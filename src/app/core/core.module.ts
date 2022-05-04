@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LanguageChangerComponent } from './components/language-changer/language-changer.component';
+import { HeaderModule } from './components/header/header.module';
 
 
 @NgModule({
@@ -16,19 +17,18 @@ import { LanguageChangerComponent } from './components/language-changer/language
     // COMPONENTS
     BreadcrumbComponent,
     FooterComponent,
-    HeaderComponent,
     LanguageChangerComponent,
     MenuComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HeaderModule
   ],
   exports: [
-    
+    HeaderModule,
     // COMPONENTS
     BreadcrumbComponent,
     FooterComponent,
-    HeaderComponent,
     LanguageChangerComponent,
     MenuComponent
   ]
