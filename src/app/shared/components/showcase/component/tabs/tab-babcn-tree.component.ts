@@ -46,7 +46,7 @@ export class TabBabcnTreeComponent {
 
     showWord: string = "Hello!";
 
-    mainSelectorComponent: string = "virtual-assistant-tree";
+    mainSelectorComponent: string = "babcn-tree";
 
     case1: Code = {
         title: 'Case 1',
