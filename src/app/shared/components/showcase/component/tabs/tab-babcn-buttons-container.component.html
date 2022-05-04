@@ -1,0 +1,109 @@
+<!-- CASE 1 -->
+<showcase-case-title [title]="case1.title" [innerHtmlSubtitle]="case1.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-BUTTONS-CONTAINER -->
+        <babcn-buttons-container>
+            <p>{{ showWord }}</p>
+        </babcn-buttons-container>
+        <!-- END BABCN-BUTTONS-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case1"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 1 -->
+
+<hr>
+
+<!-- CASE 2 -->
+<showcase-case-title [title]="case2.title" [innerHtmlSubtitle]="case2.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-BUTTONS-CONTAINER -->
+        <babcn-buttons-container vaStyle='theme'>
+            <p>{{ showWord }}</p>
+        </babcn-buttons-container>
+        <!-- END BABCN-BUTTONS-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case2"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 2 -->
+
+<hr>
+
+<!-- CASE 3 -->
+<showcase-case-title [title]="case3.title" [innerHtmlSubtitle]="case3.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-BUTTONS-CONTAINER -->
+        <babcn-buttons-container 
+            vaStyle='theme' 
+            containerWidth='400px' 
+            containerHeight='250px'
+            mainButtonText='say hello'
+            mainButtonColor='accent' 
+            [mainButtonFunction]='case3onHelloButtonClick'
+            secondaryButtonText='say bye'
+            secondaryButtonColor='primary'
+            [secondaryButtonFunction]='case3onByeButtonClick'
+        >
+            <p>{{ showWordCase3 }}</p>
+        </babcn-buttons-container>
+        <!-- END BABCN-BUTTONS-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case3"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 3 -->
+
+<hr>
+
+<!-- CASE 4 -->
+<showcase-case-title [title]="case4.title" [innerHtmlSubtitle]="case4.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-BUTTONS-CONTAINER -->
+        <babcn-buttons-container 
+            vaStyle='theme' 
+            containerWidth='450px' 
+            buttonsContainerFlow='row'
+            buttonsContainerPosition='center'
+            [buttonsContainerTotalButtons]='3'
+        >
+            <p>{{ showWord }}</p>
+        </babcn-buttons-container>
+        <!-- END BABCN-BUTTONS-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case4"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 4 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+.component-container {
+    display       : flex;
+    flex-direction: column;
+}
+
+.content-container {
+    flex-grow: 1;
+    overflow : auto;
+}
+
+.buttons-container {
+    display  : flex;
+    flex-flow: row;
+}
+
+.buttons-container-reverse {
+    display  : flex;
+    flex-flow: row-reverse;
+}
+
+.buttons-flex-end {
+    justify-content: flex-end;
+}
+
+.buttons-flex-start {
+    justify-content: flex-start;
+}
+
+.buttons-flex-center {
+    justify-content: center;
+}
+
+.buttons-flex-around {
+    justify-content: space-around;
+}
+
+.buttons-flex-between {
+    justify-content: space-between;
+}

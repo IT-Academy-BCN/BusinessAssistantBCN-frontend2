@@ -1,0 +1,48 @@
+<!-- SHOWCASE only for developers  -->
+<!-- unmute it to see -->
+<babcn-showcase></babcn-showcase>
+<!-- END SHOWCASE only for developers -->
+
+<!-- MAIN-CONTENT -->
+<div class="container mb-5 pb-3">
+    <h4 class="m-3 fw-bold"> Virtual Assistant </h4>
+    <div class="row">
+
+        <div class="col-12 col-md-6 mb-5">
+
+            <!-- babcn-CONTAINER -->
+            <babcn-container [containerHeight]="'395px'">
+
+                <!-- babcn-ACCORDION -->
+                <babcn-accordion [accordionDataInput]="dataSourceCategory"
+                    (accordionDataOutput)="getDataFromAccordion($event)">
+                </babcn-accordion>
+                <!-- END babcn-ACCORDION -->
+
+            </babcn-container>
+            <!-- END babcn-CONTAINER -->
+
+        </div>
+
+        <div class="col-12 col-md-6">
+
+            <!-- babcn-BUTTONS-CONTAINER -->
+            <babcn-buttons-container [containerHeight]="'395px'" vaStyle="theme"
+                mainButtonText="{{ 'common.button.save' }}" [mainButtonFunction]="onClickSaveButton"
+                secondaryButtonText="Ver Resumen" [secondaryButtonFunction]="onClickResumeButton">
+
+                <!-- babcn-LIST -->
+                <babcn-list [listDataInput]="dataShared"></babcn-list>
+                <!-- END babcn-LIST -->
+
+                <!-- babcn-TREE -->
+                <babcn-tree [treeDataInput]="dataSourceCategory"></babcn-tree>
+                <!-- END babcn-TREE -->
+
+            </babcn-buttons-container>
+            <!-- END babcn-BUTTONS-CONTAINER -->
+
+        </div>
+    </div>
+</div>
+<!-- END MAIN-CONTENT -->

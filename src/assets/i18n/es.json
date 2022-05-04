@@ -1,0 +1,211 @@
+{
+    "components": {
+        "footer": {
+            "section1": {
+                "title": "Quiénes somos",
+                "item1": "Directorio"
+            },
+            "section2": {
+                "title": "Contactar"
+            },
+            "section3": {
+                "title": "Recursos",
+                "item1": "FAQs"
+            },
+            "section4": {
+                "title": "Legal",
+                "item1": "Términos de servicio",
+                "item2": "Políticas de seguridad"
+            },
+            "section5": {
+                "title": "Síguenos"
+            }
+        },
+        "header": {
+            "section1": {
+                "title": "Business Assistant BCN"
+            },
+            "section2": {
+                "title": "Quiénes somos"
+            },
+            "section3": {
+                "title": "Qué hacemos"
+            },
+            "section4": {
+                "title": "FAQs"
+            },
+            "section5": {
+                "title": "Mis busquedas"
+            },
+            "section6": {
+                "title": "Directorio"
+            }
+        },
+        "info-nav": {
+            "section1": {
+                "title": "Consigue una planificación eficaz"
+            },
+            "section2": {
+                "title": "Con respaldo de expertos"
+            },
+            "section3": {
+                "title": "Con experiencia en gestión de equipos"
+            }
+        },
+        "virtual-assistant": {
+            "section1": {
+                "title": "¿Necesitas ayuda para emprender tu negocio?"
+            },
+            "section2": {
+                "title": "Porque sabemos que tienes una mente inquieta, ponemos a tu disposición un asistente virtual, herramientas de investigación y montañas de sugerencias.¿Presencial o e-commmererce?¿Prestashop, Wordpress o Shopify?¡¡Tienes mucho por hacer!!"
+            }
+        },
+        "saved-searches": {
+            "title": "Mis Búsquedas",
+            "item-1": "Ver en mapa",
+            "item-2": "Nombre",
+            "item-3": "Fecha",
+            "item-4": "Detalles"
+        }
+    },
+    "pages": {
+        "home-page": {
+            "section1": {
+                "title": "Haz que ocurra. "
+            },
+            "section2": {
+                "title": "Te ayudamos con ello."
+            },
+            "section3": {
+                "title": "Buscamos gente proactiva que quiera emprender, que cree oportunidades, que las haga brotar. Te damos toda la información que necesitas."
+            }
+        },
+        "big-stablish": {
+            "section1": {
+                "title": "Búsqueda por zona"
+            },
+            "section2": {
+                "title": "Actividad económica"
+            }
+        },
+        "big-stablish-detail": {
+            "dropdown": {
+                "download": "Descargar archivo",
+                "open": "Abrir archivo"
+            },
+            "saveSearchModal": {
+                "title": "Guardar búsqueda",
+                "name": "Nombre",
+                "detail": "Detalles de la búsqueda",
+                "msgError": "Este campo no puede estar vacío",
+                "button": {
+                    "discard": "Cancelar",
+                    "save": "Guardar"
+                }
+            }
+        },
+        "business-assistant": {
+            "section1": {
+                "title": "1. Análisis del Sector",
+                "subcat1": "Catálogo de servicios y productos para emprender",
+                "s1-item1": "Clasificación catalana de actividaes económicas",
+                "s1-item2": "Servicios para emprender",
+                "s1-item3": "Participación catalana en programas financiados por la UE",
+                "subcat2": "Economía",
+                "s2-item1": "Entidades acreditadas de financiacion alternativa",
+                "s2-item2": "Evolucion mensual del periodo medio de pago a proveedor",
+                "s2-item3": "Prestamos participativos concedidos por avancsa",
+                "s2-item4": "Indicadores sobre las convocatorias públicas de becas y ayudas en la investigación financiadas por la Generalitat",
+                "s2-item5": "Datos de las camaras oficiales de comercio industria servicios y navegacion",
+                "s2-item6": "Exportaciones realizadas por Cataluña a nivel mundial",
+                "subcat3": "Clusters de empresas",
+                "s3-item1": "Clusters acreditados de Cataluña",
+                "subcat4": "Subvenciones",
+                "s4-item1": "Concesiones del raisc registro de subvenciones y ayudas de Cataluña",
+                "s4-item2": "Convocatorias del raisc registro de subvenciones y ayudas de Cataluña",
+                "s4-item3": "Agentes de apoyo a la internacionalizacion acreditados",
+                "subcat5": "Departamentos de investigación",
+                "s5-item1": "Publicaciones de investigacion de Cataluña",
+                "s5-item2": "Investigadores de Cataluña",
+                "s5-item3": "Departamentos de investigacion de Cataluña",
+                "s5-item4": "Proyectos de investigacion de Cataluña",
+                "subcat6": "Análisis de infraestructuras",
+                "s6-item1": "Equipamientos de Cataluña",
+                "s6-item2": "Certificacion de eficiencia energetica de edificios agrupaciones segun la cualificacion de energia primaria no renovable",
+                "s6-item3": "Certificacion de eficiencia energetica de edificios",
+                "s6-item4": "Certificacion de eficiencia energetica de edificios agrupaciones segun la cualificacion de emisiones de co2",
+                "s6-item5": "Certificacion de eficiencia energetica de edificios agrupaciones segun la cualificacion de emisiones de co2 y la normativa de construccion",
+                "s6-item6": "Indicadores energeticos de Cataluña"
+            },
+
+            "section2": {
+                "title": "2. Análisis de hábitos de consumo",
+                "subcat1": "Análisis de población y hábitos de consumo",
+                "s1-item1": "Poblacion de Cataluña por municipio rango de edad y sexo",
+                "s1-item2": "Poblacion extranjera residente en Cataluña por pais de nacionalidad",
+                "s1-item3": "Turistas extranjeros anuales en Cataluña",
+                "s1-item4": "Encuesta barometro del impacto de la covid19 sobre los habitos de consumo",
+                "s1-item5": "Clasificacion europea del consumo individual por finalidad",
+                "s1-item6": "Oferta comercial por actividades",
+                "subcat2": "Análisis de productores especializados",
+                "s2-item1": "Entidades tecnio acreditadas",
+                "s2-item2": "Productores adheridos a la venta de proximidad",
+                "s2-item3": "Registro de laboratorios agroalimentarios de Cataluña",
+                "s2-item4": "Empresas de instalacion mantenimiento reparacion y operacion de instalaciones y productos industriales",
+                "subcat3": "Análisis de importaciones",
+                "s3-item1": "Importaciones realizadas por Cataluña a nivel mundial"
+            },
+            "section3": {
+                "title": "3. Entrevistas y encuestas"
+            },
+            "section4": {
+                "title": "4. Análisis de la competencia",
+                "subcat1": "Visita 'Mi Entorno'",
+                "subcat2": "Registros de licencia y sociedades laborales",
+                "s2-item1": "Registro de licencia comerciales",
+                "s2-item2": "Ocupacion comercial de ciudades catalanas",
+                "s2-item3": "Sociedades laborales en activo",
+                "subcat3": "Cooperativas",
+                "s3-item1": "Registro general de cooperativas",
+                "subcat4": "Gremio sanitario",
+                "s4-item1": "Regiones sanitarias de Cataluña",
+                "s4-item2": "Catalogo de farmacias de Cataluña"
+            },
+            "section5": {
+                "title": "5. Localización de target"
+            },
+            "section6": {
+                "title": "6. Generación de informe"
+            }
+        }
+    },
+    "common": {
+        "button": {
+            "search": "Buscar",
+            "save": "Guardar",
+            "my-enviroment": "Mi Entorno",
+            "assistant": "Asistente Virtual",
+            "big-stablish": "Grandes Establecimentos",
+            "gallery-market": "Galerías Comerciales",
+            "mall": "Centros Comerciales",
+            "public-market": "Mercados Municipales",
+            "market-fair": "Mercados y Ferias",
+            "save-results": "Guardar resultados",
+            "download-results": "Descargar resultados"
+        },
+        "title": {
+            "results": "Resultados"
+        }
+    },
+    "user": {
+        "register": {
+            "title": "Nuevo usuario",
+            "email-placeholder": "Tu email...",
+            "email-error": "Formato de email inválido / El usuario ya existe",
+            "password-title": "Contraseña",
+            "password-placeholder": "Tu contraseña...",
+            "password-error": "La contraseña debe tener almenos 8 carácteres alfanuméricos",
+            "submit-register": "Crear usuario"
+        }
+    }
+}

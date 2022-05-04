@@ -1,0 +1,46 @@
+<!-- CASE 1 -->
+<showcase-case-title [title]="case1.title" [innerHtmlSubtitle]="case1.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="'400px'">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container [containerHeight]="'350px'" [containerWidth]="'100%'">
+
+            <!-- BABCN-ACCORDION -->
+            <babcn-accordion [accordionDataInput]="dataSource"
+                (accordionDataOutput)="getDataFromAccordion($event)">
+            </babcn-accordion>
+            <!-- END BABCN-ACCORDION -->
+
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container>
+
+            <!-- BABCN-LIST -->
+            <babcn-list [listDataInput]="dataShared">
+            </babcn-list>
+            <!-- END BABCN-LIST -->
+
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container>
+
+            <showcase-code-copy-container [code]="case1"></showcase-code-copy-container>
+
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 1 -->

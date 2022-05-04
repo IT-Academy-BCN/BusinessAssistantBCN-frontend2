@@ -1,0 +1,18 @@
+<!-- CASE 1 -->
+<showcase-case-title [title]="case1.title" [innerHtmlSubtitle]="case1.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+        <babcn-container [containerWidth]="'500px'" [containerHeight]="'395px'">
+
+            <!-- BABCN-TREE -->
+            <babcn-tree [treeDataInput]="TREE_DATA">
+            </babcn-tree>
+            <!-- END BABCN-TREE -->
+
+        </babcn-container>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case1"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 1 -->

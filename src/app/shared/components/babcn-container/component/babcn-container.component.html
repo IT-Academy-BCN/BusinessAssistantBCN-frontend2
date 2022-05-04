@@ -1,0 +1,18 @@
+<!-- MAIN CONTAINER -->
+<div class="component-container" [ngClass]="
+        containerIsActive ? 
+        'mat-elevation-z' + containerElevationActive 
+        : 'mat-elevation-z' + containerElevationInactive " [ngStyle]="{
+        width: getContainerWidth,
+        height: getContainerHeight,
+        backgroundColor: getContainerBackgroundColor 
+    }">
+
+    <!-- CONTENT -->
+    <div class="content-container" [ngStyle]="{ 'padding': containerInnerPadding }">
+        <ng-content></ng-content>
+    </div>
+    <!-- END CONTENT -->
+
+</div>
+<!-- END MAIN CONTAINER -->

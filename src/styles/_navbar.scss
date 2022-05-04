@@ -1,0 +1,22 @@
+.nav-link h5 {
+    color     : #fff;
+    transition: 0.2s all;
+}
+
+.nav-link {
+    color     : #808080;
+    transition: 0.2s all;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-item .nav-link {
+    color     : grey;
+    transition: 0.2s all;
+}
+
+.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+    color: #ffff;
+}

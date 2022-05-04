@@ -1,0 +1,16 @@
+.cards {
+    transition: all 0.2s ease;
+    cursor    : pointer;
+    border    : 1px solid rgb(197, 191, 191);
+    margin    : 25px;
+}
+
+.cards:hover {
+    box-shadow      : 5px 6px 6px 2px #e9ecef;
+    transform       : scale(1.02);
+    background-color: rgb(92, 197, 98);
+}
+
+.card-contents {
+    min-height: 480px;
+}

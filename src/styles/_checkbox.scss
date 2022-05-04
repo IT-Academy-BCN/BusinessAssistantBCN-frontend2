@@ -1,0 +1,34 @@
+@import "vars";
+
+#checkbox-activity {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance        : none;
+    /* For iOS < 15 to remove gradient background */
+    background-color  : #fff;
+    /* Not removed via appearance */
+    margin            : 3;
+    font              : inherit;
+    color             : currentColor;
+    width             : 1.15em;
+    height            : 1.15em;
+    border            : 0.1em solid grey;
+    transform         : translateY(-0.075em);
+
+    display      : grid;
+    place-content: center;
+}
+
+#checkbox-activity::before {
+    content         : "";
+    width           : 0.65em;
+    height          : 0.65em;
+    transform       : scale(0);
+    transition      : 120ms transform ease-in-out;
+    box-shadow      : inset 1em 1em #0d6efd;
+    background-color: $main-color;
+}
+
+#checkbox-activity:checked::before {
+    transform: scale(1);
+}

@@ -1,0 +1,560 @@
+{
+    "count": 28,
+    "offset": 0,
+    "limit": -1,
+    "results":
+    [
+        {
+            "name": "Centre Comercial El Corte Inglés *Avinguda Diagonal",
+            "web": "http://www.elcorteingles.es",
+            "email": "clientes@elcorteingles.es",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326349,
+                    "name": "Grans magatzems i establiments especialitzats"
+                },
+                {
+                    "id": 1006045,
+                    "name": "Llibreries"
+                },
+                {
+                    "id": 112001,
+                    "name": "Registres vinculats a TRÀMITS -ITACA"
+                },
+                {
+                    "id": 37798723,
+                    "name": "Registres revisats ABRIL 2011"
+                },
+                {
+                    "id": 37810722,
+                    "name": "TISU Recursos estratègics"
+                },
+                {
+                    "id": 34296307,
+                    "name": "Com.men.grandes almacenes"
+                },
+                {
+                    "id": 32301311,
+                    "name": "Com.men.tabaco maquinas automaticas"
+                },
+                {
+                    "id": 32301307,
+                    "name": "Com.men.tabacos en expendiduria"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Av Diagonal",
+                    "street_number": "617*619",
+                    "zip_code": "08028",
+                    "district_id": "04",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 427089.6056334056,
+                        "y": 4582196.984049929
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Centre Comercial Arenas de Barcelona",
+            "web": "http://www.arenasdebarcelona.com",
+            "email": "arenas.informacion@arenasdebarcelona.com",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326347,
+                    "name": "Centres comercials"
+                },
+                {
+                    "id": 46366348,
+                    "name": "Nivell 2 (PIC's, ús intern)"
+                },
+                {
+                    "id": 46366355,
+                    "name": "Per fer compres (PIC's, ús intern) "
+                },
+                {
+                    "id": 37810722,
+                    "name": "TISU Recursos estratègics"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "G.V. Corts Catalanes",
+                    "street_number": "373*385",
+                    "zip_code": "08015",
+                    "district_id": "02",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 428919.128134815,
+                        "y": 4580850.788577912
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Hipermercat Carrefour *La Maquinista",
+            "web": "http://www.carrefour.es",
+            "email": null,
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326348,
+                    "name": "Hipermercats"
+                },
+                {
+                    "id": 31813985,
+                    "name": "Tom Tom"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Pg Potosí",
+                    "street_number": "2",
+                    "zip_code": "08030",
+                    "district_id": "09",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 433034.39665564324,
+                        "y": 4588197.656780293
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Centre Comercial El Centre de la Vila",
+            "web": "http://www.elcentredelavila.es",
+            "email": "administracion@olympicmoll.com",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326347,
+                    "name": "Centres comercials"
+                },
+                {
+                    "id": 46366349,
+                    "name": "Nivell 3 (PIC's, ús intern)"
+                },
+                {
+                    "id": 46366355,
+                    "name": "Per fer compres (PIC's, ús intern) "
+                },
+                {
+                    "id": 37810722,
+                    "name": "TISU Recursos estratègics"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "C Salvador Espriu",
+                    "street_number": "61",
+                    "zip_code": "08005",
+                    "district_id": "10",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 432939.40871910215,
+                        "y": 4582465.578640014
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Botiga FNAC *Illa Diagonal",
+            "web": "http://www.fnac.es",
+            "email": "illa@fnac.es",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326349,
+                    "name": "Grans magatzems i establiments especialitzats"
+                },
+                {
+                    "id": 1008002,
+                    "name": "Venda"
+                },
+                {
+                    "id": 1006045,
+                    "name": "Llibreries"
+                },
+                {
+                    "id": 29810744,
+                    "name": "Cinema"
+                },
+                {
+                    "id": 29810770,
+                    "name": "Vídeo"
+                },
+                {
+                    "id": 104021,
+                    "name": "Fotografia"
+                },
+                {
+                    "id": 29812727,
+                    "name": "Anglès"
+                },
+                {
+                    "id": 29812725,
+                    "name": "Francès"
+                },
+                {
+                    "id": 31813985,
+                    "name": "Tom Tom"
+                },
+                {
+                    "id": 32796754,
+                    "name": "Llibres"
+                },
+                {
+                    "id": 107006,
+                    "name": "Imatge i so"
+                },
+                {
+                    "id": 32798724,
+                    "name": "Discos"
+                },
+                {
+                    "id": 107007,
+                    "name": "Informàtica i telecomunicació"
+                },
+                {
+                    "id": 32799720,
+                    "name": "Maquinari"
+                },
+                {
+                    "id": 32799721,
+                    "name": "Programari"
+                },
+                {
+                    "id": 37798723,
+                    "name": "Registres revisats ABRIL 2011"
+                },
+                {
+                    "id": 30343758,
+                    "name": "Altres (targeta rosa) "
+                },
+                {
+                    "id": 30344758,
+                    "name": "LLibreries (targeta rosa)  "
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Av Diagonal",
+                    "street_number": "555*559",
+                    "zip_code": "08029",
+                    "district_id": "04",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 427675.4938963018,
+                        "y": 4582393.626257071
+                    }
+                }
+            ]
+        },
+        {
+            "name": "El Corte Inglés *Avinguda Portal de l'Àngel",
+            "web": "http://www.elcorteingles.es",
+            "email": null,
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326349,
+                    "name": "Grans magatzems i establiments especialitzats"
+                },
+                {
+                    "id": 1006045,
+                    "name": "Llibreries"
+                },
+                {
+                    "id": 107015,
+                    "name": "Esports"
+                },
+                {
+                    "id": 107006,
+                    "name": "Imatge i so"
+                },
+                {
+                    "id": 107007,
+                    "name": "Informàtica i telecomunicació"
+                },
+                {
+                    "id": 110158,
+                    "name": "Amb cafeteria"
+                },
+                {
+                    "id": 110012,
+                    "name": "Amb restaurant"
+                },
+                {
+                    "id": 112001,
+                    "name": "Registres vinculats a TRÀMITS -ITACA"
+                },
+                {
+                    "id": 37798723,
+                    "name": "Registres revisats ABRIL 2011"
+                },
+                {
+                    "id": 37810722,
+                    "name": "TISU Recursos estratègics"
+                },
+                {
+                    "id": 34296307,
+                    "name": "Com.men.grandes almacenes"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Av Portal de l'Àngel",
+                    "street_number": "19*21",
+                    "zip_code": "08002",
+                    "district_id": "01",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 430817.0904579748,
+                        "y": 4581924.688490288
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Centre Comercial Diagonal Mar",
+            "web": "http://www.diagonalmarcentre.es",
+            "email": "info@diagonalmarcentre.es",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326347,
+                    "name": "Centres comercials"
+                },
+                {
+                    "id": 46366349,
+                    "name": "Nivell 3 (PIC's, ús intern)"
+                },
+                {
+                    "id": 46366355,
+                    "name": "Per fer compres (PIC's, ús intern) "
+                },
+                {
+                    "id": 37810722,
+                    "name": "TISU Recursos estratègics"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Av Diagonal",
+                    "street_number": "3",
+                    "zip_code": "08019",
+                    "district_id": "10",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 434510.2090325903,
+                        "y": 4584619.5799381975
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Botiga Decathlon *Plaça Vila de Madrid",
+            "web": "http://www.decathlon.cat",
+            "email": "escuchacliente@decathlon.com",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326349,
+                    "name": "Grans magatzems i establiments especialitzats"
+                },
+                {
+                    "id": 32807720,
+                    "name": "Articles esportius"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Canuda",
+                    "street_number": "20",
+                    "zip_code": "08002",
+                    "district_id": "01",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 430840.91625275905,
+                        "y": 4581796.285748212
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Botiga Bauhaus *Passeig Zona Franca",
+            "web": "http://www.bauhaus.es",
+            "email": "barcelona@bauhaus.es",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326349,
+                    "name": "Grans magatzems i establiments especialitzats"
+                },
+                {
+                    "id": 29808734,
+                    "name": "Bricolatge"
+                },
+                {
+                    "id": 32805726,
+                    "name": "Material per a la construcció"
+                },
+                {
+                    "id": 32805720,
+                    "name": "Sanejament"
+                },
+                {
+                    "id": 29299308,
+                    "name": "Com.may.ptos.perfumeria,drogueria"
+                },
+                {
+                    "id": 29302309,
+                    "name": "Com.may. madera y corcho"
+                },
+                {
+                    "id": 29302311,
+                    "name": "Com.may. maquinaria para madera y metal"
+                },
+                {
+                    "id": 29302310,
+                    "name": "Com.may. materiales construccion"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Passeig de la Zona Franca",
+                    "street_number": "123",
+                    "zip_code": "08038",
+                    "district_id": "03",
+                    "town": "Barcelona",
+                    "location":
+                    {
+                        "x": 428107.4654593939,
+                        "y": 4578830.10113759
+                    }
+                }
+            ]
+        },
+        {
+            "name": "El Corte Inglés *Plaça Catalunya",
+            "web": "http://www.elcorteingles.es",
+            "email": null,
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326349,
+                    "name": "Grans magatzems i establiments especialitzats"
+                },
+                {
+                    "id": 1006045,
+                    "name": "Llibreries"
+                },
+                {
+                    "id": 112001,
+                    "name": "Registres vinculats a TRÀMITS -ITACA"
+                },
+                {
+                    "id": 37798723,
+                    "name": "Registres revisats ABRIL 2011"
+                },
+                {
+                    "id": 37810722,
+                    "name": "TISU Recursos estratègics"
+                },
+                {
+                    "id": 34296307,
+                    "name": "Com.men.grandes almacenes"
+                },
+                {
+                    "id": 32301307,
+                    "name": "Com.men.tabacos en expendiduria"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Pl Catalunya",
+                    "street_number": "14",
+                    "zip_code": "08002",
+                    "district_id": "02",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 430708.5304682953,
+                        "y": 4582143.131336454
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Centre Comercial Som Multiespai",
+            "web": "http://sommultiespai.com",
+            "email": "info@sommultiespai.com",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 43326347,
+                    "name": "Centres comercials"
+                },
+                {
+                    "id": 37810722,
+                    "name": "TISU Recursos estratègics"
+                },
+                {
+                    "id": 54391845,
+                    "name": "Centres Comercials"
+                },
+                {
+                    "id": 49841517,
+                    "name": "Centres comercials"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "address_name": "Av Rio de Janeiro",
+                    "street_number": "42",
+                    "zip_code": "08016",
+                    "district_id": "08",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 431579.0119413545,
+                        "y": 4587385.475400657
+                    }
+                }
+            ]
+        }
+    ]
+}

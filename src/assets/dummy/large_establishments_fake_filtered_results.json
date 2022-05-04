@@ -1,0 +1,461 @@
+{
+  "offset": 0,
+  "limit": -1,
+  "count": 10,
+  "results": [
+    {
+      "name": "Compañia Roca Sanitario",
+      "web": "http://www.roca.es",
+      "email": "infosan@roca.net",
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 32805741,
+          "name": "Sanitaris"
+        },
+        {
+          "id": 29302310,
+          "name": "Com.may. materiales construccion"
+        },
+        {
+          "id": 30699721,
+          "name": "Alquiler locales industriales"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "Av Diagonal",
+          "number": "513",
+          "zip_code": "08029",
+          "district_id": "04",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.140835,
+            "y": 41.391424
+          }
+        }
+      ]
+    },
+    {
+      "name": "Inoxcrom SA",
+      "web": "http://www.inoxcrom.com",
+      "email": "inoxcrom@inoxcrom.com",
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 31801803,
+          "name": "Inoxcrom"
+        },
+        {
+          "id": 32815721,
+          "name": "Material d'oficina"
+        },
+        {
+          "id": 32815720,
+          "name": "Paper"
+        },
+        {
+          "id": 29304311,
+          "name": "Com.may.art.papeleria y escritorio"
+        },
+        {
+          "id": 68308190,
+          "name": "Fabricacion de tubos de acero"
+        },
+        {
+          "id": 71799836,
+          "name": "Otros art. acabados en metales ncop"
+        },
+        {
+          "id": 69307190,
+          "name": "Tratamiento y recubrimiento de metales"
+        },
+        {
+          "id": 70313191,
+          "name": "Artes graficas (impresion grafica)"
+        },
+        {
+          "id": 39893895,
+          "name": "Fab. art. acabados materias plasticas"
+        },
+        {
+          "id": 40896894,
+          "name": "Fab. art. escritorio"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "T Estadella",
+          "number": "46*54",
+          "zip_code": "08030",
+          "district_id": "09",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.199667,
+            "y": 41.434138
+          }
+        }
+      ]
+    },
+    {
+      "name": "Empresa Basf Española",
+      "web": "http://www.basf.com/es",
+      "email": null,
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 107010,
+          "name": "Electrònica, electricitat, il·luminació"
+        },
+        {
+          "id": 107019,
+          "name": "Productes químics"
+        },
+        {
+          "id": 72309188,
+          "name": "Intermediarios del comercio"
+        },
+        {
+          "id": 30699721,
+          "name": "Alquiler locales industriales"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "C Can Ràbia",
+          "number": "3*5",
+          "zip_code": "08017",
+          "district_id": "05",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.134532,
+            "y": 41.392749
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fujifilm España S.A.",
+      "web": "http://www.fujifilm.eu/es/",
+      "email": null,
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 31798950,
+          "name": "Fujifilm"
+        },
+        {
+          "id": 29810744,
+          "name": "Cinema"
+        },
+        {
+          "id": 29810770,
+          "name": "Vídeo"
+        },
+        {
+          "id": 104021,
+          "name": "Fotografia"
+        },
+        {
+          "id": 29304308,
+          "name": "Com.may. instrum. medicos y ortopedicos"
+        },
+        {
+          "id": 72315196,
+          "name": "Otras reparaciones ncop"
+        },
+        {
+          "id": 13194273,
+          "name": "Venda Càmera - Accessoris: Fotografia"
+        },
+        {
+          "id": 13194275,
+          "name": "Venda Cintes"
+        },
+        {
+          "id": 13194276,
+          "name": "Venda Pel.lícula Verge"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "C Aragó",
+          "number": "180",
+          "zip_code": "08011",
+          "district_id": "02",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.158223,
+            "y": 41.386423
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mattel España S.A.",
+      "web": "https://shopping.mattel.com/es-es/",
+      "email": null,
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 31805858,
+          "name": "Mattel"
+        },
+        {
+          "id": 29800721,
+          "name": "Jocs"
+        },
+        {
+          "id": 29300310,
+          "name": "Com.may.apar.y mat. electronico"
+        },
+        {
+          "id": 29304307,
+          "name": "Com.may. juguetes y articulos deporte"
+        },
+        {
+          "id": 29304312,
+          "name": "Com.may. libros, periodicos y revistas"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "Aribau",
+          "number": "200",
+          "zip_code": "08036",
+          "district_id": "02",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.151978,
+            "y": 41.394126
+          }
+        }
+      ]
+    },
+    {
+      "name": "Font Vella S.A.",
+      "web": "http://fontvellaencasa.es",
+      "email": "fontvellaencasa@danone.com",
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 31798883,
+          "name": "Fonter"
+        },
+        {
+          "id": 31798880,
+          "name": "Font picant"
+        },
+        {
+          "id": 31798881,
+          "name": "Font vella"
+        },
+        {
+          "id": 107001,
+          "name": "Alimentació i begudes"
+        },
+        {
+          "id": 33899894,
+          "name": "Prep. y envasado de aguas minerales"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "C Buenos Aires",
+          "number": "21",
+          "zip_code": "08029",
+          "district_id": "02",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.14546,
+            "y": 41.391404
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dell España",
+      "web": "http://www.dell.es",
+      "email": null,
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 1008005,
+          "name": "Serveis d'Assistència Tècnica"
+        },
+        {
+          "id": 31797011,
+          "name": "Dell"
+        },
+        {
+          "id": 107007,
+          "name": "Informàtica i telecomunicació"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "Gran Via de les Corts Catalanes",
+          "number": "630 - 1F",
+          "zip_code": "08007",
+          "district_id": "00",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.1655926,
+            "y": 41.3885567
+          }
+        }
+      ]
+    },
+    {
+      "name": "La Llave de Oro",
+      "web": "http://www.lallavedeoro.com",
+      "email": null,
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 1027003,
+          "name": "Immobiliàries"
+        },
+        {
+          "id": 67198241,
+          "name": "Construccion completa, repar. y conserv."
+        },
+        {
+          "id": 27701721,
+          "name": "Promocion de edificaciones"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "Pg Manuel Girona",
+          "number": "62-64",
+          "zip_code": "08034",
+          "district_id": "04",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.126165,
+            "y": 41.391338
+          }
+        }
+      ]
+    },
+    {
+      "name": "IBM Client Center Barcelona",
+      "web": "http://www.ibm.com/es",
+      "email": null,
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 31801736,
+          "name": "Ibm"
+        },
+        {
+          "id": 32799723,
+          "name": "Material informàtic"
+        },
+        {
+          "id": 29302314,
+          "name": "Com.may. maquinas y material oficina"
+        },
+        {
+          "id": 103909,
+          "name": "Alquiler maq. y equipo contable"
+        },
+        {
+          "id": 102911,
+          "name": "Explotacion electronica por terceros"
+        },
+        {
+          "id": 28701728,
+          "name": "Otros servicios tecnicos ncop"
+        },
+        {
+          "id": 63006068,
+          "name": "Enseñanza form. profesional superior"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "Av Diagonal",
+          "number": "571",
+          "zip_code": "08029",
+          "district_id": "04",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.134921,
+            "y": 41.389823
+          }
+        }
+      ]
+    },
+    {
+      "name": "Oracle Ibérica",
+      "web": "http://www.oracle.es",
+      "email": null,
+      "phone": null,
+      "activities": [
+        {
+          "id": 1008031,
+          "name": "Delegacions - oficines comercials"
+        },
+        {
+          "id": 31808780,
+          "name": "Oracle"
+        },
+        {
+          "id": 107007,
+          "name": "Informàtica i telecomunicació"
+        }
+      ],
+      "addresses": [
+        {
+          "street_name": "Av Diagonal",
+          "number": "615",
+          "zip_code": "08028",
+          "district_id": "04",
+          "town": "BARCELONA",
+          "location": {
+            "x": 2.128782,
+            "y": 41.388269
+          }
+        }
+      ]
+    }
+  ]
+}
