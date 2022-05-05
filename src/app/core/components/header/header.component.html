@@ -1,31 +1,52 @@
 
-<mat-toolbar class="headerStyle flex-container">
+<mat-toolbar class="headerStyle">
+
+    <!-- Menu-icon -->
 
     <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
         <mat-icon class="menu-icon">menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" xPosition="after" class="bg-dark">
-        <div *ngFor="let button of buttons.menu; let i = index">
-            <button mat-menu-item>{{button}}</button>
+        <div *ngFor="let button of buttons.menu; let i = index" class="menu-mat">
+            <button mat-menu-item class="fc-white" (click)="menuRoute(i)">{{button}}</button>
             <div *ngIf="i == 0 || i == 4"><hr></div>
         </div>
     </mat-menu>
-            
-    <h1 class="padding-x">Business Assistant BCN</h1>
 
-    <span class="padding-l"></span>
+    <!-- Menu-icon -->
 
-    <button mat-button *ngFor="let button of buttons.start">{{button}}</button>
+    <!-- Title -->
+
+    <h1 class="padding-x">Business Assistant BCN</h1>  
+
+    <!-- Title -->
+    
+    <!-- Left-buttons -->
+
+    <span class="padding-l">
+        <button mat-button *ngFor="let button of buttons.start; let i=index" (click)="leftButtonsRoute(i)">{{button}}</button>
+    </span>
+
+    <!-- Left-buttons -->
     
     <span class="spacer"></span>
-    
-    <button mat-button *ngFor="let button of buttons.middle">{{button}}</button>
-    
-    <span class="padding-x"></span>
-    <span class="padding-l"></span>  
-    
-    <button mat-button *ngFor="let button of buttons.end">{{button}}</button>
+     
+    <!-- Middle-buttons -->
 
+    <span class="padding-x">
+        <button mat-button *ngFor="let button of buttons.middle">{{button}}</button>
+    </span>
+
+    <!-- Middle-butons -->
+
+    <!-- Right-buttons -->
+
+    <span class="padding-l">
+        <button mat-button *ngFor="let button of buttons.end; let i=index" (click)="rightButtonsRoute(i)">{{button}}</button>
+    </span>  
+
+    <!-- Right-buttons -->
+    
     
 </mat-toolbar>
 

@@ -1,18 +1,24 @@
 
 .headerStyle {
     background-color: black;
+    color: white;
     height: 83px;
 }
 
 .menu-icon{
     font-size: 50px;
     color: white;
-    padding-right: 35px;
-    
+    margin-right: 25px;
 }
+
 .menu-button{
     height: 80px;
     width: 80px;
+    margin-left: -16px;
+}
+
+.menu-mat{
+    width: 200px;
 }
 
 .padding-l{
