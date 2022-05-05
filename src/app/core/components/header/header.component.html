@@ -1,15 +1,15 @@
 
 <mat-toolbar class="headerStyle flex-container">
 
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
-            <mat-icon class="menu-icon">menu</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu" xPosition="after" class="bg-dark">
-            <div *ngFor="let button of buttons.menu; let i = index">
-                <button mat-menu-item>{{button}}</button>
-                <div *ngIf="i == 0 || i == 4"><hr></div>
-            </div>
-        </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+        <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="after" class="bg-dark">
+        <div *ngFor="let button of buttons.menu; let i = index">
+            <button mat-menu-item>{{button}}</button>
+            <div *ngIf="i == 0 || i == 4"><hr></div>
+        </div>
+    </mat-menu>
             
     <h1 class="padding-x">Business Assistant BCN</h1>
 
