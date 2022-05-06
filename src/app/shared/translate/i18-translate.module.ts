@@ -27,7 +27,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     TranslateModule
   ]
 })
-export class BabcnTranslateModule {
+export class I18TranslateModule {
   constructor(translate: TranslateService) {
     translate.addLangs(['en', 'es', 'ca']);
     translate.setDefaultLang('ca');

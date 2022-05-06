@@ -13,10 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // @NGX-TRANSLATE/CORE
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 // BABCN-TRANSLATE-MODULE: TranslateHttpLoader
-import { HttpLoaderFactory } from './shared/babcn-translate.module';
+import { HttpLoaderFactory } from './shared/translate/i18-translate.module';
 
 // MODULE: SHARED
 import { SharedModule } from './shared/shared.module';
