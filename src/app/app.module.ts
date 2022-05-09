@@ -2,17 +2,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-// MODULE: APP ROUTING
-import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // APP COMPONENT
 import { AppComponent } from './app.component';
+
+// MODULE: APP ROUTING
+import { AppRoutingModule } from './app-routing.module';
 
 // MODULE: BROWSER ANIMATIONS MODULE, is necessary for Material 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // MODULE: [FEATURE] VIRTUAL-ASSISTANT
 import { VirtualAssistantModule } from './features/virtual-assistant/virtual-assistant.module';
+
+// @NGX-TRANSLATE/CORE
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+
+// BABCN-TRANSLATE-MODULE: TranslateHttpLoader
+import { HttpLoaderFactory } from './shared/babcn-translate.module';
+
+// MODULE: SHARED
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +33,19 @@ import { VirtualAssistantModule } from './features/virtual-assistant/virtual-ass
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
+    // SHARED MODULE
+    SharedModule,
+
+    // FEATURES MODULES
     VirtualAssistantModule
   ],
   providers: [],

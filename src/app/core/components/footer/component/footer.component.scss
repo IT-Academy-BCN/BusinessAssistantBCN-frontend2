@@ -1,0 +1,41 @@
+@import '../../../../../styles.scss';
+
+*{
+    background-color: $bg-dark-grey;
+}
+
+.footer-list{
+    list-style: none;
+    padding: 0;
+    a {
+        font-weight: 400;
+    }
+}
+
+a {
+    width: 8rem;
+    color: $nav-link;
+    transition: 0.2s all;
+    h5{
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    &:hover{
+       color: white;
+    }
+    &:active {
+        color: $main-color;
+    }
+   
+}
+
+babcn-container{
+    position: absolute;
+    top: 3rem;
+}
+
+.content-align{ 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

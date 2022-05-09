@@ -1,0 +1,94 @@
+<!-- It's necessary to connect the language changer! After, we can use the pipe's -->
+
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio" >
+    <!-- [ngStyle]="{'height':ratio}" -->
+
+    <!-- ABOUT -->
+    <mat-grid-tile >
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+           <div class="content-align"> 
+            <a routerLink='' routerLinkActive="active" aria-current="page">
+                <!-- <h5 class="fs-5 fc-white">{{'components.footer.section1.title' | translate}}</h5> -->
+                <h5 class="fs-5 fc-white">About</h5>
+            </a>
+            <ul class="footer-list fs-6">
+                <!-- <li><a class="nav-link" routerLink=''>{{'components.footer.section1.item1' |
+                    translate}}</a>
+                </li> -->
+                <li>
+                    <a routerLink=''>Directory</a>
+                </li>
+            </ul>
+            </div>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- CONTACT -->
+    <mat-grid-tile >
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <div class="content-align">
+                <a routerLink='' routerLinkActive="active" aria-current="page">
+                    <!-- <h5 class="fs-5 fc-white">{{'components.footer.section2.title' | translate}}</h5> -->
+                    <h5 class="fs-5 fc-white">Contact</h5>
+                </a>
+            </div>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- RESOURCES -->
+    <mat-grid-tile >
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <div class="content-align">
+                <a routerLink='' routerLinkActive="active" aria-current="page">
+                    <!-- <h5 class="fs-5 fc-white">{{'components.footer.section3.title' | translate}}</h5> -->
+                    <h5 class="fs-5 fc-white">Resources</h5>
+                </a>
+                <ul class="footer-list fs-6">
+                    <!-- <li><a class="nav-link" routerLink=''>{{'components.footer.section3.item1' | translate}}</a>
+                    </li> -->
+                    <li>
+                        <a routerLink=''>FAQs</a>
+                    </li>
+                </ul>
+            </div>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- LEGAL -->
+    <mat-grid-tile [rowspan]="2">
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <div class="content-align">
+                <a routerLink='' routerLinkActive="active" aria-current="page">
+                    <!-- <h5 class="fs-5 fc-white">{{'components.footer.section4.title' | translate}}</h5> -->
+                    <h5 class="fs-5 fc-white">Legal</h5>
+                </a>
+                <ul class="footer-list fs-6">
+                    <!-- <li><a class="nav-link" routerLink=''>{{'components.footer.section4.item1' | translate}}</a>
+                            </li> -->
+                    <li>
+                        <a routerLink=''>Terms & <br> Conditions</a>
+                    </li>
+                </ul>
+                <ul class="footer-list fs-6">
+                    <!-- <li><a class="nav-link" routerLink=''>{{'components.footer.section4.item1' | translate}}</a>
+                                            </li> -->
+                    <li>
+                        <a routerLink=''>Safety <br> policies</a>
+                    </li>
+                </ul>
+            </div>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- FOLLOW US -->
+    <mat-grid-tile>
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <div class="content-align">
+                <a routerLink='' routerLinkActive="active" aria-current="page">
+                    <!-- <h5 class="fs-5 fc-white">{{'components.footer.section5.title' | translate}}</h5> -->
+                    <h5 class="fs-5 fc-white">Follow us</h5>
+                </a>
+            </div>
+        </babcn-container>
+    </mat-grid-tile>
+</mat-grid-list>
