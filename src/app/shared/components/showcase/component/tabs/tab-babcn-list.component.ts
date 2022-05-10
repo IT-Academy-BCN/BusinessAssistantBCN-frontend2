@@ -45,7 +45,7 @@ export class TabBabcnListComponent {
 
     showWord: string = "Hello!";
 
-    mainSelectorComponent: string = "virtual-assistant-list";
+    mainSelectorComponent: string = "babcn-list";
 
     case1: Code = {
         title: 'Case 1',
