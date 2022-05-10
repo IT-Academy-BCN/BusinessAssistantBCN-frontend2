@@ -9,8 +9,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 //MATERIAL
 import { MatGridListModule } from '@angular/material/grid-list';
 
-// BABCN-COMPONENT MODULES
-import { BabcnContainerModule } from '../../../shared/components/babcn-container/babcn-container.module';
+import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,14 @@ import { BabcnContainerModule } from '../../../shared/components/babcn-container
   ],
   imports: [
     CommonModule,
+    BabcnContainerModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
     // CDK
     LayoutModule,
@@ -25,13 +35,14 @@ import { BabcnContainerModule } from '../../../shared/components/babcn-container
     //MATERIAL
 
     MatGridListModule,
-
-    // MODULES BABCN-COMPONENTS
-    
-    BabcnContainerModule
   ],
   exports: [
-    FooterComponent
+    FooterComponent,
+    TranslateModule
   ]
 })
 export class FooterModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

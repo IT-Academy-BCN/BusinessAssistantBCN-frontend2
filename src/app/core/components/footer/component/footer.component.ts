@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
