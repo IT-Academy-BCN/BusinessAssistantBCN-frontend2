@@ -43,6 +43,7 @@ export class FooterComponent implements OnInit, OnDestroy {
       });
   }
 
+  //Number of cols
   get breakpoint(): number { 
     if (this.currentBreakpoint == Breakpoints.XSmall) {
       return 1;
@@ -56,6 +57,7 @@ export class FooterComponent implements OnInit, OnDestroy {
     return 0;
   }
 
+  //Cols height
   get ratio(): string {
     switch (this.currentBreakpoint) {
       case Breakpoints.XSmall:
@@ -76,5 +78,4 @@ export class FooterComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.responsive.ngOnDestroy();
   }
-
 }
