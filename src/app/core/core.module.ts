@@ -1,16 +1,17 @@
+
 // ANGULAR CORE & COMMON
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //COMPONENT MODULOS
 import { FooterModule } from '././components/footer/footer.module';
+import { LanguageChangerModule } from './components/language-changer/language-changer.module';
 
 // COMPONENTS
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { LanguageChangerComponent } from './components/language-changer/language-changer.component';
-
+import { FooterComponent } from './components/footer/component/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,21 +19,23 @@ import { LanguageChangerComponent } from './components/language-changer/language
     // COMPONENTS
     BreadcrumbComponent,
     HeaderComponent,
-    LanguageChangerComponent,
     MenuComponent
   ],
   imports: [
     CommonModule,
-    FooterModule
+    FooterModule,
+    LanguageChangerModule
   ],
   exports: [
     
     // COMPONENTS
     BreadcrumbComponent,
-    FooterModule,
+    FooterComponent,
     HeaderComponent,
-    LanguageChangerComponent,
-    MenuComponent
+    MenuComponent,
+
+    //MODULES
+    // LanguageChangerModule
   ]
 })
 export class CoreModule { }

@@ -29,7 +29,7 @@ export class TabBabcnAccordionComponent {
 
   showWord: string = "Hello!";
 
-  mainSelectorComponent: string = "virtual-assistant-accordion";
+  mainSelectorComponent: string = "babcn-accordion";
 
   case1: Code = {
     title: 'Case 1',

@@ -2,8 +2,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-
 // APP COMPONENT
 import { AppComponent } from './app.component';
 
@@ -16,14 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // MODULE: [FEATURE] VIRTUAL-ASSISTANT
 import { VirtualAssistantModule } from './features/virtual-assistant/virtual-assistant.module';
 
-// @NGX-TRANSLATE/CORE
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-
-// BABCN-TRANSLATE-MODULE: TranslateHttpLoader
-import { HttpLoaderFactory } from './shared/babcn-translate.module';
-
-// MODULE: SHARED
-import { SharedModule } from './shared/shared.module';
+//MODULE: TRANSLATE
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,13 +36,19 @@ import { SharedModule } from './shared/shared.module';
       }
     }),
 
-    // SHARED MODULE
-    SharedModule,
-
     // FEATURES MODULES
     VirtualAssistantModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    TranslateModule
+  ]
 })
 export class AppModule { }
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
