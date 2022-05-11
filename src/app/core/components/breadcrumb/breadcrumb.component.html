@@ -1,1 +1,19 @@
-<p>breadcrumb works!</p>
+<ul class="breadcrumb">
+    <li class="breadcrumb-item" *ngIf="breadcrumbs.length>0">
+        <a aria-label='Home' [routerLink]='["/home"]'>
+            <mat-icon aria-hidden="false" aria-label="Home icon" aria-label='Home' [routerLink]='["/home"]'>home
+            </mat-icon>
+        </a>
+    </li>
+    <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs.slice(0,breadcrumbs.length-1)">
+        <a class="breadcrumb-item pointer" [routerLink]="breadcrumb.url">
+            {{ 'common.button.'+breadcrumb.label |
+            translate}}
+        </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+        {{'common.button.'+breadcrumbs[breadcrumbs.length-1].label |
+        translate
+        }}
+    </li>
+</ul>

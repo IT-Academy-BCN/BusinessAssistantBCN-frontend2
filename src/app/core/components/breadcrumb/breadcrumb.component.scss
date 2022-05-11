@@ -1,0 +1,24 @@
+@import "/src/styles/_vars.scss";
+
+.breadcrumb {
+    list-style: none !important;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+.breadcrumb li {
+    display: inline;
+    font-size: 15px;
+}
+.breadcrumb li+li:before {
+    padding: 8px;
+    color: $black-color;
+    content: "/\00a0";
+}
+.breadcrumb li a {
+    color: $main-color;
+    text-decoration: none;
+}
+.breadcrumb-item{
+   color:$crumb-color;
+}
