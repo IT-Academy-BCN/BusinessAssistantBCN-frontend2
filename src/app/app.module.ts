@@ -1,6 +1,8 @@
 // ANGULAR CORE & COMMON
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CoreModule } from './core/core.module';
+import { HomeModule } from './features/home/home.module';
 
 // MODULE: APP ROUTING
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +23,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +38,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       }
     }),
 
-    VirtualAssistantModule
+    VirtualAssistantModule,
+    CoreModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
+  
   exports: [
     TranslateModule
   ]

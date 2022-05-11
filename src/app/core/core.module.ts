@@ -1,5 +1,5 @@
 // ANGULAR CORE & COMMON
-import { NgModule } from '@angular/core';
+import {NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //COMPONENTS MODULES
@@ -11,6 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 
+import { LanguageChangerComponent } from './components/language-changer/language-changer.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -20,11 +23,14 @@ import { MenuComponent } from './components/menu/menu.component';
     BreadcrumbComponent,
     FooterComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    // LanguageChangerComponent 
   ],
   imports: [
     CommonModule,
-    LanguageChangerModule
+    LanguageChangerModule,
+    MatIconModule,
+    AppRoutingModule
   ],
   exports: [
     
@@ -32,10 +38,7 @@ import { MenuComponent } from './components/menu/menu.component';
     BreadcrumbComponent,
     FooterComponent,
     HeaderComponent,
-    MenuComponent,
-
-    //MODULES
-    // LanguageChangerModule
+    MenuComponent
   ]
 })
 export class CoreModule { }
