@@ -46,7 +46,7 @@ export class TabBabcnButtonsContainerComponent {
 
   showWord: string = "Hello!";
 
-  mainSelectorComponent: string = "virtual-assistant-buttons-container";
+  mainSelectorComponent: string = "babcn-buttons-container";
 
   acommentComponent: string = `<!-- ${this.mainSelectorComponent.toUpperCase()} -->`;
 
