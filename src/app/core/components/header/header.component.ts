@@ -1,73 +1,63 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
+import { trigger,state, style, animate, transition } from "@angular/animations";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  animations: [
+    trigger('aniTitle', [
+      state('inactive', style({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      })),
+      state('active', style({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: '3',
+        backgroundColor: 'whitesmoke',
+        height: '100vh',
+        width: '50vw',
+        fontSize: '50px',
+        transform: 'translate(50vh,50vh)',
+        transformOrigin: 'center'
+        
+      })),
+      transition('inactive => active', animate('1s ease-in')),
+      transition('active => inactive', animate('1s ease')),
+    ])
+  ]
 })
 export class HeaderComponent implements OnInit {
 
   buttons = {
-    menu: [
-      'Les meves cerques',
-      'Directori',
+    navigate: [
+      // 'components.header.section2.title',
       'Qui som',
+      // 'components.header.section4.title',
       'FAQs',
-      'Legals',
-      'Logout',
+      // 'components.footer.section4.title',
+      'Legal',
+      'Search'
     ],
-    start: [
-      'Qui som',
-      'FAQs',
-      'Legals',
-    ],
-    middle: [
+    language: [
       'CA',
       'ES',
       'EN',
-    ],
-    end: [
-      'Login',
     ]
   }
 
+  title: string = 'inactive'
+
   
-  constructor(private route: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-  
-  menuRoute(i: number){
-    if(i == 0){
-      this.route.navigate(['/les-meves-cerques'])
-    }else if(i == 1){
-      this.route.navigate(['/directori'])
-    }else if(i ==2){
-      this.route.navigate(['/qui-som'])
-    }else if(i == 3){
-      this.route.navigate(['/faqs'])
-    }else if(i == 4){
-      this.route.navigate(['/legals'])
-    }else if(i == 5){
-      this.route.navigate(['/login'])
-    }
-  }
 
-  leftButtonsRoute(i: number){
-    if(i == 0){
-      this.route.navigate(['/qui-som'])
-    }else if(i == 1){
-      this.route.navigate(['/faqs'])
-    }else if(i == 2){
-      this.route.navigate(['/legals'])
-    }
-  }
-
-  rightButtonsRoute(i: number){
-    if(i == 0){
-      this.route.navigate(['/login'])
-    }
+  toggleTitle(){
+    this.title = this.title === 'inactive' ? 'active' : 'inactive'
   }
 
 

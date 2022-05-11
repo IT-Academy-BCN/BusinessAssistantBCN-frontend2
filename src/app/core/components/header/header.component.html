@@ -1,53 +1,26 @@
 
 <mat-toolbar class="headerStyle">
 
-    <!-- Menu-icon -->
-
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
-        <mat-icon class="menu-icon">menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu" xPosition="after" class="bg-dark">
-        <div *ngFor="let button of buttons.menu; let i = index" class="menu-mat">
-            <button mat-menu-item class="fc-white" (click)="menuRoute(i)">{{button}}</button>
-            <div *ngIf="i == 0 || i == 4"><hr></div>
-        </div>
-    </mat-menu>
-
-    <!-- Menu-icon -->
-
     <!-- Title -->
 
-    <h1 class="padding-x">Business Assistant BCN</h1>  
+        <h1 class="padding-x" [@aniTitle] = 'title' (click)="toggleTitle()">Business Assistant <span class="colorBCN">BCN</span></h1>  
 
     <!-- Title -->
-    
-    <!-- Left-buttons -->
-
-    <span class="padding-l">
-        <button mat-button *ngFor="let button of buttons.start; let i=index" (click)="leftButtonsRoute(i)">{{button}}</button>
-    </span>
-
-    <!-- Left-buttons -->
     
     <span class="spacer"></span>
      
-    <!-- Middle-buttons -->
+    <!-- Navigate-buttons -->
 
-    <span class="padding-x">
-        <button mat-button *ngFor="let button of buttons.middle">{{button}}</button>
+    <span>
+        <button mat-button *ngFor="let button of buttons.navigate"> 
+            <span *ngIf="button == 'Search'" class="padding-x"></span>
+            <mat-icon *ngIf="button == 'Search'">search</mat-icon>
+            {{button}}
+        </button>
     </span>
 
-    <!-- Middle-butons -->
+    <!-- Navigate-buttons -->
 
-    <!-- Right-buttons -->
-
-    <span class="padding-l">
-        <button mat-button *ngFor="let button of buttons.end; let i=index" (click)="rightButtonsRoute(i)">{{button}}</button>
-    </span>  
-
-    <!-- Right-buttons -->
-    
-    
 </mat-toolbar>
 
 
