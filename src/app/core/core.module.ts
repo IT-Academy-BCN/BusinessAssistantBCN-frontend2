@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //COMPONENTS MODULES
-import { LanguageChangerModule } from './components/language-changer/language-changer.module';
 import { HeaderModule } from './components/header/header.module';
 
 // COMPONENTS
@@ -23,7 +22,6 @@ import { MenuComponent } from './components/menu/menu.component';
   imports: [
     CommonModule,
     HeaderModule,
-    LanguageChangerModule
   ],
   exports: [
     // COMPONENTS
@@ -33,7 +31,6 @@ import { MenuComponent } from './components/menu/menu.component';
 
     //MODULES
     HeaderModule,
-    LanguageChangerModule
   ]
 })
 export class CoreModule { }
