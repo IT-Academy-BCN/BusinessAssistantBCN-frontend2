@@ -10,6 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTreeModule } from '@angular/material/tree';
 
+// MODULE: i18-translate.module.ts
+import { I18TranslateModule } from '../../translate/i18-tranlsate.module';
+
 // COMPONENT: BABCN-TREE
 import { BabcnTreeComponent } from './component/babcn-tree.component';
 
@@ -27,7 +30,10 @@ import { BabcnTreeComponent } from './component/babcn-tree.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatTreeModule
+    MatTreeModule,
+
+    // i18-translate
+    I18TranslateModule
   ],
   exports: [
     BabcnTreeComponent

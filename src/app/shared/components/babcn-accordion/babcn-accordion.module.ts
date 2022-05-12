@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 // MATERIAL
 import { MatExpansionModule } from '@angular/material/expansion';
 
+// MODULE: i18-translate.module.ts
+import { I18TranslateModule } from '../../translate/i18-tranlsate.module';
+
 // COMPONENT: BABCN-ACCORDION
 import { BabcnAccordionComponent } from './component/babcn-accordion.component';
 
@@ -17,7 +20,10 @@ import { BabcnAccordionComponent } from './component/babcn-accordion.component';
     CommonModule,
 
     // MATERIAL
-    MatExpansionModule
+    MatExpansionModule,
+
+    // i18-translate
+    I18TranslateModule
   ],
   exports: [
     BabcnAccordionComponent
