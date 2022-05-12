@@ -1,23 +1,29 @@
 // ANGULAR CORE & COMMON
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-// MODULE: APP ROUTING
-import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // APP COMPONENT
 import { AppComponent } from './app.component';
 
+// MODULE: APP ROUTING
+import { AppRoutingModule } from './app-routing.module';
+
 // MODULE: BROWSER ANIMATIONS MODULE, is necessary for Material 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// @NGX-TRANSLATE/CORE
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+// TranslateHttpLoader
+import { HttpLoaderFactory } from './shared/translate/i18-tranlsate.module';
+
+// MODULE: SHARED
+import { SharedModule } from './shared/shared.module';
 
 // MODULE: [FEATURE] VIRTUAL-ASSISTANT
 import { VirtualAssistantModule } from './features/virtual-assistant/virtual-assistant.module';
 
-//MODULE: TRANSLATE
-import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +34,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -36,18 +43,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       }
     }),
 
+    // SHARED MODULE
+    SharedModule,
+
     VirtualAssistantModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    TranslateModule
+    // TranslateModule
   ]
 })
 export class AppModule { }
 
-// AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 
