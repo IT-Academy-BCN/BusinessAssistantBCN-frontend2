@@ -33,9 +33,6 @@ import { MenuComponent } from './components/menu/menu.component';
     FooterComponent,
     HeaderComponent,
     MenuComponent,
-
-    //MODULES
-    // LanguageChangerModule
   ]
 })
 export class CoreModule { }
