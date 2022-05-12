@@ -10,6 +10,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { MapboxComponent } from '../shared/components/mapbox/mapbox.component';
 
 
 
@@ -20,7 +21,8 @@ import { MenuComponent } from './components/menu/menu.component';
     BreadcrumbComponent,
     FooterComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    MapboxComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { MenuComponent } from './components/menu/menu.component';
     FooterComponent,
     HeaderComponent,
     MenuComponent,
+    MapboxComponent,
 
     //MODULES
     // LanguageChangerModule
