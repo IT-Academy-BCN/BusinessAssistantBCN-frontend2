@@ -3,7 +3,7 @@
 
     <!-- Title -->
 
-        <h1 class="padding-x" [@aniTitle] = 'title' (click)="toggleTitle()">Business Assistant <span class="colorBCN">BCN</span></h1>  
+        <h1 class="padding-x" [@aniTitle] = 'title' (click)="toggleTitle()">Business Assistant <span class="text-BCN">BCN</span></h1>  
 
     <!-- Title -->
     
@@ -15,7 +15,7 @@
         <button mat-button *ngFor="let button of buttons.navigate"> 
             <span *ngIf="button == 'Search'" class="padding-x"></span>
             <mat-icon *ngIf="button == 'Search'">search</mat-icon>
-            {{button}}
+            {{button | translate}}
         </button>
     </span>
 

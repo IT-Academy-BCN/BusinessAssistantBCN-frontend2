@@ -15,12 +15,15 @@ import { trigger,state, style, animate, transition } from "@angular/animations";
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        zIndex: '3',
+        zIndex: '2',
         backgroundColor: 'whitesmoke',
-        height: '100vh',
-        width: '50vw',
+        position: 'fixed',
+        height: '100%',
+        width: '100%',
         fontSize: '50px',
-        transform: 'translate(50vh,50vh)',
+        marginLeft: '-50px',
+        marginTop: '-100px',
+        transform: 'translate(0px,50vh)',
         transformOrigin: 'center'
         
       })),
@@ -33,18 +36,10 @@ export class HeaderComponent implements OnInit {
 
   buttons = {
     navigate: [
-      // 'components.header.section2.title',
-      'Qui som',
-      // 'components.header.section4.title',
-      'FAQs',
-      // 'components.footer.section4.title',
-      'Legal',
-      'Search'
-    ],
-    language: [
-      'CA',
-      'ES',
-      'EN',
+      'components.header.section2.title',
+      'components.header.section4.title',
+      'components.footer.section4.title',
+      'common.button.search',     
     ]
   }
 
