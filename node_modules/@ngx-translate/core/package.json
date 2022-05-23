@@ -1,0 +1,48 @@
+{
+  "name": "@ngx-translate/core",
+  "description": "The internationalization (i18n) library for Angular",
+  "author": "Olivier Combe",
+  "version": "14.0.0",
+  "keywords": [
+    "angular",
+    "i18n",
+    "translate",
+    "ngx-translate"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ngx-translate/core",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngx-translate/core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ngx-translate/core/issues"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=13.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0"
+  },
+  "module": "fesm2015/ngx-translate-core.mjs",
+  "es2020": "fesm2020/ngx-translate-core.mjs",
+  "esm2020": "esm2020/ngx-translate-core.mjs",
+  "fesm2020": "fesm2020/ngx-translate-core.mjs",
+  "fesm2015": "fesm2015/ngx-translate-core.mjs",
+  "typings": "ngx-translate-core.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-translate-core.d.ts",
+      "esm2020": "./esm2020/ngx-translate-core.mjs",
+      "es2020": "./fesm2020/ngx-translate-core.mjs",
+      "es2015": "./fesm2015/ngx-translate-core.mjs",
+      "node": "./fesm2015/ngx-translate-core.mjs",
+      "default": "./fesm2020/ngx-translate-core.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

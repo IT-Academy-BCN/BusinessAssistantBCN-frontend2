@@ -1,0 +1,49 @@
+{
+  "name": "@ngx-translate/http-loader",
+  "description": "A loader for ngx-translate that loads translations using http",
+  "author": "Olivier Combe",
+  "version": "7.0.0",
+  "keywords": [
+    "angular",
+    "i18n",
+    "translate",
+    "ngx-translate"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ngx-translate/core",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngx-translate/core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ngx-translate/core/issues"
+  },
+  "peerDependencies": {
+    "@ngx-translate/core": ">=14.0.0",
+    "@angular/common": ">=13.0.0",
+    "rxjs": "^6.5.3 || ^7.4.0"
+  },
+  "module": "fesm2015/ngx-translate-http-loader.mjs",
+  "es2020": "fesm2020/ngx-translate-http-loader.mjs",
+  "esm2020": "esm2020/ngx-translate-http-loader.mjs",
+  "fesm2020": "fesm2020/ngx-translate-http-loader.mjs",
+  "fesm2015": "fesm2015/ngx-translate-http-loader.mjs",
+  "typings": "ngx-translate-http-loader.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-translate-http-loader.d.ts",
+      "esm2020": "./esm2020/ngx-translate-http-loader.mjs",
+      "es2020": "./fesm2020/ngx-translate-http-loader.mjs",
+      "es2015": "./fesm2015/ngx-translate-http-loader.mjs",
+      "node": "./fesm2015/ngx-translate-http-loader.mjs",
+      "default": "./fesm2020/ngx-translate-http-loader.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
