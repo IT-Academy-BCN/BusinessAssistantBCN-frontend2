@@ -1,38 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger,state, style, animate, transition } from "@angular/animations";
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { zoomTitle } from './animation/header.animation';
+
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: 'header.component.html',
+  styleUrls: ['header.component.scss'],
   animations: [
-    trigger('aniTitle', [
-      state('inactive', style({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      })),
-      state('active', style({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: '2',
-        backgroundColor: 'whitesmoke',
-        position: 'fixed',
-        height: '100%',
-        width: '100%',
-        fontSize: '50px',
-        marginLeft: '-50px',
-        marginTop: '-100px',
-        transform: 'translate(0px,50vh)',
-        transformOrigin: 'center'
-        
-      })),
-      transition('inactive => active', animate('1s ease-in')),
-      transition('active => inactive', animate('1s ease')),
-    ])
+    zoomTitle
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   buttons = {
     navigate: [
@@ -44,11 +22,27 @@ export class HeaderComponent implements OnInit {
   }
 
   title: string = 'inactive'
+  menu: boolean = false
 
   
-  constructor() { }
+  constructor(private responsive: BreakpointObserver) { }
 
   ngOnInit(): void {
+    this.responsive.observe([
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+    ]).subscribe(result => {
+      console.log(result)
+      if(result.breakpoints[Breakpoints.Small] || result.breakpoints[Breakpoints.XSmall]){
+        this.menu = true
+      }else{
+        this.menu = false
+      }
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.responsive.ngOnDestroy();
   }
 
   toggleTitle(){
