@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './component/footer.component';
+import { FooterComponent } from './footer.component';
 
 // CDK
 import { LayoutModule } from '@angular/cdk/layout';
