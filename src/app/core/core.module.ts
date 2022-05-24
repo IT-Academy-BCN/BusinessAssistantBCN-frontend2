@@ -33,9 +33,6 @@ import { FooterComponent } from './components/footer/component/footer.component'
     FooterComponent,
     HeaderComponent,
     MenuComponent,
-
-    //MODULES
-    // LanguageChangerModule
   ]
 })
 export class CoreModule { }

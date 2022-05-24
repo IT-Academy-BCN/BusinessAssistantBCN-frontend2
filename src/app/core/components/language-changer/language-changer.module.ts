@@ -1,12 +1,15 @@
+// ANGULAR CORE & COMMON
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
-//MATERIAL
+
+// MATERIAL
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
 // COMPONENT: LANGUAGE-CHANGER
 import { LanguageChangerComponent } from './language-changer.component';
+
+// MODULE: i18-translate.module.ts
+import { I18TranslateModule } from '../../../shared/translate/i18-translate.module';
 
 
 @NgModule({
@@ -15,30 +18,16 @@ import { LanguageChangerComponent } from './language-changer.component';
   ],
   imports: [
     CommonModule,
-    TranslateModule.forChild({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
-    //MATERIAL
+
+    // MATERIAL
     MatButtonToggleModule,
+
+    // i18-translate
+    I18TranslateModule
   ],
   exports: [
     LanguageChangerComponent,
-    TranslateModule,
   ]
 })
-export class LanguageChangerModule {
-  constructor( translate: TranslateService) {
-    translate.addLangs(['en', 'es','ca']);
-    translate.setDefaultLang('ca');
-  }
- }
-
- // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
+export class LanguageChangerModule { }
 
