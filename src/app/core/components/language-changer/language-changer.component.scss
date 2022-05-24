@@ -1,0 +1,13 @@
+.position{
+    display: flex;
+    justify-self: end;
+    position: absolute;
+    right: 0px;
+    top: 200px;
+    z-index: 3;
+}
+
+.small {
+    height: 80px;
+    width: 20px;
+}
