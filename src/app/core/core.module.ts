@@ -11,7 +11,7 @@ import { LanguageChangerModule } from './components/language-changer/language-ch
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { FooterComponent } from './components/footer/component/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
