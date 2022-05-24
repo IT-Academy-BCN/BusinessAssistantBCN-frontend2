@@ -9,14 +9,14 @@ import { AppComponent } from './app.component';
 // MODULE: APP ROUTING
 import { AppRoutingModule } from './app-routing.module';
 
-// MODULE: BROWSER ANIMATIONS MODULE, is necessary for Material 
+// MODULE: BROWSER ANIMATIONS MODULE, is necessary for Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // @NGX-TRANSLATE/CORE
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 // TranslateHttpLoader
-import { HttpLoaderFactory } from './shared/translate/i18-tranlsate.module';
+import { HttpLoaderFactory } from './shared/translate/i18-translate.module';
 
 // MODULE: SHARED
 import { SharedModule } from './shared/shared.module';

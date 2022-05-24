@@ -9,7 +9,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { LanguageChangerComponent } from './language-changer.component';
 
 // MODULE: i18-translate.module.ts
-import { I18TranslateModule } from '../../../shared/translate/i18-tranlsate.module';
+import { I18TranslateModule } from '../../../shared/translate/i18-translate.module';
 
 
 @NgModule({
