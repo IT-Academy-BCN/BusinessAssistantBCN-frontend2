@@ -191,7 +191,10 @@
             "public-market": "Municipal Markets",
             "market-fair": "Markets and Fairs",
             "save-results": "Save results",
-            "download-results": "Download results"
+            "download-results": "Download results",
+            "login": "Login",
+            "logout": "Logout",
+            "register": "Sign-in"
         },
         "title": {
             "results": "Results"
