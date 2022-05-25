@@ -1,0 +1,63 @@
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+
+	<mat-grid-tile>
+		<babcn-container vaStyle="theme" containerWidth="400px" containerHeight="400px" [containerElevationInactive]=8>
+			<span class="mat-subheading-2"><b>babcn-accordion</b></span>
+			<hr>
+			<!-- BABCN-ACCORDION -->
+			<babcn-accordion [accordionDataInput]="accordionData">
+			</babcn-accordion>
+			<!-- END BABCN-ACCORDION -->
+		</babcn-container>
+	</mat-grid-tile>
+
+	<mat-grid-tile>
+		<babcn-container vaStyle="theme" containerWidth="400px" containerHeight="400px" [containerElevationInactive]=8>
+			<span class="mat-subheading-2"><b>babcn-buttons-container</b></span>
+			<hr>
+			<!-- BABCN-BUTTONS-CONTAINER -->
+			<babcn-buttons-container vaStyle='theme' containerWidth='100%' containerHeight='250px'
+				mainButtonText='say hello' mainButtonColor='accent' [mainButtonFunction]='onHelloButtonClick'
+				secondaryButtonText='say bye' secondaryButtonColor='primary'
+				[secondaryButtonFunction]='onByeButtonClick'>
+				<p>{{ buttonsContainerWord }}</p>
+			</babcn-buttons-container>
+			<!-- END BABCN-BUTTONS-CONTAINER -->
+		</babcn-container>
+	</mat-grid-tile>
+
+	<mat-grid-tile>
+		<babcn-container vaStyle="theme" containerWidth="400px" containerHeight="400px" [containerElevationInactive]=8>
+			<span class="mat-subheading-2"><b>babcn-container</b></span>
+			<hr>
+			<!-- BABCN-CONTAINER -->
+			<babcn-container containerWidth='100%' containerHeight='100px' vaStyle='theme'
+				containerBackgroundColor='ffffaa'>
+				<p>Hello!</p>
+			</babcn-container>
+			<!-- END BABCN-CONTAINER -->
+		</babcn-container>
+	</mat-grid-tile>
+
+	<mat-grid-tile>
+		<babcn-container vaStyle="theme" containerWidth="400px" containerHeight="400px" [containerElevationInactive]=8>
+			<span class="mat-subheading-2"><b>babcn-list</b></span>
+			<hr>
+			<!-- BABCN-LIST -->
+			<babcn-list [listDataInput]='listData'>
+			</babcn-list>
+			<!-- END BABCN-LIST -->
+		</babcn-container>
+	</mat-grid-tile>
+
+	<mat-grid-tile>
+		<babcn-container vaStyle="theme" containerWidth="400px" containerHeight="400px" [containerElevationInactive]=8>
+			<span class="mat-subheading-2"><b>babcn-tree</b></span>
+			<hr>
+			<!-- BABCN-TREE -->
+			<babcn-tree [treeDataInput]='treeData'>
+			</babcn-tree>
+			<!-- END BABCN-TREE -->
+		</babcn-container>
+	</mat-grid-tile>
+</mat-grid-list>

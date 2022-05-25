@@ -1,0 +1,52 @@
+<!-- MAIN CONTAINER -->
+<div class="component-container" [ngClass]="
+        containerIsActive ? 
+        'mat-elevation-z' + containerElevationActive 
+        : 'mat-elevation-z' + containerElevationInactive " [ngStyle]="{
+        width: getContainerWidth,
+        height: getContainerHeight,
+        backgroundColor: getContainerBackgroundColor 
+    }">
+
+    <!-- CONTENT -->
+    <div class="content-container" [ngStyle]="{ 'padding': containerInnerPadding }">
+        <ng-content></ng-content>
+    </div>
+    <!-- END CONTENT -->
+
+    <!-- BUTTONS -->
+    <div [ngClass]="getButtonsClassPosition" [ngStyle]="{
+            backgroundColor: getButtonsContainerBackgroundColor, 
+            gap: getButtonsContainerGap,
+            padding: getButtonsContainerPadding
+        }">
+
+        <!-- Primary Button -->
+        <button mat-raised-button [disabled]="mainButtonDisabled" [color]="mainButtonColor"
+            (click)="onMainButtonClick()">
+            {{ mainButtonText }}
+        </button>
+
+        <!-- Secondary Button -->
+        <ng-container *ngIf="buttonsContainerTotalButtons > 1">
+            <button mat-raised-button [disabled]="secondaryButtonDisabled" [color]="secondaryButtonColor"
+                (click)="onSecondaryButtonClick()">
+                {{ secondaryButtonText }}
+            </button>
+        </ng-container>
+
+        <!-- Extra Button -->
+        <ng-container *ngIf="buttonsContainerTotalButtons == 3">
+            <button mat-raised-button [disabled]="extraButtonDisabled" [color]="extraButtonColor"
+                (click)="onExtraButtonClick()">
+                {{ extraButtonText }}
+            </button>
+        </ng-container>
+
+
+
+    </div>
+    <!-- END BUTTONS -->
+
+</div>
+<!-- END MAIN CONTAINER -->

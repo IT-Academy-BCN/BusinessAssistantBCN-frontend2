@@ -1,0 +1,148 @@
+<!-- CASE 1 -->
+<showcase-case-title [title]="case1.title" [innerHtmlSubtitle]="case1.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container>
+            <p>{{ showWord }}</p>
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case1"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 1 -->
+
+<hr>
+
+<!-- CASE 2 -->
+<showcase-case-title [title]="case2.title" [innerHtmlSubtitle]="case2.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container vaStyle='theme'>
+            <p>{{ showWord }}</p>
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case2"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 2 -->
+
+<hr>
+
+<!-- CASE 3 -->
+<showcase-case-title [title]="case3.title" [innerHtmlSubtitle]="case3.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container containerBackgroundColor='ff0000'>
+            <p>Hello!</p>
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case3"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 3 -->
+
+<hr>
+
+<!-- CASE 4 -->
+<showcase-case-title [title]="case4.title" [innerHtmlSubtitle]="case4.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container 
+            containerWidth='150px' 
+            containerHeight='150px' 
+            containerBackgroundColor='red'>
+            <p>Hello!</p>
+        </babcn-container>        
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case4"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 4 -->
+
+<hr>
+
+<!-- CASE 5 -->
+<showcase-case-title [title]="case5.title" [innerHtmlSubtitle]="case5.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container 
+            containerWidth="200px" 
+            containerHeight="100px" 
+            containerInnerPadding="15px"
+            containerBackgroundColor="white" 
+            [containerElevationInactive]=2>
+            <p>Hello!</p>
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case5"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 5 -->
+
+<hr>
+
+<!-- CASE 6 -->
+<showcase-case-title [title]="case6a.title" [innerHtmlSubtitle]="case6a.subtitle"></showcase-case-title>
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container 
+            containerWidth="200px" 
+            containerHeight="100px" 
+            vaStyle="theme"
+            containerBackgroundColor="ffffaa">
+            <p>Hello!</p>
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+        
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case6a"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+    <mat-grid-tile>
+
+        <!-- BABCN-CONTAINER -->
+        <babcn-container 
+            containerWidth="200px" 
+            containerHeight="100px" 
+            vaStyle="theme"
+            containerBackgroundColor="transparent">
+            <p>Hello!</p>
+        </babcn-container>
+        <!-- END BABCN-CONTAINER -->
+        
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <showcase-code-copy-container [code]="case6b"></showcase-code-copy-container>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- END CASE 6 -->

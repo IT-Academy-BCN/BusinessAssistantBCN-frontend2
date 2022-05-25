@@ -1,0 +1,36 @@
+// VARIABLES
+@import "../../../../../styles/vars";
+// STYLES
+
+div {
+    margin: 16px;
+}
+
+.margin-list {
+    margin-bottom: 3px;
+    cursor       : pointer;
+}
+
+.list-height {
+    padding         : 31px;
+    background-color: $main-color;
+    font-family     : 'Open Sans', sans-serif;
+}
+
+.list-height:hover {
+    background-color: $main-color !important;
+}
+
+.list-height:focus {
+    background-color: $main-color !important;
+}
+
+.itemSelected:hover {
+    text-decoration: underline;
+}
+
+
+// MATERIAL
+.mat-expansion-panel-header {
+    height: 0px;
+}

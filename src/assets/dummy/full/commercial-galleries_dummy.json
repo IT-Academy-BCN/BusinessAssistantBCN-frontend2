@@ -1,0 +1,128 @@
+{
+    "offset": 0,
+    "limit": -1,
+    "count": 4,
+    "results":
+    [
+        {
+            "name": "Galeria Comercial Bulevard dels Antiquaris",
+            "web": "http://www.bulevarddelsantiquaris.com",
+            "email": "info@bulevarddelsantiquaris.com",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 1008025,
+                    "name": "Galeries comercials"
+                },
+                {
+                    "id": 1006051,
+                    "name": "Galeries d'art"
+                },
+                {
+                    "id": 29810738,
+                    "name": "Antiguitats i brocanteries"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "street_name": "Pg Gràcia",
+                    "street_number": "55*57",
+                    "zip_code": "08007",
+                    "district_id": "02",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 430101.9362536643,
+                        "y": 4582677.01600246
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Centre Comercial Encants Nous",
+            "web": null,
+            "email": null,
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 1008025,
+                    "name": "Galeries comercials"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "street_name": "C Dos de Maig",
+                    "street_number": "225*227",
+                    "zip_code": "08013",
+                    "district_id": "02",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 431679.24361304846,
+                        "y": 4584209.912372965
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Galeria Comercial Argentina Center",
+            "web": null,
+            "email": null,
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 1008025,
+                    "name": "Galeries comercials"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "street_name": "Av República Argentina",
+                    "street_number": "238",
+                    "zip_code": "08023",
+                    "district_id": "06",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 428115.0350834559,
+                        "y": 4584925.298658831
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Galeria Comercial Les Galeries Maldà",
+            "web": "http://www.galeriesmalda.cat",
+            "email": "info@galeriesmalda.cat",
+            "phone": null,
+            "activities":
+            [
+                {
+                    "id": 1008025,
+                    "name": "Galeries comercials"
+                }
+            ],
+            "addresses":
+            [
+                {
+                    "street_name": "C Portaferrissa",
+                    "street_number": "22",
+                    "zip_code": "08002",
+                    "district_id": "01",
+                    "town": "BARCELONA",
+                    "location":
+                    {
+                        "x": 430866.53602930007,
+                        "y": 4581671.702969264
+                    }
+                }
+            ]
+        }
+    ]
+}

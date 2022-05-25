@@ -1,0 +1,210 @@
+{
+    "components": {
+        "footer": {
+            "section1": {
+                "title": "Qui som ",
+                "item1": "Directori"
+            },
+            "section2": {
+                "title": "Contactar"
+            },
+            "section3": {
+                "title": "Recursos",
+                "item1": "FAQs"
+            },
+            "section4": {
+                "title": "Legal",
+                "item1": "Termes de servei",
+                "item2": "Polítiques de seguretat"
+            },
+            "section5": {
+                "title": "Segueix-nos"
+            }
+        },
+        "header": {
+            "section1": {
+                "title": "Business Assistant BCN"
+            },
+            "section2": {
+                "title": "Qui som "
+            },
+            "section3": {
+                "title": "Què fem"
+            },
+            "section4": {
+                "title": "FAQs"
+            },
+            "section5": {
+                "title": "Les meves cerques"
+            },
+            "section6": {
+                "title": "Directori"
+            }
+        },
+        "info-nav": {
+            "section1": {
+                "title": "Aconsegueix una planificació eficaç"
+            },
+            "section2": {
+                "title": "Amb suport d'experts"
+            },
+            "section3": {
+                "title": "Amb experiència en gestió d'equips"
+            }
+        },
+        "virtual-assistant": {
+            "section1": {
+                "title": "¿Necessites ajuda per emprendre el teu negoci?"
+            },
+            "section2": {
+                "title": "Perquè sabem que tens una ment inquieta, posem a la teva disposició un assistent virtual, eines de recerca i muntanyes de suggeriments. Presencial o e-commmererce? Prestashop, Wordpress o Shopify? Tens molt per fer!!"
+            }
+        },
+        "saved-searches": {
+            "title": "Les meves recerques",
+            "item-1": "Veure al mapa",
+            "item-2": "Nom",
+            "item-3": "Data",
+            "item-4": "Detalls"
+        }
+    },
+    "pages": {
+        "home-page": {
+            "section1": {
+                "title": "Fes que passi."
+            },
+            "section2": {
+                "title": "T'ajudem amb això."
+            },
+            "section3": {
+                "title": "Busquem gent proactiva que vulgui emprendre,que creï oportunitats, que les faci brollar.Et donem tota la informació que necessites.."
+            }
+        },
+        "big-stablish": {
+            "section1": {
+                "title": "Cerca per zona"
+            },
+            "section2": {
+                "title": "Activitat econòmica"
+            }
+        },
+        "big-stablish-detail": {
+            "dropdown": {
+                "download": "Descarregar arxiu",
+                "open": "Obrir archiu"
+            },
+            "saveSearchModal": {
+                "title": "Guardar búsqueda",
+                "name": "Nom",
+                "detail": "Detalls de la búsqueda",
+                "msgError": "Aquest camp no pot estar buit",
+                "button": {
+                    "discard": "Cancel·lar",
+                    "save": "Guardar"
+                }
+            }
+        },
+        "business-assistant": {
+            "section1": {
+                "title": "1. Anàlisi del Sector",
+                "subcat1": "Catàleg de serveis i productes per emprendre",
+                "s1-item1": "Classificació catalana d'activitats econòmiques",
+                "s1-item2": "Serveis per emprendre",
+                "s1-item3": "Participació catalana en programes finançats per la UE",
+                "subcat2": "Economia",
+                "s2-item1": "Entitats acreditades de finançament alternatiu",
+                "s2-item2": "Evolucion mensual del període mitjà de pagament a proveïdor",
+                "s2-item3": "Préstecs participatius concedits per avancsa",
+                "s2-item4": "Indicadors sobre les convocatòries públiques de beques i ajuts en la recerca finançats per la Generalitat",
+                "s2-item5": "Dades de les persones oficials de comerç indústria serveis i navegacion",
+                "s2-item6": "Exportacions realitzades per Catalunya a nivell mundial",
+                "subcat3": "Clusters d' empreses",
+                "s3-item1": "Clusters acreditats de Catalunya",
+                "subcat4": "Subvencions",
+                "s4-item1": "Concessions del raisc registre de subvencions i ajuts de Catalunya",
+                "s4-item2": "Convocatòries del raisc registre de subvencions i ajuts de Catalunya",
+                "s4-item3": "Agents de suport a la internacionalitzacion acreditats",
+                "subcat5": "Departaments de recerca",
+                "s5-item1": "Publicacions de recerca de Catalunya",
+                "s5-item2": "Investigadors de Catalunya",
+                "s5-item3": "Departaments d' investigació de Catalunya",
+                "s5-item4": "Projectes de recerca de Catalunya",
+                "subcat6": "Anàlisi d' infraestructures",
+                "s6-item1": "Equipaments de Catalunya",
+                "s6-item2": "Certificacion d' eficiència energetica d' edificis agrupacions segons la qualificació d' energia primària no renovable",
+                "s6-item3": "Certificacion d' eficiència energetica d' edificis",
+                "s6-item4": "Certificacion d' eficiència energetica d' edificis agrupacions segons la qualificació d' emissions de co2",
+                "s6-item5": "Certificacion d' eficiència energetica d' edificis agrupacions segons la qualificació d' emissions de co2 i la normativa de construccions",
+                "s6-item6": "Indicadors energetics de Catalunya"
+            },
+            "section2": {
+                "title": "2. Anàlisi d'hàbits de consum",
+                "subcat1": "Anàlisi de població i hàbits de consum",
+                "s1-item1": "Poblacion de Catalunya per municipi rang d' edat i sexe",
+                "s1-item2": "Poblacion estrangera resident a Catalunya per països de nacionalitat",
+                "s1-item3": "Turistes estrangers anuals a Catalunya",
+                "s1-item4": "Encuesta barometro del impacto de la covid19 sobre los habitos de consumo",
+                "s1-item5": "Classificació europea del consum individual per finalitat",
+                "s1-item6": "Oferta comercial per activitats",
+                "subcat2": "Anàlisi de productors especialitzats",
+                "s2-item1": "Entitats tècniques acreditades",
+                "s2-item2": "Productors adherits a la venda de proximitat",
+                "s2-item3": "Registre de laboratoris agroalimentaris de Catalunya",
+                "s2-item4": "Empreses d' instal.lació manteniment reparacions i operacions d' instal.lacions i productes industrials",
+                "subcat3": "Anàlisi d' importacions",
+                "s3-item1": "Importacions realitzades per Catalunya a nivell mundial"
+            },
+            "section3": {
+                "title": "3. Entrevites i enquestes"
+            },
+            "section4": {
+                "title": "4. Anàlisi de la competència",
+                "subcat1": "Visita 'El meu Entorn'",
+                "subcat2": "Registres de llicència i societats laborals",
+                "s2-item1": "Registre de llicència comercials",
+                "s2-item2": "Ocupacion comercial de ciutats catalanes",
+                "s2-item3": "Societats laborals en actiu",
+                "subcat3": "Cooperatives",
+                "s3-item1": "Registre general de cooperatives",
+                "subcat4": "Gremi sanitari",
+                "s4-item1": "Regions sanitàries de Catalunya",
+                "s4-item2": "Catàleg de farmàcies de Catalunya"
+            },
+            "section5": {
+                "title": "5. Localització de target"
+            },
+            "section6": {
+                "title": "6. Generació d'informe"
+            }
+        }
+    },
+    "common": {
+        "button": {
+            "search": "Buscar",
+            "save": "Guardar",
+            "my-enviroment": "El meu entorn",
+            "assistant": "Assistent Virtual",
+            "big-stablish": "Grans Establiments",
+            "gallery-market": "Galeries Comercials",
+            "mall": "Centres Comerciales",
+            "public-market": "Mercats Municipals",
+            "market-fair": "Mercats i Fires",
+            "save-results": "Guardar resultats",
+            "download-results": "Descarregar resultats"
+        },
+        "title": {
+            "results": "Resultats"
+        }
+    },
+    "user": {
+        "register": {
+            "title": "Nou usuari",
+            "email-placeholder": "El teu email...",
+            "email-error": "Format d'email no vàlid / L'usuari ja existeix",
+            "password-title": "Contrasenya",
+            "password-placeholder": "La teva contrasenya...",
+            "password-error": "La contrasenya ha de tenir 8 caràcters alfanumèrics",
+            "submit-register": "Crear usuari"
+        }
+    }
+}

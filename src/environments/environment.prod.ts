@@ -1,3 +1,20 @@
 export const environment = {
-  production: true
+  production: true,
+  BACKEND_BASE_URL: 'http://businessassistantbcn/v1/api',
+  BACKEND_LOGIN_URL: '/login',
+  BACKEND_ZONES_URL: '',
+  BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '',
+  BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '',
+  BACKEND_SAVED_SEARCHES_URL: '',
+  BACKEND_BIG_MALLS_URL: '',
+  BACKEND_MUNICIPAL_MARKETS:'',
+  //fake dummy
+  BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS: '',
+  BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS: '',
+  //mapbox
+  MAPBOX_TOKEN: 'pk.eyJ1IjoianZyZnJlZWxhbmNlZGV2ZWxvcGVyIiwiYSI6ImNreTl4czUzMTAwNGQydnFsdmRhYXRvbDUifQ.TVL-2T184QdfXbze6VNw4A',
+  MAPBOX_ZOOM: 8,
+  MAPBOX_STYLE: 'mapbox://styles/mapbox/streets-v11'
+
+
 };
