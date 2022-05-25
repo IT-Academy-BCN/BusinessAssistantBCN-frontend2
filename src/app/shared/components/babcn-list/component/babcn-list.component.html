@@ -1,7 +1,7 @@
 <!-- Show input 'listDataInput' as 'dataInput' -->
 <mat-list>
     <div *ngFor="let info of dataInput; let i = index;">
-        <mat-list-item>{{ info }}</mat-list-item>
+        <mat-list-item>{{ info | translate }}</mat-list-item>
         <mat-divider *ngIf="i + 1 < dataInput.length"></mat-divider>
     </div>
 </mat-list>
