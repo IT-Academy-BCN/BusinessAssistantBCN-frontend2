@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MyEnvironmentService } from '../../services/my-environment.service';
 
 import { MyEnvironmentSearchComponent } from './my-environment-search.component';
 
@@ -8,7 +10,18 @@ describe('MyEnvironmentSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MyEnvironmentSearchComponent ]
+      declarations: [ MyEnvironmentSearchComponent ],
+      imports: [
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        })
+      ],
+      providers: [
+        MyEnvironmentService
+      ]
     })
     .compileComponents();
   });

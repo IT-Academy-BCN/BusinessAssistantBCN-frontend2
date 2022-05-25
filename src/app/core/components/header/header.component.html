@@ -25,9 +25,10 @@
     </div>
 
     <ng-template #headerbtn>
-        <button mat-button *ngFor="let button of buttons.navigate; let i=index"> 
+        <button mat-button *ngFor="let button of buttons.navigate; let i=index" (click) = 'goToLink(i)'> 
             <span *ngIf="button == 'Search'" class="padding-x"></span>
-            <mat-icon *ngIf="i == 3">search</mat-icon>
+            <mat-icon *ngIf="i == 0">search</mat-icon>
+            <mat-icon *ngIf="i == 4">login</mat-icon>
             {{button | translate}}
         </button>
     </ng-template>
