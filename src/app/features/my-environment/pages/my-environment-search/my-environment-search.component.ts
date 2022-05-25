@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyEnvironmentService } from '../../services/my-environment.service';
 
 @Component({
   selector: 'app-my-environment-search',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyEnvironmentSearchComponent implements OnInit {
 
-  constructor() { }
+  title: string = ''
+
+  constructor(
+    private myEnvSrv: MyEnvironmentService
+  ) { }
 
   ngOnInit(): void {
+    this.title = this.myEnvSrv.title
   }
 
 }

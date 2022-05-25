@@ -1,1 +1,6 @@
 <p>my-environment-page works!</p>
+
+<div *ngFor="let button of buttons; let i=index">
+    <button mat-button (click)="goToSearch(i)">{{button | translate}}</button>
+</div>
+
