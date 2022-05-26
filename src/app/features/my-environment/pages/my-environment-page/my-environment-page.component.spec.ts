@@ -1,15 +1,26 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MyEnvironmentService } from '../../services/my-environment.service';
+import { MyEnvironmentSearchComponent } from '../my-environment-search/my-environment-search.component';
 
 import { MyEnvironmentPageComponent } from './my-environment-page.component';
+
+const routes: Routes = [
+  {path: 'my-environment-search', component: MyEnvironmentSearchComponent},
+];
+
 
 describe('MyEnvironmentPageComponent', () => {
   let component: MyEnvironmentPageComponent;
   let fixture: ComponentFixture<MyEnvironmentPageComponent>;
+  
+  let myEnvSrv: MyEnvironmentService
+  
   let router: Router
+  let location: Location
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,7 +29,7 @@ describe('MyEnvironmentPageComponent', () => {
       ],
       
       imports: [
-        RouterTestingModule,
+        RouterTestingModule.withRoutes(routes),
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -35,13 +46,45 @@ describe('MyEnvironmentPageComponent', () => {
 
   beforeEach(() => {
     router = TestBed.inject(Router)
+    location = TestBed.inject(Location)
 
     fixture = TestBed.createComponent(MyEnvironmentPageComponent);
+    myEnvSrv = TestBed.inject(MyEnvironmentService)
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges()
+    router.initialNavigation()
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('Variables', ()=>{
+    it('buttons shoul be declared', ()=>{
+      expect(component.buttons.length).toBe(5)
+    })
+  })
+
+  describe('Methods', ()=>{
+    it('#goToSearch shoul navigate to "my-environment-search"', fakeAsync(()=>{
+      component.goToSearch(0)
+      router.navigate(['my-environment-search'])
+      tick()
+      expect(location.path()).toBe('/my-environment-search')
+    }))
+
+    it('#goToSearch shoul change title of MyEnvironmentService', ()=>{
+      component.goToSearch(0)
+      expect(myEnvSrv.title).toBe('common.button.mall')
+      component.goToSearch(1)
+      expect(myEnvSrv.title).toBe('common.button.gallery-market')
+      component.goToSearch(2)
+      expect(myEnvSrv.title).toBe('common.button.big-stablish')
+      component.goToSearch(3)
+      expect(myEnvSrv.title).toBe('common.button.market-fair')
+      component.goToSearch(4)
+      expect(myEnvSrv.title).toBe('common.button.public-market')
+    })
+  })
+
 });
