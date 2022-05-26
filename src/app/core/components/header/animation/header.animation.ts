@@ -6,6 +6,7 @@ export let zoomTitle =
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            cursor: 'pointer'
         })),
         state('active', style({
             display: 'flex',
@@ -22,6 +23,6 @@ export let zoomTitle =
                 
         })),
 
-        transition('inactive => active', animate('1s ease-in')),
-        transition('active => inactive', animate('1s ease')),
+        transition('inactive => active', animate('700ms ease-in')),
+        transition('active => inactive', animate('800ms ease')),
 ])
