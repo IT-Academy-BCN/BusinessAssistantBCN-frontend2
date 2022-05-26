@@ -1,0 +1,44 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { TranslateService, TranslateStore } from '@ngx-translate/core';
+import { LanguageChangerComponent } from './language-changer.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { LanguagesModel } from './language-changer.interface';
+
+
+describe('LanguageChangerComponent', () => {
+  let component: LanguageChangerComponent;
+  let fixture: ComponentFixture<LanguageChangerComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ LanguageChangerComponent ],
+      imports: [
+        I18TranslateModule,
+        MatButtonToggleModule
+      ],
+      providers: [
+          TranslateService,
+          TranslateStore,
+          HttpClient,
+          HttpHandler
+      ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(LanguageChangerComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should pass a parameter', () => {
+    component.changeLanguage(LanguagesModel.ca)
+  })
+});

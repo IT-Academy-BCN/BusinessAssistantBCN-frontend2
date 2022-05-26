@@ -26,7 +26,10 @@ import { I18TranslateModule } from '../../../shared/translate/i18-translate.modu
     I18TranslateModule
   ],
   exports: [
+    // Components
     LanguageChangerComponent,
+    // Modules
+    I18TranslateModule,
   ]
 })
 export class LanguageChangerModule { }
