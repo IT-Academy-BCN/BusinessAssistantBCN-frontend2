@@ -23,6 +23,9 @@ import { SharedModule } from './shared/shared.module';
 
 // MODULE: [FEATURE] VIRTUAL-ASSISTANT
 import { VirtualAssistantModule } from './features/virtual-assistant/virtual-assistant.module';
+import { HomeModule } from './features/home/home.module';
+import { UsersModule } from './features/users/users.module';
+import { MyEnvironmentModule } from './features/my-environment/my-environment.module';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { VirtualAssistantModule } from './features/virtual-assistant/virtual-ass
 
     // SHARED MODULE
     SharedModule,
-
+    //FEATURES
+    HomeModule,
+    UsersModule,
+    MyEnvironmentModule,
     VirtualAssistantModule
   ],
   providers: [],

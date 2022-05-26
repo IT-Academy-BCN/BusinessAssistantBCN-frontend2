@@ -1,8 +1,12 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { VirtualAssistantPageComponent } from './features/virtual-assistant/page-routing/virtual-assistant-page.component';
 
 describe('AppComponent', () => {
+  let app: AppComponent
+  let fixture: ComponentFixture<AppComponent>
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -14,22 +18,17 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
+  beforeEach(()=>{
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.componentInstance;
+  })
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'BusinessAssistantBCN-frontend2'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
     expect(app.title).toEqual('BusinessAssistantBCN-frontend2');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('BusinessAssistantBCN-frontend2 app is running!');
-  });
 });

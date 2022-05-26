@@ -7,7 +7,7 @@
         <!-- MAT-EXPANSION-PANEL-HEADER -->
         <mat-expansion-panel-header class="list-height fs-5">
             <mat-panel-title class="fc-white">
-                {{ category.title }}
+                {{ category.title | translate }}
             </mat-panel-title>
         </mat-expansion-panel-header>
         <!-- END MAT-EXPANSION-PANEL-HEADER -->
@@ -17,14 +17,14 @@
 
             <!-- SUBCATEGORY TITLE -->
             <div (click)="onClickItems(e)">
-                {{ subcat.title }}
+                {{ subcat.title | translate }}
             </div>
             <!-- END SUBCATEGORIES TITLE -->
 
             <!-- SUBCATEGORY ITEMS -->
             <div *ngFor="let items of subcat.items" class="itemSelected fw-normal" (click)="onClickItemSaveData(items.item)">
                 <div *ngIf="itemAccordion == e && isItemOpen">
-                    {{ items.item }}
+                    {{ items.item | translate }}
                 </div>
             </div>
             <!-- END SUBCATEGORIES ITEMS -->
