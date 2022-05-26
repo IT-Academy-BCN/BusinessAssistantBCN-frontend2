@@ -137,7 +137,7 @@ header {
 
 .lang {
     width:50px;
-    right: 0;;
+    right: 0;
 }
 
 .lang-item {
@@ -422,13 +422,6 @@ footer h2 {
     color:var(--color-gray)
 }
 
-.wrapp-content {
-    padding: 0;
-}
-
-.wrapp-content p {
-    margin: 0;
-}
 
 
 
@@ -447,7 +440,7 @@ footer h2 {
 }
 
 .wrapp-content p{
-    margin-top: 20px;
+    margin: 20px 0 0 0;
     
 }
 
