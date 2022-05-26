@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 
 //COMPONENT MODULOS
 import { FooterModule } from './components/footer/footer.module';
-import { LanguageChangerModule } from './components/language-changer/language-changer.module';
 import { HeaderModule } from './components/header/header.module';
 
 // COMPONENTS

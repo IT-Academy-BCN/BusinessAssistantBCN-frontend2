@@ -28,7 +28,7 @@ import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/
       }
     })
   }
-  override ngOnDestroy(): void {}
+  //override ngOnDestroy(): void {}
 }
 
 describe("FooterComponent", () => {
