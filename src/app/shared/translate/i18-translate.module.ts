@@ -28,6 +28,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
   ]
 })
 export class I18TranslateModule {
+  static forRoot(arg0: { loader: { provide: any; useClass: any; }; }): any {
+    throw new Error('Method not implemented.');
+  }
   constructor(translate: TranslateService) {
     translate.addLangs(['en', 'es', 'ca']);
     translate.setDefaultLang('ca');

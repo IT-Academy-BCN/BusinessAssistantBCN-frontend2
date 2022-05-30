@@ -1,7 +1,9 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing"
+import { ComponentFixture, fakeAsync, TestBed, tick } from "@angular/core/testing"
 import { RouterTestingModule } from "@angular/router/testing"
 
 import { HeaderComponent } from "./header.component"
+import { LoginComponent } from "src/app/features/users/components/login/login.component"
+
 import {
   BreakpointObserver,
   BreakpointState,
@@ -13,6 +15,8 @@ import {
   TranslateModule,
 } from "@ngx-translate/core"
 import { Observable, of } from "rxjs"
+import { Router, Routes } from "@angular/router"
+import { Location } from "@angular/common"
 
 
 class MockBreakpointObserver extends BreakpointObserver {
@@ -29,9 +33,16 @@ class MockBreakpointObserver extends BreakpointObserver {
   override ngOnDestroy(): void {}
 }
 
+const routes: Routes = [
+  {path: 'login', component: LoginComponent},
+];
+
+
 describe("HeaderComponent", () => {
   let fixture: ComponentFixture<HeaderComponent>
   let app: HeaderComponent
+  let router: Router
+  let location: Location
   //spies
   let responsive: BreakpointObserver
 
@@ -41,6 +52,7 @@ describe("HeaderComponent", () => {
       imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
+        RouterTestingModule.withRoutes(routes),
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -55,9 +67,13 @@ describe("HeaderComponent", () => {
   })
 
   beforeEach(() => {
+    router = TestBed.inject(Router)
+    location = TestBed.inject(Location)
+    
     fixture = TestBed.createComponent(HeaderComponent)
     app = fixture.componentInstance
     responsive = TestBed.inject(BreakpointObserver)
+    router.initialNavigation()
   })
 
   afterEach(()=> {
@@ -70,7 +86,7 @@ describe("HeaderComponent", () => {
 
   describe("Variables", () => {
     it("Buttons Should be declared", () => {
-      expect(app.buttons.navigate.length).toBe(4)
+      expect(app.buttons.navigate.length).toBe(5)
     })
 
     it("Title should be declared", () => {
@@ -123,6 +139,15 @@ describe("HeaderComponent", () => {
         app.toggleTitle()
         expect(app.title).toEqual('inactive')
     })
+  })
+
+  describe('#goToLink', () => {
+    it('Should go to login page', fakeAsync(() => {
+      app.goToLink(4)
+      router.navigate(['login'])
+      tick()
+      expect(location.path()).toBe('/login')
+    }))
   })
 
 
