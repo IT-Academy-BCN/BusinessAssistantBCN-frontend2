@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="sendForm(form.value)">
+      <h1>Login</h1>
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="usuario">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="contrasena">
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+        
+
+        <p>No estas registrado? Haz click <a [routerLink]="['/register']" >aquí</a></p>
+
+        <div class="button-position">
+            <button type="submit" mat-raised-button color="primary">Send</button>
+        </div>
+        
+    </form>
+</div>
