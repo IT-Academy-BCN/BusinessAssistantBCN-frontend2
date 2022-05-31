@@ -13,4 +13,10 @@ describe('MyEnvironmentService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  describe('Variables', ()=>{
+    it('title should be declared', ()=>{
+      expect(service.title).toBeDefined()
+    })
+  })
 });
