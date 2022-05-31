@@ -9,7 +9,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class FooterComponent implements OnInit, OnDestroy {
 
-  currentBreakpoint: string = "";
+  breakpoint: number = 0;
+  ratio: string = "";
 
   constructor(private responsive: BreakpointObserver) { }
 
@@ -21,58 +22,27 @@ export class FooterComponent implements OnInit, OnDestroy {
       Breakpoints.Medium,
       Breakpoints.Large,
       Breakpoints.XLarge])
-      .subscribe(result => {
-
-        const breakpoints = result.breakpoints;
-
-        //SIZES
-        if (breakpoints[Breakpoints.XSmall]) {
-          this.currentBreakpoint = Breakpoints.XSmall;
-        }
-        else if (breakpoints[Breakpoints.Small]) {
-          this.currentBreakpoint = Breakpoints.Small;
-        }
-        else if (breakpoints[Breakpoints.Medium]) {
-          this.currentBreakpoint = Breakpoints.Medium;
-        }
-        else if (breakpoints[Breakpoints.Large]) {
-          this.currentBreakpoint = Breakpoints.Large;
-        }
-        else if (breakpoints[Breakpoints.XLarge]) {
-          this.currentBreakpoint = Breakpoints.XLarge;
-        }
-      });
+    .subscribe(() =>
+        this.breakpointChanged()
+      );
   }
 
-  //Number of cols
-  get breakpoint(): number { 
-    if (this.currentBreakpoint == Breakpoints.XSmall) {
-      return 1;
-    } else if (this.currentBreakpoint == Breakpoints.Small) {
-      return 2;
-    } else if (this.currentBreakpoint == Breakpoints.Medium) {
-      return 4;
-    } else if (this.currentBreakpoint == Breakpoints.Large || this.currentBreakpoint == Breakpoints.XLarge){
-      return 5;
+  private breakpointChanged() {
+    if (this.responsive.isMatched(Breakpoints.XSmall)) {
+      this.breakpoint = 1;
+      this.ratio = "110px";
     }
-    return 0;
-  }
-
-  //Cols height
-  get ratio(): string {
-    switch (this.currentBreakpoint) {
-      case Breakpoints.XSmall:
-        return "110px";
-      case Breakpoints.Small:
-        return "130px";
-      case Breakpoints.Medium:
-        return "130px";
-      case Breakpoints.Large:
-        return "140px";
-      case Breakpoints.XLarge:
-        return "40px";
-      default:
-        return "70px";
+    else if (this.responsive.isMatched(Breakpoints.Small)) {
+      this.breakpoint = 2;
+      this.ratio = "130px";
+    }
+    else if (this.responsive.isMatched(Breakpoints.Medium)) {
+      this.breakpoint = 4;
+      this.ratio = "140px";
+    }
+    else if (this.responsive.isMatched(Breakpoints.Large) || this.responsive.isMatched(Breakpoints.XLarge)) {
+      this.breakpoint = 5;
+      this.ratio = "120px";
     }
   }
 

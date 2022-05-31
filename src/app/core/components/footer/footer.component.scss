@@ -2,6 +2,7 @@
 
 *{
     background-color: $bg-dark-grey;
+    line-height: 2em;
 }
 
 .footer-list{
@@ -31,10 +32,7 @@ a {
 babcn-container{
     position: absolute;
     top: 3rem;
-}
-
-.content-align{ 
+    text-align: center;
     display: flex;
     flex-direction: column;
-    text-align: center;
 }

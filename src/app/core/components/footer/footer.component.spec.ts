@@ -78,15 +78,17 @@ describe("FooterComponent", () => {
     });
   });
 
-  describe('#breakpoint', () => {
+  describe('#breakpointChanged', () => {
     it('Should get cols', () => {
-      expect(app.breakpoint).toEqual(0);
-    });
-  });
+      const mockBreakpoint = 2;
+      expect(app.breakpoint).toEqual(mockBreakpoint);
 
-  describe('#ratio', () => {
+    });
+
     it('Should get col_height', () => {
-      expect(app.ratio).toEqual("70px");
+      const mockRatio = "130px";
+      expect(app.ratio).toEqual(mockRatio);
+      
     });
   });
 
