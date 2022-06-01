@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './features/home/components/home.component';
+import { HomeComponent } from './features/home/page/home.component';
 import { MyEnvironmentPageComponent } from './features/my-environment/pages/my-environment-page/my-environment-page.component';
 import { MyEnvironmentResultComponent } from './features/my-environment/pages/my-environment-result/my-environment-result.component';
 import { MyEnvironmentSearchComponent } from './features/my-environment/pages/my-environment-search/my-environment-search.component';
