@@ -1,11 +1,7 @@
-// ANGULAR CORE
 import { Injectable } from '@angular/core';
-
-// ANGULAR CDK BREAKPOINT-OBSERVER
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
-// RXJS
 import { Subject, Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
