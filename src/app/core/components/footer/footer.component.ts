@@ -22,12 +22,13 @@ export class FooterComponent implements OnInit, OnDestroy {
       Breakpoints.Medium,
       Breakpoints.Large,
       Breakpoints.XLarge])
-    .subscribe(() =>
-        this.breakpointChanged()
+     .subscribe(() =>
+        this.breakpointChanged() 
       );
   }
 
   private breakpointChanged() {
+    
     if (this.responsive.isMatched(Breakpoints.XSmall)) {
       this.breakpoint = 1;
       this.ratio = "110px";
