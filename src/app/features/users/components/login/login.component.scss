@@ -1,0 +1,28 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form {
+    border: solid 1px gray;
+    width: 30%;
+    padding: 30px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 7px 7px 10px 0px grey; 
+}
+
+h1{
+    text-align: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.button-position {
+    display: flex;
+    justify-content: end;
+}

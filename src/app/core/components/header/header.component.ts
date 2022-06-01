@@ -37,7 +37,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       Breakpoints.XSmall,
       Breakpoints.Small,
     ]).subscribe(result => {
-      console.log(result)
       if(result.breakpoints[Breakpoints.Small] || result.breakpoints[Breakpoints.XSmall]){
         this.menu = true
       }else{
