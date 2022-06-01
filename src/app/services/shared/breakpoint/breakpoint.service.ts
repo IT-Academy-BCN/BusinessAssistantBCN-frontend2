@@ -6,18 +6,14 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 // RXJS
 import { Subject, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BreakpointService {
-  // destroyed = new Subject<void>();
-  // currentScreenSize: string = "";
 
   private _breakpoint$: Subject<string> = new Subject();
 
-  // Create a map to display breakpoint names for demonstration purposes.
   private displayNameMap = new Map([
     [Breakpoints.XSmall, 'XSmall'],
     [Breakpoints.Small, 'Small'],
