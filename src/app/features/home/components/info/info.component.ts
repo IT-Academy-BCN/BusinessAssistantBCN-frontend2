@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { InfoCard } from '../../interfaces/info.interface';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  infoCard: string[] = [
+    'components.info-nav.section1.title',
+    'components.info-nav.section2.title',
+    'components.info-nav.section3.title'
+  ]
+
+  break: number = 3
+  ratio: string = '350px'
+
+  constructor(
+    private responsive: BreakpointService
+  ) { }
 
   ngOnInit(): void {
+    this.responsive.breakpoint$.subscribe(result => {
+      if (result == 'XSmall') {
+        this.break = 1
+      } else if(result == 'Small') {
+        this.break = 1
+      }else {
+        this.break = 3
+        this.ratio = '350px'
+      }
+    })
   }
 
 }
