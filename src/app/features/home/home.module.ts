@@ -8,6 +8,7 @@ import { HomeComponent } from './page/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InfoComponent } from './components/info/info.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -22,7 +23,8 @@ import { PresentationComponent } from './components/presentation/presentation.co
     CommonModule,
     RouterModule,
     MatButtonModule,
-    I18TranslateModule
+    I18TranslateModule,
+    MatGridListModule
   ]
 })
 export class HomeModule { }
