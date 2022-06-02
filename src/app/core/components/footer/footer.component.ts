@@ -27,6 +27,9 @@ export class FooterComponent implements OnInit, OnDestroy {
       );
   }
 
+  //Leer del observable de Ramon y pasarlo como parametro para leer de array o de JSON
+  //y asignar a las variables col y height
+
   private breakpointChanged() {
     
     if (this.responsive.isMatched(Breakpoints.XSmall)) {
