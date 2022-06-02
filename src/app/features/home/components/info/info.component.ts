@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
-import { InfoCard } from '../../interfaces/info.interface';
 
 @Component({
   selector: 'app-info',
