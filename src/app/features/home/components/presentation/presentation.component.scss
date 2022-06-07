@@ -1,5 +1,28 @@
 
 
 .presentation{
-    background-color: rgba(250, 235, 215, 0.946);
+    background-color: #ece7de;
+    font-family: Montserrat', sans-serif';
+    
+}
+
+// h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i , b, u, em{
+//     font-weight: inherit;
+//     font-style: inherit;
+//     text-decoration: none;
+//     color:inherit;
+// }
+
+
+.line {
+    width:300px;
+    // background-color: var(--color-dark2);
+    background-color: #ffb142;
+    border:none;
+    height: 2px;
+}
+
+img, picture, iframe {
+    max-width: 100%;
+    display: block;
 }
