@@ -99,7 +99,6 @@ nav {
     margin:0 auto;
     padding:0 auto;
     max-width:1400px;
-    padding:0;
 }
 
 .menu .logo {
@@ -170,7 +169,6 @@ header {
 
 .text-intro{
     text-align: left;
-    margin-top:60px;
     font-size:1.5rem;
     color:white;
     max-width: 800px;
@@ -484,8 +482,6 @@ footer h2 {
 
 
 .item:hover {
-
-    background-color: var(--color-light1);
     cursor:pointer;
     color:var(--color-graylight);
     background-color: var(--color-black);
