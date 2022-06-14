@@ -35,8 +35,15 @@
     display: flex;
 }
 
+.just-center {
+    justify-content: center;
+}
 .just-space-bet {
     justify-content: space-between;
+}
+
+.just-space-ar {
+  justify-content: space-evenly;
 }
 
 .just-right {
@@ -83,6 +90,10 @@ ul, p {
 
 
 /* menu */
+
+nav {
+  background-color: white;
+}
 
 .menu {
     margin:0 auto;
@@ -137,7 +148,7 @@ header {
 
 .lang {
     width:50px;
-    right: 0;
+    right: 0;;
 }
 
 .lang-item {
@@ -158,12 +169,12 @@ header {
 
 .text-intro{
     text-align: left;
-    margin:60px 50px 50px 50px;
     font-size:1.5rem;
     color:white;
     max-width: 800px;
     font-weight: 400;
     line-height: 3rem;
+    margin:50px;
 }
 
 
@@ -403,7 +414,7 @@ footer h2 {
 
 
 .main2{
-    background: #73C8A9;  /* fallback for old browsers */
+    background: var(--color-graylight);
     background: -webkit-linear-gradient(to right, var( --color-graylight))var(--color-light1), ;  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, var(--color-graylight), var( --color-light1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding-bottom:150px;
@@ -414,6 +425,13 @@ footer h2 {
     color:var(--color-gray)
 }
 
+.wrapp-content {
+    padding: 0;
+}
+
+.wrapp-content p {
+    margin: 0;
+}
 
 
 
@@ -432,7 +450,7 @@ footer h2 {
 }
 
 .wrapp-content p{
-    margin: 20px 0 0 0;
+    margin-top: 20px;
     
 }
 
@@ -479,6 +497,71 @@ footer h2 {
 
 .btn-result a {
     margin:30px;
+}
+
+/* ******************************************meuentorn */
+
+.wrapp-meuentorn {
+  background-color: var(--color-graylight);
+  height: 800px;
+}
+
+
+.main3 {
+  margin-top: 100px;
+  height: 500px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapp-meuentorn .row-1 {
+  margin-bottom: 100px;
+}
+
+
+
+
+svg {
+  fill:var(--color-dark2);
+  height: 50px;
+}
+
+.grans-establiments, 
+.galeries-comercials,
+.centres-comercials
+{
+  width: 30%;
+  background-color: white;
+  flex-direction: column;
+  text-align: center;
+  padding-top:30px;
+  cursor:pointer;
+  border-radius: 5px;
+  
+}
+
+.grans-establiments:hover, 
+.galeries-comercials:hover,
+.centres-comercials:hover {
+  background-color: black;
+  color:var(--color-graylight);
+}
+
+.row-1 {
+  font-size: 1.2rem;
+  line-height: 2;
+  font-weight: bold;
+  color: var(--color-gray);
+
+}
+
+
+.image-backbround3{
+  width: 100%;
+  height: 80vh;
+  background-image:url(src/shopping-arcade-geb40d51e8_1920.jpg);
+  background-size: cover;
 }
 
 

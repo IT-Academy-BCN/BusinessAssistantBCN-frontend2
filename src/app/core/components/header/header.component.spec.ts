@@ -17,21 +17,8 @@ import {
 import { Observable, of } from "rxjs"
 import { Router, Routes } from "@angular/router"
 import { Location } from "@angular/common"
+import { BreakpointService } from "src/app/services/shared/breakpoint/breakpoint.service"
 
-
-class MockBreakpointObserver extends BreakpointObserver {
-  override observe(): Observable<BreakpointState> {
-    return of({
-      matches: true,
-      breakpoints: {
-        "(max-width: 599.98px)": false,
-        "(min-width: 600px) and (max-width: 959.98px)": true,
-      }
-
-    })
-  }
-  override ngOnDestroy(): void {}
-}
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -44,7 +31,7 @@ describe("HeaderComponent", () => {
   let router: Router
   let location: Location
   //spies
-  let responsive: BreakpointObserver
+  let responsive: BreakpointService
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -61,7 +48,7 @@ describe("HeaderComponent", () => {
         }),
       ],
       providers: [
-        { provide: BreakpointObserver, useClass: MockBreakpointObserver },
+      { provide: BreakpointService },
       ],
     }).compileComponents()
   })
@@ -72,7 +59,7 @@ describe("HeaderComponent", () => {
     
     fixture = TestBed.createComponent(HeaderComponent)
     app = fixture.componentInstance
-    responsive = TestBed.inject(BreakpointObserver)
+    responsive = TestBed.inject(BreakpointService)
     router.initialNavigation()
   })
 
@@ -86,7 +73,7 @@ describe("HeaderComponent", () => {
 
   describe("Variables", () => {
     it("Buttons Should be declared", () => {
-      expect(app.buttons.navigate.length).toBe(5)
+      expect(app.buttons.length).toBe(5)
     })
 
     it("Title should be declared", () => {
@@ -99,37 +86,22 @@ describe("HeaderComponent", () => {
 
   describe("#NgOnInit", () => {
     it("Should be call the BreakpointObserver", () => {
-      spyOn(responsive, "observe").and.callThrough()
       app.ngOnInit()
-      expect(responsive.observe).toHaveBeenCalled()
+      expect(responsive.breakpoint$).toBeTruthy()
  
     })
 
     it("Should change the menu variable to true", () => {
-      spyOn(responsive, "observe").and.callThrough()
+      spyOnProperty(responsive, "breakpoint$").and.returnValue(of('Small'))
       app.ngOnInit()
       expect(app.menu).toBeTrue()
     })
 
-    it("Should change the menu variable to false", () => {
-        const mockResponse = {
-            matches: false,
-            breakpoints: {
-              "(max-width: 599.98px)": false,
-              "(min-width: 600px) and (max-width: 959.98px)": false,
-            }
-          }
-      spyOn(responsive, "observe").and.returnValue(of(mockResponse))
+    it("Should change the menu variable to false", () => {      
+      spyOnProperty(responsive, "breakpoint$").and.returnValue(of('Large'))
       app.ngOnInit()
       expect(app.menu).toBeFalse()
     })   
-  })
-
-  describe('#ngOnDestroy', () => {
-    it('Should reset the responsive breakpoint', () => {
-        app.ngOnDestroy()
-        expect(responsive.ngOnDestroy()).toBeUndefined()
-    })
   })
 
   describe('#toggleTitle', () => {
