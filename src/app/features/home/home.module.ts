@@ -8,6 +8,9 @@ import { HomeComponent } from './page/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InfoComponent } from './components/info/info.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
+import {MatCardModule} from '@angular/material/card';
+import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -16,13 +19,16 @@ import { PresentationComponent } from './components/presentation/presentation.co
     HomeComponent,
     HeaderComponent,
     InfoComponent,
-    PresentationComponent
+    PresentationComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatButtonModule,
-    I18TranslateModule
+    MatCardModule,
+    I18TranslateModule,
+    BabcnContainerModule,
+    MatGridListModule
   ]
 })
 export class HomeModule { }
