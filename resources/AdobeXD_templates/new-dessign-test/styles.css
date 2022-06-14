@@ -326,26 +326,19 @@ p {
 
 /* **************************************parallax */
 
-
-
 .container-plx{
     padding:150px 0px;
     background-color: var(--color-graylight);
 }
 
-
 .container-image {
     width: 45%;
 }
-
 
 .container-text {
     padding:50px 0;
     max-width: 600px;
 }
-
-
-
 
 .image-backbround1{
     height: 70vh;
@@ -359,7 +352,6 @@ p {
     background-size:160%;
     background-image:url(src/architecture.jpg);
 }
-
 
 
 .separation{

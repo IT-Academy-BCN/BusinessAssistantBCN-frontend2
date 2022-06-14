@@ -1,26 +1,38 @@
 <section class="presentation">
-  <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>
-    <div>
-      <img src="../../../../../assets/img/piggybank-CBbxr3Jg-vert.jpg" alt="" width="100%">
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div>
-      <h2>Assistent Virtual</h2>
-      <hr align="" class="line">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto eaque cum non enim voluptate, vero praesentium tenetur esse libero quae ex ullam reiciendis, ad corrupti ratione illum facere? Mollitia.</p>
-    </div>
-  </mat-grid-tile>
+  <mat-grid-list cols="2" rowHeight="500px" gutterSize="50px">
+    <div class="target1">
       <mat-grid-tile>
-        <div>
-          <h2>El meu entorn</h2>
-          <hr align="" class="line">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iusto eaque cum non enim voluptate, vero praesentium tenetur esse libero quae ex ullam reiciendis, ad corrupti ratione illum facere? Mollitia.</p>
-        </div> 
+            <div class="img1 parallax" id="img1">
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <div class="text1">
+              <h2 class="title">{{'common.button.assistant' | translate}}</h2>
+              <hr align="left" class="line"> 
+              <p class="">{{'components.virtual-assistant.section1.title' | translate}}</p>
+              <div class="button1">
+                <button class="button" mat-raised-button color="primary" routerLink="virtual-assistant">{{'common.button.assistant' | translate}}</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </div>
+
+  <div class="target2" align="right" >
+      <mat-grid-tile>
+            <div class="text2">
+                    <h2 class="title" >{{'common.button.my-enviroment' | translate}}</h2>
+                    <hr align="right" class="line">
+                    {{'components.virtual-assistant.section2.title' | translate}}
+                <div class="button1">
+                     <button class="button" mat-raised-button color="primary" routerLink="my-environment">{{'common.button.my-enviroment' | translate}}</button>
+                </div>
+            </div> 
       </mat-grid-tile>
       <mat-grid-tile>
-        <img src="../../../../../assets/img/architecture.jpg" alt="">
+            <div class="img2 parallax" id="img2">
+ 
+            </div>
       </mat-grid-tile>
+  </div>
   </mat-grid-list>
 </section>
