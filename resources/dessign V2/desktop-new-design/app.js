@@ -4,12 +4,20 @@ window.onload = ()=>{
     //obtenemos y guardamos nuestra img del dom
     let image1 = document.querySelector(".image-backbround1");
     let image2 = document.querySelector(".image-backbround2");
+    let image3 = document.querySelector(".image-background3");
+    console.log(image3);
 
     window.addEventListener('scroll', (e) =>{
-    let scroll = window.scrollY;
+    
+      let scroll = window.scrollY;
+      console.log(scroll);
+
+
     //entramos en la propiedad style y background de image
     image1.style.backgroundPositionY = `${scroll/2}px`;
     image2.style.backgroundPositionY = `${scroll/2}px`;
+    image3.style.backgroundPositionY = `${scroll}px`;
+    
     });
 }
 
