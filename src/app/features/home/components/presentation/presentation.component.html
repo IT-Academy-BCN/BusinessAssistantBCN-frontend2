@@ -1,38 +1,44 @@
 <section class="presentation">
-  <mat-grid-list cols="2" rowHeight="500px" gutterSize="50px">
-    <div class="target1">
-      <mat-grid-tile>
-            <div class="img1 parallax" id="img1">
-            </div>
+  <div class="grid ">
+    <mat-grid-list [cols]="break" 
+                          rowHeight="700px">
+    
+          <mat-grid-tile>     
+              <div class="img1 parallax"></div>  
           </mat-grid-tile>
+          
           <mat-grid-tile>
-            <div class="text1">
-              <h2 class="title">{{'common.button.assistant' | translate}}</h2>
-              <hr align="left" class="line"> 
-              <p class="">{{'components.virtual-assistant.section1.title' | translate}}</p>
-              <div class="button1">
-                <button class="button" mat-raised-button color="primary" routerLink="virtual-assistant">{{'common.button.assistant' | translate}}</button>
+              <div class="text1">
+                   <h2 class="title">{{'common.button.assistant' | translate}}</h2>
+                    <hr align="left" class="line"> 
+                    <p class="">{{'components.virtual-assistant.section1.title' | translate}}</p>
+                    <div class="button1">
+                      <button class="button" mat-raised-button color="primary" routerLink="virtual-assistant">{{'common.button.assistant' | translate}}</button>
+                    </div>
                 </div>
-            </div>
-        </mat-grid-tile>
-    </div>
+          </mat-grid-tile>
+  </mat-grid-list>
+</div>
 
-  <div class="target2" align="right" >
+<div class="grid">
+  <mat-grid-list class="grid2"
+                        [cols]="break"               
+                        rowHeight="700px">
+  
       <mat-grid-tile>
-            <div class="text2">
-                    <h2 class="title" >{{'common.button.my-enviroment' | translate}}</h2>
-                    <hr align="right" class="line">
-                    {{'components.virtual-assistant.section2.title' | translate}}
-                <div class="button1">
+        <div class="text2">
+                <h2 class="title" >{{'common.button.my-enviroment' | translate}}</h2>
+                <hr align="right" class="line">
+                <p class="">{{'components.virtual-assistant.section1.title' | translate}}</p>
+               <div class="button1">
                      <button class="button" mat-raised-button color="primary" routerLink="my-environment">{{'common.button.my-enviroment' | translate}}</button>
                 </div>
-            </div> 
+          </div> 
       </mat-grid-tile>
+                
       <mat-grid-tile>
-            <div class="img2 parallax" id="img2">
- 
-            </div>
+               <div class="img2 parallax" id="img2"></div>
       </mat-grid-tile>
+    </mat-grid-list>
   </div>
-  </mat-grid-list>
 </section>
