@@ -8,6 +8,11 @@ import { HomeComponent } from './page/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InfoComponent } from './components/info/info.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
+<<<<<<< HEAD
+=======
+import {MatCardModule} from '@angular/material/card';
+import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
+>>>>>>> develop
 import { MatGridListModule } from '@angular/material/grid-list';
 
 
@@ -17,13 +22,19 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HomeComponent,
     HeaderComponent,
     InfoComponent,
-    PresentationComponent
+    PresentationComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatButtonModule,
+<<<<<<< HEAD
     I18TranslateModule,
+=======
+    MatCardModule,
+    I18TranslateModule,
+    BabcnContainerModule,
+>>>>>>> develop
     MatGridListModule
   ]
 })

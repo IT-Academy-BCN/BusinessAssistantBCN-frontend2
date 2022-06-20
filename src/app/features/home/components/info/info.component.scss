@@ -1,0 +1,47 @@
+@import '../../../../../styles/vars';
+
+
+hr {
+    width:300px;
+    background-color: $color-dark2;
+    border:none;
+    height: 3px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.info-header{
+    text-align: center;
+    p{
+        margin: 0px 50px;
+   }
+}
+
+.card-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 8px 20px -10px;
+    border: 1px solid rgba(128, 128, 128, 0.38);
+    p {
+        margin: 20px;
+    }
+}
+
+.icons{
+    height: 70px;
+    width: 70px;
+    border-radius:50px;
+    border:1px solid $color-dark2;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+        color: $color-dark2;
+        width: 40px;
+        fill:currentColor;
+    }
+}
+
