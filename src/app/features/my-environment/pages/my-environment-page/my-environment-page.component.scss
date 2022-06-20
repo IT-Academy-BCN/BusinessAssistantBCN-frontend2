@@ -1,0 +1,50 @@
+@import '../../../../../styles/global';
+
+
+.grid-env {
+  margin:50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:20px;
+}
+
+
+.grid-env{
+  padding:50px;
+}
+
+.environment {
+  padding:50px;
+  transition: all 0.2s ease;
+  cursor    : pointer;
+  min-width: 20%;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.environment:hover {
+  transform       : scale(1.1);
+  background-color: black;
+  color:white;
+}
+
+
+svg {
+  margin-bottom:10px;
+  width: 50px;
+  fill:$color-dark2;
+}
+
+.parallax {
+  background-image: url(../../../../../assets/img/shopping-arcade-geb40d51e8_1920.jpg);
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

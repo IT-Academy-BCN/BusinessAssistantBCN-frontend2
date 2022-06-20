@@ -14,8 +14,18 @@
 @import "styles/navbar";
 @import "styles/text";
 @import "styles/virtual-container";
+@import "styles/global";
 
 // add here new styles.scss
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0; 
+}

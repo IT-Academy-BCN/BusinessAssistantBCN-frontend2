@@ -1,4 +1,6 @@
-@import '../../../../../styles/vars';
+
+@import '../../../../../styles/global';
+
 
 
 hr {
@@ -12,9 +14,17 @@ hr {
 
 .info-header{
     text-align: center;
+    h1 {
+      padding:30px auto;
+    }
     p{
-        margin: 0px 50px;
-   }
+        margin: 50px auto;
+    }
+}
+
+.text {
+  border-radius: 5px;
+  background-color: pink;
 }
 
 .card-center{
@@ -22,8 +32,6 @@ hr {
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 2px 8px 20px -10px;
-    border: 1px solid rgba(128, 128, 128, 0.38);
     p {
         margin: 20px;
     }

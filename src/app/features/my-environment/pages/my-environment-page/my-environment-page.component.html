@@ -1,6 +1,25 @@
-<p>my-environment-page works!</p>
 
-<div *ngFor="let button of buttons; let i=index">
-    <button mat-button (click)="goToSearch(i)">{{button | translate}}</button>
-</div>
+<div class="grid-env">
+  
+  <div class="environment shadow disp-flex flex-col just-center align-center" *ngFor="let button of buttons; let i=index ">
+
+    
+    <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="iconsList[i].viewbox">
+      <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+      <path [attr.d]= "iconsList[i].icon"/>
+    </svg>
+    
+      <div >
+        <a (click)="goToSearch(i)">{{button | translate}}</a>
+      </div>
+  
+    </div>
+    
+  </div>
+  
+      <div class="parallax">
+        
+      </div>
+
+  
 
