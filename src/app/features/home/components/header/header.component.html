@@ -1,1 +1,30 @@
-<p>header works!</p>
+<mat-grid-list 
+             cols="1" 
+             rowHeight="900px"
+             class="deg">
+
+      
+    <mat-grid-tile class="text-header">
+        <div class="fc-white">
+            <h2 class="header-1">{{'pages.home-page.section1.title' | translate | uppercase}}</h2>
+            <h2 class="header-2">{{'pages.home-page.section2.title'| translate}}</h2>
+            <p class="text-intro">{{'pages.home-page.section3.title'| translate}}</p>
+            
+            <div class="button-header">
+                <button class="btn1 " 
+                                mat-button 
+                                routerLink="virtual-assistant">
+                                 {{'common.button.assistant' | translate | uppercase}}
+                </button>
+                <button class="btn1" 
+                            mat-button 
+                            routerLink="my-environment">
+                            {{'common.button.my-enviroment' | translate | uppercase}}
+                </button>
+            </div>
+        </div>
+
+    </mat-grid-tile>
+    
+</mat-grid-list>
+
