@@ -1,8 +1,8 @@
 <div>
     <div class="info-header">
-        <h1>{{"components.virtual-assistant.section1.title" | translate}}</h1>
+        <h1 class="title1">{{"components.virtual-assistant.section1.title" | translate}}</h1>
         <hr>
-        <p>{{"components.virtual-assistant.section2.title" | translate}}</p>
+        <p class="text-center">{{"components.virtual-assistant.section2.title" | translate}}</p>
     </div>
     
     <mat-grid-list [cols]="break" [rowHeight]="ratio">
@@ -12,8 +12,7 @@
                 containerHeight='250px'
                 containerInnerPadding='45px'
                 containerBackgroundColor='white'
-                class="card-center"
-                >
+                class="card-center">
         
                 <div class="icons" >
                     <div *ngIf="i==0">
@@ -32,7 +31,4 @@
             </babcn-container>
         </mat-grid-tile>
     </mat-grid-list>
-
-
-
 </div>

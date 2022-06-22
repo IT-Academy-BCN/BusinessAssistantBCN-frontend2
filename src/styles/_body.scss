@@ -1,3 +1,5 @@
+@import './vars';
+
 html,
 body {
     height: 100%;
@@ -5,7 +7,6 @@ body {
 
 body {
     margin             : 0;
-    background-color   : #EFEFEF;
-    font-family        : 'Open Sans', sans-serif;
-    // font-family     : Roboto, "Helvetica Neue", sans-serif;
+    background-color   : $color-graylight;
+    // background-color   : $color-graylight;
 }
