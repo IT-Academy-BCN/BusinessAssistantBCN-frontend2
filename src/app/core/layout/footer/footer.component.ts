@@ -14,7 +14,7 @@ import { FOOTER_MAT_GRID_LIST } from '../../../shared/components/component-const
   
 export class FooterComponent implements OnInit, OnDestroy {
 
-  breakpoint: number | string | "Unknown" = 2;
+  breakpoint: number | string | "Unknown" = 2; 
   ratio: string | number = "110";
   breakPoints:(string | number)[] | undefined = FOOTER_MAT_GRID_LIST.get("Breakpoints.XSmall");
 

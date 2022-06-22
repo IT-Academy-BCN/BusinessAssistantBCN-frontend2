@@ -1,0 +1,56 @@
+
+@import '../../../../../styles/global';
+
+
+
+hr {
+    width:300px;
+    background-color: $color-dark2;
+    border:none;
+    height: 3px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.info-header{
+    padding-top: 50px;
+    text-align: center;
+    h1 {
+      padding:30px auto;
+    }
+    p{
+        margin: 50px auto;
+    }
+}
+
+.text {
+  border-radius: 5px;
+  background-color: pink;
+}
+
+.card-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    p {
+        margin: 20px;
+    }
+}
+
+.icons{
+    height: 70px;
+    width: 70px;
+    border-radius:50px;
+    border:1px solid $color-dark2;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+        color: $color-dark2;
+        width: 40px;
+        fill:currentColor;
+    }
+}
+

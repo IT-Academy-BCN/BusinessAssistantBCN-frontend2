@@ -1,0 +1,88 @@
+@import './vars';
+
+@mixin titles(){
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+@mixin texts($font-color:$color-gray, $t-align:center, $f-size:1.2rem){
+  color:$font-color;
+  text-align: $t-align;
+  font-size: $f-size;
+  line-height: 2.5rem;
+  font-weight: 500;
+  max-width:1300px;
+}
+
+
+
+// clases /////////////////////////////////////
+
+
+
+
+.shadow {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.127), 0 6px 6px rgba(0, 0, 0, 0.127);
+}
+
+
+
+// fonts
+
+.title1 {
+  @include titles();
+}
+
+
+.text-left{
+  @include texts($color-gray,left);
+}
+.text-center{
+  @include texts();
+}
+
+.text-right{
+  @include texts($color-gray,right);
+}
+
+
+
+
+// flex
+
+.disp-flex {
+  display: flex;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.just-space-bet {
+  justify-content: space-between;
+}
+
+.just-space-ar {
+justify-content: space-evenly;
+}
+
+.just-right {
+  justify-content: right;
+}
+
+.align-center {
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+

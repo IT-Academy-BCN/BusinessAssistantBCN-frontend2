@@ -1,7 +1,7 @@
 @import '../../../../styles.scss';
 
 *{
-    background-color: $bg-dark-grey;
+    background-color: black;
     line-height: 2em;
 }
 
@@ -22,7 +22,7 @@ a {
         font-weight: bold;
     }
     &:hover{
-       color: white;
+      color: white;
     }
     &:active {
         color: $main-color;

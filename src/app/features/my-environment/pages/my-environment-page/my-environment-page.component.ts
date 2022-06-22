@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyEnvironmentService } from '../../services/my-environment.service';
+import { Icons } from './environment-models';
+
+
 
 @Component({
   selector: 'app-my-environment-page',
@@ -9,6 +12,8 @@ import { MyEnvironmentService } from '../../services/my-environment.service';
 })
 export class MyEnvironmentPageComponent implements OnInit {
 
+
+  iconsList:Icons [] = [];
 
   buttons: string[] = [
     'common.button.mall',
@@ -19,12 +24,14 @@ export class MyEnvironmentPageComponent implements OnInit {
   ]
 
 
+
   constructor(
     private router: Router,
     private myEnvSrv: MyEnvironmentService
   ) { }
 
   ngOnInit(): void {
+    this.iconsList = this.myEnvSrv.iconsList
 
   }
 

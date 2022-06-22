@@ -22,7 +22,7 @@ export class BreakpointService {
     return this._breakpoint$.asObservable();
   }
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver) {
     breakpointObserver
       .observe([
         Breakpoints.XSmall,
@@ -39,5 +39,15 @@ export class BreakpointService {
           }
         }
       });
+  }
+
+  public getCurrentScreenSize(): string {
+    let currentScreenSize: string = 'Unknown';
+    this.displayNameMap.forEach((value, key) => {
+      if (this.breakpointObserver.isMatched(key)) {
+        currentScreenSize = value;
+      }
+    });
+    return currentScreenSize;
   }
 }
