@@ -29,9 +29,13 @@ a {
     } 
 }
 
+mat-grid-list{
+    padding: 0.7rem;
+}
+
 babcn-container{
     position: absolute;
-    top: 3rem;
+    top: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;

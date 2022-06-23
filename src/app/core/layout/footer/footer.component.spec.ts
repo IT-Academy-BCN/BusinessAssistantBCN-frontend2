@@ -2,40 +2,22 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from "@angular/router/testing"
 
 import { FooterComponent } from './footer.component';
-import {
-  BreakpointObserver,
-  BreakpointState,
-} from "@angular/cdk/layout"
+import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import {
   TranslateFakeLoader,
   TranslateLoader,
   TranslateModule,
 } from "@ngx-translate/core"
-import { Observable, of } from "rxjs"
+import { of } from "rxjs"
 import { MatGridListModule } from '@angular/material/grid-list';
-import { Injectable } from '@angular/core';
 import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
 
-
-@Injectable() class MockBreakpointObserver extends BreakpointObserver {
-  
-  override observe(): Observable<BreakpointState> {
-    return of({
-      matches: true,
-      breakpoints: {
-        "XSmall": false,
-        "Small": true,
-      }
-    })
-  }
-  //override ngOnDestroy(): void {}
-}
-
 describe("FooterComponent", () => {
-  let app: FooterComponent;
+  let footer: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
-  let responsive: BreakpointObserver;
+  let breakpointService: BreakpointService;
 
+  /* Creamos el módulo para nuestro componente */
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
@@ -49,53 +31,76 @@ describe("FooterComponent", () => {
           loader: {
             provide: TranslateLoader,
             useClass: TranslateFakeLoader,
-          },
+          }, 
         }),
       ],
       providers: [
-        { provide: BreakpointObserver, useClass: MockBreakpointObserver },
-      ],
+        BreakpointService
+      ] 
     }).compileComponents();
   });
 
+/* Creamos e instanciamos el componente, observamos cambios, inyeccion del servicio*/
   beforeEach(() => {
     fixture = TestBed.createComponent(FooterComponent);
-    app = fixture.componentInstance;
+    footer = fixture.componentInstance;
+    breakpointService = TestBed.inject(BreakpointService);
     fixture.detectChanges();
-    responsive = TestBed.inject(BreakpointObserver);
-    
   });
 
+  afterEach(()=> {
+      fixture.destroy()
+  })
+
+/* Comporobamos que el componente exista */
   it('should create the footer', () => {
-    expect(app).toBeTruthy();
+    expect(footer).toBeTruthy();
   });
 
-  describe('#ngOnInit', () => {
-    it('Should be call the BreakPointObserver', () => {
-      spyOn(responsive, "observe").and.callThrough();
-      app.ngOnInit();
-      expect(responsive.observe).toHaveBeenCalled();
+/* Comporobamos que las variables existen */
+  it('should have variable called "breakpoint"', () => {
+    expect(footer.breakpoint).toBeTruthy();
+  });
+
+  it('should have variable called "ratio"', () => {
+    expect(footer.ratio).toBeTruthy();
+  });
+
+  /* Comporobamos el metodo del constructor que da las madidas iniciales de pantalla */
+  it('should recive the currentScreenSize value in the constructor, getCurrentScreenSize()', () => { 
+    const screenSize = spyOn(breakpointService, "getCurrentScreenSize");
+    screenSize.and.returnValue('Medium');
+    expect(footer.breakpoint).toEqual(4);
+    expect(footer.ratio).toEqual("150px"); 
+  })
+
+  /* Comprobamos lo que reciben las variables en ngOnInit */
+  describe("#NgOnInit", () => {
+    it("Should be call the BreakpointService", () => {
+      footer.ngOnInit();
+      expect(breakpointService.breakpoint$).toBeTruthy();
+ 
     });
-  });
 
-  describe('#breakpointChanged', () => {
-    it('Should get cols', () => {
-      const mockBreakpoint = 2;
-      expect(app.breakpoint).toEqual(mockBreakpoint);
-
+    it("Should recive de breakpoint value", () => {
+      const breakpoint = spyOnProperty(breakpointService, "breakpoint$");
+      breakpoint.and.returnValue(of('Small'));
+      footer.ngOnInit();
+      expect(footer.breakpoint).toEqual(2);
+      breakpoint.and.returnValue(of('Large'));
+      footer.ngOnInit();
+      expect(footer.breakpoint).toEqual(5);
     });
 
-    it('Should get col_height', () => {
-      const mockRatio = "130px";
-      expect(app.ratio).toEqual(mockRatio);
-      
-    });
-  });
-
-  describe('#ngOnDestroy', () => {
-    it('Should reset the resposive breakpoint', () => {
-      app.ngOnDestroy();
-      expect(responsive.ngOnDestroy()).toBeUndefined();
-    })
-  });
+    it("Should recive the ratio value", () => {
+      const ratio = spyOnProperty(breakpointService, "breakpoint$");
+      ratio.and.returnValue(of('Xsmall'));
+      footer.ngOnInit();
+      expect(footer.ratio).toEqual("150px");
+      ratio.and.returnValue(of('Xsmall'));
+      footer.ngOnInit();
+      expect(footer.ratio).toEqual("150px");
+    });   
+  })
+  
 });
