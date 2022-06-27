@@ -1,10 +1,10 @@
-<section class="presentation">
+<section class="presentation  ">
   <div class="grid ">
-    <mat-grid-list [cols]="break" 
-                          rowHeight="700px">
+    <mat-grid-list [cols]="breakpoint" 
+                           [rowHeight]="ratio">
     
           <mat-grid-tile>     
-              <div class="img1 parallax"></div>  
+              <div class="img1"></div>  
           </mat-grid-tile>
           
           <mat-grid-tile>
@@ -22,14 +22,14 @@
 
 <div class="grid  ">
   <mat-grid-list class="grid2 "
-                        [cols]="break"               
-                        rowHeight="700px">
+                        [cols]="breakpoint"               
+                        [rowHeight]="ratio">
   
       <mat-grid-tile>
         <div class="text2">
                 <h2 class="title" >{{'common.button.my-enviroment' | translate}}</h2>
                 <hr align="right" class="line">
-                <p class="">{{'components.virtual-assistant.section1.title' | translate}}</p>
+                <p class="">{{'components.virtual-assistant.section2.title' | translate}}</p>
                <div class="button1">
                      <button class="button" mat-raised-button color="primary" routerLink="my-environment">{{'common.button.my-enviroment' | translate}}</button>
                 </div>
@@ -37,7 +37,7 @@
       </mat-grid-tile>
                 
       <mat-grid-tile>
-               <div class="img2 parallax " id="img2"></div>
+               <div class="img2"></div>
       </mat-grid-tile>
     </mat-grid-list>
   </div>

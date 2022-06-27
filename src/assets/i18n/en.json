@@ -42,6 +42,12 @@
             }
         },
         "info-nav": {
+            "section": {
+                "title": "Do you need help to start your business?"
+            },
+            "section0": {
+                "title": "Because we know you have a restless mind, we put at your disposal a virtual assistant, search tools and mountains of suggestions. Face-to-face o e-commmererce? Prestashop, Wordpress o Shopify? You have a lot to do!!"
+            },
             "section1": {
                 "title": "Get effective planning"
             },
@@ -54,10 +60,10 @@
         },
         "virtual-assistant": {
             "section1": {
-                "title": "Do you need help to start your business?"
+                "title": "Find the most reliable and updated information"
             },
             "section2": {
-                "title": "Because we know you have a restless mind, we put at your disposal a virtual assistant, research tools and mountains of suggestions. Face-to-face or e-commmererce? Prestashop, Wordpress or Shopify? You have a lot to do !!"
+                "title": "Locate competitive businesses in your area."
             }
         },
         "saved-searches": {

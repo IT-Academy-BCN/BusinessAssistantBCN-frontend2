@@ -42,6 +42,12 @@
             }
         },
         "info-nav": {
+            "section": {
+                "title":"¿Necessites ajuda per emprendre el teu negoci?"
+            },
+            "section0": {
+                "title": "Perquè sabem que tens una ment inquieta, posem a la teva disposició un assistent virtual, eines de recerca i muntanyes de suggeriments. Presencial o e-commmererce? Prestashop, Wordpress o Shopify? Tens molt per fer!!"
+            },
             "section1": {
                 "title": "Aconsegueix una planificació eficaç"
             },
@@ -54,10 +60,10 @@
         },
         "virtual-assistant": {
             "section1": {
-                "title": "¿Necessites ajuda per emprendre el teu negoci?"
+                "title": "Troba la informació més fidedigna i actualitzada"
             },
             "section2": {
-                "title": "Perquè sabem que tens una ment inquieta, posem a la teva disposició un assistent virtual, eines de recerca i muntanyes de suggeriments. Presencial o e-commmererce? Prestashop, Wordpress o Shopify? Tens molt per fer!!"
+                "title": "Localitza negocis competencials a la teva àrea."
             }
         },
         "saved-searches": {

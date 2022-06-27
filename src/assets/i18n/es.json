@@ -42,6 +42,12 @@
             }
         },
         "info-nav": {
+            "section": {
+                "title": "¿Necesitas ayuda para emprender tu negocio?"
+            },
+            "section0": {
+                "title": "Porque sabemos que tienes una mente inquieta, ponemos a tu disposición un asistente virtual, herramientas de busqueda y montañas de sugerencias. Presencial o e-commmererce? Prestashop, Wordpress o Shopify? Tienes mucho por hacer!!"
+            },
             "section1": {
                 "title": "Consigue una planificación eficaz"
             },
@@ -54,10 +60,10 @@
         },
         "virtual-assistant": {
             "section1": {
-                "title": "¿Necesitas ayuda para emprender tu negocio?"
+                "title": "Encuentra la información más fidedigna y actualizada."
             },
             "section2": {
-                "title": "Porque sabemos que tienes una mente inquieta, ponemos a tu disposición un asistente virtual, herramientas de investigación y montañas de sugerencias.¿Presencial o e-commmererce?¿Prestashop, Wordpress o Shopify?¡¡Tienes mucho por hacer!!"
+                "title": "Localiza negocios competenciales en tu area."
             }
         },
         "saved-searches": {
