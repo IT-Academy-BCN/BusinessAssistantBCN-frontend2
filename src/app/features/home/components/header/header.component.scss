@@ -1,10 +1,11 @@
+@import '../../../../../styles/global';
 
 .header{
     width: 100%;
     height: 100%;
-    background: #F1F2B5;  /* fallback for old browsers */
-    background-image: -webkit-linear-gradient(to right, #499082, #f1f2b52d);  /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to right, #499082, rgba(255,0,0,0)), url('../../../../../assets/img/header-light.jpg'); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: $color-dark1;  /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(to right, $color-dark1, #f1f2b52d);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, $color-dark1, rgba(255,0,0,0)), url('../../../../../assets/img/header-light.jpg'); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     
     // background-repeat: no-repeat;
@@ -50,13 +51,13 @@
     border-radius: 5px;
     color:white;
     box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
-    background-color: rgba(0, 0, 0, 0.161);
+    background-color: rgba(0, 0, 0, 0.343);
     width: 20rem;
     font-family: 'Montserrat', sans-serif;
 }
 
 .btn1:hover {
-    background-color: black;
+    background-color: $color-dark2;
 }
 
 .button-header{

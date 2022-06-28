@@ -1,17 +1,20 @@
+@import '../../../../../styles/global';
+
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin:100px 0px;
 }
 
 
+
 form {
-    border: solid 1px gray;
     width: 30%;
     padding: 30px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 7px 7px 10px 0px grey; 
+    background-color: white;
 }
 
 h1{
@@ -25,4 +28,8 @@ mat-form-field {
 .button-position {
     display: flex;
     justify-content: end;
+}
+
+button {
+  background-color: $color-dark2;
 }
