@@ -44,7 +44,7 @@ p {
 .img1{
     background-image: url(../../../../../assets/img/piggybank-CBbxr3Jg-vert.jpg);
     width: 100%;
-    min-height: 500px;
+    height: 100vh;
     margin-right: 7rem;
     background-attachment: fixed;
     // background-position: center;
@@ -67,6 +67,10 @@ p {
 
 .grid{
     padding-bottom: 20px;
+}
+
+.grid2{
+   
 }
 
 
