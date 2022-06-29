@@ -1,7 +1,13 @@
 
 <div class="grid-env">
   
-  <div class="environment shadow disp-flex flex-col just-center align-center" *ngFor="let button of buttons; let i=index ">
+  <div id="environment" class="environment shadow disp-flex flex-col just-center align-center" 
+      [class] = "getClassHover()"
+      [ngClass]="{
+                  'width-small': size == 'Small',
+                  'width-xsmall': size == 'XSmall'
+                }" 
+      *ngFor="let button of buttons; let i=index ">
 
     
     <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="iconsList[i].viewbox">
@@ -17,9 +23,12 @@
     
   </div>
   
-      <div class="parallax">
-        
-      </div>
+  <!-- <div class="parallax" *ngIf ="size === 'Large' || size === 'XLarge' || size === 'Medium'"></div>
+  <div class="img-shopping" *ngIf ="size === 'Small' || size === 'XSmall'"
+      [class] = "( size === 'Small' ? 'height-100': 'height-80')"></div> -->
 
   
 
+<div class="parallax" *ngIf ="size === 'Large' || size === 'XLarge' || size === 'Medium'"></div>
+
+<div class="img-shopping"  *ngIf ="size === 'Small' || size === 'XSmall'"></div>

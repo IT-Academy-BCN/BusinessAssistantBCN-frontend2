@@ -14,43 +14,46 @@ import { zoomTitle } from './animation/header.animation';
 export class HeaderComponent implements OnInit {
 
   buttons: string[] =  [
-      'common.button.search',     
-      'components.header.section2.title',
-      'components.header.section4.title',
-      'components.footer.section4.title',
-      'common.button.login',
-    ]
+    'common.button.search',
+    'components.header.section2.title',
+    'components.header.section4.title',
+    'components.footer.section4.title',
+    'common.button.login',
+  ]
 
   title: string = 'inactive'
   menu: boolean = false
 
-  
+
   constructor(
     private responsive: BreakpointService,
     private router: Router
-  ) { }
+  ) {
+    const currentScreenSize = this.responsive.getCurrentScreenSize();
+    this.expandMenu(currentScreenSize);
+  }
 
   ngOnInit(): void {
     this.responsive.breakpoint$.subscribe(result => {
-      console.log(result)
-      if(result == 'Small' || result == 'XSmall'){
-        this.menu = true
-      }else{
-        this.menu = false
-      }
+      this.expandMenu(result);
     })
   }
 
-  toggleTitle(){
-    this.title = this.title === 'inactive' ? 'active' : 'inactive'
-  }
-
-  goToLink(num: number){
-    if (num == 4) {
-      this.router.navigate(['login'])
+  private expandMenu(currentScreenSize: string) {
+    if (currentScreenSize == 'Small' || currentScreenSize == 'XSmall') {
+      this.menu = true;
+    } else {
+      this.menu = false;
     }
   }
 
+  toggleTitle() {
+    this.title = this.title === 'inactive' ? 'active' : 'inactive';
+  }
 
-
+  goToLink(num: number) {
+    if (num == 4) {
+      this.router.navigate(['login']);
+    }
+  }
 }

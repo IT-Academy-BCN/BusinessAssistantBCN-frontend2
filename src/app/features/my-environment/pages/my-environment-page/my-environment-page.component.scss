@@ -2,16 +2,16 @@
 
 
 .grid-env {
-  margin:50px auto;
+  margin:100px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap:20px;
-  padding:50px;
+  max-width: 1600px;
 }
 
 
-.grid-env{
+.padding-env{
   padding:50px;
 }
 
@@ -24,9 +24,9 @@
   background-color: #fff;
 }
 
-.environment:hover {
-  transform       : scale(1.1);
-  background-color: black;
+.env-hovering:hover {
+  transform       : scale(1.06);
+  background-color: $color-light2;
   color:white;
 }
 
@@ -41,11 +41,38 @@ svg {
   background-image: url(../../../../../assets/img/shopping-arcade-geb40d51e8_1920.jpg);
   /* Set a specific height */
   min-height: 500px;
-
+  min-width: 20%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.width-small {
+  min-width: 50%;
+  margin:auto 3%;
+}
+
+
+.width-xsmall {
+  min-width: 70%;
+  margin:auto 10%;
+}
+
+.text {
+  background-color: red;
+}
+
+
+.img-shopping {
+  background-image: url(../../../../../assets/img/shopping-arcade-sm.jpg);
+  height:80vh;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
 

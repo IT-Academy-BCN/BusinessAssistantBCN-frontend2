@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="sendForm(form.value)">
+    <form [formGroup]="form" (ngSubmit)="sendForm(form.value)" class="shadow">
       <h1>Login</h1>
         <mat-form-field appearance="fill">
           <mat-label>Usuario</mat-label>
@@ -16,7 +16,7 @@
         <p>No estas registrado? Haz click <a [routerLink]="['/register']" >aquí</a></p>
 
         <div class="button-position">
-            <button type="submit" mat-raised-button color="primary">Send</button>
+            <button type="submit" mat-raised-button>Send</button>
         </div>
         
     </form>

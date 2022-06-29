@@ -1,7 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 import { Icons } from './environment-models';
+import {BreakpointService} from '../../../../services/shared/breakpoint/breakpoint.service';
+
 
 
 
@@ -12,6 +15,7 @@ import { Icons } from './environment-models';
 })
 export class MyEnvironmentPageComponent implements OnInit {
 
+  size:string = '';
 
   iconsList:Icons [] = [];
 
@@ -21,17 +25,27 @@ export class MyEnvironmentPageComponent implements OnInit {
     'common.button.big-stablish',
     'common.button.market-fair',
     'common.button.public-market',
-  ]
-
+  ];
 
 
   constructor(
     private router: Router,
-    private myEnvSrv: MyEnvironmentService
-  ) { }
+    private myEnvSrv: MyEnvironmentService,
+    private _responsive: BreakpointService
+  
+  ) { 
+    const currentScreenSize = this._responsive.getCurrentScreenSize();
+    this.size = currentScreenSize;
+    console.log(`esta es la medida ${currentScreenSize}`);
+  }
 
   ngOnInit(): void {
-    this.iconsList = this.myEnvSrv.iconsList
+    this.iconsList = this.myEnvSrv.iconsList;
+    this._responsive.breakpoint$.subscribe(result => {
+      this.size = result;
+    });
+
+
 
   }
 
@@ -57,6 +71,16 @@ export class MyEnvironmentPageComponent implements OnInit {
     }
   }
 
+  getClassHover(){
+    let cl = '';
+    if(this.size === 'Medium' || this.size === 'Large' || this.size === 'XLarge' ){
+      cl = 'env-hovering'
+    }
+    return cl;
+  }
+
 //end
+
+
 
 }
