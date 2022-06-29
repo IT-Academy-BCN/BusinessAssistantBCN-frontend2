@@ -16,6 +16,9 @@ import { VirtualAssistantComponent } from './pages/virtual-assistant/virtual-ass
 //MATERIAL
 import { MatGridListModule } from '@angular/material/grid-list';
 
+//BACNCONTAINER
+import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
+
 // ARRAY with VIRTUAL-ASSISTANT APPLICATION PAGES
 const VirtualAssistantPages = [
   VirtualAssistantPageComponent
@@ -33,7 +36,8 @@ const VirtualAssistantPages = [
 
     // VIRTUAL-ASSISTANT-CONTENTS-MODULE
     VirtualAssistantPageContentsModule,
-    MatGridListModule
+    MatGridListModule,
+    BabcnContainerModule
   ],
   exports: [
     [...VirtualAssistantPages]
