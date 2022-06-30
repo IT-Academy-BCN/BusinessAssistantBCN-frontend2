@@ -2,15 +2,7 @@
 // ANGULAR CORE
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, Input, OnInit } from '@angular/core';
-
-// MATERIAL
-import { MatDialog } from '@angular/material/dialog';
-
-// VIRTUAL-ASSISTANT MODELS - BUSINESS ASISSTANT CATEGORY
 import { Category } from '../../models/business-assistant.model';
-
-
-// RESUME-DIALOG-COMPONENT
 
 
 @Component({
@@ -28,11 +20,9 @@ export class VirtualAssistantComponent implements OnInit {
   ngOnInit(): void {
 
     this.responsive.observe([
-      // Breakpoints.XSmall,
       Breakpoints.Small,
       Breakpoints.Medium,
-      // Breakpoints.Large,
-      // Breakpoints.XLarge
+    
     ])
      .subscribe(() =>
         this.breakpointChanged() 
@@ -43,13 +33,16 @@ export class VirtualAssistantComponent implements OnInit {
     
     if (this.responsive.isMatched(Breakpoints.Small)) {
       this.breakpoint = 1;
-      this.ratio = "300px";
+      this.ratio = "500px";
     }
     else if (this.responsive.isMatched(Breakpoints.Medium)) {
       this.breakpoint = 2;
-      this.ratio = "600px";
+      this.ratio = "500px";
     }
   }
 
 
+
+  
+ 
 }

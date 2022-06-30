@@ -29,7 +29,49 @@
 }
 
 .panel{
-    background-color: #ffb142;
+    background-color: #f8f7f4;
+    width: 500px;
+    height: 400px;
+    text-align: center;
 }
+
+.shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.127), 0 6px 6px rgba(0, 0, 0, 0.127);
+}
+
+.text{
+    padding: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 15px 30PX;
+    border-radius: 5px;
+    background-color:#499090;
+    color:white;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+    transition: all 0.5s ease-out;
+}
+
+.result{
+    position: relative;
+}
+
+.btn-result{
+    position:absolute;
+    bottom:30px;
+    right:10px;
+    // bottom:0;
+    // right: 0;
+}
+
+.btn-result a {
+    margin:30px 10px;
+}
+
+.btn:hover {
+    background-color: #135058;
+}
+
 
 
