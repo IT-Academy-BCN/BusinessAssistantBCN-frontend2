@@ -11,6 +11,7 @@ export class BigMallsService {
 
   constructor( private http: HttpClient ) { }
 
+  /*
   private _zonesSelected: number[] = [];
   private _activitiesSelected: EconomicActivityModel[] = [];
 
@@ -49,15 +50,12 @@ export class BigMallsService {
   initializeSelected() {
     this._zonesSelected = [];
     this._activitiesSelected = []
-  }
+  }*/
 
   // pass data to backend
-  sendSelectedData() {
-    let params = new HttpParams();
+  sendSelectedData(zones: number[]) {
 
-    params = params.append('zones', JSON.stringify(this.zoneSelected));
-
-    console.log(params)
+    let params = new HttpParams().append('zones', JSON.stringify(zones));
     // Fake-filtered to check that it works. Will have to be substituted for actual backend response.
     return this.http.get(`${environment.BACKEND_BASE_URL}${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`, { params: params },
     )
