@@ -51,7 +51,8 @@ export class BigMallsService {
     this._activitiesSelected = []
   }
 
-  // pass data to backend
+  // pass data to backend -------------dejar este aqui!! ----------el se resto no
+
   sendSelectedData() {
     let params = new HttpParams();
 
