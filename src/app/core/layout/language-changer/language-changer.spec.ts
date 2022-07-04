@@ -7,7 +7,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { LanguagesModel } from './language-changer.interface';
 
 
-describe('LanguageChangerComponent', () => {
+xdescribe('LanguageChangerComponent', () => {
   let component: LanguageChangerComponent;
   let fixture: ComponentFixture<LanguageChangerComponent>;
 

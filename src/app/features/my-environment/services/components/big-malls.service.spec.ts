@@ -1,6 +1,10 @@
+//PRUEBAS
+// xdescribe('LanguageChangerComponent')
+// xdescribe('VirtualAssistantComponent')
+// xdescribe("HeaderComponent")
 
 
-describe ('', () => {
+describe ('Pruebas big-malls', () => {
 
     let spy: any;
   
@@ -8,8 +12,10 @@ describe ('', () => {
   
     });
   
-    it('',()=>{
-  
+    it('Debe contener...',()=>{
+     
+
+
     });
   });
   
