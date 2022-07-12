@@ -194,7 +194,8 @@
             "download-results": "Download results",
             "login": "Login",
             "logout": "Logout",
-            "register": "Sign-in"
+            "register": "Sign-in",
+            "see-summary": "See summary"
         },
         "title": {
             "results": "Results"

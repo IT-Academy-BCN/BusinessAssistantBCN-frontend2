@@ -5,6 +5,9 @@ import { CommonModule } from '@angular/common';
 // MATERIAL
 import { MatButtonModule } from '@angular/material/button';
 
+// MODULE: i18-translate.module.ts
+import { I18TranslateModule } from '../../translate/i18-translate.module';
+
 // COMPONENT: BABCN-BUTTONS-CONTAINER
 import { BabcnButtonsContainerComponent } from './component/babcn-buttons-container.component';
 
@@ -18,6 +21,9 @@ import { BabcnButtonsContainerComponent } from './component/babcn-buttons-contai
 
     // MATERIAL
     MatButtonModule,
+
+    // i18-translate
+    I18TranslateModule
   ],
   exports: [
     BabcnButtonsContainerComponent

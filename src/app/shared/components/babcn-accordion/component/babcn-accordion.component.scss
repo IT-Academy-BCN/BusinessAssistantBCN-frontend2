@@ -13,16 +13,16 @@ div {
 
 .list-height {
     padding         : 31px;
-    background-color: $main-color;
+    background-color: $color-dark1;
     font-family     : 'Open Sans', sans-serif;
 }
 
 .list-height:hover {
-    background-color: $main-color !important;
+    background-color: $color-dark2 !important;
 }
 
 .list-height:focus {
-    background-color: $main-color !important;
+    background-color: $color-medium !important;
 }
 
 .itemSelected:hover {

@@ -11,6 +11,7 @@ import { PresentationComponent } from './components/presentation/presentation.co
 import {MatCardModule} from '@angular/material/card';
 import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { BabcnShowcaseModule } from '../../shared/components/showcase/babcn-showcase.module';
 
 
 
@@ -28,7 +29,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardModule,
     I18TranslateModule,
     BabcnContainerModule,
-    MatGridListModule
+    MatGridListModule,
+    BabcnShowcaseModule
   ]
 })
 export class HomeModule { }

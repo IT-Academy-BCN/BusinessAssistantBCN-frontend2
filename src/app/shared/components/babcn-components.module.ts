@@ -7,6 +7,7 @@ import { BabcnAccordionModule } from './babcn-accordion/babcn-accordion.module';
 import { BabcnButtonsContainerModule } from './babcn-buttons-container/babcn-buttons-container.module';
 import { BabcnContainerModule } from './babcn-container/babcn-container.module';
 import { BabcnListModule } from './babcn-list/babcn-list.module';
+import { BabcnTitleModule } from './babcn-title/babcn-title.module';
 import { BabcnTreeModule } from './babcn-tree/babcn-tree.module';
 import { BabcnShowcaseModule } from './showcase/babcn-showcase.module';
 
@@ -22,6 +23,7 @@ import { BabcnShowcaseModule } from './showcase/babcn-showcase.module';
     BabcnButtonsContainerModule,
     BabcnContainerModule,
     BabcnListModule,
+    BabcnTitleModule,
     BabcnTreeModule,
 
     // SHOWCASE FOR DEVELOPERS

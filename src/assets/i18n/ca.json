@@ -193,7 +193,8 @@
             "download-results": "Descarregar resultats",
             "login": "Login",
             "logout": "Logout",
-            "register": "Registrar-se"
+            "register": "Registrar-se",
+            "see-summary": "Veure resum"
         },
         "title": {
             "results": "Resultats"

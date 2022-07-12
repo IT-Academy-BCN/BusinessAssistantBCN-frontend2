@@ -11,7 +11,6 @@ import { VirtualAssistantPageContentsModule } from './page-contents/virtual-assi
 // SERVICE: VIRTUAL-ASSISTANT-CATEGORIES-SERVICE
 import { VirtualAssisstantCategoriesService } from './services/virtual-assistant-categories.service';
 import { CoreModule } from '../../core/core.module';
-import { VirtualAssistantComponent } from './pages/virtual-assistant/virtual-assistant.component';
 
 //MATERIAL
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -26,9 +25,7 @@ const VirtualAssistantPages = [
 
 @NgModule({
   declarations: [
-    [...VirtualAssistantPages,
-    VirtualAssistantComponent
-  ]
+    [...VirtualAssistantPages]
   ],
   imports: [
     CommonModule,

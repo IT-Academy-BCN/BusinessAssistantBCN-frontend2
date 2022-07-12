@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VirtualAssistantComponent } from './virtual-assistant.component';
+import { BabcnTitleComponent } from './babcn-title.component';
 
-describe('VirtualAssistantComponent', () => {
-  let component: VirtualAssistantComponent;
-  let fixture: ComponentFixture<VirtualAssistantComponent>;
+describe('BabcnTitleComponent', () => {
+  let component: BabcnTitleComponent;
+  let fixture: ComponentFixture<BabcnTitleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VirtualAssistantComponent ]
+      declarations: [ BabcnTitleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VirtualAssistantComponent);
+    fixture = TestBed.createComponent(BabcnTitleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
