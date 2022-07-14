@@ -21,6 +21,7 @@ export class VirtualAssistantPageComponent implements OnInit {
     constructor(private serviceCategories: VirtualAssisstantCategoriesService) {
         this.dataSourceCategory = [];
         this.serviceCategories.getCategories();
+        window.scroll(0, 0);
     }
 
     /** Obtain data into 'dataSourceCategory' from VACategoriesService. */

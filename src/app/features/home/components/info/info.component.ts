@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 
 @Component({
-  selector: 'app-info',
+  selector: 'home-info',
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.scss']
 })

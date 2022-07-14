@@ -12,6 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BabcnShowcaseModule } from '../../shared/components/showcase/babcn-showcase.module';
+import { BabcnComponentsModule } from '../../shared/components/babcn-components.module';
 
 
 
@@ -27,9 +28,10 @@ import { BabcnShowcaseModule } from '../../shared/components/showcase/babcn-show
     RouterModule,
     MatButtonModule,
     MatCardModule,
-    I18TranslateModule,
-    BabcnContainerModule,
     MatGridListModule,
+    I18TranslateModule,
+    // BabcnContainerModule,
+    BabcnComponentsModule,
     BabcnShowcaseModule
   ]
 })

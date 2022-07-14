@@ -1,0 +1,32 @@
+.main-container {
+    // margin        : 0 auto;
+    padding       : 50px 0px;
+    display       : flex;
+    flex-direction: column;
+    gap           : 70px;
+}
+
+.main-content {
+    width         : 70%;
+    margin        : 0 auto;
+    display       : flex;
+    flex-direction: row;
+    gap           : 50px;
+}
+
+.img-presentation {
+    width          : 100%;
+    background-size: cover;
+
+    @media (max-width: 800px) {
+        display: none;
+    }
+}
+
+.virtual-assistant {
+    background-image: url("../../../../../assets/img/piggybank-CBbxr3Jg-vert.jpg");
+}
+
+.my-enviroment {
+    background-image: url("../../../../../assets/img/architecture.jpg");
+}

@@ -1,1 +1,41 @@
-<p>presentation works!</p>
+<div class="main-container">
+
+    <div class="main-content">
+
+        <div class="img-presentation virtual-assistant"></div>
+
+        <babcn-buttons-container vaStyle="transparent" buttonsContainerBackgroundColor="transparent"
+            containerWidth="100%" [buttonsContainerTotalButtons]="1"
+            mainButtonText="{{ 'common.button.assistant' | translate |  uppercase}}" mainButtonColor="accent"
+            [mainButtonFunction]="onClickButtonVirtualAssistantButton">
+            <babcn-title titleInput='common.button.assistant'></babcn-title>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aspernatur modi labore odit recusandae
+                doloremque quibusdam iusto soluta ipsa quos earum quidem voluptatibus, sequi, doloribus voluptate, fugit
+                a!
+                Repellendus, iste.</p>
+        </babcn-buttons-container>
+
+    </div>
+
+    <div class="main-content">
+
+        <div class="img-presentation my-enviroment"></div>
+
+        <babcn-buttons-container vaStyle="transparent" buttonsContainerBackgroundColor="transparent"
+            containerWidth="100%" [buttonsContainerTotalButtons]="1"
+            mainButtonText="{{ 'common.button.my-enviroment' | translate |  uppercase}}" mainButtonColor="accent"
+            [mainButtonFunction]="onClickButtonMyEnvironment">
+            <babcn-title titleInput='common.button.my-enviroment'></babcn-title>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aspernatur modi labore odit recusandae
+                doloremque quibusdam iusto soluta ipsa quos earum quidem voluptatibus, sequi, doloribus voluptate, fugit
+                a!
+                Repellendus, iste.</p>
+        </babcn-buttons-container>
+
+    </div>
+
+</div>
