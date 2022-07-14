@@ -7,10 +7,16 @@
     background-image: -webkit-linear-gradient(to right, $color-dark1, #f1f2b52d);  /* Chrome 10-25, Safari 5.1-6 */
     background-image: linear-gradient(to right, $color-dark1, rgba(255,0,0,0)), url('../../../../../assets/img/header-light.jpg'); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
+    background-position: right;
+
+    @media (max-width: 924px) {
+        background-position: 90%;
+    }
+
+    @media (max-width: 640px) {
+        background-position: 70%;
+    }
     
-    // background-repeat: no-repeat;
-    // background-position: right top;
-    // position:relative;
 }
 
 .text-header{
