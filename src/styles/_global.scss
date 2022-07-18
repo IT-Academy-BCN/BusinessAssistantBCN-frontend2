@@ -17,7 +17,7 @@
 @mixin btn($bg-color:$color-dark3, $t-color:$color-light0){
     cursor:pointer;
     text-decoration: none;
-    padding: 15px 30PX;
+    padding: 20px 50PX;
     display: inline-block;
     border-radius: 5px;
     background-color:$bg-color;
@@ -72,6 +72,7 @@
 .text-right{
   @include texts($color-gray,right);
 }
+
 
 
 //buttons

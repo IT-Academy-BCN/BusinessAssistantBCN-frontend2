@@ -13,6 +13,7 @@ export class PresentationComponent implements OnInit,OnDestroy {
   listener:any;
   
   @ViewChild('asImage1') image1!:ElementRef;
+  @ViewChild('asImage2') image2!:ElementRef;
 
   constructor(public router: Router,
               private renderer2:Renderer2) {
@@ -23,7 +24,9 @@ ngOnInit(): void {
   this.listener = this.renderer2.listen('window', 'scroll', ()=>{
     let scroll = window.scrollY;
     const image1 = this.image1.nativeElement;
+    const image2 = this.image2.nativeElement;
     image1.style.backgroundPositionY  = `${scroll/2}px` ;
+    image2.style.backgroundPositionY  = `${scroll/2}px` ;
 
   });
 

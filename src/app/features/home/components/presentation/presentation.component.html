@@ -4,7 +4,7 @@
   <div class="wrapp-plx disp-flex">
 
     <div id="img-a" class="container-image">
-      <div id="image1" class="image-background1" #asImage1></div>
+      <div id="image1" class="image-background image-background1" #asImage1></div>
     </div> 
 
     <div class="wrapp-text">
@@ -18,8 +18,21 @@
 
 
 
-  <div class="option2">
-    option2
+  <div class="wrapp-options">
+    <div class="wrapp-plx disp-flex just-right ¡">
+
+      <div class="wrapp-text align-right">
+        <h2 class="title1">  {{'common.button.my-enviroment' | translate }}</h2>
+        <hr align="right" class="line">
+        <p class="text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis beatae accusamus aut molestiae dignissimos ut suscipit.</p>
+        <button class="btn-dark btn-opc"   (click)="img()"> {{'common.button.my-enviroment' | translate | uppercase}}</button>
+      </div>
+
+      <div id="img-a" class="container-image disp-flex just-right">
+        <div id="image1" class="image-background image-background2" #asImage2></div>
+      </div> 
+
+    </div>
   </div>
 
 </div>
