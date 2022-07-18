@@ -1,32 +1,64 @@
-.main-container {
-    // margin        : 0 auto;
-    padding       : 50px 0px;
-    display       : flex;
-    flex-direction: column;
-    gap           : 70px;
+// .main-container {
+//     // margin        : 0 auto;
+//     padding       : 50px 0px;
+//     display       : flex;
+//     flex-direction: column;
+//     gap           : 70px;
+// }
+
+// .main-content {
+//     width         : 70%;
+//     margin        : 0 auto;
+//     display       : flex;
+//     flex-direction: row;
+//     gap           : 50px;
+// }
+
+// .img-presentation {
+//     width          : 100%;
+//     background-size: cover;
+
+//     @media (max-width: 800px) {
+//         display: none;
+//     }
+// }
+
+// .virtual-assistant {
+//     background-image: url("../../../../../assets/img/piggybank-CBbxr3Jg-vert.jpg");
+// }
+
+// .my-enviroment {
+//     background-image: url("../../../../../assets/img/architecture.jpg");
+// }
+
+
+.wrapp-options {
+  padding:100px 0;
 }
 
-.main-content {
-    width         : 70%;
-    margin        : 0 auto;
-    display       : flex;
-    flex-direction: row;
-    gap           : 50px;
+.container-image{
+  width: 50%;
 }
 
-.img-presentation {
-    width          : 100%;
-    background-size: cover;
-
-    @media (max-width: 800px) {
-        display: none;
-    }
+.image-background1{
+  width: 100%;
+  height: 80vh;
+  background-image: url(../../../../../assets/img/opc1.jpg);
+  background-size: cover;
 }
 
-.virtual-assistant {
-    background-image: url("../../../../../assets/img/piggybank-CBbxr3Jg-vert.jpg");
+
+.wrapp-text {
+  padding:50px;
+  max-width: 600px;
 }
 
-.my-enviroment {
-    background-image: url("../../../../../assets/img/architecture.jpg");
+.opc-text {
+  font-size: 3rem;
+  font-weight: 500;
+  color:rgba(0, 0, 0, 0.802);
+}
+
+.btn-opc {
+  margin: 50px 0;
 }

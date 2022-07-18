@@ -36,7 +36,6 @@ export class MyEnvironmentPageComponent implements OnInit {
   ) { 
     const currentScreenSize = this._responsive.getCurrentScreenSize();
     this.size = currentScreenSize;
-    console.log(`esta es la medida ${currentScreenSize}`);
     window.scroll(0, 0);
   }
 

@@ -14,10 +14,30 @@
   max-width:1300px;
 }
 
+@mixin btn($bg-color:$color-dark3, $t-color:$color-light0){
+    cursor:pointer;
+    text-decoration: none;
+    padding: 15px 30PX;
+    display: inline-block;
+    border-radius: 5px;
+    background-color:$bg-color;
+    color:$t-color;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+    transition: all 0.5s ease-out;
+    border:none;
+    &:hover{
+      background-color: transparent;
+      border:1px solid $bg-color;
+      color: $bg-color;
+    }
+
+}
+
+
+
 
 
 // clases /////////////////////////////////////
-
 
 
 
@@ -25,6 +45,14 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.127), 0 6px 6px rgba(0, 0, 0, 0.127);
 }
 
+.line {
+  width:300px;
+  background-color: $color-dark2;
+  border:none;
+  height: 3px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
 
 // fonts
@@ -45,6 +73,13 @@
   @include texts($color-gray,right);
 }
 
+
+//buttons
+
+.btn-dark {
+  @include btn();
+
+}
 
 
 
