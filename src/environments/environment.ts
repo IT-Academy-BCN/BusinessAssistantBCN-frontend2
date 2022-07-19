@@ -7,7 +7,7 @@ export const environment = {
   BACKEND_BASE_URL: '',
   BACKEND_LOGIN_URL: '/login',
   BACKEND_REGISTER_URL: '/register',
-  BACKEND_ZONES_URL: '../../assets/dummy/full/zones_dummy.json',
+  BACKEND_ZONES_URL: '../assets/dummy/full/zones_dummy.json',
   BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json',
   BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '../../assets/dummy/large-establishments_zones_activity_dummy.json',
   BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-search-large-establishments_dummy.json',
