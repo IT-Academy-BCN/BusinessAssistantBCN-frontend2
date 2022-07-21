@@ -5,6 +5,8 @@ import { MyEnvironmentSearchComponent } from './pages/my-environment-search/my-e
 import { MyEnvironmentResultComponent } from './pages/my-environment-result/my-environment-result.component';
 import { MatButtonModule } from '@angular/material/button';
 import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
+import { BabcnComponentsModule } from 'src/app/shared/components/babcn-components.module';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -17,7 +19,11 @@ import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.modul
   imports: [
     CommonModule,
     MatButtonModule,
-    I18TranslateModule
+    MatGridListModule,
+    I18TranslateModule,
+
+    // BABCN COMPONENTS
+    BabcnComponentsModule
   ]
 })
 export class MyEnvironmentModule { }
