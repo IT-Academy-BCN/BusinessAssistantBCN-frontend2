@@ -56,11 +56,6 @@ ngOnInit(): void {
   onClickButtonMyEnvironment = () => {
     this.router.navigate(['my-environment']);
   }
-
-  img(){
-    console.log(this.image1);
-  }
-
   
 
   ngOnDestroy(): void {

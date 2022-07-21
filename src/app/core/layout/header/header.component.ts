@@ -48,7 +48,9 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleTitle() {
-    this.title = this.title === 'inactive' ? 'active' : 'inactive';
+    // animacion deshabilitada de cara a la presentación del 28/07/2022
+    // para volver a habilitar la animacion, desenmudecer la siguiente sentencia:
+    // this.title = this.title === 'inactive' ? 'active' : 'inactive';
   }
 
   goToLink(num: number) {
