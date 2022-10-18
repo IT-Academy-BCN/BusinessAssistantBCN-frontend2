@@ -1,0 +1,35 @@
+@import '../../../../../styles/global';
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:100px 0px;
+}
+
+
+
+form {
+    width: 30%;
+    padding: 30px;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.button-position {
+    display: flex;
+    justify-content: end;
+}
+
+button {
+  background-color: $color-dark2;
+}

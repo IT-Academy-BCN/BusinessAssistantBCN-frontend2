@@ -24,14 +24,14 @@
         <!-- Primary Button -->
         <button mat-raised-button [disabled]="mainButtonDisabled" [color]="mainButtonColor"
             (click)="onMainButtonClick()">
-            {{ mainButtonText }}
+            {{ mainButtonText | translate }}
         </button>
 
         <!-- Secondary Button -->
         <ng-container *ngIf="buttonsContainerTotalButtons > 1">
             <button mat-raised-button [disabled]="secondaryButtonDisabled" [color]="secondaryButtonColor"
                 (click)="onSecondaryButtonClick()">
-                {{ secondaryButtonText }}
+                {{ secondaryButtonText | translate }}
             </button>
         </ng-container>
 
@@ -39,7 +39,7 @@
         <ng-container *ngIf="buttonsContainerTotalButtons == 3">
             <button mat-raised-button [disabled]="extraButtonDisabled" [color]="extraButtonColor"
                 (click)="onExtraButtonClick()">
-                {{ extraButtonText }}
+                {{ extraButtonText | translate }}
             </button>
         </ng-container>
 

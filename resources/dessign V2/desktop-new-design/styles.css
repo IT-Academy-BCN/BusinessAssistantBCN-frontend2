@@ -1,0 +1,582 @@
+.bg-pink {
+    background-color: pink;
+}
+
+/* ******************************************GLOBAL */
+
+.shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.127), 0 6px 6px rgba(0, 0, 0, 0.127);
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+
+/* flex */
+
+.disp-flex {
+    display: flex;
+}
+
+.just-center {
+    justify-content: center;
+}
+.just-space-bet {
+    justify-content: space-between;
+}
+
+.just-space-ar {
+  justify-content: space-evenly;
+}
+
+.just-right {
+    justify-content: right;
+}
+
+.align-center {
+    align-items: center;
+}
+
+
+
+
+
+
+
+/* ************************************************* */
+
+ul, p {
+    padding:0;
+    margin:0;
+}
+
+.intro {
+    padding:100px;
+}
+
+.header-1{
+    font-size: 2rem;
+    color:white;
+    font-weight: 500;
+    padding:20px 50px;
+}
+
+.header-2{
+    font-size:5rem;
+    font-weight: 600;
+    color:white;
+    margin:0;
+    padding:50px;
+}
+
+
+
+
+/* menu */
+
+nav {
+  background-color: white;
+}
+
+.menu {
+    margin:0 auto;
+    padding:0 auto;
+    max-width:1400px;
+}
+
+.menu .logo {
+    font-weight:bolder;
+    font-size: 1.4rem;
+    padding:0;
+    color:var(--color-black)
+}
+
+.menu .logo span{
+    color:var(--color-dark2)
+}
+
+.menu li{
+    margin: 0 20px;
+    padding:30px 20px;
+    font-weight: 500;
+    color:var(--color-gray);
+}
+
+li:hover {
+    color:var(--color-dark2);
+    cursor: pointer;
+}
+
+
+
+/* header */
+
+
+
+header {
+    background-image: url(src/header-light.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+    position:relative;
+}
+
+.deg {
+    width: 100%;
+    height: 100%;
+    background: #F1F2B5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var( --color-medium), #f1f2b52d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--color-medium), #f1f2b525); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.lang {
+    width:50px;
+    right: 0;;
+}
+
+.lang-item {
+    margin: 10px 0 10px 0;
+    background-color: var(--color-white);
+    padding:8px;
+    border-radius: 3px 0 0 3px;
+    cursor: pointer;
+    transition: all .5s ease-out;
+
+}
+
+.lang-item:hover {
+    background-color: black;
+    color:white;
+}
+
+
+.text-intro{
+    text-align: left;
+    font-size:1.5rem;
+    color:white;
+    max-width: 800px;
+    font-weight: 400;
+    line-height: 3rem;
+    margin:50px;
+}
+
+
+.buttons-header {
+    max-width: 900px;
+    padding:30px  0px 30px 50px;
+
+}
+
+
+.btn1 {
+    padding: 15px 30PX;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color:white;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+    background-color: rgba(0, 0, 0, 0.161);
+}
+
+.btn1:hover {
+    background-color: var(--color-black);
+}
+
+
+
+.buttons-header .btn1 {
+    width: 44%;
+}
+
+/* :nth-child() */
+.buttons-header .btn1:first-child {
+    margin-right: 6%;
+
+}
+
+
+/* *********************************************elements */
+
+/* fonts */
+
+.tit-1{
+    font-size: 3rem;
+    font-weight: 500;
+    color:var(--color-black);
+    padding:30px 0px;
+}
+
+.line {
+    width:300px;
+    background-color: var(--color-dark2);
+    border:none;
+    height: 2px;
+}
+
+
+
+p {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+    max-width:1300px;
+    color:rgba(0, 0, 0, 0.645);
+    margin-top: 50px;
+
+}
+
+
+.btn2 {
+    text-decoration: none;
+    padding: 15px 30PX;
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color:black;
+    color:white;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+    transition: all 0.5s ease-out;
+}
+
+
+.btn2:hover {
+    background-color: var(--color-dark1);
+}
+
+
+
+
+/* *******************************************main */
+
+
+.main {
+    padding:200px 0px 100px 0px;
+}
+/* icons */
+
+.icons {
+    padding:150px 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    /***********************/
+    opacity: 0;
+    transform: translateY(0px);
+    transition: 1s ease-in-out all;
+}
+
+.icons .icon {
+    flex-direction:column;
+    align-items: center;
+    max-width: 350px;
+    text-align: center;
+    padding:50px;
+    border: 1px solid rgba(128, 128, 128, 0.38);
+}
+
+.icons .icon p {
+    font-size: 1.2rem;
+    line-height: 2;
+    font-weight: bold;
+}
+
+.icons svg {
+    width: 45px;
+    color:var(--color-dark2);
+}
+
+.calendar {
+    border:1px solid var(--color-dark2);
+    padding:15px 17px;
+    border-radius:50px;
+}
+
+.calendar svg {
+    width: 30px;
+}
+
+
+.prix {
+    border:1px solid var(--color-dark2);
+    padding:15px;
+    border-radius:50px;
+}
+
+.prix, .people {
+    border:1px solid var(--color-dark2);
+    padding:15px 12px;
+    border-radius:50px;
+}
+
+.prix svg {
+    width: 32px;
+}
+
+.people svg {
+    width: 40px;
+}
+
+
+/* **************************************parallax */
+
+
+
+.container-plx{
+    padding:150px 0px;
+    background-color: var(--color-graylight);
+}
+
+
+.container-image {
+    width: 45%;
+}
+
+
+.container-text {
+    padding:50px 0;
+    max-width: 600px;
+}
+
+
+
+
+.image-backbround1{
+    height: 70vh;
+    background-size:120%;
+    background-position:top;
+    background-image:url(src/piggybank-CBbxr3Jg-vert.jpg);
+}
+
+.image-backbround2{
+    height: 70vh;
+    background-size:160%;
+    background-image:url(src/architecture.jpg);
+}
+
+
+
+.separation{
+    width: 10%;
+}
+
+.opc-text {
+    font-size: 3rem;
+    font-weight: 500;
+    color:rgba(0, 0, 0, 0.802);
+}
+
+.container-text .btn2 {
+    margin-top:100px;
+}
+
+
+footer {
+    height: 500px;
+    background-color: var(--color-black);
+    margin:0;
+}
+
+footer h2 {
+    margin:0;
+}
+
+
+/* ********************************visible */
+
+.bottom-a {
+    transform: translateY(200px);
+}
+.left-a{
+    transform: translateX(200px);
+}
+
+.img-a{
+    transform: translateX(-100px);
+}
+
+.visible {
+    opacity: 1;
+    transform:translateX(0);
+}
+
+
+/* ****************************************assistencia */
+
+
+.main2{
+    background: var(--color-graylight);
+    background: -webkit-linear-gradient(to right, var( --color-graylight))var(--color-light1), ;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--color-graylight), var( --color-light1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-bottom:150px;
+}
+
+.wrapp-content h2{
+    margin:0;
+    color:var(--color-gray)
+}
+
+.wrapp-content {
+    padding: 0;
+}
+
+.wrapp-content p {
+    margin: 0;
+}
+
+
+
+
+.wrapp-content{
+    margin-left:auto;
+    margin-right: auto;
+    padding:100px;
+    max-width: 1600px;
+}
+
+
+.column {
+    margin-top:50px;
+    width:48%;
+}
+
+.wrapp-content p{
+    margin-top: 20px;
+    
+}
+
+.wrapp-items{
+    display: grid;
+    gap:4px;
+    font-weight: 500;
+    color:var(--color-gray);
+    max-width: 1400px;
+}
+
+
+
+.wrapp-items >*{
+    background-color:var(--color-white);
+    font-size: 1.3rem;
+    padding:25px;
+    padding-left:10%;
+    transition: all .2s ease-out
+}
+
+
+.item:hover {
+    cursor:pointer;
+    color:var(--color-graylight);
+    background-color: var(--color-black);
+
+}
+
+
+
+.result {
+    background-color: white;
+    padding:30px;
+    position:relative;
+}
+
+
+.btn-result{
+    position: absolute;
+    bottom:0;
+    right: 0;
+}
+
+.btn-result a {
+    margin:30px;
+}
+
+/* ******************************************meuentorn */
+
+.wrapp-meuentorn {
+  background-color: var(--color-graylight);
+  height: 800px;
+}
+
+
+.main3 {
+  margin-top: 100px;
+  height: 500px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapp-meuentorn .row-1 {
+  margin-bottom: 100px;
+}
+
+
+
+
+svg {
+  fill:var(--color-dark2);
+  height: 50px;
+}
+
+.grans-establiments, 
+.galeries-comercials,
+.centres-comercials
+{
+  width: 30%;
+  background-color: white;
+  flex-direction: column;
+  text-align: center;
+  padding-top:30px;
+  cursor:pointer;
+  border-radius: 5px;
+  
+}
+
+.grans-establiments:hover, 
+.galeries-comercials:hover,
+.centres-comercials:hover {
+  background-color: black;
+  color:var(--color-graylight);
+}
+
+.row-1 {
+  font-size: 1.2rem;
+  line-height: 2;
+  font-weight: bold;
+  color: var(--color-gray);
+
+}
+
+
+.image-backbround3{
+  width: 100%;
+  height: 80vh;
+  background-image:url(src/shopping-arcade-geb40d51e8_1920.jpg);
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+

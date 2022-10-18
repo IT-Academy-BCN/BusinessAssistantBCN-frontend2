@@ -191,7 +191,11 @@
             "public-market": "Mercados Municipales",
             "market-fair": "Mercados y Ferias",
             "save-results": "Guardar resultados",
-            "download-results": "Descargar resultados"
+            "download-results": "Descargar resultados",
+            "login": "Login",
+            "logout": "Logout",
+            "register": "Registrarse",
+            "see-summary": "Ver resumen"
         },
         "title": {
             "results": "Resultados"

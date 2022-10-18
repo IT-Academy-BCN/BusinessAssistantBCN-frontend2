@@ -1,1 +1,33 @@
-<p>my-environment-search works!</p>
+<section>
+    <div class="main-container">
+        <!-- babcn-TITLE -->
+        <babcn-title [titleInput]='title'></babcn-title>
+        <!-- END babcn-TITLE -->
+
+        <button mat-button (click)="goToResult()" >Result</button>
+
+        <!-- MAT GRID LIST -->
+        <mat-grid-list [cols]="breakpoint" rowHeight="450px">
+
+            <mat-grid-tile>
+
+                <!-- babcn-CONTAINER -->
+                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                </babcn-container>
+                <!-- END babcn-CONTAINER -->
+
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+
+                <!-- babcn-CONTAINER -->
+                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                </babcn-container>
+                <!-- END babcn-CONTAINER -->
+
+            </mat-grid-tile>
+
+        </mat-grid-list>
+        <!-- END MAT GRID LIST -->
+    </div>
+</section>

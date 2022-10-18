@@ -1,1 +1,39 @@
-<p>my-environment-page works!</p>
+<section>
+  <div class="main-container">
+      <!-- babcn-TITLE -->
+      <babcn-title titleInput='common.button.my-enviroment'></babcn-title>
+      <!-- END babcn-TITLE -->
+
+      <div class="grid-env">
+  
+        <div id="environment" class="environment shadow disp-flex flex-col just-center align-center" 
+            [class] = "getClassHover()"
+            [ngClass]="{
+                        'width-small': size == 'Small',
+                        'width-xsmall': size == 'XSmall'
+                      }" 
+            *ngFor="let button of buttons; let i=index "
+            (click)="goToSearch(i)">
+      
+          
+          <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="iconsList[i].viewbox">
+            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path [attr.d]= "iconsList[i].icon"/>
+          </svg>
+          
+            <div >
+              <a >{{button | translate}}</a>
+            </div>
+        
+          </div>
+          
+        </div>
+  </div>
+</section>
+
+  
+
+
+<div class="parallax" *ngIf ="size === 'Large' || size === 'XLarge' || size === 'Medium'"></div>
+
+<div class="img-shopping"  *ngIf ="size === 'Small' || size === 'XSmall'"></div>

@@ -66,7 +66,7 @@ export class BabcnBaseContainerComponent implements OnInit {
     }
   }
 
-  /** Returns the height of the main div 'component-container'. */
+  /** Returns the width of the main div 'component-container'. */
   get getContainerWidth(): string {
     return this.containerWidth;
   }

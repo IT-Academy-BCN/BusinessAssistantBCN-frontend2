@@ -1,0 +1,67 @@
+<mat-grid-list [cols]="breakpoint" [rowHeight]="ratio">
+ 
+    <!-- ABOUT -->
+    <mat-grid-tile >
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <a routerLink='' routerLinkActive="active" aria-current="page">
+                <h5 class="fs-5 fc-white">{{'components.footer.section1.title' | translate}}</h5>
+            </a>
+            <ul class="footer-list fs-6">
+                <li><a class="nav-link" routerLink=''>{{'components.footer.section1.item1' |
+                    translate}}</a>
+                </li>
+            </ul>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- CONTACT -->
+    <mat-grid-tile >
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <a routerLink='' routerLinkActive="active" aria-current="page">
+                <h5 class="fs-5 fc-white">{{'components.footer.section2.title' | translate}}</h5>
+            </a>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- RESOURCES -->
+    <mat-grid-tile >
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <a routerLink='' routerLinkActive="active" aria-current="page">
+                <h5 class="fs-5 fc-white">{{'components.footer.section3.title' | translate}}</h5>                
+            </a>
+            <ul class="footer-list fs-6">
+                <li>
+                    <a class="nav-link" routerLink=''>{{'components.footer.section3.item1' | translate}}</a>
+                </li>
+            </ul>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- LEGAL -->
+    <mat-grid-tile [rowspan]="2">
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <a routerLink='' routerLinkActive="active" aria-current="page">
+                <h5 class="fs-5 fc-white">{{'components.footer.section4.title' | translate}}</h5>
+            </a>
+            <ul class="footer-list fs-6">                    
+                <li>
+                      <a class="nav-link" routerLink=''>{{'components.footer.section4.item1' | translate}}</a>
+                 </li>
+            </ul>
+            <ul class="footer-list fs-6">
+                <li>
+                    <a class="nav-link" routerLink=''>{{'components.footer.section4.item2' | translate}}</a>
+                </li>
+            </ul>
+        </babcn-container>
+    </mat-grid-tile>
+
+    <!-- FOLLOW US -->
+    <mat-grid-tile>
+        <babcn-container vaStyle="transparent" containerWidth="100%" containerHeight="70%">
+            <a routerLink='' routerLinkActive="active" aria-current="page">
+                <h5 class="fs-5 fc-white">{{'components.footer.section5.title' | translate}}</h5>
+            </a>
+        </babcn-container>
+    </mat-grid-tile>
+</mat-grid-list>

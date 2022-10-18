@@ -1,0 +1,124 @@
+@import './vars';
+
+@mixin titles(){
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+@mixin texts($font-color:$color-gray, $t-align:center, $f-size:1.2rem){
+  color:$font-color;
+  text-align: $t-align;
+  font-size: $f-size;
+  line-height: 2.5rem;
+  font-weight: 500;
+  max-width:1300px;
+}
+
+@mixin btn($bg-color:$color-dark3, $t-color:$color-light0){
+    cursor:pointer;
+    text-decoration: none;
+    padding: 20px 50PX;
+    display: inline-block;
+    border-radius: 5px;
+    background-color:$bg-color;
+    color:$t-color;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+    transition: all 0.5s ease-out;
+    border:none;
+    &:hover{
+      background-color: transparent;
+      border:1px solid $bg-color;
+      color: $bg-color;
+    }
+
+}
+
+
+
+
+
+// clases /////////////////////////////////////
+
+
+
+.shadow {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.127), 0 6px 6px rgba(0, 0, 0, 0.127);
+}
+
+.line {
+  width:300px;
+  background-color: $color-dark2;
+  border:none;
+  height: 3px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+// fonts
+
+.title1 {
+  @include titles();
+}
+
+
+.text-left{
+  @include texts($color-gray,left);
+}
+.text-center{
+  @include texts();
+}
+
+.text-right{
+  @include texts($color-gray,right);
+}
+
+
+
+//buttons
+
+.btn-dark {
+  @include btn();
+
+}
+
+
+
+// flex
+
+.disp-flex {
+  display: flex;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.just-space-bet {
+  justify-content: space-between;
+}
+
+.just-space-ar {
+justify-content: space-evenly;
+}
+
+.just-right {
+  justify-content: right;
+}
+
+.align-center {
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+

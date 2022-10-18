@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+/*********** variables */
+/*
+colors.
+#fdcb6e
+#00cec9 ---mandarin sorbet
+#ffda79  -----spicebutternut
+#ffb142
+#218c74----- verde palm
+*/
+
+
+:root {
+    --color-light1:#f4e5c1;
+    --color-light2:#69a5a6;
+    --color-medium:#499090;
+    --color-dark1:#135058;
+    --color-dark2:#ffb142;
+    --color-gray:rgba(0, 0, 0, 0.645);
+    --color-graylight:#eae9e6;/*hotstone*/
+    --color-black:black;
+    --color-white:white;
+    --font-main:'Montserrat', sans-serif;
+
+}
+
+
+img, picture, iframe {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    display: block;
+}
+
+p a {
+    display: inline;
+}
+
+li {
+    list-style-type: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+svg {
+    width: 100%;
+    display: block;
+    fill:currentColor;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i , b, u, em{
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color:inherit;
+}
+
+body {
+    margin:0;
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--font-main);
+    color:var(--color-gray);
+    line-height: 1.4em;
+}
+

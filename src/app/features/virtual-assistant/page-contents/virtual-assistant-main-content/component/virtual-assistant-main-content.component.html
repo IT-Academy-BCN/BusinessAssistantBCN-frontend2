@@ -1,48 +1,54 @@
-<!-- SHOWCASE only for developers  -->
-<!-- unmute it to see -->
-<babcn-showcase></babcn-showcase>
-<!-- END SHOWCASE only for developers -->
-
 <!-- MAIN-CONTENT -->
-<div class="container mb-5 pb-3">
-    <h4 class="m-3 fw-bold"> Virtual Assistant </h4>
-    <div class="row">
+<section class="main">
+    <div class="main-container">
+        
+        <!-- babcn-TITLE -->
+        <babcn-title titleInput='common.button.assistant'></babcn-title>
+        <!-- END babcn-TITLE -->
 
-        <div class="col-12 col-md-6 mb-5">
+        <!-- MAT GRID LIST -->
+        <mat-grid-list [cols]="breakpoint" rowHeight="450px">
 
-            <!-- babcn-CONTAINER -->
-            <babcn-container [containerHeight]="'395px'">
+            <mat-grid-tile>
 
-                <!-- babcn-ACCORDION -->
-                <babcn-accordion [accordionDataInput]="dataSourceCategory"
-                    (accordionDataOutput)="getDataFromAccordion($event)">
-                </babcn-accordion>
-                <!-- END babcn-ACCORDION -->
+                <!-- babcn-CONTAINER -->
+                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()'>
 
-            </babcn-container>
-            <!-- END babcn-CONTAINER -->
+                    <!-- babcn-ACCORDION -->
+                    <babcn-accordion [accordionDataInput]="dataSourceCategory"
+                        (accordionDataOutput)="getDataFromAccordion($event)">
+                    </babcn-accordion>
+                    <!-- END babcn-ACCORDION -->
 
-        </div>
+                </babcn-container>
+                <!-- END babcn-CONTAINER -->
 
-        <div class="col-12 col-md-6">
+            </mat-grid-tile>
 
-            <!-- babcn-BUTTONS-CONTAINER -->
-            <babcn-buttons-container [containerHeight]="'395px'" vaStyle="theme"
-                mainButtonText="{{ 'common.button.save' }}" [mainButtonFunction]="onClickSaveButton"
-                secondaryButtonText="Ver Resumen" [secondaryButtonFunction]="onClickResumeButton">
+            <mat-grid-tile>
 
-                <!-- babcn-LIST -->
-                <babcn-list [listDataInput]="dataShared"></babcn-list>
-                <!-- END babcn-LIST -->
+                <!-- babcn-BUTTONS-CONTAINER -->
+                <babcn-buttons-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme"
+                    mainButtonText='common.button.save'
+                    mainButtonColor="primary" [mainButtonFunction]="onClickSaveButton"
+                    secondaryButtonText='common.button.see-summary' [secondaryButtonFunction]="onClickResumeButton">
 
-                <!-- babcn-TREE -->
-                <babcn-tree [treeDataInput]="dataSourceCategory"></babcn-tree>
-                <!-- END babcn-TREE -->
+                    <!-- babcn-LIST -->
+                    <babcn-list [listDataInput]="dataShared"></babcn-list>
+                    <!-- END babcn-LIST -->
 
-            </babcn-buttons-container>
-            <!-- END babcn-BUTTONS-CONTAINER -->
+                    <!-- babcn-TREE -->
+                    <babcn-tree [treeDataInput]="dataSourceCategory"></babcn-tree>
+                    <!-- END babcn-TREE -->
 
-        </div>
+                </babcn-buttons-container>
+                <!-- END babcn-BUTTONS-CONTAINER -->
+
+            </mat-grid-tile>
+
+        </mat-grid-list>
+        <!-- END MAT GRID LIST -->
+
     </div>
-</div>
+</section>
 <!-- END MAIN-CONTENT -->

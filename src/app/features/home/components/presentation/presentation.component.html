@@ -1,0 +1,81 @@
+
+<div class="wrapp-options">
+
+  <div class="wrapp-plx disp-flex">
+
+    <div id="img-a" class="container-image">
+      <div id="image1" class="image-background image-background1" #asImage1></div>
+    </div> 
+
+    <div class="wrapp-text">
+      <h2 class="title1"> {{'common.button.assistant' | translate }}</h2>
+      <hr align="left" class="line">
+      <p class="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis beatae accusamus aut molestiae dignissimos ut suscipit.</p>
+      <button class="btn-dark btn-opc" (click)="onClickButtonVirtualAssistantButton()">{{'common.button.assistant' | translate |uppercase }}</button>
+    </div>
+
+  </div>
+
+
+
+  <div class="wrapp-options">
+    <div class="wrapp-plx disp-flex just-right ¡">
+
+      <div class="wrapp-text align-right">
+        <h2 class="title1">  {{'common.button.my-enviroment' | translate }}</h2>
+        <hr align="right" class="line">
+        <p class="text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis beatae accusamus aut molestiae dignissimos ut suscipit.</p>
+        <button class="btn-dark btn-opc"   (click)="onClickButtonMyEnvironment()"> {{'common.button.my-enviroment' | translate | uppercase}}</button>
+      </div>
+
+      <div id="img-a" class="container-image disp-flex just-right">
+        <div id="image1" class="image-background image-background2" #asImage2></div>
+      </div> 
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <div class="main-container">
+
+    <div class="main-content">
+
+        <div class="img-presentation virtual-assistant"></div>
+
+        <babcn-buttons-container vaStyle="transparent" buttonsContainerBackgroundColor="transparent"
+            containerWidth="100%" [buttonsContainerTotalButtons]="1"
+            mainButtonText="{{ 'common.button.assistant' | translate |  uppercase}}" mainButtonColor="accent"
+            [mainButtonFunction]="onClickButtonVirtualAssistantButton">
+            <babcn-title titleInput='common.button.assistant'></babcn-title>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aspernatur modi labore odit recusandae
+                doloremque quibusdam iusto soluta ipsa quos earum quidem voluptatibus, sequi, doloribus voluptate, fugit
+                a!
+                Repellendus, iste.</p>
+        </babcn-buttons-container>
+
+    </div>
+
+    <div class="main-content">
+
+        <div class="img-presentation my-enviroment"></div>
+
+        <babcn-buttons-container vaStyle="transparent" buttonsContainerBackgroundColor="transparent"
+            containerWidth="100%" [buttonsContainerTotalButtons]="1"
+            mainButtonText="{{ 'common.button.my-enviroment' | translate |  uppercase}}" mainButtonColor="accent"
+            [mainButtonFunction]="onClickButtonMyEnvironment">
+            <babcn-title titleInput='common.button.my-enviroment'></babcn-title>
+            <br>
+            <br>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores aspernatur modi labore odit recusandae
+                doloremque quibusdam iusto soluta ipsa quos earum quidem voluptatibus, sequi, doloribus voluptate, fugit
+                a!
+                Repellendus, iste.</p>
+        </babcn-buttons-container>
+
+    </div>
+
+</div> -->

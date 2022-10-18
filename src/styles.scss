@@ -3,6 +3,7 @@
 @import "styles/button";
 @import "styles/cards";
 @import "styles/checkbox";
+@import "styles/container";
 @import "styles/data";
 @import "styles/font-color";
 @import "styles/font-size";
@@ -10,13 +11,14 @@
 @import "styles/form";
 @import "styles/input";
 @import "styles/mapbox";
+@import "styles/material";
 @import "styles/modal";
 @import "styles/navbar";
 @import "styles/text";
 @import "styles/virtual-container";
-@import "styles/background-color";
+@import "styles/global";
 
 // add here new styles.scss
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Montserrat", sans-serif !important; }
