@@ -1,4 +1,6 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
+
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { LanguageChangerComponent } from './language-changer.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -16,13 +18,12 @@ describe('LanguageChangerComponent', () => {
       declarations: [ LanguageChangerComponent ],
       imports: [
         I18TranslateModule,
-        MatButtonToggleModule
+        MatButtonToggleModule,
+        HttpClientTestingModule 
       ],
       providers: [
           TranslateService,
           TranslateStore,
-          HttpClient,
-          HttpHandler
       ]
     })
     .compileComponents();
