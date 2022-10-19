@@ -1,6 +1,7 @@
 // ANGULAR CORE & COMMON
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {TranslateModule} from '@ngx-translate/core';
 
 // DIRECTIVE: OBSERVER-INTERSECTION
 import { ObserverIntersectionDirective } from './directives/observer-interceptor.directive';
@@ -11,10 +12,12 @@ import { ObserverIntersectionDirective } from './directives/observer-interceptor
     ObserverIntersectionDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   exports: [
-    ObserverIntersectionDirective
+    ObserverIntersectionDirective,
+    TranslateModule
   ]
 })
 export class SharedModule { }
