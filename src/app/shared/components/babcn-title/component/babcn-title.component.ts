@@ -1,5 +1,6 @@
 // ANGULAR CORE
 import { Component, Input } from '@angular/core';
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'babcn-title',
@@ -12,5 +13,5 @@ export class BabcnTitleComponent {
   @Input('titleInput') titleInput: string = '';
 
   // Not delete this empty constructor to make implementations easier to understand.
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 }

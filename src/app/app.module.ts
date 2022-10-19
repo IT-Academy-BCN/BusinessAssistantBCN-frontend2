@@ -59,7 +59,7 @@ import { CoreModule } from './core/core.module';
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    // TranslateModule
+     TranslateModule
   ]
 })
 export class AppModule { }
