@@ -80,7 +80,7 @@ describe("HeaderComponent", () => {
       expect(app.title).toEqual("inactive")
     })
     it("Menu should be declared", () => {
-      expect(app.menu).toBe(false)
+      expect(app.menu).toBe(true)
     })
   })
 

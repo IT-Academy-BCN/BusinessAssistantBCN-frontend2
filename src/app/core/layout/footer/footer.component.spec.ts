@@ -70,7 +70,7 @@ describe("FooterComponent", () => {
   it('should recive the currentScreenSize value in the constructor, getCurrentScreenSize()', () => { 
     const screenSize = spyOn(breakpointService, "getCurrentScreenSize");
     screenSize.and.returnValue('Medium');
-    expect(footer.breakpoint).toEqual(4);
+    expect(footer.breakpoint).toEqual(2);
     expect(footer.ratio).toEqual("150px"); 
   })
 
