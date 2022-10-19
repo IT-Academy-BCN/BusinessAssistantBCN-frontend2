@@ -19,7 +19,7 @@ export let zoomTitle =
             width: '100%',
             fontSize: '200%',
             marginTop: '-90px',
-            transform: 'translate(-50px,50vh)',
+            transform: '(-50px,50vh)',
                 
         })),
 
