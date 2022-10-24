@@ -24,7 +24,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div *ngIf="municipalMarkets || marketFairs" class="d-grid gap-2 d-md-flex justify-content-md-end pt-4">
+                        <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="d-grid gap-2 d-md-flex justify-content-md-end pt-4">
                             <button (click)="search()"
                                     routerLink="my-environment-search-detail"
                                     class="search-button"
@@ -40,10 +40,12 @@
 
 
             
+          
             <mat-grid-tile>
 
+    
                 <!-- babcn-CONTAINER -->
-                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                <babcn-container *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'" containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
                     <h2 class=" title-right ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
                         <div class="p-3 border bg-light card-contents">
                             <div class="data">
@@ -66,14 +68,15 @@
                                         class="search-button"
                                         type="submit">
                                     {{'common.button.search' | translate}}
+                                  
                                 </button>
                             </div>
             </div>
                 </babcn-container>
+         
                 <!-- END babcn-CONTAINER -->
-
+          
             </mat-grid-tile>
-    
 
         </mat-grid-list>
         <!-- END MAT GRID LIST -->
