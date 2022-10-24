@@ -20,17 +20,10 @@ export class MyEnvironmentSearchComponent implements OnInit {
   // Responsive Breakpoint
   breakpoint: number | string | "Unknown";
   ratio: string | number;
-
-
-  largeStablishments:boolean = false;
-  municipalMarkets:boolean = false;
-  commercialGalleries:boolean = false;
-  marketFairs:boolean = false;
-  bigMalls:boolean = false;
   
   zones:ZoneModel[] = []; //zones will store all the available zones before any selection
   activities:EconomicActivityModel[] =[]; //activities will store all the available economic activities before any selection
-  currentBusiness:Subscription | null = null;
+//  currentBusiness:Subscription | null = null;
   environments:Subscription | null = null;
   activitiesSub:Subscription | null= null;
   zonesSub:Subscription | null= null;
