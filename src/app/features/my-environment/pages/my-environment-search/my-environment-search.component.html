@@ -4,7 +4,7 @@
         <babcn-title [titleInput]='title'></babcn-title>
         <!-- END babcn-TITLE -->
 
-        <button mat-button (click)="goToResult()" >Result</button>
+        
 
         <!-- MAT GRID LIST -->
         <mat-grid-list [cols]="breakpoint" rowHeight="450px">
@@ -13,21 +13,70 @@
 
                 <!-- babcn-CONTAINER -->
                 <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                    <h2 class=" ps-5 pt-4 fw-bold mb-3 title-left">{{'pages.big-stablish.section1.title'| translate}}
+                    </h2>
+                    <div class="p-3 ms-8 border bg-light card-contents">
+                        <div class="" *ngFor="let zone of zones">
+                            <div class="form-check">
+                                <label class="form-check-label" >
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [checked]="false" (change)="checkZones(zone, $event.target)">
+                                    {{ zone.zoneName }}
+                                </label>
+                            </div>
+                        </div>
+                        <div *ngIf="municipalMarkets || marketFairs" class="d-grid gap-2 d-md-flex justify-content-md-end pt-4">
+                            <button (click)="search()"
+                                    routerLink="my-environment-search-detail"
+                                    class="search-button"
+                                    type="submit">
+                                {{'common.button.search' | translate}}
+                            </button>
+                        </div>
+                    </div>
                 </babcn-container>
                 <!-- END babcn-CONTAINER -->
 
             </mat-grid-tile>
 
+
+            
             <mat-grid-tile>
 
                 <!-- babcn-CONTAINER -->
                 <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                    <h2 class=" title-right ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
+                        <div class="p-3 border bg-light card-contents">
+                            <div class="data">
+                                <div *ngFor="let activity of activities; let i = index" >
+                                    <div class="form-check">
+                                        <label class="form-check-label" >
+                                            <input class="form-check-input"
+                                                type="checkbox"
+                                                value=""
+                                                [checked]="false"
+                                            (change)="checkActivities(activity,$event.target)">
+                                            {{ activity.activityName }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-4">
+                                <button (click)="search()"
+                                        routerLink="my-environment-search-detail"
+                                        class="search-button"
+                                        type="submit">
+                                    {{'common.button.search' | translate}}
+                                </button>
+                            </div>
+            </div>
                 </babcn-container>
                 <!-- END babcn-CONTAINER -->
 
             </mat-grid-tile>
+    
 
         </mat-grid-list>
         <!-- END MAT GRID LIST -->
+        <button mat-button (click)="goToResult()" >Result</button>
     </div>
 </section>

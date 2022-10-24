@@ -16,8 +16,11 @@ export const environment = {
   //fake dummy
   BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS: '../../assets/dummy/large_establishments_fake_filtered_results.json',
   BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS: '../assets/dummy/big-malls_fake_filtered_results.json',
+  BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS: '../assets/dummy/municipal-markets_fake_filtered_results.json',
+  BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS: '../assets/dummy/market-fairs_fake_filtered_results.json',
   //mapbox
   MAPBOX_TOKEN: 'pk.eyJ1IjoianZyZnJlZWxhbmNlZGV2ZWxvcGVyIiwiYSI6ImNreTl4czUzMTAwNGQydnFsdmRhYXRvbDUifQ.TVL-2T184QdfXbze6VNw4A',
   MAPBOX_ZOOM: 8,
-  MAPBOX_STYLE: 'mapbox://styles/mapbox/streets-v11'
+  MAPBOX_STYLE: 'mapbox://styles/mapbox/streets-v11',
+  BACKEND_COMMERCIAL_GALLERIES:'../../assets/dummy/full/commercial-galleries_dummy.json',
 };
