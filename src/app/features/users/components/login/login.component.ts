@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +8,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
 
-  form: FormGroup
-  constructor(private build: FormBuilder) {
+  form: UntypedFormGroup
+  constructor(private build: UntypedFormBuilder) {
     this.form = this.build.group({
       usuario: ['', Validators.required],
       contrasena: ['', [Validators.required, Validators.minLength(8)]],
     })
   }
 
-  sendForm(value : FormGroup){
+  sendForm(value : UntypedFormGroup){
     console.log(value)
   }
 
