@@ -58,6 +58,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
     this.getAllActivities() //gets all the activities available from the common service
     this.getAllZones() //gets all the zones available from the common service
 
+
   }
 
   goToResult() {
@@ -89,6 +90,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
   getAllZones(){
     this.zonesSub=this.commonService.getZones().subscribe(response=>{
       this.zones=response.results;
+
     })
   }
 
