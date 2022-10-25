@@ -7,19 +7,15 @@
         
 
         <!-- MAT GRID LIST -->
-        <mat-grid-list [cols]="breakpoint" rowHeight="450px">
+        <mat-grid-list [cols]="breakpoint" rowHeight="550px">
 
             <mat-grid-tile>
                 <div class="container">
-
                     <section>
                         <h2 class=" ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section1.title'| translate}}
                         </h2>
                     </section>
-
-
                  <!-- babcn-CONTAINER -->
-               
                 <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
                     
                     <div class="p-3 ms-8 border bg-light card-contents">
@@ -31,17 +27,21 @@
                                 </label>
                             </div>
                         </div>
-                        <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="d-grid gap-2 d-md-flex justify-content-md-end pt-4">
-                            <button (click)="search()"
-                                    routerLink="my-environment-search-detail"
-                                    class="search-button"
-                                    type="submit">
-                                {{'common.button.search' | translate}}
-                            </button>
-                        </div>
                     </div>
                 </babcn-container>
                 <!-- END babcn-CONTAINER -->
+                <section>
+                    <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="search">
+                        <button (click)="search()"
+                                routerLink="my-environment-search-detail"
+                                class="search-button"
+                                type="submit">
+                            {{'common.button.search' | translate}}
+                        </button>
+                    </div>
+                </section>
+
+             
             </div>
             </mat-grid-tile>
 
@@ -52,11 +52,9 @@
 
                 <div  *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'" class="container">
                 
-                <section>
-                    <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
-                </section>
-                
-
+                    <section>
+                        <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
+                    </section>
 
                <!-- babcn-CONTAINER -->
                 <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
@@ -71,19 +69,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-4">
-                                <button (click)="search()"
-                                        routerLink="my-environment-search-detail"
-                                        class="search-button"
-                                        type="submit">
-                                    {{'common.button.search' | translate}}
-                                  
-                                </button>
-                            </div>
+                            
                         </div>
                 </babcn-container>
             <!-- END babcn-CONTAINER -->
-         
+                
+                    <div class="search">
+                        <button (click)="search()"
+                                routerLink="my-environment-search-detail"
+                                class="search-button"
+                                type="submit">
+                            {{'common.button.search' | translate}}
+                          
+                        </button>
+                    </div>
+             
                 
             </div>
             </mat-grid-tile>
