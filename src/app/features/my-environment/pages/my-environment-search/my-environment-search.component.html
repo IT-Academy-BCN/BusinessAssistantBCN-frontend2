@@ -26,7 +26,7 @@
                         <div class="" *ngFor="let zone of zones">
                             <div class="form-check">
                                 <label class="form-check-label" >
-                                    <mat-checkbox class="form-check-input" [checked]="zone.zoneName" (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>
+                                    <mat-checkbox class="form-check-input"  (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>
         
                                 </label>
                             </div>
@@ -65,7 +65,7 @@
                                 <div *ngFor="let activity of activities; let i = index" >
                                     <div class="form-check">
                                         <label class="form-check-label" >
-                                            <mat-checkbox class="form-check-input" [checked]="activity.activityName" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
+                                            <mat-checkbox class="form-check-input" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
                         
                                         </label>
                                     </div>
