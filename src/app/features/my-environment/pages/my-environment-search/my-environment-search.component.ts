@@ -47,6 +47,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.myEnvSrv.title;
+    console.log(this.title,"my title")
     this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
@@ -55,7 +56,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
         }
       });
     });
-    this.getAllActivities() //gets all the activities available from the common service
+    this.getAllActivities(this.title) //gets all the activities available from the common service
     this.getAllZones() //gets all the zones available from the common service
 
 
@@ -94,8 +95,8 @@ export class MyEnvironmentSearchComponent implements OnInit {
     })
   }
 
-  getAllActivities(){
-    this.activitiesSub=this.commonService.getEconomicActivities().subscribe(response=>{
+  getAllActivities(category: string){
+    this.activitiesSub=this.commonService.getEconomicActivities(category).subscribe(response=>{
       this.activities=response.results;
     })
   }

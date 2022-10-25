@@ -37,9 +37,18 @@ export class CommonService {
       });
   }
 
-  getEconomicActivities(): Observable<any> {
+  getEconomicActivities(category:string): Observable<any> {
+
+    const {BACKEND_BIG_MALLS_ACTIVITIES_URL, BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL, BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL } = environment;
+
+    let activitiesUrl ='';
+
+    category == 'common.button.mall' ? activitiesUrl = BACKEND_BIG_MALLS_ACTIVITIES_URL :
+    category == 'common.button.gallery-market' ? activitiesUrl = BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL :
+    category == 'common.button.big-stablish' ? activitiesUrl = BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL : ''
+
     return this.http.get(
-      `${ environment.BACKEND_BASE_URL }${ environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL }`,
+      `${ environment.BACKEND_BASE_URL }${ activitiesUrl }`,
       {
         headers: {
           'Content-Type': 'application/json'
