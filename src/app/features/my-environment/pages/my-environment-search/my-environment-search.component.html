@@ -10,11 +10,18 @@
         <mat-grid-list [cols]="breakpoint" rowHeight="450px">
 
             <mat-grid-tile>
+                <div class="container">
 
-                <!-- babcn-CONTAINER -->
+                    <section>
+                        <h2 class=" ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section1.title'| translate}}
+                        </h2>
+                    </section>
+
+
+                 <!-- babcn-CONTAINER -->
+               
                 <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
-                    <h2 class=" ps-5 pt-4 fw-bold mb-3 title-left">{{'pages.big-stablish.section1.title'| translate}}
-                    </h2>
+                    
                     <div class="p-3 ms-8 border bg-light card-contents">
                         <div class="" *ngFor="let zone of zones">
                             <div class="form-check">
@@ -35,7 +42,7 @@
                     </div>
                 </babcn-container>
                 <!-- END babcn-CONTAINER -->
-
+            </div>
             </mat-grid-tile>
 
 
@@ -43,10 +50,16 @@
 
             <mat-grid-tile>
 
-    
-                <!-- babcn-CONTAINER -->
-                <babcn-container *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'" containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
-                    <h2 class=" title-right ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
+                <div  *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'" class="container">
+                
+                <section>
+                    <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
+                </section>
+                
+
+
+               <!-- babcn-CONTAINER -->
+                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
                         <div class="p-3 border bg-light card-contents">
                             <div class="data">
                                 <div *ngFor="let activity of activities; let i = index" >
@@ -67,11 +80,12 @@
                                   
                                 </button>
                             </div>
-            </div>
+                        </div>
                 </babcn-container>
+            <!-- END babcn-CONTAINER -->
          
-                <!-- END babcn-CONTAINER -->
-          
+                
+            </div>
             </mat-grid-tile>
 
         </mat-grid-list>
