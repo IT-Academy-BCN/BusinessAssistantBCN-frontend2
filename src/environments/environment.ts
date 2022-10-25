@@ -9,6 +9,8 @@ export const environment = {
   BACKEND_REGISTER_URL: '/register',
   BACKEND_ZONES_URL: '../../assets/dummy/full/zones_dummy.json',
   BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json',
+  BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json',
+  BACKEND_BIG_MALLS_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json',
   BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '../../assets/dummy/large-establishments_zones_activity_dummy.json',
   BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-search-large-establishments_dummy.json',
   BACKEND_BIG_MALLS_URL: '../assets/dummy/full/big-malls_dummy.json',
