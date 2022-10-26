@@ -32,7 +32,7 @@
                 <!-- END babcn-CONTAINER -->
                 <section>
                     <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="search">
-                        <button mat-raised-button color="accent"
+                        <button mat-raised-button color="warn" mat-raised-button color="accent"
                                 (click)="goToResult()"
                                 routerLink="my-environment-search-detail"
                                 type="submit">
@@ -75,8 +75,12 @@
             <!-- END babcn-CONTAINER -->
                 
                     <div class="search">
+<<<<<<< HEAD
                         <button mat-raised-button color="accent" 
                                 (click)="goToResult()"
+=======
+                        <button mat-raised-button color="warn" (click)="search()"
+>>>>>>> 3f9c9eba7dbe95346ec85ee3d463eb586012046f
                                 routerLink="my-environment-search-detail"
                                 type="submit">
                             {{'common.button.search' | translate}}
