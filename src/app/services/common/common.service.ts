@@ -18,7 +18,7 @@ export class CommonService {
 
   zones:ZoneModel[]=[];
   activities:EconomicActivityModel[]=[]
-  API_ENDPOINT:string = '../../assets/dummy/full/'
+  //API_ENDPOINT:string = '../../assets/dummy/full/'
   results = new Subject<BasicBusinessModel[]>()
   currentBusiness =  new BehaviorSubject<string>('');
   businessModel:string=''
@@ -38,22 +38,45 @@ export class CommonService {
   }
 
   getEconomicActivities(category:string): Observable<any> {
+    
+    
+    const activityEndPoint=[
+      {establishment :'common.button.mall', endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL},
+      {establishment :'common.button.gallery-market', endPointActivity:environment.BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL},
+      {establishment :'common.button.big-stablish', endPointActivity:environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL}
+    ]
 
-    const {BACKEND_BIG_MALLS_ACTIVITIES_URL, BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL, BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL } = environment;
-
-    let activitiesUrl ='';
-
-    category == 'common.button.mall' ? activitiesUrl = BACKEND_BIG_MALLS_ACTIVITIES_URL :
-    category == 'common.button.gallery-market' ? activitiesUrl = BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL :
-    category == 'common.button.big-stablish' ? activitiesUrl = BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL : ''
+    let endPoint=activityEndPoint.find(item=> item.establishment==category)
+    if (endPoint==undefined) endPoint={establishment:'',endPointActivity:''}    
+  
 
     return this.http.get(
-      `${ environment.BACKEND_BASE_URL }${ activitiesUrl }`,
+      `${ environment.BACKEND_BASE_URL }${endPoint.endPointActivity}`,
       {
         headers: {
           'Content-Type': 'application/json'
         }
       });
+    
+  }
+
+
+
+    // const {BACKEND_BIG_MALLS_ACTIVITIES_URL, BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL, BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL } = environment;
+
+    // let activitiesUrl ='';
+
+    // category == 'common.button.mall' ? activitiesUrl = BACKEND_BIG_MALLS_ACTIVITIES_URL :
+    // category == 'common.button.gallery-market' ? activitiesUrl = BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL :
+    // category == 'common.button.big-stablish' ? activitiesUrl = BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL : ''
+
+    // return this.http.get(
+    //   `${ environment.BACKEND_BASE_URL }${ activitiesUrl }`,
+    //   {
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   });
   }
 
   // getEnvironments(){
@@ -82,4 +105,4 @@ export class CommonService {
 
   // }
 
-}
+
