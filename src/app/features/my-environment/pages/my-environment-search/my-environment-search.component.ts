@@ -47,7 +47,6 @@ export class MyEnvironmentSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.myEnvSrv.title;
-    console.log(this.title,"my title")
     this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
