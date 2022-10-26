@@ -56,30 +56,30 @@ export class CommonService {
       });
   }
 
-  getEnvironments(){
-    let params = new HttpParams();
+  // getEnvironments(){
+  //   let params = new HttpParams();
 
-    params = params.append('zones', JSON.stringify(this.zones))
+  //   params = params.append('zones', JSON.stringify(this.zones))
 
-    params = params.append('activities', JSON.stringify(this.activities));
-    //return this.http.get<T>(`${this.API_ENDPOINT}${businessModel}_dummy.json`,{params:params});
+  //   params = params.append('activities', JSON.stringify(this.activities));
+  //   //return this.http.get<T>(`${this.API_ENDPOINT}${businessModel}_dummy.json`,{params:params});
 
 
-    switch (this.businessModel){
-      case 'large-establishments':
-        return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
-      case 'commercial-galleries':
-        return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES}`,{params})
-      case 'big-malls':
-        return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
-      case 'municipal-markets':
-        return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
-      case 'market-fairs':
-        return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
-      default:
-        return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
-    }
+  //   switch (this.businessModel){
+  //     case 'large-establishments':
+  //       return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
+  //     case 'commercial-galleries':
+  //       return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES}`,{params})
+  //     case 'big-malls':
+  //       return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
+  //     case 'municipal-markets':
+  //       return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
+  //     case 'market-fairs':
+  //       return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
+  //     default:
+  //       return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
+  //   }
 
-  }
+  // }
 
 }

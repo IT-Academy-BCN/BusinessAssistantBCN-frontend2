@@ -101,12 +101,13 @@ export class MyEnvironmentSearchComponent implements OnInit {
     })
   }
 
-  search(){
-    this.environments=this.commonService.getEnvironments().subscribe((response:any)=>{
-      this.commonService.results.next(response.results)
-      console.log(response.results)
-    });
-  }
+  // search(){
+  //   this.environments=this.commonService.getEnvironments().subscribe((response:any)=>{
+  //     this.commonService.results.next(response.results)
+  //     console.log(response.results)
+  //   });
+
+  // }
 
 
 
