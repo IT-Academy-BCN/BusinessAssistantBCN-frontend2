@@ -4,6 +4,7 @@ import { MyEnvironmentPageComponent } from './pages/my-environment-page/my-envir
 import { MyEnvironmentSearchComponent } from './pages/my-environment-search/my-environment-search.component';
 import { MyEnvironmentResultComponent } from './pages/my-environment-result/my-environment-result.component';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
 import { BabcnComponentsModule } from 'src/app/shared/components/babcn-components.module';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -23,7 +24,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
     I18TranslateModule,
 
     // BABCN COMPONENTS
-    BabcnComponentsModule
+    BabcnComponentsModule,
+    MatCheckboxModule
+  ],
+  exports: [
+    
   ]
 })
 export class MyEnvironmentModule { }
