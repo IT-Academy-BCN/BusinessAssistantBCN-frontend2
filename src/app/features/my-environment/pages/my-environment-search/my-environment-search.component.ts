@@ -68,20 +68,20 @@ export class MyEnvironmentSearchComponent implements OnInit {
   checkZones(zoneSelected: ZoneModel, event: any) {
     if (event.checked) {
       //Adds the selected zone to the array zones in the common service to use it there as parameter
-      this.commonService.zones.push(zoneSelected);
+      this.myEnvSrv.selectedZones.push(zoneSelected);
     } else {
       //removes the zone if it is already in the common service array
-      this.commonService.zones.splice(this.commonService.zones.indexOf(zoneSelected),1);
+      this.myEnvSrv.selectedZones.splice(this.myEnvSrv.selectedZones.indexOf(zoneSelected),1);
     }
   }
 
   checkActivities(activitySelected: EconomicActivityModel, event: any) {
     if (event.checked) {
       //Adds the selected activity to the array zones in the common service to use it there as parameter
-      this.commonService.activities.push(activitySelected);
+      this.myEnvSrv.selectedActivities.push(activitySelected);
     } else {
       //removes the selected if it is already in the common service array
-      this.commonService.activities.splice(this.commonService.activities.indexOf(activitySelected),1);
+      this.myEnvSrv.selectedActivities.splice(this.myEnvSrv.selectedActivities.indexOf(activitySelected),1);
     }
   }
 
