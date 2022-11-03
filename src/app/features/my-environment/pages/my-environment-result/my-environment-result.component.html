@@ -1,1 +1,19 @@
-<p>my-environment-result works!</p>
+<div
+class="d-flex flex-column mb-4"
+*ngFor="let ls of businessModelsArray"
+>
+<h5 class="details">{{ ls.name }}</h5>
+<ul class="result-container list-unstyled" *ngFor="let address of ls.addresses">
+  <!--*ngFor must be added!-->
+  <li *ngIf="address.street_name">
+    {{ address.street_name }}, {{ address.street_number }}
+  </li>
+  <li *ngIf="address.town">
+    {{ address.zip_code }} {{ address.town }}
+  </li>
+  <li *ngIf="ls.email">Email: {{ ls.email }}</li>
+  <li *ngIf="ls.web">Web: {{ ls.web }}</li>
+  <li *ngIf="ls.phone">Tel.:{{ ls.phone }}</li>
+  <li></li>
+</ul>
+</div>

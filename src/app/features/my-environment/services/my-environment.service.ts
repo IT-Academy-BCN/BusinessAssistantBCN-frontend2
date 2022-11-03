@@ -5,6 +5,8 @@ import { EconomicActivityModel } from './../../../shared/models/common/economic-
 import { ZoneModel } from './../../../shared/models/common/zone.interface';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import {environment} from "../../../../environments/environment";
+import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
+import { Subject } from 'rxjs';
 
 
 
@@ -15,7 +17,9 @@ export class MyEnvironmentService {
 
   selectedZones: ZoneModel[] = [];
   selectedActivities: EconomicActivityModel[] = [];
+  results = new Subject<BasicBusinessModel[]>()
 
+  
   constructor(private http: HttpClient) { }
 
 
@@ -47,22 +51,27 @@ export class MyEnvironmentService {
   getResults(businessModel: string){
 
     let params = new HttpParams();
+   
 
     params = params.append('zones', JSON.stringify(this.selectedZones))
+    
 
-    params = params.append('activities', JSON.stringify(this.selectedActivities));
+    params = params.append('activities', JSON.stringify(this.selectedActivities));     
+    
+
     //return this.http.get<T>(`${this.API_ENDPOINT}${businessModel}_dummy.json`,{params:params});
+
     switch (businessModel){
       case 'common.button.mall':
         return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
       case 'common.button.gallery-market':
-        return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES}`,{params})
+        return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES_FAKE_FILTERED_RESULTS}`,{params})
       case 'common.button.big-stablish':
         return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
       case 'common.button.market-fair':
-        return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
-      case 'common.button.public-market':
         return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
+      case 'common.button.public-market':
+        return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
       default:
         return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
     }
