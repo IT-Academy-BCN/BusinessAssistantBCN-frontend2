@@ -54,7 +54,7 @@ export class MapboxComponent implements AfterViewInit {
 
       // Create a marker for each result and add it to the map
 
-       if(result && this.coordinatesAreValid(result)) this.createANewMarker("orange", result);
+       if(this.coordinatesAreValid(result)) this.createANewMarker("orange", result);
     });
   }
 
@@ -143,8 +143,18 @@ export class MapboxComponent implements AfterViewInit {
 
   coordinatesAreValid(business:BasicBusinessModel){
 
-    const location = business!.addresses[0].location;
+    const location = business!.addresses[0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
 
-    return [ Number(location.x), Number(location.y)].every(c=> c >=-90 && c <=90)  
+    let valid = false;
+
+    switch (format) {
+
+      case 'GCS':{ valid = [location.x, location.y].every(c=>Math.abs(Number(c))<=90);  break; }        
+    
+    }
+
+    if(!valid) console.log('ERROR - incorrect coordinates format - ' + business.name + '');    
+
+    return valid
   }
 }
