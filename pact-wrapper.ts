@@ -6,7 +6,7 @@ export class PactWrapper {
 
     constructor(uniqueNameOfMyProvider: string) {
         this.provider = new Pact({
-            port: 8181,
+            //port: 8181,
             log: path.resolve(process.cwd(), 'pacts', 'logs', 'pact.log'),
             dir: path.resolve(process.cwd(), 'pacts'),
             spec: 3,
