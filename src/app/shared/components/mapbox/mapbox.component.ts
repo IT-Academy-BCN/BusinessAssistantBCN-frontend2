@@ -49,9 +49,12 @@ export class MapboxComponent implements AfterViewInit {
   }
 
   ngOnChanges() {
-    this.filteredResultsToPrintOnMap.forEach((result) => {
+
+   (this.filteredResultsToPrintOnMap || []).forEach((result) => {
+
       // Create a marker for each result and add it to the map
-      this.createANewMarker("orange", result);
+
+       if(result && this.coordinatesAreValid(result)) this.createANewMarker("orange", result);
     });
   }
 
@@ -65,10 +68,11 @@ export class MapboxComponent implements AfterViewInit {
       container: this.mapDivElement.nativeElement,
       style: environment.MAPBOX_STYLE,
       center: [this.MAPBOX_INIT_LOCATION.addresses[0].location.x, this.MAPBOX_INIT_LOCATION.addresses[0].location.y], // starting center so it doesn't start from Germany
-      zoom: environment.MAPBOX_ZOOM
+      zoom: environment.MAPBOX_ZOOM, 
+      maxZoom: 18
     });
 
-    this.map.addControl(new NavigationControl());
+    this.map.addControl(new NavigationControl({showZoom:true}));
 
     // Add geolocate control to the map.
     this.map.addControl(
@@ -83,7 +87,7 @@ export class MapboxComponent implements AfterViewInit {
 
   // Function to create a single marker (with the marker's colour and the business (or user's coords) as parameters)
   createANewMarker(markerColor: string, business?: BasicBusinessModel, coord?: GeolocationCoordinates): void {
-
+ 
     // Create a popup with the business's basic information
     const popup = new Popup().setHTML(
       `<b>${business?.name}</b> </br> ${business?.addresses[0].street_name} , ${business?.addresses[0].street_number}`
@@ -95,11 +99,15 @@ export class MapboxComponent implements AfterViewInit {
         .addTo(this.map);
       this.currentMarkers.push(newIndividualMarker);
     } else { // If user hasn't accepted to share their location OR when iterating through the filteredResultsToPrintOnMap array.
-      const newIndividualMarker = new Marker({ color: markerColor })
+
+   
+        const newIndividualMarker = new Marker({ color: markerColor })
         .setLngLat([business!.addresses[0].location.x, business!.addresses[0].location.y])
         .setPopup(popup)
         .addTo(this.map);
-      this.currentMarkers.push(newIndividualMarker);
+        this.currentMarkers.push(newIndividualMarker);
+    
+      
     }
 
     // MAP LÍMITS
@@ -122,6 +130,7 @@ export class MapboxComponent implements AfterViewInit {
       (pos) => {
         // this.map.flyTo({ center: [pos.coords.longitude, pos.coords.latitude], zoom: 11 })
         this.createANewMarker("green", undefined, pos.coords);
+        
       },
       // Error callback function (if user hasn't accepted to share their location)
       () => {
@@ -130,5 +139,12 @@ export class MapboxComponent implements AfterViewInit {
         this.createANewMarker("red", this.MAPBOX_INIT_LOCATION);
       }
     );
+  }
+
+  coordinatesAreValid(business:BasicBusinessModel){
+
+    const location = business!.addresses[0].location;
+
+    return [ Number(location.x), Number(location.y)].every(c=> c >=-90 && c <=90)  
   }
 }
