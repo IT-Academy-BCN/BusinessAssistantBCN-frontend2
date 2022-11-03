@@ -2,7 +2,6 @@
 const esModules = ['@angular', '@ngrx', 'd3'];
 
 module.exports = {
-    // [...]
     extensionsToTreatAsEsm: ['.ts'],
     globals: {
         'ts-jest': {
