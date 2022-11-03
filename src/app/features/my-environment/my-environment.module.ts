@@ -8,6 +8,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
 import { BabcnComponentsModule } from 'src/app/shared/components/babcn-components.module';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MapboxComponent } from 'src/app/shared/components/mapbox/mapbox.component';
 
 
 
@@ -15,7 +16,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
   declarations: [
     MyEnvironmentPageComponent,
     MyEnvironmentSearchComponent,
-    MyEnvironmentResultComponent
+    MyEnvironmentResultComponent,
+    MapboxComponent
   ],
   imports: [
     CommonModule,
