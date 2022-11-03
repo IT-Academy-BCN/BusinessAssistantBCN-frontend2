@@ -149,7 +149,7 @@ export class MapboxComponent implements AfterViewInit {
 
     switch (format) {
 
-      case 'GCS':{ valid = [location.x, location.y].every(c=>Math.abs(Number(c))<=90);  break; }        
+      case 'GCS':{ valid = [location.x, location.y].every(c=>Math.abs(c)<=90);  break; }        
     
     }
 
