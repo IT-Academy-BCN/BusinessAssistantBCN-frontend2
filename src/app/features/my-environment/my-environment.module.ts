@@ -8,6 +8,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
 import { BabcnComponentsModule } from 'src/app/shared/components/babcn-components.module';
 import { MatGridListModule } from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
+
 
 
 
@@ -22,6 +24,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatButtonModule,
     MatGridListModule,
     I18TranslateModule,
+    MatListModule,
 
     // BABCN COMPONENTS
     BabcnComponentsModule,
