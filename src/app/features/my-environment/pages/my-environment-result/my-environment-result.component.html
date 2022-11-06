@@ -2,59 +2,44 @@
   <mat-grid-list [cols]="breakpoint" rowHeight="550px">
     <mat-grid-tile>
       <div class="container">
-        <div class="col-12 col-sm-6 m-5 me-0 ms-3 results-card">
-          <div class="p-3 ms-8 border bg-light">
-            <h2 class="ps-5 pt-4 fw-bold mb-3">
-              {{ "common.title.results" | translate }}
-            </h2>
-            <div class="data" *ngIf="true" id="pdfData">
-              <div
-                class="d-flex flex-column mb-4"
-                *ngFor="let ls of businessModels"
-              >
-                <h5 class="details">{{ ls.name }}</h5>
-                <mat-list  class="result-container list-unstyled" *ngFor="let address of ls.addresses">
-                  <!--*ngFor must be added!-->
-                  <mat-list-item *ngIf="address.street_name">
-                    {{ address.street_name }}, {{ address.street_number }}
-                  </mat-list-item>
-                  <mat-list-item *ngIf="address.town">
-                    {{ address.zip_code }} {{ address.town }}
-                  </mat-list-item>
-                  <mat-list-item *ngIf="ls.email">Email: {{ ls.email }}</mat-list-item>
-                  <mat-list-item *ngIf="ls.web">Web: {{ ls.web }}</mat-list-item>
-                  <li *ngIf="ls.phone">Tel.:{{ ls.phone }}</li>
-                  <mat-list-item></mat-list-item>
-                </mat-list >
-              </div>
-            </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button mat-raised-button color="accent" style="background: #2c5e8f"
-                class="btn btn-lg me-md-2 mt-4 me-4 justify-content-center text-white fw-bolder rounded-0"
-                type="button">
-                {{ "common.button.save-results" | translate }}
-              </button>
-              <div class="dropdown">
-                <button mat-raised-button color="accent" style="background: #5cb85c"
-                  class="btn btn-lg me-md-2 mt-4 me-4 justify-content-center text-white fw-bolder rounded-0 dropdown-toggle"
-                  type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  {{ "common.button.download-results" | translate }}
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li>
-                    <a class="dropdown-item"
-                      >{{"pages.big-stablish-detail.dropdown.download"|translate}}</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item"
-                    >{{"pages.big-stablish-detail.dropdown.open"|translate}}</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div class=" results-card">
+          <div class="bg-light">
+    <h2 >
+      
+      {{ "common.title.results" | translate }}
+    </h2>
+    <div class="data" *ngIf="true" id="pdfData">
+      <div
+      *ngFor="let ls of businessModelsArray"
+      >
+      <h5 class="details">{{ ls.name }}</h5>
+      <mat-list class="result-container list-unstyled" *ngFor="let address of ls.addresses">
+        <!--*ngFor must be added!-->
+        <mat-list-item *ngIf="address.street_name">
+          {{ address.street_name }}, {{ address.street_number }}
+        </mat-list-item>
+        <mat-list-item *ngIf="address.town">
+          {{ address.zip_code }} {{ address.town }}
+        </mat-list-item>
+        <mat-list-item *ngIf="ls.email">Email: {{ ls.email }}</mat-list-item>
+        <mat-list-item *ngIf="ls.web">Web: {{ ls.web }}</mat-list-item>
+        <mat-list-item *ngIf="ls.phone">Tel.:{{ ls.phone }}</mat-list-item>
+        <mat-list-item></mat-list-item>
+      </mat-list>
+      </div>
+    </div>
+    <button mat-raised-button color="accent" style="background: #2c5e8f; color: white">
+    {{ "common.button.save-results" | translate }}
+    </button>
+    <button mat-raised-button color="accent" style="background: #5cb85c; color: white"
+     id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    {{ "common.button.download-results" | translate }}
+    </button>
+
+
         </div>
       </div>
+    </div>
     </mat-grid-tile>
-</mat-grid-list>
+  </mat-grid-list>
 </babcn-container>

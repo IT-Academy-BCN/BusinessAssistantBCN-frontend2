@@ -62,7 +62,11 @@ export class MyEnvironmentSearchComponent implements OnInit {
   }
 
   goToResult() {
-    this.router.navigate(['my-environment-result']);
+    this.router.navigate(['my-environment-result'])
+    this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+      this.myEnvSrv.results.next(response.results)
+      console.log(response.results)
+    })
   }
 
   checkZones(zoneSelected: ZoneModel, event: any) {
@@ -100,13 +104,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
     })
   }
 
-  // search(){
-  //   this.environments=this.commonService.getEnvironments().subscribe((response:any)=>{
-  //     this.commonService.results.next(response.results)
-  //     console.log(response.results)
-  //   });
 
-  // }
 
 
 

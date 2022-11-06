@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
+import { Subscription } from 'rxjs';
+import { MyEnvironmentService } from '../../services/my-environment.service';
 
 @Component({
   selector: 'app-my-environment-result',
@@ -10,12 +12,15 @@ import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/compo
 })
 export class MyEnvironmentResultComponent implements OnInit {
 
-  businessModels: BasicBusinessModel[] = [];
 
   breakpoint: number | string | "Unknown";
   ratio: string | number;
 
-  constructor(private responsive: BreakpointService,) {
+  businessModelsArray: BasicBusinessModel[] = [];
+  modelsSub:Subscription | null = null;
+
+  constructor(private responsive: BreakpointService,
+    private myEnvSrv: MyEnvironmentService) {
     const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
@@ -28,38 +33,10 @@ export class MyEnvironmentResultComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.businessModels = [
-      {
-        name: "Compañia Roca Sanitario",
-        email: "infosan@roca.net",
-        web: "http://roca.es",
-        phone: null,
-        activities: [],
-      addresses: [{
-        district_id: "09",
-        location: {x: 2.199667, y: 41.4323},
-        street_name: "T Estadella",
-        street_number: "46*54",
-        town: "BARCELONA",
-        zip_code: "08030"
-      }]
-      },
-      {
-        name: "Compañia Roca Sanitario",
-        email: "infosan@roca.net",
-        web: "http://roca.es",
-        phone: null,
-        activities: [],
-      addresses: [{
-        district_id: "09",
-        location: {x: 2.199667, y: 41.4323},
-        street_name: "T Estadella",
-        street_number: "46*54",
-        town: "BARCELONA",
-        zip_code: "08030"
-      }]
-      }
-    ]
-  }
+    this.modelsSub=this.myEnvSrv.results.asObservable().subscribe((results:BasicBusinessModel[])=>{
+      this.businessModelsArray=results;
+      console.log(results, "new results")
+  })
 
+  }
 }

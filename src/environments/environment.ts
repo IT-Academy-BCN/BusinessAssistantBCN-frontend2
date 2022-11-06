@@ -20,6 +20,7 @@ export const environment = {
   BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS: '../assets/dummy/big-malls_fake_filtered_results.json',
   BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS: '../assets/dummy/municipal-markets_fake_filtered_results.json',
   BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS: '../assets/dummy/market-fairs_fake_filtered_results.json',
+  BACKEND_COMMERCIAL_GALLERIES_FAKE_FILTERED_RESULTS:'../../assets/dummy/full/commercial-galleries_dummy.json',
   //mapbox
   MAPBOX_TOKEN: 'pk.eyJ1IjoianZyZnJlZWxhbmNlZGV2ZWxvcGVyIiwiYSI6ImNreTl4czUzMTAwNGQydnFsdmRhYXRvbDUifQ.TVL-2T184QdfXbze6VNw4A',
   MAPBOX_ZOOM: 8,
