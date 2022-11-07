@@ -1,8 +1,10 @@
-<babcn-container class="main-container">
+
+
   <mat-grid-list [cols]="breakpoint" rowHeight="550px">
     <mat-grid-tile>
       <div class="container">
         <div class=" results-card">
+          <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
           <div class="bg-light">
     <h2 >
       
@@ -38,8 +40,28 @@
 
 
         </div>
+      </babcn-container>
+      </div>
+    </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <div class="container">
+        
+        <div class=" results-card">
+          <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+          <div class="bg-light">
+            <app-mapbox [filteredResultsToPrintOnMap]="results"></app-mapbox>
+        </div>
+        </babcn-container>
       </div>
     </div>
     </mat-grid-tile>
   </mat-grid-list>
-</babcn-container>
+
+
+
+
+
+
+

@@ -9,7 +9,7 @@ import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.modul
 import { BabcnComponentsModule } from 'src/app/shared/components/babcn-components.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
-
+import { MapboxComponent } from 'src/app/shared/components/mapbox/mapbox.component';
 
 
 
@@ -17,7 +17,8 @@ import {MatListModule} from '@angular/material/list';
   declarations: [
     MyEnvironmentPageComponent,
     MyEnvironmentSearchComponent,
-    MyEnvironmentResultComponent
+    MyEnvironmentResultComponent,
+    MapboxComponent
   ],
   imports: [
     CommonModule,

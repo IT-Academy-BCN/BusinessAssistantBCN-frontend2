@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Subscription } from 'rxjs';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 
+
 @Component({
   selector: 'app-my-environment-result',
   templateUrl: './my-environment-result.component.html',
   styleUrls: ['./my-environment-result.component.scss']
 })
-export class MyEnvironmentResultComponent implements OnInit {
+export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
 
 
   breakpoint: number | string | "Unknown";
@@ -27,7 +29,7 @@ export class MyEnvironmentResultComponent implements OnInit {
       this.ratio = value[1];
     } else {
       this.breakpoint = 0;
-      this.ratio = "350px";
+      this.ratio = "150px";
     }
    }
 
@@ -35,8 +37,14 @@ export class MyEnvironmentResultComponent implements OnInit {
 
     this.modelsSub=this.myEnvSrv.results.asObservable().subscribe((results:BasicBusinessModel[])=>{
       this.businessModelsArray=results;
-      console.log(results, "new results")
   })
 
   }
+
+  results:BasicBusinessModel[] =[];
+  subscription!:Subscription;
+
+
+  ngOnDestroy(): void {  this.subscription ? this.subscription.unsubscribe():null  }
+
 }
