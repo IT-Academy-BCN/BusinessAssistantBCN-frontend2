@@ -7,6 +7,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import {environment} from "../../../../environments/environment";
 import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
 import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 
@@ -15,13 +16,13 @@ import { Subject } from 'rxjs';
 })
 export class MyEnvironmentService {
 
+  title: string = '';
   selectedZones: ZoneModel[] = [];
   selectedActivities: EconomicActivityModel[] = [];
   results = new Subject<BasicBusinessModel[]>()
 
   
   constructor(private http: HttpClient) { }
-
 
 //array icons  
 
@@ -52,14 +53,9 @@ export class MyEnvironmentService {
 
     let params = new HttpParams();
    
-
     params = params.append('zones', JSON.stringify(this.selectedZones))
     
-
     params = params.append('activities', JSON.stringify(this.selectedActivities));     
-    
-
-    //return this.http.get<T>(`${this.API_ENDPOINT}${businessModel}_dummy.json`,{params:params});
 
     switch (businessModel){
       case 'common.button.mall':
@@ -78,9 +74,26 @@ export class MyEnvironmentService {
 
   }
 
+  getEconomicActivities(category:string): Observable<any> {
+    
+    
+    const activityEndPoint=[
+      {establishment :'common.button.mall', endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL},
+      {establishment :'common.button.gallery-market', endPointActivity:environment.BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL},
+      {establishment :'common.button.big-stablish', endPointActivity:environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL}
+    ]
 
-  title: string = ''
+    let endPoint=activityEndPoint.find(item=> item.establishment==category)
+    if (endPoint==undefined) endPoint={establishment:'common.button.mall',endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL}    
   
 
+    return this.http.get(
+      `${ environment.BACKEND_BASE_URL }${endPoint.endPointActivity}`,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+  }
 
 }

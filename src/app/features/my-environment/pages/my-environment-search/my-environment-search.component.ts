@@ -23,7 +23,6 @@ export class MyEnvironmentSearchComponent implements OnInit {
   
   zones:ZoneModel[] = []; //zones will store all the available zones before any selection
   activities:EconomicActivityModel[] =[]; //activities will store all the available economic activities before any selection
-//  currentBusiness:Subscription | null = null;
   environments:Subscription | null = null;
   activitiesSub:Subscription | null= null;
   zonesSub:Subscription | null= null;
@@ -55,17 +54,16 @@ export class MyEnvironmentSearchComponent implements OnInit {
         }
       });
     });
-    this.getAllActivities(this.title) //gets all the activities available from the common service
-    this.getAllZones() //gets all the zones available from the common service
+    this.getAllActivities(this.title); //gets all the activities available from my environment service
+    this.getAllZones(); //gets all the zones available from the common service
 
 
   }
 
   goToResult() {
-    this.router.navigate(['my-environment-result'])
+    this.router.navigate(['my-environment-result']);
     this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
-      this.myEnvSrv.results.next(response.results)
-      console.log(response.results)
+      this.myEnvSrv.results.next(response.results);
     })
   }
 
@@ -94,18 +92,13 @@ export class MyEnvironmentSearchComponent implements OnInit {
   getAllZones(){
     this.zonesSub=this.commonService.getZones().subscribe(response=>{
       this.zones=response.results;
-
     })
   }
 
   getAllActivities(category: string){
-    this.activitiesSub=this.commonService.getEconomicActivities(category).subscribe(response=>{
+    this.activitiesSub=this.myEnvSrv.getEconomicActivities(category).subscribe(response=>{
       this.activities=response.results;
     })
   }
-
-
-
-
 
 }
