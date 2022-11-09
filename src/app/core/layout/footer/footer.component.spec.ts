@@ -65,7 +65,7 @@ describe("FooterComponent", () => {
 
 /* Comporobamos que las variables existen */
   it('should have variable called "breakpoint"', () => {
-    expect(footer.breakpoint).toBeTruthy();
+    expect(footer.breakpoint).toBeDefined();
   });
 
   it('should have variable called "ratio"', () => {

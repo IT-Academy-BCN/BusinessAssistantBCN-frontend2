@@ -91,7 +91,8 @@ let fixture: ComponentFixture<HeaderComponent>
       - Linux ok si valor esperado es true
       */
     it("Menu should be declared", () => {
-      expect(app.menu).toBe(true)
+
+      expect(app.menu).toBeDefined()
     })
 })
 
@@ -103,10 +104,10 @@ let fixture: ComponentFixture<HeaderComponent>
     })
 
     it("Should change the menu variable to true", () => {
-      //spyOnProperty(responsive, "breakpoint$").and.returnValue(of('Small'))
+      jest.spyOn(responsive, "breakpoint$", 'get').mockReturnValue(of('Small'))
 
-      const spy = jest.spyOn(responsive, 'getCurrentScreenSize');
-      responsive.getCurrentScreenSize();
+   /*    const spy = jest.spyOn(responsive, 'getCurrentScreenSize');
+      responsive.getCurrentScreenSize(); */
 
       app.ngOnInit()
       expect(app.menu).toBe(true);
