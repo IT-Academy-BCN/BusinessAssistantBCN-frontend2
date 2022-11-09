@@ -6,11 +6,11 @@ import { HomeComponent } from './home.component';
 describe('HomeComponent', () => {
 
 
-  test('',() => {
+/*   test('',() => {
     expect(true).toBe(true);
-  });
+  }); */
   
-  /*
+
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
@@ -37,5 +37,5 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });

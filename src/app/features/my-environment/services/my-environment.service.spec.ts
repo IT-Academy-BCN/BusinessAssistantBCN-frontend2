@@ -6,7 +6,7 @@ describe('MyEnvironmentService', () => {
   test('',() => {
     expect(true).toBe(true);
   });
-  /*
+
   let service: MyEnvironmentService;
 
   beforeEach(() => {
@@ -22,5 +22,5 @@ describe('MyEnvironmentService', () => {
     it('title should be declared', ()=>{
       expect(service.title).toBeDefined()
     })
-  })*/
+  })
 });

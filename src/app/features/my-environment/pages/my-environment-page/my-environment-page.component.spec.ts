@@ -8,18 +8,18 @@ import { MyEnvironmentSearchComponent } from '../my-environment-search/my-enviro
 
 import { MyEnvironmentPageComponent } from './my-environment-page.component';
 
-/*const routes: Routes = [
+const routes: Routes = [
   {path: 'my-environment-search', component: MyEnvironmentSearchComponent},
-];*/
+];
 
 
 describe('MyEnvironmentPageComponent', () => {
 
-  test('',() => {
+ /*  test('',() => {
     expect(true).toBe(true);
   });
+ */
 
-  /*
   let component: MyEnvironmentPageComponent;
   let fixture: ComponentFixture<MyEnvironmentPageComponent>;
   
@@ -92,5 +92,5 @@ describe('MyEnvironmentPageComponent', () => {
       expect(myEnvSrv.title).toBe('common.button.public-market')
     })
   })
-*/
+
 });

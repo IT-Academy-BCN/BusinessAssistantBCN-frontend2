@@ -1,17 +1,19 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyEnvironmentResultComponent } from './my-environment-result.component';
 
 describe('MyEnvironmentResultComponent', () => {
-  test('',() => {
+ /*  test('',() => {
     expect(true).toBe(true);
-  });
+  }); */
 
-  /*let component: MyEnvironmentResultComponent;
+let component: MyEnvironmentResultComponent;
   let fixture: ComponentFixture<MyEnvironmentResultComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ],
       declarations: [ MyEnvironmentResultComponent ]
     })
     .compileComponents();
@@ -25,5 +27,5 @@ describe('MyEnvironmentResultComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });

@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
-import { BreakpointService } from "../../../../services/shared/breakpoint/breakpoint.service";
+import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+
 import { InfoComponent } from './info.component';
 
 describe('InfoComponent', () => {
@@ -61,12 +62,12 @@ describe('InfoComponent', () => {
       expect(breakpoint.breakpoint$).toBeTruthy()
     })
     it('#ngOnInit should change the break variable',()=>{
-      spyOnProperty(breakpoint, 'breakpoint$').and.returnValue(of('XSmall','Small'))
+      jest.spyOn(breakpoint, 'breakpoint$', 'get').mockReturnValue(of('XSmall','Small'))
       component.ngOnInit()
       expect(component.break).toBe(1)
     })
     it('#ngOnInit should reset the break anb ratio variable',()=>{
-      spyOnProperty(breakpoint, 'breakpoint$').and.returnValue(of('Large', 'Medium', 'XLarge'))
+      jest.spyOn(breakpoint, 'breakpoint$' , 'get').mockReturnValue(of('Large', 'Medium', 'XLarge'))
       component.ngOnInit()
       expect(component.break).toBe(3)
       expect(component.ratio).toBe('350px')

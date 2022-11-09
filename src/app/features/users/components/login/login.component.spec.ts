@@ -6,11 +6,11 @@ import {from} from "rxjs";
 
 describe('LoginComponent', () => {
 
-  test('',() => {
+/*   test('',() => {
     expect(true).toBe(true);
   });
+ */
 
-  /*
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
@@ -32,5 +32,5 @@ describe('LoginComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });
