@@ -1,0 +1,88 @@
+<div class="container main-container">
+   
+        <div class="p-3 ms-8 border bg-light card-contents">
+          <h2 class=" ps-3 pt-4 fw-bold mb-3 title-left">
+            {{'components.saved-searches.title'| translate}}
+            <!-- Mis Búsquedas -->
+          </h2>
+ 
+            <table mat-table [dataSource]="savedSearchesData" class="mat-elevation-z8 demo-table">
+             
+              <ng-container matColumnDef="search-name">
+                <th mat-header-cell *matHeaderCellDef> {{'components.saved-searches.item-2'| translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.search_name}} </td>
+              </ng-container>
+            
+        
+              <ng-container matColumnDef="search-date">
+                <th mat-header-cell *matHeaderCellDef> {{'components.saved-searches.item-3'| translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.search_date}} </td>
+              </ng-container>
+            
+           
+              <ng-container matColumnDef="search-detail">
+                <th mat-header-cell *matHeaderCellDef> {{'components.saved-searches.item-4'| translate}} </th>
+                <td mat-cell *matCellDef="let element"> {{element.search_detail}} </td>
+              </ng-container>
+            
+            
+              <ng-container matColumnDef="search-button">
+                <th mat-header-cell *matHeaderCellDef>  </th>
+                <td mat-cell *matCellDef="let element"><button mat-raised-button color="primary" routerLink="/large-stablishments-detail">
+                  {{'components.saved-searches.item-1'| translate}}</button></td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          
+                     
+          <div *ngFor="let item of savedSearchesData">.
+          <mat-card>
+            <mat-grid-list [cols]="breakpoint" rowHeight="75px" (window:resize)="onResize($event)">
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div class="search-column">
+                <mat-card-subtitle>{{'components.saved-searches.item-2'| translate}}</mat-card-subtitle>
+                <mat-card-content>{{item.search_name}}</mat-card-content>
+              </div>
+              </mat-grid-tile>
+
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div>
+                <mat-card-subtitle>{{'components.saved-searches.item-3'| translate}}</mat-card-subtitle>
+                <mat-card-content>{{item.search_date}}</mat-card-content>
+              </div>
+              </mat-grid-tile>
+
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div>
+                <mat-card-subtitle>{{'components.saved-searches.item-4'| translate}}</mat-card-subtitle>
+                <mat-card-content>{{item.search_detail}}</mat-card-content>
+              </div>
+              </mat-grid-tile>
+
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div>
+                <button mat-raised-button color="primary" routerLink="/large-stablishments-detail">
+                  {{'components.saved-searches.item-1'| translate}}</button>
+              </div>
+              </mat-grid-tile>
+            </mat-grid-list>  
+          </mat-card>
+          </div>
+        
+        </div>
+  </div>
+
