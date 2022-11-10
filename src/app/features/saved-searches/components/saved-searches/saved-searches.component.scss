@@ -2,7 +2,15 @@ table {
     width: 100%;
   }
 
-  mat-grid-tile {
-    justify-content: flex-start;
+  mat-card {
+    margin: 1rem 0;
   }
+
+  @media (max-width: 576px) {
+
+    .card-column {
+      position: absolute;
+      left: 1rem;
+    }
+   }
 

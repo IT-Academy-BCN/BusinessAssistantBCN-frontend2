@@ -5,7 +5,6 @@ import { SavedSearchesComponent } from './components/saved-searches/saved-search
 import { I18TranslateModule } from './../../shared/translate/i18-translate.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -17,8 +16,7 @@ import {MatTableModule} from '@angular/material/table';
     I18TranslateModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule,
-    MatTableModule
+    MatGridListModule
   ]
 })
 export class SavedSearchesModule { }
