@@ -23,7 +23,6 @@ export class MyEnvironmentSearchComponent implements OnInit {
   
   zones:ZoneModel[] = []; //zones will store all the available zones before any selection
   activities:EconomicActivityModel[] =[]; //activities will store all the available economic activities before any selection
-//  currentBusiness:Subscription | null = null;
   environments:Subscription | null = null;
   activitiesSub:Subscription | null= null;
   zonesSub:Subscription | null= null;
@@ -55,33 +54,36 @@ export class MyEnvironmentSearchComponent implements OnInit {
         }
       });
     });
-    this.getAllActivities(this.title) //gets all the activities available from the common service
-    this.getAllZones() //gets all the zones available from the common service
+    this.getAllActivities(this.title); //gets all the activities available from my environment service
+    this.getAllZones(); //gets all the zones available from the common service
 
 
   }
 
   goToResult() {
     this.router.navigate(['my-environment-result']);
+    this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+      this.myEnvSrv.results.next(response.results);
+    })
   }
 
   checkZones(zoneSelected: ZoneModel, event: any) {
     if (event.checked) {
       //Adds the selected zone to the array zones in the common service to use it there as parameter
-      this.commonService.zones.push(zoneSelected);
+      this.myEnvSrv.selectedZones.push(zoneSelected);
     } else {
       //removes the zone if it is already in the common service array
-      this.commonService.zones.splice(this.commonService.zones.indexOf(zoneSelected),1);
+      this.myEnvSrv.selectedZones.splice(this.myEnvSrv.selectedZones.indexOf(zoneSelected),1);
     }
   }
 
   checkActivities(activitySelected: EconomicActivityModel, event: any) {
     if (event.checked) {
       //Adds the selected activity to the array zones in the common service to use it there as parameter
-      this.commonService.activities.push(activitySelected);
+      this.myEnvSrv.selectedActivities.push(activitySelected);
     } else {
       //removes the selected if it is already in the common service array
-      this.commonService.activities.splice(this.commonService.activities.indexOf(activitySelected),1);
+      this.myEnvSrv.selectedActivities.splice(this.myEnvSrv.selectedActivities.indexOf(activitySelected),1);
     }
   }
 
@@ -90,24 +92,13 @@ export class MyEnvironmentSearchComponent implements OnInit {
   getAllZones(){
     this.zonesSub=this.commonService.getZones().subscribe(response=>{
       this.zones=response.results;
-
     })
   }
 
   getAllActivities(category: string){
-    this.activitiesSub=this.commonService.getEconomicActivities(category).subscribe(response=>{
+    this.activitiesSub=this.myEnvSrv.getEconomicActivities(category).subscribe(response=>{
       this.activities=response.results;
     })
   }
-
-  // search(){
-  //   this.environments=this.commonService.getEnvironments().subscribe((response:any)=>{
-  //     this.commonService.results.next(response.results)
-  //     console.log(response.results)
-  //   });
-
-  // }
-
-
 
 }

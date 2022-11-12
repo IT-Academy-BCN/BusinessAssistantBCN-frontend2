@@ -1,8 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription, take } from 'rxjs';
+
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
-import { environment } from 'src/environments/environment';
+import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
+import { Subscription } from 'rxjs';
+import { MyEnvironmentService } from '../../services/my-environment.service';
+
 
 @Component({
   selector: 'app-my-environment-result',
@@ -12,24 +15,35 @@ import { environment } from 'src/environments/environment';
 export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
 
 
-  results:BasicBusinessModel[] =[];
-  subscription!:Subscription;
+  breakpoint: number | string | "Unknown";
+  ratio: string | number;
 
-  constructor(private http:HttpClient) { }
+  businessModelsArray: BasicBusinessModel[] = [];
+  modelsSub:Subscription | null = null;
+
+  constructor(private responsive: BreakpointService,
+    private myEnvSrv: MyEnvironmentService) {
+    const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
+    if (value != undefined) {
+      this.breakpoint = value[0];
+      this.ratio = value[1];
+    } else {
+      this.breakpoint = 0;
+      this.ratio = "150px";
+    }
+   }
 
   ngOnInit(): void {
 
-    this.subscription = this.getResults().subscribe((data:any)=>data ? this.results= (data.results as BasicBusinessModel[]):[])
+    this.modelsSub=this.myEnvSrv.results.asObservable().subscribe((results:BasicBusinessModel[])=>{
+      this.businessModelsArray=results;
+  })
+
   }
 
-  getResults(){
+  results:BasicBusinessModel[] =[];
+  subscription!:Subscription;
 
-    return this.http.get(
-      `${ environment.BACKEND_BASE_URL }${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,
-      {
-
-      }).pipe(take(1));
-  }
 
   ngOnDestroy(): void {  this.subscription ? this.subscription.unsubscribe():null  }
 

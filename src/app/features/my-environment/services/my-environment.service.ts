@@ -1,11 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Icons } from '../pages/my-environment-page/environment-models';
 
+import { EconomicActivityModel } from './../../../shared/models/common/economic-activity.interface';
+import { ZoneModel } from './../../../shared/models/common/zone.interface';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import {environment} from "../../../../environments/environment";
+import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
+import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyEnvironmentService {
+
+  title: string = '';
+  selectedZones: ZoneModel[] = [];
+  selectedActivities: EconomicActivityModel[] = [];
+  results = new Subject<BasicBusinessModel[]>()
+
+  
+  constructor(private http: HttpClient) { }
 
 //array icons  
 
@@ -32,8 +49,51 @@ export class MyEnvironmentService {
     }
   ]
 
+  getResults(businessModel: string){
 
-  title: string = ''
+    let params = new HttpParams();
+   
+    params = params.append('zones', JSON.stringify(this.selectedZones))
+    
+    params = params.append('activities', JSON.stringify(this.selectedActivities));     
+
+    switch (businessModel){
+      case 'common.button.mall':
+        return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
+      case 'common.button.gallery-market':
+        return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES_FAKE_FILTERED_RESULTS}`,{params})
+      case 'common.button.big-stablish':
+        return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
+      case 'common.button.market-fair':
+        return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
+      case 'common.button.public-market':
+        return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
+      default:
+        return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
+    }
+
+  }
+
+  getEconomicActivities(category:string): Observable<any> {
+    
+    
+    const activityEndPoint=[
+      {establishment :'common.button.mall', endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL},
+      {establishment :'common.button.gallery-market', endPointActivity:environment.BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL},
+      {establishment :'common.button.big-stablish', endPointActivity:environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL}
+    ]
+
+    let endPoint=activityEndPoint.find(item=> item.establishment==category)
+    if (endPoint==undefined) endPoint={establishment:'common.button.mall',endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL}    
   
-  constructor() { }
+
+    return this.http.get(
+      `${ environment.BACKEND_BASE_URL }${endPoint.endPointActivity}`,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+  }
+
 }
