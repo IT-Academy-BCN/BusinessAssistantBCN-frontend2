@@ -1,3 +1,4 @@
+import { SavedSearchesComponent } from './features/saved-searches/components/saved-searches/saved-searches.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/page/home.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'virtual-assistant', component: VirtualAssistantPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  { path: "saved-searches", component: SavedSearchesComponent },
 ];
 
 @NgModule({

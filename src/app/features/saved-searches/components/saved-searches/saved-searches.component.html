@@ -1,0 +1,55 @@
+<div class="container main-container">
+   
+        <div class="p-3 ms-8 border bg-light card-contents">
+          <h2 class=" ps-3 pt-4 fw-bold mb-3 title-left">
+            {{'components.saved-searches.title'| translate}}
+            <!-- Mis Búsquedas -->
+          </h2>           
+          <div *ngFor="let item of savedSearchesData">
+          <mat-card>
+            <mat-grid-list [cols]="breakpoint" rowHeight="75px" (window:resize)="onResize($event)">
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div class="card-column">
+                <mat-card-subtitle>{{'components.saved-searches.item-2'| translate}}</mat-card-subtitle>
+                <mat-card-content>{{item.search_name}}</mat-card-content>
+              </div>
+              </mat-grid-tile>
+
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div class="card-column">
+                <mat-card-subtitle>{{'components.saved-searches.item-3'| translate}}</mat-card-subtitle>
+                <mat-card-content>{{item.search_date}}</mat-card-content>
+              </div>
+              </mat-grid-tile>
+
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div class="card-column">
+                <mat-card-subtitle>{{'components.saved-searches.item-4'| translate}}</mat-card-subtitle>
+                <mat-card-content>{{item.search_detail}}</mat-card-content>
+              </div>
+              </mat-grid-tile>
+
+              <mat-grid-tile
+              [colspan]="1"
+              [rowspan]="1"
+              >
+              <div class="card-column">
+                <button mat-raised-button color="primary" routerLink="/large-stablishments-detail">
+                  {{'components.saved-searches.item-1'| translate}}</button>
+              </div>
+              </mat-grid-tile>
+            </mat-grid-list>  
+          </mat-card>
+          </div>
+        </div>
+  </div>
+
