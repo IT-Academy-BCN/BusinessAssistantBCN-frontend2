@@ -1,4 +1,6 @@
 import { Location } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -26,7 +28,7 @@ describe('MyEnvironmentPageComponent', () => {
   let myEnvSrv: MyEnvironmentService
   
   let router: Router
-  let location: Location
+  let location: Location;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -36,6 +38,7 @@ describe('MyEnvironmentPageComponent', () => {
       
       imports: [
         RouterTestingModule.withRoutes(routes),
+        HttpClientTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -53,7 +56,6 @@ describe('MyEnvironmentPageComponent', () => {
   beforeEach(() => {
     router = TestBed.inject(Router)
     location = TestBed.inject(Location)
-
     fixture = TestBed.createComponent(MyEnvironmentPageComponent);
     myEnvSrv = TestBed.inject(MyEnvironmentService)
     component = fixture.componentInstance;

@@ -3,6 +3,9 @@ const esModules = ['@angular', '@ngrx', 'd3'];
 
 
 module.exports = {
+    preset: 'jest-preset-angular',
+    setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+    globalSetup: 'jest-preset-angular/global-setup',
     extensionsToTreatAsEsm: ['.ts'],
     moduleDirectories: ['node_modules', '<rootDir>'],
     globals: {

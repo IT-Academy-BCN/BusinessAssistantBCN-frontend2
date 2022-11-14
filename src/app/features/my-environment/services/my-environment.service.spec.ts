@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { MyEnvironmentService } from './my-environment.service';
@@ -10,7 +11,9 @@ describe('MyEnvironmentService', () => {
   let service: MyEnvironmentService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ],
+    });
     service = TestBed.inject(MyEnvironmentService);
   });
 
