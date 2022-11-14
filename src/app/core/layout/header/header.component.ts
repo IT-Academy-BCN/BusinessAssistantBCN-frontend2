@@ -54,8 +54,9 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-    if (num == 4) {
-      this.router.navigate(['login']);
-    }
+  console.log('should heading login component')
+
   }
+ 
+  
 }

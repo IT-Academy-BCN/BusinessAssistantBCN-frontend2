@@ -50,7 +50,7 @@ ngOnInit(): void {
 
 
   onClickButtonVirtualAssistantButton = () => {
-    this.router.navigate(['virtual-assistant']);
+    console.log('should heading vistural assistance component');
   }
 
   onClickButtonMyEnvironment = () => {

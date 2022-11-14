@@ -27,6 +27,7 @@ import { HomeModule } from './features/home/home.module';
 import { UsersModule } from './features/users/users.module';
 import { MyEnvironmentModule } from './features/my-environment/my-environment.module';
 import { CoreModule } from './core/core.module';
+import { SavedSearchesModule } from './features/saved-searches/saved-searches.module';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { CoreModule } from './core/core.module';
     HomeModule,
     UsersModule,
     MyEnvironmentModule,
+    SavedSearchesModule,
     VirtualAssistantModule
   ],
   providers: [],
