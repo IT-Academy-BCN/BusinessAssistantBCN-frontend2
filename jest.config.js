@@ -1,9 +1,9 @@
 // jest.config.js
 const esModules = ['@angular', '@ngrx', 'd3'];
 
-
 module.exports = {
     preset: 'jest-preset-angular',
+    setupFiles: ['<rootDir>/canvas-jest.ts'],
     setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
     globalSetup: 'jest-preset-angular/global-setup',
     extensionsToTreatAsEsm: ['.ts'],

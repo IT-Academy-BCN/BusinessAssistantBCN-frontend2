@@ -1,9 +1,15 @@
 import { Location } from '@angular/common';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
 import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
+import { BabcnTitleModule } from 'src/app/shared/components/babcn-title/babcn-title.module';
+import { BabcnTreeModule } from 'src/app/shared/components/babcn-tree/babcn-tree.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 import { MyEnvironmentResultComponent } from '../my-environment-result/my-environment-result.component';
 
@@ -40,6 +46,7 @@ describe('MyEnvironmentSearchComponent', () => {
           },
         })
       ],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [
         MyEnvironmentService
       ]

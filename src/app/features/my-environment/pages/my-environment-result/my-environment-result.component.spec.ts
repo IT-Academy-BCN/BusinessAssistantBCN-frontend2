@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
-
 import { MyEnvironmentResultComponent } from './my-environment-result.component';
 
 describe('MyEnvironmentResultComponent', () => {
@@ -14,8 +14,12 @@ let component: MyEnvironmentResultComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule, TranslateModule.forRoot() ],
-      declarations: [ MyEnvironmentResultComponent ]
+      imports: [           
+        HttpClientTestingModule, 
+        TranslateModule.forRoot() ],
+      declarations: [ MyEnvironmentResultComponent  ],
+      schemas: [NO_ERRORS_SCHEMA]
+
     })
     .compileComponents();
   });

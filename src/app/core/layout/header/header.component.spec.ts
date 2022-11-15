@@ -18,6 +18,9 @@ import {
 } from "@ngx-translate/core"
 
 import { Location } from "@angular/common"
+import { MatToolbarModule } from "@angular/material/toolbar"
+import { NO_ERRORS_SCHEMA } from "@angular/core"
+import { MatGridListModule, MatGridTile } from "@angular/material/grid-list"
 
 
 
@@ -44,7 +47,7 @@ let fixture: ComponentFixture<HeaderComponent>
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       imports: [
-        RouterTestingModule,
+    
         BrowserAnimationsModule,
         RouterTestingModule.withRoutes(routes),
         TranslateModule.forRoot({
@@ -54,6 +57,7 @@ let fixture: ComponentFixture<HeaderComponent>
           },
         }),
       ],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [
       { provide: BreakpointService },
       ],
