@@ -11,13 +11,13 @@ export enum SearchType {
 }
 
 
-export abstract class MyEnvironmentSearchModel {
+export abstract class MyEnvironmentSearch {
    searchType: SearchType;
    zone: Zone;
    result: SearchItemResult[];
 }
 
-export class BigMallsSearch extends MyEnvironmentSearchModel {
+export class BigMallsSearch extends MyEnvironmentSearch {
 
     activities: EconomicActivity;
 
@@ -28,7 +28,7 @@ export class BigMallsSearch extends MyEnvironmentSearchModel {
 
 }
 
-export class CommercialGalleriesSearch extends MyEnvironmentSearchModel {
+export class CommercialGalleriesSearch extends MyEnvironmentSearch {
 
     activities: EconomicActivity;
 
@@ -39,7 +39,7 @@ export class CommercialGalleriesSearch extends MyEnvironmentSearchModel {
 
 }
 
-export class LargeEstablishmentsSearch extends MyEnvironmentSearchModel {
+export class LargeEstablishmentsSearch extends MyEnvironmentSearch {
 
     activities: EconomicActivity;
 
@@ -50,7 +50,7 @@ export class LargeEstablishmentsSearch extends MyEnvironmentSearchModel {
 
 }
 
-export class MarketsAndFairsSearch extends MyEnvironmentSearchModel {
+export class MarketsAndFairsSearch extends MyEnvironmentSearch {
 
     constructor() {
         super();
@@ -59,7 +59,7 @@ export class MarketsAndFairsSearch extends MyEnvironmentSearchModel {
 
 }
 
-export class MunicipalMarketsSearch extends MyEnvironmentSearchModel {
+export class MunicipalMarketsSearch extends MyEnvironmentSearch {
 
     constructor() {
         super();
