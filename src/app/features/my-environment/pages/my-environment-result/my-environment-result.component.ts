@@ -1,6 +1,5 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Subscription } from 'rxjs';
@@ -18,7 +17,7 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
   breakpoint: number | string | "Unknown";
   ratio: string | number;
 
-  businessModelsArray: BasicBusinessModel[] = [];
+  //businessModelsArray: BasicBusinessModel[] = [];
   modelsSub:Subscription | null = null;
 
   constructor(private responsive: BreakpointService,
@@ -35,13 +34,13 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.modelsSub=this.myEnvSrv.results.asObservable().subscribe((results:BasicBusinessModel[])=>{
+/*    this.modelsSub=this.myEnvSrv.results.asObservable().subscribe((results:BasicBusinessModel[])=>{
       this.businessModelsArray=results;
-  })
+  })*/
 
   }
 
-  results:BasicBusinessModel[] =[];
+ // results:BasicBusinessModel[] =[];
   subscription!:Subscription;
 
 

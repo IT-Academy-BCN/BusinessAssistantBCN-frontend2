@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Icons } from '../pages/my-environment-page/environment-models';
 
-import { EconomicActivityModel } from './../../../shared/models/common/economic-activity.interface';
-import { ZoneModel } from './../../../shared/models/common/zone.interface';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import {environment} from "../../../../environments/environment";
-import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
 import { Subject } from 'rxjs';
 import { Observable } from 'rxjs';
 
@@ -17,9 +14,9 @@ import { Observable } from 'rxjs';
 export class MyEnvironmentService {
 
   title: string = '';
-  selectedZones: ZoneModel[] = [];
-  selectedActivities: EconomicActivityModel[] = [];
-  results = new Subject<BasicBusinessModel[]>()
+/*  selectedZones: ZoneModel[] = [];
+  selectedActivities: EconomicActivityModel[] = [];*/
+  /*results = new Subject<BasicBusinessModel[]>()*/
 
   
   constructor(private http: HttpClient) { }
@@ -53,9 +50,9 @@ export class MyEnvironmentService {
 
     let params = new HttpParams();
    
-    params = params.append('zones', JSON.stringify(this.selectedZones))
+/*    params = params.append('zones', JSON.stringify(this.selectedZones))
     
-    params = params.append('activities', JSON.stringify(this.selectedActivities));     
+    params = params.append('activities', JSON.stringify(this.selectedActivities));   */
 
     switch (businessModel){
       case 'common.button.mall':

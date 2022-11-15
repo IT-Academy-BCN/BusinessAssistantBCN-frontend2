@@ -1,4 +1,4 @@
-export interface EconomicActivityModel {
+export interface EconomicActivity {
     idActivity: number ;
     activityName: string;
 }

@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EconomicActivityModel } from 'src/app/shared/models/common/economic-activity.interface';
-import { ZoneModel } from 'src/app/shared/models/common/zone.interface';
+import { EconomicActivityModel } from 'src/app/shared/models/common/economic-activity.model';
+import { ZoneModel } from 'src/app/shared/models/common/zone.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
