@@ -1,18 +1,29 @@
 .container{
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-position: absolute;
-display: flex;
-flex-direction:column;
-align-items:flex-start;
-justify-content:flex-start;
-height: 100%;
-padding: 0;
-margin: 0;
-}
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    }
+    
+    .search {
+        margin-top:10px
+    }
+    
+    .search-container {
+        background: white;
+        padding: 2rem;
+    }
 
-.search {
-    margin-top:10px
-}
+    .form-check {
+        margin-left:0px;
+    }
+    
+    

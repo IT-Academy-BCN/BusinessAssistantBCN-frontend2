@@ -2,7 +2,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BasicBusinessModel } from 'src/app/shared/models/common/basic-business.interface';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
-import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
+import { MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Subscription } from 'rxjs';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 
@@ -23,7 +23,7 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
 
   constructor(private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService) {
-    const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
+    const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
       this.ratio = value[1];
@@ -38,6 +38,15 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
     this.modelsSub=this.myEnvSrv.results.asObservable().subscribe((results:BasicBusinessModel[])=>{
       this.businessModelsArray=results;
   })
+
+  this.responsive.breakpoint$.subscribe((res) => {
+    MY_ENVIRONMENT_MAT_GRID_LIST.forEach((value, key) => {
+      if (key == res) {
+        this.breakpoint = value[0];
+        this.ratio = value[1];
+      }
+    });
+  });
 
   }
 

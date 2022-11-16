@@ -1,11 +1,28 @@
-.results-card{
-    min-width: 55%;
-  }
+@import '../../../../../styles/global';
+
+
+.results-container {
+    background: white;
+    padding: 2rem;
+    min-height:470px;
+}
+
+.main-container {
+  margin: 100px auto;
+}
+
+.buttons-container{
+  width:100%;
+  display:flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin-right: 1rem;
+}
   
   
-  .result-container{
-    padding-left: 14%;
-  }
+  
   .details{
     padding-left: 12%;
   }
@@ -25,4 +42,7 @@
         padding-left: 1.1rem !important;
     }
   }
-  
+
+  app-mapbox {
+    max-width: 80%;
+  }

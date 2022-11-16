@@ -16,34 +16,37 @@
                         </h2>
                     </section>
                  <!-- babcn-CONTAINER -->
-                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                <div class="search-container">
+                    <babcn-container containerHeight="396px" 
+                    [containerWidth]='ratio.toString()' 
+                    [containerIsActive]="false"
+                    >
                     
-                    <div class="p-3 ms-8 border bg-light card-contents">
-                        <div class="" *ngFor="let zone of zones">
-                            <div class="form-check">
-                                <label class="form-check-label" >
-                                    <mat-checkbox class="form-check-input"  (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>
-        
-                                </label>
+                        <div class="p-3 ms-8 border">
+                            <div class="" *ngFor="let zone of zones">
+                                <div class="form-check">
+                                    <label class="form-check-label" >
+                                        <mat-checkbox class="form-check-input"  (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </babcn-container>
+                        <section>
+                            <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="search">
+                                <button mat-raised-button style="background:black; color: white" (click)="goToResult()"
+                                        routerLink="my-environment-search-detail"
+                                        type="submit">
+                                    {{'common.button.search' | translate}}
+                                </button>
+                            </div>
+                        </section>
+                    </babcn-container>
+                </div>
                 <!-- END babcn-CONTAINER -->
-                <section>
-                    <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="search">
-                        <button mat-raised-button color="warn" (click)="goToResult()"
-                                routerLink="my-environment-search-detail"
-                                type="submit">
-                            {{'common.button.search' | translate}}
-                        </button>
-                    </div>
-                </section>
 
              
             </div>
             </mat-grid-tile>
-
 
             
 
@@ -52,34 +55,39 @@
                 <div  *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'" class="container">
                 
                     <section>
-                        <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
+                        <h2 class="">{{'pages.big-stablish.section2.title' | translate}}</h2>
                     </section>
 
                <!-- babcn-CONTAINER -->
-                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
-                        <div class="p-3 border bg-light card-contents">
-                            <div class="data">
-                                <div *ngFor="let activity of activities; let i = index" >
-                                    <div class="form-check">
-                                        <label class="form-check-label" >
-                                            <mat-checkbox class="form-check-input" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
-                        
-                                        </label>
+                <div class="search-container">
+                    <babcn-container containerHeight="350px" 
+                    [containerWidth]='ratio.toString()' 
+                    >
+                            <div class="">
+                                <div class="activity-checkboxes">
+                                    <div *ngFor="let activity of activities; let i = index" >
+                                        <div class="form-check">
+                                            <label class="form-check-label" >
+                                                <mat-checkbox class="form-check-input" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
+                    
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
+                    
                             </div>
-                            
-                        </div>
-                </babcn-container>
-            <!-- END babcn-CONTAINER -->
-                
+                    
+                    </babcn-container>
                     <div class="search">
-                        <button mat-raised-button color="warn" (click)="goToResult()"
+                        <button mat-raised-button style="background:black; color: white" (click)="goToResult()"
                                 routerLink="my-environment-search-detail"
                                 type="submit">
                                 {{'common.button.search' | translate}}
                                 </button>
                     </div>
+                </div>
+            <!-- END babcn-CONTAINER -->
+                
              
                 
             </div>
