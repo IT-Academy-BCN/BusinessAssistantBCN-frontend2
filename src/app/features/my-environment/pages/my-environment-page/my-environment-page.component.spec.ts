@@ -1,4 +1,6 @@
 import { Location } from '@angular/common';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -8,34 +10,42 @@ import { MyEnvironmentSearchComponent } from '../my-environment-search/my-enviro
 
 import { MyEnvironmentPageComponent } from './my-environment-page.component';
 
-/*const routes: Routes = [
+const routes: Routes = [
   {path: 'my-environment-search', component: MyEnvironmentSearchComponent},
-];*/
+];
 
 
 describe('MyEnvironmentPageComponent', () => {
 
-  test('',() => {
-    expect(true).toBe(true);
+  const { scroll } = window;
+
+  beforeAll(() => {
+
+    window.scroll = jest.fn();
   });
 
-  /*
+  afterAll(() => {
+    window.scroll = scroll;
+  });
+
+
   let component: MyEnvironmentPageComponent;
   let fixture: ComponentFixture<MyEnvironmentPageComponent>;
   
   let myEnvSrv: MyEnvironmentService
   
   let router: Router
-  let location: Location
+  let location: Location;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ 
         MyEnvironmentPageComponent,
       ],
-      
+      schemas: [NO_ERRORS_SCHEMA],
       imports: [
         RouterTestingModule.withRoutes(routes),
+        HttpClientTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -51,9 +61,10 @@ describe('MyEnvironmentPageComponent', () => {
   });
 
   beforeEach(() => {
+
+  
     router = TestBed.inject(Router)
     location = TestBed.inject(Location)
-
     fixture = TestBed.createComponent(MyEnvironmentPageComponent);
     myEnvSrv = TestBed.inject(MyEnvironmentService)
     component = fixture.componentInstance;
@@ -92,5 +103,7 @@ describe('MyEnvironmentPageComponent', () => {
       expect(myEnvSrv.title).toBe('common.button.public-market')
     })
   })
-*/
+
+  
+
 });

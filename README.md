@@ -71,6 +71,11 @@ Cada producto o característica ofrecida por la aplicación se encapsula en form
 
 A fin de mantener una diferenciación entre las capas de la aplicación, y también para tener un código más parcelado, concreto, y escalable, es importante que los servicios, el manejo de datos, la actualización de componentes visuales y demás procedimientos habituales de un aplicativo queden bien repartidos entre los 'componentes'* que forman la aplicación (*'componentes' en el sentido más ámplio, es decir, páginas, contenidos, babcn-nnn, ...)
 
+# Breakpoint Service [app]
+
+Véase la [Guía de uso](src/app/services/shared/breakpoint/BreakpointServiceReadme.md)
+
+
 <hr/>
 
 # BusinessAssistantBCNFrontend

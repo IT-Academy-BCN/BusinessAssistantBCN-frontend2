@@ -86,6 +86,9 @@
           "options": {
             "browserTarget": "BusinessAssistantBCN-frontend2:build"
           }
+        },
+        "test": {
+          "builder": "@angular-builders/jest:run"
         }
       }
     }

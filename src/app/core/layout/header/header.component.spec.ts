@@ -1,33 +1,37 @@
 /*import { ComponentFixture, fakeAsync, TestBed, tick } from "@angular/core/testing"
 import { RouterTestingModule } from "@angular/router/testing"*/
 
-//import { HeaderComponent } from "./header.component"
-//import { LoginComponent } from "src/app/features/users/components/login/login.component"
+import { ComponentFixture, fakeAsync, TestBed, tick } from "@angular/core/testing"
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
+import { Router , Routes} from "@angular/router"
+import { RouterTestingModule } from "@angular/router/testing"
+import { of } from "rxjs"
+import { BreakpointService } from "src/app/services/shared/breakpoint/breakpoint.service"
+import { HeaderComponent } from "./header.component"
+import { LoginComponent } from "src/app/features/users/components/login/login.component"
 
-/*import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
+
 import {
   TranslateFakeLoader,
   TranslateLoader,
   TranslateModule,
 } from "@ngx-translate/core"
-import { Router, Routes } from "@angular/router"
+
 import { Location } from "@angular/common"
-import { BreakpointService } from "src/app/services/shared/breakpoint/breakpoint.service"*/
+import { MatToolbarModule } from "@angular/material/toolbar"
+import { NO_ERRORS_SCHEMA } from "@angular/core"
+import { MatGridListModule, MatGridTile } from "@angular/material/grid-list"
 
 
-/*const routes: Routes = [
+
+const routes: Routes = [
   {path: 'login', component: LoginComponent},
-];*/
+];
 
 
 describe("HeaderComponent", () => {
 
-
-  test('',() => {
-    expect(true).toBe(true);
-  });
-
-  /*let fixture: ComponentFixture<HeaderComponent>
+let fixture: ComponentFixture<HeaderComponent>
   let app: HeaderComponent
   let router: Router
   let location: Location
@@ -38,7 +42,7 @@ describe("HeaderComponent", () => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       imports: [
-        RouterTestingModule,
+    
         BrowserAnimationsModule,
         RouterTestingModule.withRoutes(routes),
         TranslateModule.forRoot({
@@ -48,6 +52,7 @@ describe("HeaderComponent", () => {
           },
         }),
       ],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [
       { provide: BreakpointService },
       ],
@@ -84,12 +89,13 @@ describe("HeaderComponent", () => {
       - Mac & Windows ok si valor esperado es false
       - Linux ok si valor esperado es true
       */
-    /*it("Menu should be declared", () => {
-      expect(app.menu).toBe(true)
-    })*/
- // })
+    it("Menu should be declared", () => {
 
- /* describe("#NgOnInit", () => {
+      expect(app.menu).toBeDefined()
+    })
+})
+
+  describe("#NgOnInit", () => {
     it("Should be call the BreakpointObserver", () => {
       app.ngOnInit()
       expect(responsive.breakpoint$).toBeTruthy()
@@ -97,20 +103,20 @@ describe("HeaderComponent", () => {
     })
 
     it("Should change the menu variable to true", () => {
-      //spyOnProperty(responsive, "breakpoint$").and.returnValue(of('Small'))
+      jest.spyOn(responsive, "breakpoint$", 'get').mockReturnValue(of('Small'))
 
-      const spy = jest.spyOn(responsive, 'getCurrentScreenSize');
-      responsive.getCurrentScreenSize();
+   /*    const spy = jest.spyOn(responsive, 'getCurrentScreenSize');
+      responsive.getCurrentScreenSize(); */
 
       app.ngOnInit()
       expect(app.menu).toBe(true);
     })
 
-   /!* it("Should change the menu variable to false", () => {
-      spyOnProperty(responsive, "breakpoint$").and.returnValue(of('Large'))
+   it("Should change the menu variable to false", () => {
+    jest.spyOn(responsive, 'breakpoint$', 'get').mockReturnValue(of('Large'))
       app.ngOnInit()
       expect(app.menu).toBe(false);
-    }) *!/
+    }) 
   })
 
   describe('#toggleTitle', () => {
@@ -127,10 +133,10 @@ describe("HeaderComponent", () => {
       app.goToLink(4)
       router.navigate(['login'])
       tick()
-      expect(location.path()).toBe('/login')
+      expect((location as any).path()).toBe('/login')
     }))
   })
-*/
+
 
 
 })

@@ -4,11 +4,6 @@ import { RegisterComponent } from './register.component';
 
 describe('RegisterComponent', () => {
 
-  test('',() => {
-    expect(true).toBe(true);
-  });
-
-  /*
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
 
@@ -27,5 +22,5 @@ describe('RegisterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });
