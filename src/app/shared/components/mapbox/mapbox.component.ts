@@ -62,13 +62,14 @@ export class MapboxComponent implements AfterViewInit {
   }
 
   generateMap() {
-    (Mapboxgl.accessToken as any) = environment.MAPBOX_TOKEN;
-    this.map = new Map({
+    /* (Mapboxgl.accessToken as any) = environment.MAPBOX_TOKEN; */
+    this.map = new Mapboxgl.Map({
       container: this.mapDivElement.nativeElement,
       style: environment.MAPBOX_STYLE,
       center: [this.MAPBOX_INIT_LOCATION.addresses[0].location.x, this.MAPBOX_INIT_LOCATION.addresses[0].location.y], // starting center so it doesn't start from Germany
       zoom: environment.MAPBOX_ZOOM, 
-      maxZoom: 18
+      maxZoom: 18,
+      accessToken:environment.MAPBOX_TOKEN
     });
 
     this.map.addControl(new NavigationControl({showZoom:true}));
