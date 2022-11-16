@@ -7,7 +7,8 @@
         
 
         <!-- MAT GRID LIST -->
-        <mat-grid-list [cols]="breakpoint" rowHeight="550px">
+      <!--  <mat-grid-list [cols]="breakpoint" rowHeight="550px">-->
+            <mat-grid-list rowHeight="550px">
 
             <mat-grid-tile>
                 <div class="container">
@@ -19,10 +20,12 @@
                 <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
                     
                     <div class="p-3 ms-8 border bg-light card-contents">
-                        <div class="" *ngFor="let zone of zones">
+                        <!--<div class="" *ngFor="let zone of zones">-->
+                            <div class="" >
                             <div class="form-check">
                                 <label class="form-check-label" >
-                                    <mat-checkbox class="form-check-input"  (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>
+                                    <!--<mat-checkbox class="form-check-input"  (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>-->
+                                    <mat-checkbox class="form-check-input" >name</mat-checkbox>
         
                                 </label>
                             </div>
@@ -59,10 +62,12 @@
                 <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
                         <div class="p-3 border bg-light card-contents">
                             <div class="data">
-                                <div *ngFor="let activity of activities; let i = index" >
+                                <div  >
+                               <!-- <div *ngFor="let activity of activities; let i = index" >-->
                                     <div class="form-check">
                                         <label class="form-check-label" >
-                                            <mat-checkbox class="form-check-input" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
+                                         <!--   <mat-checkbox class="form-check-input" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>-->
+                                            <mat-checkbox class="form-check-input" > name</mat-checkbox>
                         
                                         </label>
                                     </div>

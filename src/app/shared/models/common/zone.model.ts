@@ -1,5 +1,5 @@
 
 export class Zone {
-    idZone: number | null;
-    zoneName: string | null;
+    idZone: number | undefined;
+    zoneName: string | undefined;
 }

@@ -2,7 +2,6 @@ import { Component, AfterViewInit, ViewChild, ElementRef, Input } from "@angular
 import * as Mapboxgl from "mapbox-gl"; 
 import { LngLatBounds, NavigationControl, GeolocateControl, Map, Popup, Marker } from "mapbox-gl";
 import { environment } from "src/environments/environment";
-import { BasicBusinessModel } from "../../models/common/basic-business.interface";
 /* import { LargeStablishmentModel } from '../../models/large-stablishment.model';
 import {BasicBusinessModel} from "../../models/common/basic-business.model"; */
 
@@ -14,11 +13,11 @@ import {BasicBusinessModel} from "../../models/common/basic-business.model"; */
 export class MapboxComponent implements AfterViewInit {
   @ViewChild("mapDiv")
   mapDivElement!: ElementRef;
-  @Input() filteredResultsToPrintOnMap!: BasicBusinessModel[];
+  @Input() filteredResultsToPrintOnMap!: any[];
   private map!: Map;
   private currentMarkers: Marker[] = [];
 
-  private MAPBOX_INIT_LOCATION: BasicBusinessModel = {
+  private MAPBOX_INIT_LOCATION: any = {
     name: "IT Academy",
     web: "bcn.cat/barcelonactiva",
     email: "itacademy@barcelonactiva.cat",
@@ -86,7 +85,7 @@ export class MapboxComponent implements AfterViewInit {
   }
 
   // Function to create a single marker (with the marker's colour and the business (or user's coords) as parameters)
-  createANewMarker(markerColor: string, business?: BasicBusinessModel, coord?: GeolocationCoordinates): void {
+  createANewMarker(markerColor: string, business?: any, coord?: GeolocationCoordinates): void {
  
     // Create a popup with the business's basic information
     const popup = new Popup().setHTML(
@@ -141,7 +140,7 @@ export class MapboxComponent implements AfterViewInit {
     );
   }
 
-  coordinatesAreValid(business:BasicBusinessModel){
+  coordinatesAreValid(business:any){
 
     const location = business!.addresses[0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
 
