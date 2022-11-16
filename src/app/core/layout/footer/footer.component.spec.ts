@@ -12,18 +12,19 @@ import { of } from "rxjs"
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/babcn-container.module';
 
+
 describe("FooterComponent", () => {
 
-  test('',() => {
+/*   test('',() => {
     expect(true).toBe(true);
-  });
+  }); */
 
-  /*
+
   let footer: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
   let breakpointService: BreakpointService;
 
-  /!* Creamos el módulo para nuestro componente *!/
+  /* Creamos el módulo para nuestro componente */
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
@@ -46,7 +47,7 @@ describe("FooterComponent", () => {
     }).compileComponents();
   });
 
-/!* Creamos e instanciamos el componente, observamos cambios, inyeccion del servicio*!/
+/* Creamos e instanciamos el componente, observamos cambios, inyeccion del servicio*/
   beforeEach(() => {
     fixture = TestBed.createComponent(FooterComponent);
     footer = fixture.componentInstance;
@@ -58,33 +59,33 @@ describe("FooterComponent", () => {
       fixture.destroy()
   })
 
-/!* Comporobamos que el componente exista *!/
+/* Comporobamos que el componente exista */
   it('should create the footer', () => {
     expect(footer).toBeTruthy();
   });
 
-/!* Comporobamos que las variables existen *!/
+/* Comporobamos que las variables existen */
   it('should have variable called "breakpoint"', () => {
-    expect(footer.breakpoint).toBeTruthy();
+    expect(footer.breakpoint).toBeDefined();
   });
 
   it('should have variable called "ratio"', () => {
     expect(footer.ratio).toBeTruthy();
   });
 
-  /!* Comporobamos el metodo del constructor que da las madidas iniciales de pantalla *!/
+  /* Comporobamos el metodo del constructor que da las madidas iniciales de pantalla */
   it('should recive the currentScreenSize value in the constructor, getCurrentScreenSize()', () => { 
-    const screenSize = spyOn(breakpointService, "getCurrentScreenSize");
-    screenSize.and.returnValue('Medium');
-    /!*TODO - Error en varias plataformas:
+    const screenSize = jest.spyOn(breakpointService, "getCurrentScreenSize");
+    screenSize.mockReturnValue('Medium');
+    /*TODO - Error en varias plataformas:
       - Mac & Windows ok si valor esperado es 4
       - Linux ok si valor esperado es 2
-    *!/
+    */
     //expect(footer.breakpoint).toEqual(2);
     expect(footer.ratio).toEqual("150px"); 
   })
 
-  /!* Comprobamos lo que reciben las variables en ngOnInit *!/
+  /* Comprobamos lo que reciben las variables en ngOnInit */
   describe("#NgOnInit", () => {
     it("Should be call the BreakpointService", () => {
       footer.ngOnInit();
@@ -92,25 +93,25 @@ describe("FooterComponent", () => {
  
     });
 
-/!*    it("Should recive de breakpoint value", () => {
-      const breakpoint = spyOnProperty(breakpointService, "breakpoint$");
-      breakpoint.and.returnValue(of('Small'));
+   it("Should recive de breakpoint value", () => {
+      const breakpoint = jest.spyOn(breakpointService, "breakpoint$", 'get');
+      breakpoint.mockReturnValue(of('Small'));
       footer.ngOnInit();
       expect(footer.breakpoint).toEqual(2);
-      breakpoint.and.returnValue(of('Large'));
+      breakpoint.mockReturnValue(of('Large'));
       footer.ngOnInit();
       expect(footer.breakpoint).toEqual(5);
     });
 
     it("Should recive the ratio value", () => {
-      const ratio = spyOnProperty(breakpointService, "breakpoint$");
-      ratio.and.returnValue(of('Xsmall'));
+      const ratio = jest.spyOn(breakpointService, "breakpoint$", 'get');
+      ratio.mockReturnValue(of('Xsmall'));
       footer.ngOnInit();
       expect(footer.ratio).toEqual("150px");
-      ratio.and.returnValue(of('Xsmall'));
+      ratio.mockReturnValue(of('Xsmall'));
       footer.ngOnInit();
       expect(footer.ratio).toEqual("150px");
-    }); *!/
-  })*/
+    }); 
+  })
   
 });

@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
@@ -9,12 +10,13 @@ describe('HeaderComponent', () => {
     expect(true).toBe(true);
   });
 
-  /*let component: HeaderComponent;
+let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
       imports: [
         TranslateModule.forRoot({
           loader: {
@@ -36,5 +38,5 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });
