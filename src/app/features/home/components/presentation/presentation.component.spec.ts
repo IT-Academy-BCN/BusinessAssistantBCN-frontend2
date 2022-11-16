@@ -6,10 +6,10 @@ import { PresentationComponent } from './presentation.component';
 
 describe('PresentationComponent', () => {
 
-  test('',() => {
+/*   test('',() => {
     expect(true).toBe(true);
-  });
- /*
+  }); */
+
   let component: PresentationComponent;
   let fixture: ComponentFixture<PresentationComponent>;
 
@@ -37,5 +37,5 @@ describe('PresentationComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });

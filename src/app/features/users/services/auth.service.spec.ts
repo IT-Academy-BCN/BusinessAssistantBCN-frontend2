@@ -4,11 +4,11 @@ import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
 
-  test('',() => {
+/*   test('',() => {
     expect(true).toBe(true);
-  });
+  }); */
 
-  /*
+
   let service: AuthService;
 
   beforeEach(() => {
@@ -18,5 +18,5 @@ describe('AuthService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
-  });*/
+  });
 });

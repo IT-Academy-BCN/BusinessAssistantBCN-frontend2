@@ -4,11 +4,11 @@ import { BreakpointService } from './breakpoint.service';
 
 describe('BreakpointService', () => {
 
-  test('',() => {
+/*   test('',() => {
     expect(true).toBe(true);
-  });
+  }); */
 
- /* let service: BreakpointService;
+ let service: BreakpointService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -17,5 +17,5 @@ describe('BreakpointService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
-  });*/
+  });
 });

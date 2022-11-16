@@ -2,9 +2,15 @@
 const esModules = ['@angular', '@ngrx', 'd3'];
 
 module.exports = {
+    preset: 'jest-preset-angular',
+    setupFiles: ['<rootDir>/canvas-jest.ts'],
+    setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
+    globalSetup: 'jest-preset-angular/global-setup',
     extensionsToTreatAsEsm: ['.ts'],
+    moduleDirectories: ['node_modules', '<rootDir>'],
     globals: {
         'ts-jest': {
+            allowSyntheticDefaultImports: true,
             useESM: true,
             tsconfig: '<rootDir>/tsconfig.spec.json',
             stringifyContentPathRegex: '\\.html$',
@@ -15,9 +21,9 @@ module.exports = {
         '^(\\.{1,2}/.*)\\.js$': '$1',
     },
     transform: {
-        '^.+\\.(ts|js|mjs|html|svg)$': 'jest-preset-angular',
+        '^.+\\.(ts|js|mjs|html|svg)$': 'jest-preset-angular'     
     },
     transformIgnorePatterns: [
-        `<rootDir>/node_modules/(?!.*\\.mjs$|${esModules.join('|')})`,
+       `<rootDir>/node_modules/.pnpm/(?!.*\\.mjs$|${esModules.join('|')}@)`,        
     ]
 };
