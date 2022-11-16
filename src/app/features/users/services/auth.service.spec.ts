@@ -4,11 +4,6 @@ import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
 
-/*   test('',() => {
-    expect(true).toBe(true);
-  }); */
-
-
   let service: AuthService;
 
   beforeEach(() => {

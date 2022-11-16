@@ -5,11 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MyEnvironmentResultComponent } from './my-environment-result.component';
 
 describe('MyEnvironmentResultComponent', () => {
- /*  test('',() => {
-    expect(true).toBe(true);
-  }); */
 
-let component: MyEnvironmentResultComponent;
+  let component: MyEnvironmentResultComponent;
   let fixture: ComponentFixture<MyEnvironmentResultComponent>;
 
   beforeEach(async () => {

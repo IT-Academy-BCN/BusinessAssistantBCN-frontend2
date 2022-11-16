@@ -7,11 +7,6 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('LoginComponent', () => {
 
-/*   test('',() => {
-    expect(true).toBe(true);
-  });
- */
-
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 

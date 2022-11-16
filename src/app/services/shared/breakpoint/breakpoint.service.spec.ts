@@ -4,10 +4,6 @@ import { BreakpointService } from './breakpoint.service';
 
 describe('BreakpointService', () => {
 
-/*   test('',() => {
-    expect(true).toBe(true);
-  }); */
-
  let service: BreakpointService;
 
   beforeEach(() => {

@@ -8,13 +8,6 @@ import { InfoComponent } from './info.component';
 
 describe('InfoComponent', () => {
 
-
-/*  test('',() => {
-    expect(true).toBe(true);
-  });*/
-
-
-
   let component: InfoComponent;
   let fixture: ComponentFixture<InfoComponent>;
   let breakpoint: BreakpointService

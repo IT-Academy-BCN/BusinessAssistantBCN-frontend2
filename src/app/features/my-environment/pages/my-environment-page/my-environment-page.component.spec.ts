@@ -17,10 +17,6 @@ const routes: Routes = [
 
 describe('MyEnvironmentPageComponent', () => {
 
- /*  test('',() => {
-    expect(true).toBe(true);
-  });
- */
   const { scroll } = window;
 
   beforeAll(() => {

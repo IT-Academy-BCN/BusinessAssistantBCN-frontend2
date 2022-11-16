@@ -31,11 +31,6 @@ const routes: Routes = [
 
 describe("HeaderComponent", () => {
 
-
-/*   test('',() => {
-    expect(true).toBe(true);
-  });
- */
 let fixture: ComponentFixture<HeaderComponent>
   let app: HeaderComponent
   let router: Router

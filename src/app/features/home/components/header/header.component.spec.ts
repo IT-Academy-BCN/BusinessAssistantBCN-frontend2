@@ -6,10 +6,6 @@ import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
 
-  test('',() => {
-    expect(true).toBe(true);
-  });
-
 let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 

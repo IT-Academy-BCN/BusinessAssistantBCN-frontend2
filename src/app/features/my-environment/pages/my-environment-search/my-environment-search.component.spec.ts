@@ -21,10 +21,6 @@ const routes: Routes = [
 
 describe('MyEnvironmentSearchComponent', () => {
 
-/*   test('',() => {
-    expect(true).toBe(true);
-  }); */
-
   let component: MyEnvironmentSearchComponent;
   let fixture: ComponentFixture<MyEnvironmentSearchComponent>;
   let myEnvSrv: MyEnvironmentService

@@ -15,11 +15,6 @@ import { BabcnContainerModule } from 'src/app/shared/components/babcn-container/
 
 describe("FooterComponent", () => {
 
-/*   test('',() => {
-    expect(true).toBe(true);
-  }); */
-
-
   let footer: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
   let breakpointService: BreakpointService;

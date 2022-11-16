@@ -6,10 +6,6 @@ import { PresentationComponent } from './presentation.component';
 
 describe('PresentationComponent', () => {
 
-/*   test('',() => {
-    expect(true).toBe(true);
-  }); */
-
   let component: PresentationComponent;
   let fixture: ComponentFixture<PresentationComponent>;
 

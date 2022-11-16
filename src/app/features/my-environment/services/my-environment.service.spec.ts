@@ -4,9 +4,6 @@ import { TestBed } from '@angular/core/testing';
 import { MyEnvironmentService } from './my-environment.service';
 
 describe('MyEnvironmentService', () => {
-  test('',() => {
-    expect(true).toBe(true);
-  });
 
   let service: MyEnvironmentService;
 
