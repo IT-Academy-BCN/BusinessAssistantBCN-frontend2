@@ -90,7 +90,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
 
 
   getAllZones(){
-    this.zonesSub=this.myEnvSrv.getZones().subscribe(response=>{
+    this.zonesSub=this.commonService.getZones().subscribe(response=>{
       //this.zones=response.results;
     })
   }
