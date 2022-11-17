@@ -11,7 +11,7 @@ import { BigMallsSearch, MyEnvironmentSearch, SearchType, CommercialGalleriesSea
 })
 export class MyEnvironmentService {
 
-  //title: string = '';
+  title: string = '';
 
   constructor(private http: HttpClient) { }
 
