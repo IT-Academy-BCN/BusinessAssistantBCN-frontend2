@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import {environment} from "../../../../environments/environment";
 import { Observable } from 'rxjs';
-import { MyEnvironmentSearch, SearchType } from '../../../shared/models/my-environment-search/my-environment-search.model';
-import { Zone } from 'src/app/shared/models/common/zone.model';
+import { BigMallsSearch, MyEnvironmentSearch, SearchType, CommercialGalleriesSearch, LargeEstablishmentsSearch } from '../../../shared/models/my-environment-search/my-environment-search.model';
+
 
 
 @Injectable({
@@ -11,18 +11,16 @@ import { Zone } from 'src/app/shared/models/common/zone.model';
 })
 export class MyEnvironmentService {
 
-  title: string = '';
+  //title: string = '';
 
   constructor(private http: HttpClient) { }
 
 
- 
-
   getEconomicActivities(businessModel:SearchType): Observable<any> {
     const activityEndPoint=[
-      {establishment :0, endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL},
-      {establishment :1, endPointActivity:environment.BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL},
-      {establishment :2, endPointActivity:environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL}
+      {establishment :SearchType.BIG_MALLS, endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL},
+      {establishment :SearchType.COMMERCIAL_GALLERIES, endPointActivity:environment.BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL},
+      {establishment :SearchType.LARGE_ESTABLISHMENTS, endPointActivity:environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL}
     ]
 
     let endPoint=activityEndPoint.find(item=> item.establishment==businessModel)
@@ -42,21 +40,29 @@ export class MyEnvironmentService {
         params = params.append('activities', JSON.stringify(this.selectedActivities));   */
 //TODO
     switch (businessModelSearch.searchType){
-      case 0:
+      case SearchType.BIG_MALLS:
+        params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
+        params=params.append('activities',JSON.stringify((businessModelSearch as BigMallsSearch).activities))
         return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
-      case 1:
+      case SearchType.COMMERCIAL_GALLERIES:
+        params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
+        params=params.append('activities',JSON.stringify((businessModelSearch as CommercialGalleriesSearch).activities))
         return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES_FAKE_FILTERED_RESULTS}`,{params})
-      case 2:
+      case SearchType.LARGE_ESTABLISHMENTS:
+        params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
+        params=params.append('activities',JSON.stringify((businessModelSearch as LargeEstablishmentsSearch).activities))
         return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
-      case 3:
+      case SearchType.MARKETS_AND_FAIRS:
+        params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
         return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
-      case 4:
+      case SearchType.MUNICIPAL_MARKETS:
+        params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
         return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
       default:
         return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
     }
   }
-
+  // The zone atribute up,  should be an Array of Zones 
 
   
 
