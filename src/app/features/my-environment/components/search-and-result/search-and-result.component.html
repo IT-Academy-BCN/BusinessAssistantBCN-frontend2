@@ -1,0 +1,120 @@
+<section>
+    <div class="main-container">
+        <!-- babcn-TITLE -->
+        <babcn-title [titleInput]='title'></babcn-title>
+        <!-- END babcn-TITLE -->
+        <!-- MAT GRID LIST -->
+      <!--  <mat-grid-list [cols]="breakpoint" rowHeight="550px">-->
+            <mat-grid-list rowHeight="550px" [cols]="breakpoint">
+
+            <mat-grid-tile>
+                <div class="container">
+                    <section>
+                        <h2 class="">{{'pages.big-stablish.section1.title'| translate}}
+                        </h2>
+                    </section>
+                 <!-- babcn-CONTAINER -->
+                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                    
+                    <div *ngIf="!showResults; else showResult" class="p-3 ms-8 border bg-light card-contents">
+                        <app-card-content [contentArray]="zones" [checkHandler]="checkZones"></app-card-content>
+                    </div>
+
+                    <ng-template #showResult>
+                        <h2 >
+                            {{ "common.title.results" | translate }}
+                        </h2>
+                        <div class="data" *ngIf="true" id="pdfData">
+        <!--                    <div *ngFor="let ls of businessModelsArray" >
+                                <h5 class="details">{{ ls.name }}</h5>
+                                <mat-list class="result-container list-unstyled" *ngFor="let address of ls.addresses">
+                                    <mat-list-item *ngIf="address.street_name">
+                                        {{ address.street_name }}, {{ address.street_number }}
+                                    </mat-list-item>
+                                    <mat-list-item *ngIf="address.town">
+                                        {{ address.zip_code }} {{ address.town }}
+                                    </mat-list-item>
+                                    <mat-list-item *ngIf="ls.email">
+                                        Email: {{ ls.email }}
+                                    </mat-list-item>
+                                    <mat-list-item *ngIf="ls.web">
+                                        Web: {{ ls.web }}
+                                    </mat-list-item>
+                                    <mat-list-item *ngIf="ls.phone">
+                                        Tel.:{{ ls.phone }}
+                                    </mat-list-item>
+                                </mat-list>
+                            </div>-->
+                        </div>
+                        <button mat-raised-button color="accent" style="background: #2c5e8f; color: white">
+                            {{ "common.button.save-results" | translate }}
+                        </button>
+                        <button mat-raised-button color="accent" style="background: #5cb85c; color: white"
+                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ "common.button.download-results" | translate }}
+                        </button>
+                    </ng-template>
+                </babcn-container>
+                <!-- END babcn-CONTAINER -->
+                <section>
+                    <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="search">
+                        <button mat-raised-button color="warn" (click)="goToResult()"
+                                routerLink="my-environment-search-detail"
+                                type="submit">
+                            {{'common.button.search' | translate}}
+                        </button>
+                    </div>
+                </section>
+
+             
+            </div>
+            </mat-grid-tile>
+
+
+            
+
+            <mat-grid-tile>
+
+                <div  *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'" class="container">
+                
+                    <section>
+                        <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
+                    </section>
+
+               <!-- babcn-CONTAINER -->
+                <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                        <div *ngIf="!showResults; else showResult" class="p-3 border bg-light card-contents">
+                            <div class="data">
+                                <div  >
+                               <div *ngFor="let activity of activities; let i = index" >
+                                    <div class="form-check">
+                                        <label class="form-check-label" >
+                                         <mat-checkbox class="form-check-input" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
+                                        </label>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <ng-template #showResult>
+                            <app-mapbox ></app-mapbox>
+                        </ng-template>
+                </babcn-container>
+            <!-- END babcn-CONTAINER -->
+                
+                    <div *ngIf="!showResults" class="search">
+                        <button mat-raised-button color="warn" (click)="goToResult()"
+                                routerLink="my-environment-search-detail"
+                                type="submit">
+                                {{'common.button.search' | translate}}
+                                </button>
+                    </div>  
+            </div>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+        <!-- END MAT GRID LIST -->
+       
+    </div>
+</section>
