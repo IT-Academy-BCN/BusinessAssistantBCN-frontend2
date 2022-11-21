@@ -17,20 +17,21 @@ export class MyEnvironmentService {
     /*    params = params.append('zones', JSON.stringify(this.selectedZones))
         params = params.append('activities', JSON.stringify(this.selectedActivities));   */
 //TODO
-    switch (businessModel){
-      case 'common.button.mall':
-        return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
-      case 'common.button.gallery-market':
-        return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES_FAKE_FILTERED_RESULTS}`,{params})
-      case 'common.button.big-stablish':
-        return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
-      case 'common.button.market-fair':
-        return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
-      case 'common.button.public-market':
-        return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
-      default:
-        return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
-    }
+    // switch (businessModel){
+    //   case 'common.button.mall':
+    //     return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
+    //   case 'common.button.gallery-market':
+    //     return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES_FAKE_FILTERED_RESULTS}`,{params})
+    //   case 'common.button.big-stablish':
+    //     return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
+    //   case 'common.button.market-fair':
+    //     return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
+    //   case 'common.button.public-market':
+    //     return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
+    //   default:
+    //     return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
+    // }
+  
   }
 
 
