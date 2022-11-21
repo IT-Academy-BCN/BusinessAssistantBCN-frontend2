@@ -1,10 +1,11 @@
+import { SearchItemResult } from './../../../../shared/models/my-environment-search/search-item-result.model';
 import { MyEnvironmentService } from './../../services/my-environment.service';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
-import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
+import {  MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Zone } from 'src/app/shared/models/common/zone.model';
 
 import { Subscription } from 'rxjs';
@@ -16,6 +17,7 @@ import { Subscription } from 'rxjs';
 })
 export class SearchAndResultComponent implements OnInit {
 
+  @Input() title = '';
    // Responsive Breakpoint
    breakpoint: number | string | "Unknown";
    ratio: string | number;
@@ -25,14 +27,16 @@ export class SearchAndResultComponent implements OnInit {
     activities:EconomicActivity[] =[]; //activities will store all the available economic activities before any selection
     selectedZones: Zone[] = [];
     selectedActivities:EconomicActivity[] = [];
+    searchResults: SearchItemResult[] = [];
 
    zonesSub:Subscription | null= null;
    activitiesSub:Subscription | null= null;
+   environments:Subscription | null = null;
 
   constructor(private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService,
     private commonService:CommonService) { 
-    const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
+    const value =  MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
       this.ratio = value[1];
@@ -41,7 +45,6 @@ export class SearchAndResultComponent implements OnInit {
       this.ratio = "150px";
     }
   }
-  @Input() title = '';
 
   myEnvironmentSearch: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch |  null = null;
 
@@ -65,17 +68,22 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   goToResult() {
-
     this.showResults = true;
-   // this.router.navigate(['my-environment-result']);
-
-    // this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
-    //   //this.myEnvSrv.results.next(response.results);
-    // })
+    this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+    response.results.forEach( (result: any) => { 
+      this.searchResults.push( {
+        name: result.name,
+        web: result.web,
+        email: result.email,
+        phone: result.phone,
+        addresses: result.addresses
+      })
+    })
+     })
   }
 
   checkZones(zoneSelected: Zone, event: any) {
-       if (event.checked) {
+       if (event) {
           //Adds the selected zone to the array zones in the common service to use it there as parameter
           this.selectedZones.push(zoneSelected);
         } else {
@@ -85,13 +93,15 @@ export class SearchAndResultComponent implements OnInit {
       }
 
   checkActivities(activitySelected: EconomicActivity, event: any) {
-            if (event.checked) {
+            if (event) {
               //Adds the selected activity to the selected activities array
               this.selectedActivities.push(activitySelected);
             } else {
               //removes the selected if it is already in the selected activities arary
               this.selectedActivities.splice(this.selectedActivities.indexOf(activitySelected),1);
+              console.log(activitySelected, event, "my not selected activity")
             }
+            console.log(this.selectedActivities)
           }
 
   getAllZones(){
@@ -109,6 +119,15 @@ export class SearchAndResultComponent implements OnInit {
   ngOnInit(): void {
 
     this.defineSearchType(this.title);
+
+    this.responsive.breakpoint$.subscribe((res) => {
+      MY_ENVIRONMENT_MAT_GRID_LIST.forEach((value, key) => {
+        if (key == res) {
+          this.breakpoint = value[0];
+          this.ratio = value[1];
+        }
+      });
+    });
 
     this.getAllZones(); //gets all the zones available from the common service
 

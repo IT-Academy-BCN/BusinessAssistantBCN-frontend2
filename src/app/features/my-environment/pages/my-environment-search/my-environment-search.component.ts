@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { MyEnvironmentService } from '../../services/my-environment.service';
-import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
+import { MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Subscription } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
 import {Zone} from "../../../../shared/models/common/zone.model";
@@ -37,7 +37,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
     private responsive: BreakpointService,
     private commonService:CommonService,
   ) {
-    const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
+    const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
       this.ratio = value[1];
@@ -71,7 +71,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
   ngOnInit(): void {
     this.title = this.myEnvSrv.title;
     this.responsive.breakpoint$.subscribe((res) => {
-      VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
+      MY_ENVIRONMENT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
           this.breakpoint = value[0];
           this.ratio = value[1];
@@ -81,10 +81,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
     this.getAllActivities(this.title); //gets all the activities available from my environment service
     this.getAllZones(); //gets all the zones available from the common service
 
-    console.log(this.title)
-
-    this.defineSearchType(this.title)
-
+    console.log(this.ratio, "ratio")
   }
 
   goToResult() {
