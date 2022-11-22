@@ -26,6 +26,8 @@ describe('MyEnvironmentSearchComponent', () => {
   let component: MyEnvironmentSearchComponent;
   let fixture: ComponentFixture<MyEnvironmentSearchComponent>;
   let myEnvSrv: MyEnvironmentService
+
+  const envService=jasmine.createSpyObj('myEnvSrv', ['goToResult()',])
   let businessModelSearch:MyEnvironmentSearch
 
   let router: Router
@@ -59,6 +61,7 @@ describe('MyEnvironmentSearchComponent', () => {
     myEnvSrv = TestBed.inject(MyEnvironmentService)
     fixture = TestBed.createComponent(MyEnvironmentSearchComponent);
     component = fixture.componentInstance;
+    
     
     router.initialNavigation()
   });

@@ -11,7 +11,7 @@ import { BigMallsSearch, MyEnvironmentSearch, SearchType, CommercialGalleriesSea
 })
 export class MyEnvironmentService {
 
-  title: string = '';
+  title: string = ''; // This atribute should be remove once refactor other components is done
 
   constructor(private http: HttpClient) { }
 
