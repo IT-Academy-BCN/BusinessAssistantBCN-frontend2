@@ -44,7 +44,7 @@
     <mat-grid-tile>
         <div class="container">
             <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
-                <app-mapbox ></app-mapbox>
+                <app-mapbox [filteredResultsToPrintOnMap]="[]" [selectedResultsToChangeColor]="selectedList"></app-mapbox>
                 <!--<app-mapbox [filteredResultsToPrintOnMap]="results"></app-mapbox>-->
             </babcn-container>
         </div>

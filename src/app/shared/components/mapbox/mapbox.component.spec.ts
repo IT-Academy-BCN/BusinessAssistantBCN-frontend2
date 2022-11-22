@@ -48,6 +48,16 @@ describe('MapboxComponent', () => {
         expect(component).toBeTruthy();
 
       });
+
+      it('should update elements', () => { 
+
+        component.updateSelectedMarkers();
+
+        const selected = component['currentMarkers'].filter(e=>(e as any)['_color']=='red');
+
+        expect(selected.length == (component.selectedResultsToChangeColor || []).length).toBeTruthy();
+
+      });
 });
 
 

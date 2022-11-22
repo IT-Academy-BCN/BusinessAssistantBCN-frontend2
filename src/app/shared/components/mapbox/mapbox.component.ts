@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Input } from "@angular/core";
+import { Component, AfterViewInit, ViewChild, ElementRef, Input, SimpleChanges } from "@angular/core";
 import * as Mapboxgl from "mapbox-gl"; 
 import { LngLatBounds, NavigationControl, GeolocateControl, Map, Popup, Marker } from "mapbox-gl";
 import { environment } from "src/environments/environment";
@@ -14,6 +14,7 @@ export class MapboxComponent implements AfterViewInit {
   @ViewChild("mapDiv")
   mapDivElement!: ElementRef;
   @Input() filteredResultsToPrintOnMap!: any[];
+  @Input() selectedResultsToChangeColor!: any[];
   private map!: Map;
   private currentMarkers: Marker[] = [];
 
@@ -47,7 +48,7 @@ export class MapboxComponent implements AfterViewInit {
     this.getUsersLocation();
   }
 
-  ngOnChanges() {
+  ngOnChanges(changes:SimpleChanges) {
 
    (this.filteredResultsToPrintOnMap || []).forEach((result) => {
 
@@ -55,6 +56,8 @@ export class MapboxComponent implements AfterViewInit {
 
        if(this.coordinatesAreValid(result)) this.createANewMarker("orange", result);
     });
+
+    if(changes['selectedResultsToChangeColor']){ this.updateSelectedMarkers(); }
   }
 
   ngOnDestroy() {
@@ -139,6 +142,29 @@ export class MapboxComponent implements AfterViewInit {
         this.createANewMarker("red", this.MAPBOX_INIT_LOCATION);
       }
     );
+  }
+
+  updateSelectedMarkers(){
+
+    let selected;
+
+    // first reset markers
+
+    this.currentMarkers.forEach(e=> e.remove())
+    this.currentMarkers = [];
+
+    // then update
+
+    (this.filteredResultsToPrintOnMap || []).forEach((element)=>{
+
+      let {x, y} = element!.addresses[0].location; 
+
+      selected = (this.selectedResultsToChangeColor || []).find(e=> x == e!.addresses[0].location.x && y == e!.addresses[0].location.y);
+
+      this.createANewMarker( selected ? 'red' : 'yellow' ,element );     
+
+    });
+
   }
 
   coordinatesAreValid(business:any){
