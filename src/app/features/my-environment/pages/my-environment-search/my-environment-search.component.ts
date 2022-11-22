@@ -60,12 +60,16 @@ export class MyEnvironmentSearchComponent implements OnInit {
 
   }
 
-  goToResult() {
-    this.router.navigate(['my-environment-result']);
-    this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
-      //this.myEnvSrv.results.next(response.results);
-    })
+  goToResult(){
+    
   }
+
+  // goToResult() {
+  //   this.router.navigate(['my-environment-result']);
+  //   this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+  //     //this.myEnvSrv.results.next(response.results);
+  //   })
+  // }
 
   checkZones(zoneSelected: Zone, event: any) {
 /*    if (event.checked) {
