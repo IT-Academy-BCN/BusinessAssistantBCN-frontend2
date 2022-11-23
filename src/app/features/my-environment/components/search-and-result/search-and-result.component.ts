@@ -23,8 +23,8 @@ export class SearchAndResultComponent implements OnInit {
    ratio: string | number;
    showResults: boolean = false;
 
-   bussienesModel:SearchType=0 
-   bussinesModelSearch!:MyEnvironmentSearch
+   businessModel:SearchType=0 
+   bussinesModelSearch!:MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch
 
     zones:Zone[] = []; //zones will store all the available zones
     activities:EconomicActivity[] =[]; //activities will store all the available economic activities before any selection
@@ -49,7 +49,15 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
-  myEnvironmentSearch: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch |  null = null;
+  myEnvironmentSearch: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch = {
+    searchType: 0,
+    activities: [],
+   zone: {
+    idZone: 0,
+    zoneName: '',
+    },
+   result: []
+  };
 
   defineSearchType(str: string){
     if (str == 'common.button.mall') {
@@ -68,10 +76,14 @@ export class SearchAndResultComponent implements OnInit {
       this.myEnvironmentSearch = new MunicipalMarketsSearch;
       //Here go all the data of Municipal-markets
     }
+    this.bussinesModelSearch = this.myEnvironmentSearch
+    console.log(this.bussinesModelSearch.searchType)
   }
 
-  goToResult(bussinesModelSearch:MyEnvironmentSearch) {
+  goToResult(bussinesModelSearch:MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch) {
     this.showResults = true;
+    //this.bussinesModelSearch.zone = this.selectedZones[0],
+
     this.environments=this.myEnvSrv.getResults(bussinesModelSearch).subscribe((response:any)=>{
     response.results.forEach( (result: any) => { 
       this.searchResults.push( {
@@ -80,8 +92,8 @@ export class SearchAndResultComponent implements OnInit {
         email: result.email,
         phone: result.phone,
         addresses: result.addresses
-      })
-    })
+          })
+        })
      })
   }
 
@@ -102,9 +114,7 @@ export class SearchAndResultComponent implements OnInit {
             } else {
               //removes the selected if it is already in the selected activities arary
               this.selectedActivities.splice(this.selectedActivities.indexOf(activitySelected),1);
-              console.log(activitySelected, event, "my not selected activity")
             }
-            console.log(this.selectedActivities)
           }
 
   getAllZones(){
@@ -134,7 +144,7 @@ export class SearchAndResultComponent implements OnInit {
 
     this.getAllZones(); //gets all the zones available from the common service
 
-    this.getAllActivities(this.bussienesModel); //gets all the activities available from my environment service
+    this.getAllActivities(this.businessModel); //gets all the activities available from my environment service
   }
 
 }
