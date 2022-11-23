@@ -68,7 +68,7 @@
 
                         <section>
                             <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="search">
-                            <button mat-raised-button style="background:black; color: white" (click)="goToResult()"
+                            <button mat-raised-button style="background:black; color: white" (click)="goToResult(bussinesModelSearch)"
                                     routerLink="my-environment-search-detail"
                                     type="submit">
                                 {{'common.button.search' | translate}}
@@ -115,7 +115,7 @@
                                <!-- END babcn-CONTAINER -->
                    
                         <div *ngIf="!showResults" class="search">
-                            <button mat-raised-button style="background:black; color: white" (click)="goToResult()"
+                            <button mat-raised-button style="background:black; color: white" (click)="goToResult(bussinesModelSearch)"
                                     routerLink="my-environment-search-detail"
                                     type="submit">
                                     {{'common.button.search' | translate}}

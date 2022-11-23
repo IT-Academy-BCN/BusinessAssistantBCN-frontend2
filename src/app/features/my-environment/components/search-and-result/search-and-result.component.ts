@@ -3,7 +3,7 @@ import { MyEnvironmentService } from './../../services/my-environment.service';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
+import { MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch, SearchType } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import {  MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Zone } from 'src/app/shared/models/common/zone.model';
@@ -22,6 +22,9 @@ export class SearchAndResultComponent implements OnInit {
    breakpoint: number | string | "Unknown";
    ratio: string | number;
    showResults: boolean = false;
+
+   bussienesModel:SearchType=0 
+   bussinesModelSearch!:MyEnvironmentSearch
 
     zones:Zone[] = []; //zones will store all the available zones
     activities:EconomicActivity[] =[]; //activities will store all the available economic activities before any selection
@@ -67,9 +70,9 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
-  goToResult() {
+  goToResult(bussinesModelSearch:MyEnvironmentSearch) {
     this.showResults = true;
-    this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+    this.environments=this.myEnvSrv.getResults(bussinesModelSearch).subscribe((response:any)=>{
     response.results.forEach( (result: any) => { 
       this.searchResults.push( {
         name: result.name,
@@ -110,8 +113,8 @@ export class SearchAndResultComponent implements OnInit {
     })
   }
 
-  getAllActivities(category: string){
-    this.activitiesSub=this.myEnvSrv.getEconomicActivities(category).subscribe(response=>{
+  getAllActivities(businessModel:SearchType){
+    this.activitiesSub=this.myEnvSrv.getEconomicActivities(businessModel).subscribe(response=>{
     this.activities=response.results;
     })
   }
@@ -131,7 +134,7 @@ export class SearchAndResultComponent implements OnInit {
 
     this.getAllZones(); //gets all the zones available from the common service
 
-    this.getAllActivities(this.title); //gets all the activities available from my environment service
+    this.getAllActivities(this.bussienesModel); //gets all the activities available from my environment service
   }
 
 }
