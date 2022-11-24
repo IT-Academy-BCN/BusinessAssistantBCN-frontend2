@@ -36,9 +36,7 @@ export class MyEnvironmentService {
 
   getResults(businessModelSearch: MyEnvironmentSearch){
     let params = new HttpParams();
-    /*    params = params.append('zones', JSON.stringify(this.selectedZones))
-        params = params.append('activities', JSON.stringify(this.selectedActivities));   */
-//TODO
+   
     switch (businessModelSearch.searchType){
       case SearchType.BIG_MALLS:
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
