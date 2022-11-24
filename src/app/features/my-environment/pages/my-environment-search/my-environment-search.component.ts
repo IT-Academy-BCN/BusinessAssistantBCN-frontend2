@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
 import {Zone} from "../../../../shared/models/common/zone.model";
 import {EconomicActivity} from "../../../../shared/models/common/economic-activity.model";
@@ -13,7 +13,7 @@ import {EconomicActivity} from "../../../../shared/models/common/economic-activi
   templateUrl: './my-environment-search.component.html',
   styleUrls: ['./my-environment-search.component.scss']
 })
-export class MyEnvironmentSearchComponent implements OnInit {
+export class MyEnvironmentSearchComponent implements OnInit, OnDestroy {
 
   title: string = '';
 
@@ -23,10 +23,18 @@ export class MyEnvironmentSearchComponent implements OnInit {
   
   //zones:ZoneModel[] = []; //zones will store all the available zones before any selection
   //activities:EconomicActivityModel[] =[]; //activities will store all the available economic activities before any selection
-  environments:Subscription | null = null;
+ /*  environments:Subscription | null = null;
   activitiesSub:Subscription | null= null;
-  zonesSub:Subscription | null= null;
+  zonesSub:Subscription | null= null; */
 
+  subscription!:Subscription;
+
+  zones$!:Observable<any>;
+  activities$!:Observable<any>;
+
+
+  selectedZones:any = [];
+  selectedActivities:any = [];
 
   constructor(
     private router: Router,
@@ -46,7 +54,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.myEnvSrv.title;
-    this.responsive.breakpoint$.subscribe((res) => {
+    this.subscription = this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
           this.breakpoint = value[0];
@@ -56,53 +64,74 @@ export class MyEnvironmentSearchComponent implements OnInit {
     });
     this.getAllActivities(this.title); //gets all the activities available from my environment service
     this.getAllZones(); //gets all the zones available from the common service
+  }
 
+/*   goToResult(){
+    
+  } */
+
+   goToResult() {
+
+    this.updateSelectionsOnService();
+    this.router.navigate(['my-environment-result']);
+ /*    this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+  this.myEnvSrv.results.next(response.results);
+   }) */
+  }
+
+  private updateSelectionsOnService(){
+
+    /* this.myEnvSrv.selectedZones = this.selectedZones;
+    this.myEnvSrv.selectedActivities = this.selectedActivities; */
 
   }
 
-  goToResult(){
+  checkZones(zoneSelected: Zone, event: any) {
+
+    const list = this.selectedZones;
+
+    /* const list = this.myEnvSrv.selectedZones; */
+    
+    if (event) {
+      //Adds the selected zone to the array zones in the common service to use it there as parameter
+      list.push(zoneSelected);
+
+    } else {
+      //removes the zone if it is already in the common service array      
+      const index = list.indexOf(zoneSelected);
+      if(index!=-1) list.splice(index,1) 
+      
+    }
+
     
   }
 
-  // goToResult() {
-  //   this.router.navigate(['my-environment-result']);
-  //   this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
-  //     //this.myEnvSrv.results.next(response.results);
-  //   })
-  // }
-
-  checkZones(zoneSelected: Zone, event: any) {
-/*    if (event.checked) {
-      //Adds the selected zone to the array zones in the common service to use it there as parameter
-      this.myEnvSrv.selectedZones.push(zoneSelected);
-    } else {
-      //removes the zone if it is already in the common service array
-      this.myEnvSrv.selectedZones.splice(this.myEnvSrv.selectedZones.indexOf(zoneSelected),1);
-    }*/
-  }
-
   checkActivities(activitySelected: EconomicActivity, event: any) {
-/*    if (event.checked) {
+
+    const list = this.selectedActivities;
+    /* const list = this.myEnvSrv.selectedActivities */
+
+   if (event) {
       //Adds the selected activity to the array zones in the common service to use it there as parameter
-      this.myEnvSrv.selectedActivities.push(activitySelected);
+      list.push(activitySelected);
+      
     } else {
       //removes the selected if it is already in the common service array
-      this.myEnvSrv.selectedActivities.splice(this.myEnvSrv.selectedActivities.indexOf(activitySelected),1);
-    }*/
+      const index = list.indexOf(activitySelected);
+      if(index!=-1) list.splice(index,1)      
+    }
+    
   }
-
 
 
   getAllZones(){
-    this.zonesSub=this.commonService.getZones().subscribe(response=>{
-      //this.zones=response.results;
-    })
+    this.zones$ =this.commonService.getZones()
   }
 
   getAllActivities(category: string){
-    this.activitiesSub=this.myEnvSrv.getEconomicActivities(category).subscribe(response=>{
-     // this.activities=response.results;
-    })
+    this.activities$ =this.myEnvSrv.getEconomicActivities(category)
   }
+
+  ngOnDestroy(): void { this.subscription?.unsubscribe();  }
 
 }
