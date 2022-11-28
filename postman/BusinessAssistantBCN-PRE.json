@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "7be6db64-636e-4902-844e-832e1d0c0e13",
+		"name": "BusinessAssistantBCN-PRE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Commercial Galleries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InVlYmVybWVuc2NoQHphcmF0aHVzdHJhLmNvbSIsInBhc3N3b3JkIjoiTDJtbnh1cX1eWiNyQWg3XUooXm9pQCU0QDosRXZmLVYiLCJhdXRob3JpdGllcyI6WyJTVVBFUlVTRVIiXSwiaWF0IjoxNjY5MTM1MjAzfQ.ySbRr7yOZcTwfOux1oitmNUfrM6omb-ky64fGrrqngk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://87.106.229.175:7777/businessassistantbcn/api/v1/opendata/commercial-galleries",
+					"protocol": "http",
+					"host": [
+						"87",
+						"106",
+						"229",
+						"175"
+					],
+					"port": "7777",
+					"path": [
+						"businessassistantbcn",
+						"api",
+						"v1",
+						"opendata",
+						"commercial-galleries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Big Malls",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InVlYmVybWVuc2NoQHphcmF0aHVzdHJhLmNvbSIsInBhc3N3b3JkIjoiTDJtbnh1cX1eWiNyQWg3XUooXm9pQCU0QDosRXZmLVYiLCJhdXRob3JpdGllcyI6WyJTVVBFUlVTRVIiXSwiaWF0IjoxNjY5MTM1MjAzfQ.ySbRr7yOZcTwfOux1oitmNUfrM6omb-ky64fGrrqngk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://87.106.229.175:7777/businessassistantbcn/api/v1/opendata/commercial-galleries",
+					"protocol": "http",
+					"host": [
+						"87",
+						"106",
+						"229",
+						"175"
+					],
+					"port": "7777",
+					"path": [
+						"businessassistantbcn",
+						"api",
+						"v1",
+						"opendata",
+						"commercial-galleries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

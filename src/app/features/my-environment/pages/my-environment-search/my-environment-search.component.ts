@@ -88,12 +88,16 @@ export class MyEnvironmentSearchComponent implements OnInit {
     console.log(this.ratio, "ratio")
   }
 
-  goToResult(bussinesModelSearch:MyEnvironmentSearch) {
-    this.router.navigate(['my-environment-result']);
-    this.environments=this.myEnvSrv.getResults(bussinesModelSearch).subscribe((response:any)=>{
-      //this.myEnvSrv.results.next(response.results);
-    })
+  goToResult(){
+    
   }
+
+  // goToResult() {
+  //   this.router.navigate(['my-environment-result']);
+  //   this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+  //     //this.myEnvSrv.results.next(response.results);
+  //   })
+  // }
 
   checkZones(zoneSelected: Zone, event: any) {
 /*    if (event.checked) {

@@ -19,6 +19,7 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
 
   //businessModelsArray: BasicBusinessModel[] = [];
   modelsSub:Subscription | null = null;
+  selectedList: any[] = [];
 
   constructor(private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService) {
@@ -52,6 +53,15 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
  // results:BasicBusinessModel[] =[];
   subscription!:Subscription;
 
+  selectItem(item:any){
+
+    const selectedIndex = this.selectedList.findIndex(e=>e==item), list = [...this.selectedList];
+
+    if(selectedIndex==-1) list.push(item); else list.splice(selectedIndex,1);
+
+    this.selectedList = list;
+    
+  }
 
   ngOnDestroy(): void {  this.subscription ? this.subscription.unsubscribe():null  }
 

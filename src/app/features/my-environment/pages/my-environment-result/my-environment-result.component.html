@@ -47,18 +47,18 @@
               </babcn-container>
             </div>
         </div>
-      </mat-grid-tile>
-  
-      <mat-grid-tile>
-         
-              <div class="results-container" [ngStyle]="{'width': ratio}">
-                  <!-- <app-mapbox [filteredResultsToPrintOnMap]="results"></app-mapbox> -->
-              </div>
-         
-      </mat-grid-tile>
-  
-  </mat-grid-list>
-</section>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <div class="container">
+            <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+                <app-mapbox [filteredResultsToPrintOnMap]="[]" [selectedResultsToChangeColor]="selectedList"></app-mapbox>
+                <!--<app-mapbox [filteredResultsToPrintOnMap]="results"></app-mapbox>-->
+            </babcn-container>
+        </div>
+    </mat-grid-tile>
+
+</mat-grid-list>
 
 
 

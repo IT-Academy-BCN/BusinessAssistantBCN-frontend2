@@ -22,6 +22,7 @@ export class SearchAndResultComponent implements OnInit {
    breakpoint: number | string | "Unknown";
    ratio: string | number;
    showResults: boolean = false;
+   selectedList: any[] = [];
 
    businessModel:SearchType=0 
    bussinesModelSearch!:MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch
@@ -127,6 +128,18 @@ export class SearchAndResultComponent implements OnInit {
     this.activitiesSub=this.myEnvSrv.getEconomicActivities(businessModel).subscribe(response=>{
     this.activities=response.results;
     })
+  }
+
+  subscription!:Subscription;
+
+  selectItem(item:any){
+
+    const selectedIndex = this.selectedList.findIndex(e=>e==item), list = [...this.selectedList];
+
+    if(selectedIndex==-1) list.push(item); else list.splice(selectedIndex,1);
+
+    this.selectedList = list;
+    
   }
 
   ngOnInit(): void {
