@@ -53,4 +53,31 @@ export class MyEnvironmentService {
         });
   }
 
+  test(){ // Temporal function for testing endpoints. To delete
+       
+    [ 
+      {url:'BACKEND_ZONES_URL'},
+      {url:'BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL',},
+      {url:'BACKEND_LARGE_STABLISHMENTS_SEARCH_URL', config:{"zones": JSON.stringify([1,2,3,4]),"activities": JSON.stringify([1,2,3,4])}}, 
+      {url:'BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL'}, 
+      {url:'BACKEND_BIG_MALLS_URL'}, 
+      {url:'BACKEND_SAVED_SEARCHES_URL', params:'/99832-12345-12345-12345-12345?offset=0&limit=5'},
+      {url:'BACKEND_BIG_MALLS_ACTIVITIES_URL'},
+      {url:'BACKEND_MUNICIPAL_MARKETS'}
+
+    ].forEach((endPoint:any)=>{
+
+      let params = new HttpParams(), config = endPoint.config||{};
+
+      Object.keys(config).forEach(key=>params.append(key, config[key]))
+
+      this.http.get( `${ environment.BACKEND_BASE_URL }${(environment as any)[endPoint.url]}${endPoint.params||''}`,
+      {
+        params:params
+      }).subscribe(success=>console.log(endPoint, 'SUCCESS ----->', success), error=>console.log(endPoint, 'ERROR  ----->', error)) 
+    }) 
+  
+}
+
+
 }
