@@ -48,7 +48,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title = this.myEnvSrv.title;
+  
     this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
@@ -69,6 +69,14 @@ export class MyEnvironmentSearchComponent implements OnInit {
       //this.myEnvSrv.results.next(response.results);
     })
   }
+
+
+  // goToResult() {
+  //   this.router.navigate(['my-environment-result']);
+  //   this.environments=this.myEnvSrv.getResults(this.title).subscribe((response:any)=>{
+  //     //this.myEnvSrv.results.next(response.results);
+  //   })
+  // }
 
   checkZones(zoneSelected: Zone, event: any) {
 /*    if (event.checked) {
@@ -98,10 +106,12 @@ export class MyEnvironmentSearchComponent implements OnInit {
     })
   }
 
-  getAllActivities(businessModel:SearchType){
+  getAllActivities(businessModel:SearchType) {
     this.activitiesSub=this.myEnvSrv.getEconomicActivities(businessModel).subscribe(response=>{
      // this.activities=response.results;
     })
   }
 
-}
+  }
+
+
