@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
 import {Zone} from "../../../../shared/models/common/zone.model";
 import {EconomicActivity} from "../../../../shared/models/common/economic-activity.model";
+import { MyEnvironmentSearch, SearchType } from '../../../../shared/models/my-environment-search/my-environment-search.model';
 
 @Component({
   selector: 'app-my-environment-search',
@@ -15,7 +16,9 @@ import {EconomicActivity} from "../../../../shared/models/common/economic-activi
 })
 export class MyEnvironmentSearchComponent implements OnInit {
 
-  title: string = '';
+  bussienesModel:SearchType=0 
+  bussinesModelSearch!:MyEnvironmentSearch
+  title:string=''
 
   // Responsive Breakpoint
   breakpoint: number | string | "Unknown";
@@ -45,7 +48,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title = this.myEnvSrv.title;
+  
     this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
@@ -54,15 +57,19 @@ export class MyEnvironmentSearchComponent implements OnInit {
         }
       });
     });
-    this.getAllActivities(this.title); //gets all the activities available from my environment service
+    this.getAllActivities(this.bussienesModel); //gets all the activities available from my environment service
     this.getAllZones(); //gets all the zones available from the common service
 
 
   }
 
-  goToResult(){
-    
+  goToResult(bussinesModelSearch:MyEnvironmentSearch) {
+    this.router.navigate(['my-environment-result']);
+    this.environments=this.myEnvSrv.getResults(bussinesModelSearch).subscribe((response:any)=>{
+      //this.myEnvSrv.results.next(response.results);
+    })
   }
+
 
   // goToResult() {
   //   this.router.navigate(['my-environment-result']);
@@ -99,10 +106,12 @@ export class MyEnvironmentSearchComponent implements OnInit {
     })
   }
 
-  getAllActivities(category: string){
-    this.activitiesSub=this.myEnvSrv.getEconomicActivities(category).subscribe(response=>{
+  getAllActivities(businessModel:SearchType) {
+    this.activitiesSub=this.myEnvSrv.getEconomicActivities(businessModel).subscribe(response=>{
      // this.activities=response.results;
     })
   }
 
-}
+  }
+
+
