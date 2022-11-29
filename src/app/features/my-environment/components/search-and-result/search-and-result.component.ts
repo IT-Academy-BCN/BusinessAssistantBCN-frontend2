@@ -128,7 +128,6 @@ export class SearchAndResultComponent implements OnInit {
     })
   }
 
-  subscription!:Subscription;
 
   selectItem(item:any){
 
@@ -157,7 +156,5 @@ export class SearchAndResultComponent implements OnInit {
 
     this.getAllActivities(this.businessModel); //gets all the activities available from my environment service
   }
-
-  ngOnDestroy(): void {  this.subscription ? this.subscription.unsubscribe():null  }
 
 }
