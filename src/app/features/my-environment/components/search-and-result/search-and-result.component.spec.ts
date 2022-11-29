@@ -5,7 +5,6 @@ import { MyEnvironmentService } from '../../services/my-environment.service';
 import { SearchAndResultComponent } from './search-and-result.component';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { of } from 'rxjs';
 
 
 describe('SearchAndResultComponent', () => {
@@ -66,7 +65,6 @@ describe('SearchAndResultComponent', () => {
       const spy = jest.spyOn(commonSrv, 'getZones');
       fixture.detectChanges();
       expect(spy).toHaveBeenCalledTimes(1);
-      //expect(component.zones.length).toBeGreaterThan(0);
     })
     );
   })
