@@ -12,14 +12,14 @@ import { environment } from "src/environments/environment";
 
 export class CommonService {
 
-  zones:Zone[]=[];
+  //zones:Zone[]=[];
   activities:EconomicActivity[]=[]
   //results = new Subject<BasicBusinessModel[]>()
 
   constructor(private http: HttpClient) {
   }
 
-  getZones(): Observable<any>{
+  getZones(): Observable<any> {
     return this.http.get(
       `${ environment.BACKEND_BASE_URL }${ environment.BACKEND_ZONES_URL }`,
       {
