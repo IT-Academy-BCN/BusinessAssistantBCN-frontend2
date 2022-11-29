@@ -73,7 +73,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.title = this.myEnvSrv.title;
+  
     this.responsive.breakpoint$.subscribe((res) => {
       MY_ENVIRONMENT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
@@ -88,9 +88,13 @@ export class MyEnvironmentSearchComponent implements OnInit {
     console.log(this.ratio, "ratio")
   }
 
-  goToResult(){
-    
+  goToResult(bussinesModelSearch:MyEnvironmentSearch) {
+    this.router.navigate(['my-environment-result']);
+    this.environments=this.myEnvSrv.getResults(bussinesModelSearch).subscribe((response:any)=>{
+      //this.myEnvSrv.results.next(response.results);
+    })
   }
+
 
   // goToResult() {
   //   this.router.navigate(['my-environment-result']);
@@ -127,10 +131,12 @@ export class MyEnvironmentSearchComponent implements OnInit {
     })
   }
 
-  getAllActivities(businessModel:SearchType){
+  getAllActivities(businessModel:SearchType) {
     this.activitiesSub=this.myEnvSrv.getEconomicActivities(businessModel).subscribe(response=>{
      // this.activities=response.results;
     })
   }
 
-}
+  }
+
+

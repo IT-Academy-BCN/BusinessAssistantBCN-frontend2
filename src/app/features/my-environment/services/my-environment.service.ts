@@ -15,6 +15,8 @@ export class MyEnvironmentService {
 
   constructor(private http: HttpClient) { }
 
+
+
   getEconomicActivities(businessModel:SearchType): Observable<any> {
     const activityEndPoint=[
       {establishment :SearchType.BIG_MALLS, endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL},
@@ -35,9 +37,7 @@ export class MyEnvironmentService {
 
   getResults(businessModelSearch: MyEnvironmentSearch){
     let params = new HttpParams();
-    /*    params = params.append('zones', JSON.stringify(this.selectedZones))
-        params = params.append('activities', JSON.stringify(this.selectedActivities));   */
-//TODO
+   
     switch (businessModelSearch.searchType){
       case SearchType.BIG_MALLS:
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
@@ -51,9 +51,9 @@ export class MyEnvironmentService {
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
         params=params.append('activities',JSON.stringify((businessModelSearch as LargeEstablishmentsSearch).activities))
         return this.http.get(`${environment.BACKEND_LARGE_STABLISHMENTS_SEARCH_URL}`,{params})
-      case SearchType.MARKETS_AND_FAIRS:
+      case SearchType.MARKETS_AND_FAIRS: //This endpoint is missing therefore a repeated one is used
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
-        return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS}`,{params})
+        return this.http.get(`${environment.BACKEND_BIG_MALLS_URL}`,{params})
       case SearchType.MUNICIPAL_MARKETS:
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
         return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS}`,{params})
