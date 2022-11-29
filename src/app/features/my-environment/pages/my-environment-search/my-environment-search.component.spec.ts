@@ -27,9 +27,6 @@ describe('MyEnvironmentSearchComponent', () => {
   let fixture: ComponentFixture<MyEnvironmentSearchComponent>;
   let myEnvSrv: MyEnvironmentService
 
-  const envService=jasmine.createSpyObj('myEnvSrv', ['goToResult()',])
-  let businessModelSearch:MyEnvironmentSearch
-
   let router: Router
   let location: Location
 
@@ -83,7 +80,7 @@ describe('MyEnvironmentSearchComponent', () => {
       expect(component.title).toBe(newTitle)
     })
     it('#goToResult should navigate to my-environment-result', fakeAsync(()=>{
-      component.goToResult(businessModelSearch)
+      component.goToResult()
       router.navigate(['my-environment-result'])
       tick()
       expect(location.path()).toBe('/my-environment-result')

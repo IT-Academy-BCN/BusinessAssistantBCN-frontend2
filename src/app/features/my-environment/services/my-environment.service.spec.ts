@@ -11,7 +11,7 @@ describe('MyEnvironmentService', () => {
 
   let service:MyEnvironmentService
 
-  
+  /* 
   jest.mock('MockServices', () => ({
 
     GeolocateControl: jest.fn(),
@@ -23,13 +23,10 @@ describe('MyEnvironmentService', () => {
     NavigationControl: jest.fn()
 
 }));
-
- 
+*/
  
   beforeEach(() => {
 
-   
-  
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
     });
@@ -41,9 +38,4 @@ describe('MyEnvironmentService', () => {
     expect(service).toBeTruthy();
   });
 
-  // describe('Variables', ()=>{
-  //   it('title should be declared', ()=>{
-  //     expect(service.title).toBeDefined()
-  //   })
-  // })
 });

@@ -78,12 +78,10 @@ export class SearchAndResultComponent implements OnInit {
       //Here go all the data of Municipal-markets
     }
     this.bussinesModelSearch = this.myEnvironmentSearch
-    console.log(this.bussinesModelSearch.searchType)
   }
 
   goToResult(bussinesModelSearch:MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch) {
     this.showResults = true;
-    //this.bussinesModelSearch.zone = this.selectedZones[0],
 
     this.environments=this.myEnvSrv.getResults(bussinesModelSearch).subscribe((response:any)=>{
     response.results.forEach( (result: any) => { 
@@ -139,7 +137,7 @@ export class SearchAndResultComponent implements OnInit {
     if(selectedIndex==-1) list.push(item); else list.splice(selectedIndex,1);
 
     this.selectedList = list;
-    
+
   }
 
   ngOnInit(): void {
@@ -159,5 +157,7 @@ export class SearchAndResultComponent implements OnInit {
 
     this.getAllActivities(this.businessModel); //gets all the activities available from my environment service
   }
+
+  ngOnDestroy(): void {  this.subscription ? this.subscription.unsubscribe():null  }
 
 }

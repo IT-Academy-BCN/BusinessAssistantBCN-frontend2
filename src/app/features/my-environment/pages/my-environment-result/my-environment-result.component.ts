@@ -35,9 +35,6 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-/*    this.modelsSub=this.myEnvSrv.results.asObservable().subscribe((results:BasicBusinessModel[])=>{
-      this.businessModelsArray=results;
-  })*/
 
   this.responsive.breakpoint$.subscribe((res) => {
     MY_ENVIRONMENT_MAT_GRID_LIST.forEach((value, key) => {
@@ -49,8 +46,6 @@ export class MyEnvironmentResultComponent implements OnInit, OnDestroy {
   });
 
   }
-
- // results:BasicBusinessModel[] =[];
   subscription!:Subscription;
 
   selectItem(item:any){
