@@ -14,7 +14,7 @@ const TOKEN = environment.BACKEND_TOKEN;
 })
 export class JwtInterceptorService implements HttpInterceptor {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let modifiedRequest = request;
@@ -23,11 +23,10 @@ export class JwtInterceptorService implements HttpInterceptor {
     if (TOKEN != null) {
       modifiedRequest = request.clone({ headers: request.headers.set(AUTHORIZATION, BEARER + TOKEN) });
     }
-    console.log(modifiedRequest);
     return next.handle(modifiedRequest).pipe( //redireccionar si alguna petición arroja 401 - Forbidden
       catchError((error) => {
         if (error.status === 401) {
-          // this.router.navigateByUrl('');
+          this.router.navigateByUrl('/login');
         }
         return throwError(() => new Error(error.message));
       }));
