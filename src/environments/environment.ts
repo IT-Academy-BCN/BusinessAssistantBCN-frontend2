@@ -19,5 +19,12 @@ export const environment = {
   MAPBOX_TOKEN: 'pk.eyJ1IjoianZyZnJlZWxhbmNlZGV2ZWxvcGVyIiwiYSI6ImNreTl4czUzMTAwNGQydnFsdmRhYXRvbDUifQ.TVL-2T184QdfXbze6VNw4A',
   MAPBOX_ZOOM: 8,
   MAPBOX_STYLE: 'mapbox://styles/mapbox/streets-v11',
-  MAPBOX_COORDINATES_FORMAT: 'GCS'
+  MAPBOX_COORDINATES_FORMAT: 'GCS',
+  //jwt
+  AUTHORIZATION: 'Authorization',
+  BEARER: 'Bearer ',
+  BACKEND_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InVlYmVybWVuc2NoQHphcmF0aHVzdHJhLmNvbSIsInBhc3N3b3JkIjoiTDJtbnh1cX1eWiNyQWg3XUooXm9pQCU0QDosRXZmLVYiLCJhdXRob3JpdGllcyI6WyJTVVBFUlVTRVIiXSwiaWF0IjoxNjY5MTM1MjAzfQ.ySbRr7yOZcTwfOux1oitmNUfrM6omb-ky64fGrrqngk',
+
+
+
 };
