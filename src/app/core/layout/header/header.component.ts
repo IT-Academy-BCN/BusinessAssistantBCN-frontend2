@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-  console.log('should heading login component')
+  //should heading login component
 
   }
  
