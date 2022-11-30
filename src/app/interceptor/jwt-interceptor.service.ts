@@ -19,7 +19,6 @@ export class JwtInterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let modifiedRequest = request;
     //const isApiUrl = request.url.startsWith(environment.BACKEND_BASE_URL);
-
     if (TOKEN != null) {
       modifiedRequest = request.clone({ headers: request.headers.set(AUTHORIZATION, BEARER + TOKEN) });
     }
@@ -30,7 +29,6 @@ export class JwtInterceptorService implements HttpInterceptor {
         }
         return throwError(() => new Error(error.message));
       }));
-
   }
 }
 export const interceptorProvider = [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true}];
