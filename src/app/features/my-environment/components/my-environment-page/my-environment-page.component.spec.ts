@@ -7,7 +7,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 import { MyEnvironmentPageComponent } from './my-environment-page.component';
-import { SearchAndResultComponent } from '../../components/search-and-result/search-and-result.component';
+import { SearchAndResultComponent } from '../search-and-result/search-and-result.component';
 
 const routes: Routes = [
   {path: 'my-environment-search', component: SearchAndResultComponent},

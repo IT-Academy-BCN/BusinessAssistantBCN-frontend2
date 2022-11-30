@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyEnvironmentPageComponent } from './pages/my-environment-page/my-environment-page.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
@@ -10,6 +9,9 @@ import {MatListModule} from '@angular/material/list';
 import { MapboxComponent } from 'src/app/shared/components/mapbox/mapbox.component';
 import { CardContentComponent } from './components/card-content/card-content.component';
 import { SearchAndResultComponent } from './components/search-and-result/search-and-result.component';
+import { MyEnvironmentPageComponent } from './components/my-environment-page/my-environment-page.component';
+
+
 
 
 
