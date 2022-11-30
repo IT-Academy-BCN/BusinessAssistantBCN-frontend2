@@ -63,9 +63,4 @@ export class MyEnvironmentService {
   }
   // The zone atribute up,  should be an Array of Zones 
 
-  
-
-
-
-
 }

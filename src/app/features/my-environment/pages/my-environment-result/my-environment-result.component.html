@@ -1,43 +1,51 @@
 
-<!--<mat-grid-list [cols]="breakpoint" rowHeight="550px">-->
-    <mat-grid-list  rowHeight="550px">
-
-    <mat-grid-tile>
-        <div class="container">
-            <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme">
+<section class="main-container">
+  <mat-grid-list [cols]="breakpoint" rowHeight="550px">
+  
+      <mat-grid-tile>
+        <div >
+            <div class="results-container">
+              <section>
                 <h2 >
-                    {{ "common.title.results" | translate }}
+                  {{ "common.title.results" | translate }}
                 </h2>
+              </section>
+              <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()'>
                 <div class="data" *ngIf="true" id="pdfData">
-<!--                    <div *ngFor="let ls of businessModelsArray" >
-                        <h5 class="details">{{ ls.name }}</h5>
-                        <mat-list class="result-container list-unstyled" *ngFor="let address of ls.addresses">
-                            <mat-list-item *ngIf="address.street_name">
-                                {{ address.street_name }}, {{ address.street_number }}
-                            </mat-list-item>
-                            <mat-list-item *ngIf="address.town">
-                                {{ address.zip_code }} {{ address.town }}
-                            </mat-list-item>
-                            <mat-list-item *ngIf="ls.email">
-                                Email: {{ ls.email }}
-                            </mat-list-item>
-                            <mat-list-item *ngIf="ls.web">
-                                Web: {{ ls.web }}
-                            </mat-list-item>
-                            <mat-list-item *ngIf="ls.phone">
-                                Tel.:{{ ls.phone }}
-                            </mat-list-item>
-                        </mat-list>
-                    </div>-->
+                  <!-- <div
+                  *ngFor="let ls of businessModelsArray"
+                  >
+                    <h5 class="details">{{ ls.name }}</h5>
+                    <mat-list class="list-unstyled" *ngFor="let address of ls.addresses">
+                      <mat-list-item *ngIf="address.street_name">
+                      {{ address.street_name }}, {{ address.street_number }}
+                      </mat-list-item>
+                      <mat-list-item *ngIf="address.town">
+                      {{ address.zip_code }} {{ address.town }}
+                      </mat-list-item>
+                      <mat-list-item *ngIf="ls.email">
+                      Email: {{ ls.email }}
+                      </mat-list-item>
+                      <mat-list-item *ngIf="ls.web">
+                      Web: {{ ls.web }}
+                      </mat-list-item>
+                      <mat-list-item *ngIf="ls.phone">
+                      Tel.:{{ ls.phone }}
+                      </mat-list-item>
+                    </mat-list>
+                  </div> -->
                 </div>
-                <button mat-raised-button color="accent" style="background: #2c5e8f; color: white">
-                    {{ "common.button.save-results" | translate }}
-                </button>
-                <button mat-raised-button color="accent" style="background: #5cb85c; color: white"
-                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ "common.button.download-results" | translate }}
-                </button>
-            </babcn-container>
+                <div class="button-container">
+                  <button mat-raised-button color="accent" style="background:black; color: white">
+                  {{ "common.button.save-results" | translate }}
+                  </button>
+                  <button mat-raised-button color="accent" style="background: #ffb142; color: white"
+                  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ "common.button.download-results" | translate }}
+                  </button>
+                </div>
+              </babcn-container>
+            </div>
         </div>
     </mat-grid-tile>
 

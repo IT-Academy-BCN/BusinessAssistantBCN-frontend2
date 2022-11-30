@@ -10,6 +10,8 @@ import { BabcnComponentsModule } from 'src/app/shared/components/babcn-component
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import { MapboxComponent } from 'src/app/shared/components/mapbox/mapbox.component';
+import { SearchAndResultComponent } from './components/search-and-result/search-and-result.component';
+import { CardContentComponent } from './components/card-content/card-content.component';
 
 
 
@@ -18,7 +20,9 @@ import { MapboxComponent } from 'src/app/shared/components/mapbox/mapbox.compone
     MyEnvironmentPageComponent,
     MyEnvironmentSearchComponent,
     MyEnvironmentResultComponent,
-    MapboxComponent
+    MapboxComponent,
+    SearchAndResultComponent,
+    CardContentComponent
   ],
   imports: [
     CommonModule,

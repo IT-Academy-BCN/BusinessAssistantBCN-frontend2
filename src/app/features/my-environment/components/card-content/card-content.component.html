@@ -1,0 +1,11 @@
+<div class="" *ngFor="let content of contentArray">
+    <div class="" >
+    <div class="form-check">
+        <label class="form-check-label" >
+            <mat-checkbox class="form-check-input" 
+            (change)="checkHandler(content, $event.checked)"
+             >{{content.zoneName}}</mat-checkbox>
+        </label>
+    </div>
+    </div>
+</div>

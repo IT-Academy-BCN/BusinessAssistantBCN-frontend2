@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { MyEnvironmentService } from '../../services/my-environment.service';
-import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
+import { MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Subscription } from 'rxjs';
 import { CommonService } from 'src/app/services/common/common.service';
 import {Zone} from "../../../../shared/models/common/zone.model";
 import {EconomicActivity} from "../../../../shared/models/common/economic-activity.model";
-import { MyEnvironmentSearch, SearchType } from '../../../../shared/models/my-environment-search/my-environment-search.model';
+
+import { MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch, SearchType} from 'src/app/shared/models/my-environment-search/my-environment-search.model';
+
 
 @Component({
   selector: 'app-my-environment-search',
@@ -30,6 +32,8 @@ export class MyEnvironmentSearchComponent implements OnInit {
   activitiesSub:Subscription | null= null;
   zonesSub:Subscription | null= null;
 
+  myEnvironmentSearch: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch |  null = null;
+
 
   constructor(
     private router: Router,
@@ -37,7 +41,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
     private responsive: BreakpointService,
     private commonService:CommonService,
   ) {
-    const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
+    const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
       this.ratio = value[1];
@@ -47,10 +51,31 @@ export class MyEnvironmentSearchComponent implements OnInit {
     }
   }
 
+  defineSearchType(str: string){
+    if (str == 'common.button.mall') {
+      this.myEnvironmentSearch = new BigMallsSearch;
+      //Here go all the data of Big-malls
+    }else if (str == 'common.button.gallery-market') {
+      this.myEnvironmentSearch = new CommercialGalleriesSearch;
+      //Here go all the data of Commercial-galleries
+    }else if (str == 'common.button.big-stablish') {
+      this.myEnvironmentSearch = new LargeEstablishmentsSearch;
+      //Here go all the data of Large-stablishments
+    }else if (str == 'common.button.market-fair') {
+      this.myEnvironmentSearch = new MarketsAndFairsSearch;
+      //Here go all the data of Market-fairs
+    }else if (str == 'common.button.public-market') {
+      this.myEnvironmentSearch = new MunicipalMarketsSearch;
+      //Here go all the data of Municipal-markets
+    }
+
+    console.log(this.myEnvironmentSearch)
+  }
+
   ngOnInit(): void {
   
     this.responsive.breakpoint$.subscribe((res) => {
-      VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
+      MY_ENVIRONMENT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
           this.breakpoint = value[0];
           this.ratio = value[1];
@@ -60,7 +85,7 @@ export class MyEnvironmentSearchComponent implements OnInit {
     this.getAllActivities(this.bussienesModel); //gets all the activities available from my environment service
     this.getAllZones(); //gets all the zones available from the common service
 
-
+    console.log(this.ratio, "ratio")
   }
 
   goToResult(bussinesModelSearch:MyEnvironmentSearch) {
