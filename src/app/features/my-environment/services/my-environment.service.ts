@@ -58,7 +58,7 @@ export class MyEnvironmentService {
     [ 
       {url:'BACKEND_ZONES_URL'},
       {url:'BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL',},
-      {url:'BACKEND_LARGE_STABLISHMENTS_SEARCH_URL', config:{"zones": JSON.stringify([1,2,3,4]),"activities": JSON.stringify([1,2,3,4])}}, 
+      {url:'BACKEND_LARGE_STABLISHMENTS_SEARCH_URL', config:{"zones": JSON.stringify([2]),"activities": JSON.stringify([1008031,34296307,63006067])}}, 
       {url:'BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL'}, 
       {url:'BACKEND_BIG_MALLS_URL'}, 
       {url:'BACKEND_SAVED_SEARCHES_URL', params:'/99832-12345-12345-12345-12345?offset=0&limit=5'},

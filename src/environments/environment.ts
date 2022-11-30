@@ -7,7 +7,7 @@ export const environment = {
   BACKEND_BASE_URL: '', 
   BACKEND_LOGIN_URL: '/login',
   BACKEND_REGISTER_URL: '/register',
-  BACKEND_ZONES_URL: '/businessassistantbcn/api/v1/opendata/common/zones', /* 404 - Not found */
+  BACKEND_ZONES_URL: '/businessassistantbcn/api/v1/common/bcn-zones', /* 404 - Not found */
   BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '/businessassistantbcn/api/v1/opendata/large-establishments/activities', /* OK */
   BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '/businessassistantbcn/api/v1/opendata/large-establishments/search', /* 400 - Bad Request */
   BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL: '/businessassistantbcn/api/v1/opendata/commercial-galleries/activities', /* OK */
