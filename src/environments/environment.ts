@@ -7,14 +7,14 @@ export const environment = {
   BACKEND_BASE_URL: '',
   BACKEND_LOGIN_URL: '/login',
   BACKEND_REGISTER_URL: '/register',
-  BACKEND_ZONES_URL: '../../assets/dummy/full/zones_dummy.json',
-  BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json',
-  BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '../../assets/dummy/large-establishments_zones_activity_dummy.json',
-  BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json', 
+  BACKEND_ZONES_URL: '/businessassistantbcn/api/v1/common/bcn-zones', /* OK */
+  BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '/businessassistantbcn/api/v1/opendata/large-establishments/activities', /* OK */
+  BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '/businessassistantbcn/api/v1/opendata/large-establishments/search', /* 400 - Bad Request */
+  BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL: '/businessassistantbcn/api/v1/opendata/commercial-galleries/activities', /* OK */ 
   BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-search-large-establishments_dummy.json',
-  BACKEND_BIG_MALLS_URL: '../assets/dummy/full/big-malls_dummy.json',
-  BACKEND_BIG_MALLS_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json',
-  BACKEND_MUNICIPAL_MARKETS: '../../assets/dummy/full/municipal-markets_dummy.json',
+  BACKEND_BIG_MALLS_URL: '/businessassistantbcn/api/v1/opendata/big-malls', /* OK  */
+  BACKEND_BIG_MALLS_ACTIVITIES_URL: '/businessassistantbcn/api/v1/opendata/big-malls/activities', /*  OK  */
+  BACKEND_MUNICIPAL_MARKETS: '/businessassistantbcn/api/v1/opendata/municipal-markets', /*  OK  */
   //mapbox
   MAPBOX_TOKEN: 'pk.eyJ1IjoianZyZnJlZWxhbmNlZGV2ZWxvcGVyIiwiYSI6ImNreTl4czUzMTAwNGQydnFsdmRhYXRvbDUifQ.TVL-2T184QdfXbze6VNw4A',
   MAPBOX_ZOOM: 8,
@@ -24,7 +24,5 @@ export const environment = {
   AUTHORIZATION: 'Authorization',
   BEARER: 'Bearer ',
   BACKEND_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InVlYmVybWVuc2NoQHphcmF0aHVzdHJhLmNvbSIsInBhc3N3b3JkIjoiTDJtbnh1cX1eWiNyQWg3XUooXm9pQCU0QDosRXZmLVYiLCJhdXRob3JpdGllcyI6WyJTVVBFUlVTRVIiXSwiaWF0IjoxNjY5MTM1MjAzfQ.ySbRr7yOZcTwfOux1oitmNUfrM6omb-ky64fGrrqngk',
-
-
-
 };
+
