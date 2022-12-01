@@ -20,6 +20,8 @@ export class CommonService {
   }
 
   getZones(): Observable<any> {
+    console.log('URL ZONES: ', `${ environment.BACKEND_BASE_URL }${ environment.BACKEND_ZONES_URL }`);
+    
     return this.http.get(
       `${ environment.BACKEND_BASE_URL }${ environment.BACKEND_ZONES_URL }`,
       {

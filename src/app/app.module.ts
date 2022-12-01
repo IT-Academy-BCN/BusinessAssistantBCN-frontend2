@@ -61,7 +61,8 @@ import { interceptorProvider } from './interceptor/jwt-interceptor.service';
     SavedSearchesModule,
     VirtualAssistantModule
   ],
-  providers: [interceptorProvider],
+  // providers: [interceptorProvider],
+  providers: [],
   bootstrap: [AppComponent],
   exports: [
      TranslateModule

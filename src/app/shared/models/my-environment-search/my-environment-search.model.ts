@@ -15,11 +15,13 @@ export abstract class MyEnvironmentSearch {
    searchType!: SearchType;
    zone!: Zone;
    result!: SearchItemResult[];
+   zones!: Zone[];
+   activities!: EconomicActivity[];
 }
 
 export class BigMallsSearch extends MyEnvironmentSearch {
 
-    activities!: EconomicActivity[];
+    // activities!: EconomicActivity[];
 
     constructor() {
         super();
@@ -30,7 +32,7 @@ export class BigMallsSearch extends MyEnvironmentSearch {
 
 export class CommercialGalleriesSearch extends MyEnvironmentSearch {
 
-    activities!: EconomicActivity[];
+    // activities!: EconomicActivity[];
 
     constructor() {
         super();
@@ -41,7 +43,7 @@ export class CommercialGalleriesSearch extends MyEnvironmentSearch {
 
 export class LargeEstablishmentsSearch extends MyEnvironmentSearch {
 
-    activities!: EconomicActivity[];
+    // activities!: EconomicActivity[];
 
     constructor() {
         super();

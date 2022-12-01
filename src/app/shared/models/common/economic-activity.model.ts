@@ -1,4 +1,4 @@
 export interface EconomicActivity {
-    idActivity: number ;
+    activityId: number ;
     activityName: string;
 }
