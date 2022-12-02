@@ -21,5 +21,5 @@
     <div class="img-shopping"  *ngIf ="size === 'Small' || size === 'XSmall'"></div>
 </div>
 <ng-template #searchBegan>
-    <app-search-and-result [title]="title"></app-search-and-result>
+    <app-search-and-result [title]="this.title" [businessModel]="this.businessModel"></app-search-and-result>
 </ng-template>

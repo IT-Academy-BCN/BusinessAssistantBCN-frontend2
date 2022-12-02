@@ -24,9 +24,8 @@ export class SearchAndResultComponent implements OnInit {
   showResults: boolean = false;
   selectedList: any[] = [];
 
-  businessModel: SearchType = 0
-  businessModelSearch!: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch
-
+  @Input() businessModel!: SearchType;
+  businessModelSearch!: MyEnvironmentSearch;
 
   zones: Zone[] = []; //zones will store all the available zones
   activities: EconomicActivity[] = []; //activities will store all the available economic activities before any selection
@@ -52,9 +51,7 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.defineSearchType(this.title);
-
     this.responsive.breakpoint$.subscribe((res) => {
       MY_ENVIRONMENT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
@@ -63,56 +60,55 @@ export class SearchAndResultComponent implements OnInit {
         }
       });
     });
-
     this.getAllZones(); //gets all the zones available from the common service
-
-    this.getAllActivities(); //gets all the activities available from my environment service
+    if (this.businessModel <= 2) {
+      this.getAllActivities(); //gets all the activities available from my environment service
+    }
   }
 
+  getAllZones() {
+    this.zonesSub = this.commonService.getZones().subscribe(response => {
+      this.zones = response.elements;
+    })
+  }
 
-  myEnvironmentSearch: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch = {
-    searchType: 0,
-    activities: [],
-    zone: {
-      idZone: 0,
-      zoneName: '',
-    },
-    zones: [],
-    result: []
-  };
+  getAllActivities() {
+    this.activitiesSub = this.myEnvSrv.getEconomicActivities(this.businessModel).subscribe(response => {
+      console.log('ACTIVITIES', response.results);
+      this.activities = response.results;
+    })
+  }
 
   defineSearchType(str: string) {
-
     if (str == 'common.button.mall') {
-      this.businessModel = 0;
-      this.myEnvironmentSearch = new BigMallsSearch();
+      this.businessModelSearch = new BigMallsSearch();
     } else if (str == 'common.button.gallery-market') {
-      this.businessModel = 1;
-      this.myEnvironmentSearch = new CommercialGalleriesSearch();
+      this.businessModelSearch = new CommercialGalleriesSearch();
       //Here go all the data of Commercial-galleries
     } else if (str == 'common.button.big-stablish') {
-      this.businessModel = 2;
-      this.myEnvironmentSearch = new LargeEstablishmentsSearch();
+      this.businessModelSearch = new LargeEstablishmentsSearch();
       //Here go all the data of Large-stablishments
     } else if (str == 'common.button.market-fair') {
-      this.businessModel = 3;
-      this.myEnvironmentSearch = new MarketsAndFairsSearch();
+      this.businessModelSearch = new MarketsAndFairsSearch();
       //Here go all the data of Market-fairs
     } else if (str == 'common.button.public-market') {
-      this.businessModel = 4;
-      this.myEnvironmentSearch = new MunicipalMarketsSearch();
+      this.businessModelSearch = new MunicipalMarketsSearch();
       //Here go all the data of Municipal-markets
     }
-    this.myEnvironmentSearch.activities = this.selectedActivities;
-    this.myEnvironmentSearch.zones = this.selectedZones;
-    this.businessModelSearch = this.myEnvironmentSearch
-
   }
 
-  goToResult(businessModelSearch: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch) {
+  goToResult() {
+
+    if (this.businessModel <= 2) {
+      this.businessModelSearch.activities = this.selectedActivities;
+    } else {
+      this.businessModelSearch.activities = [new EconomicActivity()];
+    }
+
+    this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
-    this.environments = this.myEnvSrv.getResults(businessModelSearch).subscribe((response: any) => {
-      console.log('RESULTS: ', response.results);
+
+    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
       response.results.forEach((result: any) => {
         this.searchResults.push({
           name: result.name,
@@ -145,32 +141,10 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
-  getAllZones() {
-    this.zonesSub = this.commonService.getZones().subscribe(response => {
-      // this.zones=response.results;
-      this.zones = response.elements;
-      console.log(response);
-
-    })
-  }
-
-  getAllActivities() {
-    this.activitiesSub = this.myEnvSrv.getEconomicActivities(this.businessModel).subscribe(response => {
-      console.log('ACTIVITIES', response.results);
-
-      this.activities = response.results;
-    })
-  }
-
-
   selectItem(item: any) {
-
     const selectedIndex = this.selectedList.findIndex(e => e == item), list = [...this.selectedList];
-
     if (selectedIndex == -1) list.push(item); else list.splice(selectedIndex, 1);
-
     this.selectedList = list;
-
   }
 
 }

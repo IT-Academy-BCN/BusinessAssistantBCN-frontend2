@@ -4,6 +4,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 import { SearchAndResultComponent } from './search-and-result.component';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
+import { compileComponentFromMetadata } from '@angular/compiler';
+import { Zone } from 'src/app/shared/models/common/zone.model';
 
 
 
@@ -40,7 +43,7 @@ describe('SearchAndResultComponent', () => {
     myEnvSrv = TestBed.inject(MyEnvironmentService);
     commonSrv = TestBed.inject(CommonService)
     fixture = TestBed.createComponent(SearchAndResultComponent);
-    component = fixture.componentInstance;
+    component = fixture.componentInstance; 
   });
 
   it('should create', () => {
