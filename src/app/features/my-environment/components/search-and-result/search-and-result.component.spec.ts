@@ -57,7 +57,7 @@ describe('SearchAndResultComponent', () => {
     it('#ngOnInit if user selects Big Malls, the search Type should be Big Malls Search',()=>{
       component.title = 'common.button.mall'
       component.ngOnInit()
-      expect(component.bussinesModelSearch.searchType).toBe(0)
+      expect(component.businessModelSearch.searchType).toBe(0)
     })
 
     it('#ngOnInit Zones should be loaded', (() => {
