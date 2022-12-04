@@ -1,3 +1,4 @@
+import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 import { BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MunicipalMarketsSearch } from './../../../../shared/models/my-environment-search/my-environment-search.model';
 import { MarketsAndFairsSearch } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
 import { CommonService } from 'src/app/services/common/common.service';
@@ -10,6 +11,7 @@ import { CommonTestingService } from 'src/test/common.service.testing';
 import { MyEnvironmentTestingService } from 'src/test/my-environment.service.testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of } from 'rxjs';
+import { Zone } from 'src/app/shared/models/common/zone.model';
 
 describe('SearchAndResultComponent', () => {
   let component: SearchAndResultComponent;
@@ -33,9 +35,6 @@ describe('SearchAndResultComponent', () => {
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
-    fixture = TestBed.createComponent(SearchAndResultComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   beforeEach(() => {
@@ -63,8 +62,23 @@ describe('SearchAndResultComponent', () => {
     })
 
     test('#ngOnInit Zones should be loaded', (() => {
-      const response: any = [];
       const spy = jest.spyOn(commonSrv, 'getZones');
+      fixture.detectChanges();
+      expect(spy).toHaveBeenCalledTimes(1);
+    })
+    );
+
+    test('#ngOnInit should not call getAllActivities method if Business Model is greater than 2', (() => {
+      component.businessModel = 3;
+      const spy = jest.spyOn(myEnvSrv, 'getEconomicActivities');
+      fixture.detectChanges();
+      expect(spy).toHaveBeenCalledTimes(0);
+    })
+    );
+
+    test('#ngOnInit should call getAllActivities method if Business Model is less than or equal to 2', (() => {
+      component.businessModel = 2;
+      const spy = jest.spyOn(component, 'getAllActivities');
       fixture.detectChanges();
       expect(spy).toHaveBeenCalledTimes(1);
     })
@@ -167,6 +181,26 @@ describe('SearchAndResultComponent', () => {
       component.businessModelSearch = new MunicipalMarketsSearch();
       component.goToResult();
       expect(component.searchResults[1].name).toBe("Mercat del Ninot");
+    });
+
+    test('checkZones should add element if event is true', () => {
+      let event = false;
+      component.checkZones(new Zone(), event);
+      expect(component.selectedZones.length).toBe(0);
+
+      event = true;
+      component.checkZones(new Zone(), event);
+      expect(component.selectedZones.length).toBe(1);
+    });
+
+    test('checkActivities should add element if event is true', () => {
+      let event = false;
+      component.checkActivities(new EconomicActivity(), event);
+      expect(component.selectedActivities.length).toBe(0);
+
+      event = true;
+      component.checkActivities(new EconomicActivity(), event);
+      expect(component.selectedActivities.length).toBe(1);
     });
   });
 });
