@@ -8,7 +8,7 @@ export const environment = {
   BACKEND_BASE_URL: 'http://localhost:8762/businessassistantbcn/api/v1/',
   BACKEND_LOGIN_URL: '/login',
   BACKEND_REGISTER_URL: '/register',
-  // BACKEND_ZONES_URL: '../../assets/dummy/full/zones_dummy.json',
+  DUMMY_ZONES_URL: '../../assets/dummy/full/zones_dummy.json',
   BACKEND_ZONES_URL: 'common/bcn-zones',
   // BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '../../assets/dummy/full/activities_dummy.json',
   BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: 'opendata/large-establishments/activities',
