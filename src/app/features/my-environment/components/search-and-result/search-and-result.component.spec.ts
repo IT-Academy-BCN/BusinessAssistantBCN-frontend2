@@ -1,7 +1,7 @@
-import { MunicipalMarketsSearch } from './../../../../shared/models/my-environment-search/my-environment-search.model';
+import { BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MunicipalMarketsSearch } from './../../../../shared/models/my-environment-search/my-environment-search.model';
 import { MarketsAndFairsSearch } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
 import { CommonService } from 'src/app/services/common/common.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 import { SearchAndResultComponent } from './search-and-result.component';
@@ -14,7 +14,6 @@ import { of } from 'rxjs';
 describe('SearchAndResultComponent', () => {
   let component: SearchAndResultComponent;
   let fixture: ComponentFixture<SearchAndResultComponent>;
-  let httpMock: HttpTestingController;
   let myEnvSrv: MyEnvironmentService;
   let commonSrv: CommonService;
   beforeEach(async () => {
@@ -42,29 +41,28 @@ describe('SearchAndResultComponent', () => {
   beforeEach(() => {
     myEnvSrv = TestBed.inject(MyEnvironmentService);
     commonSrv = TestBed.inject(CommonService);
-    // httpMock = TestBed.inject(HttpTestingController);
     fixture = TestBed.createComponent(SearchAndResultComponent);
     component = fixture.componentInstance;
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 
   describe('Variables', () => {
-    it('title should be declared', () => {
+    test('title should be declared', () => {
       expect(component.title).toBe('')
     })
   })
 
   describe('Methods', () => {
-    it('#ngOnInit if user selects Big Malls, the search Type should be Big Malls Search', () => {
+    test('#ngOnInit if user selects Big Malls, the search Type should be Big Malls Search', () => {
       component.title = 'common.button.mall'
       component.ngOnInit()
       expect(component.businessModelSearch.searchType).toBe(0)
     })
 
-    it('#ngOnInit Zones should be loaded', (() => {
+    test('#ngOnInit Zones should be loaded', (() => {
       const response: any = [];
       const spy = jest.spyOn(commonSrv, 'getZones');
       fixture.detectChanges();
@@ -72,46 +70,98 @@ describe('SearchAndResultComponent', () => {
     })
     );
 
-    it('getZones should return an array of 10 elements', () => {
-      // jest.spyOn(commonSrv, 'getZones').mockReturnValue(of());
+    test('defineSearchType should create an instance depending on the option selected', () => {
+      let option = 'common.button.mall'
+      component.defineSearchType(option);
+      expect(component.businessModelSearch).toBeInstanceOf(BigMallsSearch);
+      option = 'common.button.gallery-market'
+      component.defineSearchType(option);
+      expect(component.businessModelSearch).toBeInstanceOf(CommercialGalleriesSearch);
+      option = 'common.button.big-stablish'
+      component.defineSearchType(option);
+      expect(component.businessModelSearch).toBeInstanceOf(LargeEstablishmentsSearch);
+      option = 'common.button.market-fair'
+      component.defineSearchType(option);
+      expect(component.businessModelSearch).toBeInstanceOf(MarketsAndFairsSearch);
+      option = 'common.button.public-market'
+      component.defineSearchType(option);
+      expect(component.businessModelSearch).toBeInstanceOf(MunicipalMarketsSearch);
+    });
+
+    test('getZones should return an array of 10 elements', () => {
       jest.spyOn(commonSrv, 'getZones');
       component.getAllZones();
       expect(component.zones.length).toBe(10);
     });
 
-    it('getAllActivities should return an array of 3 elements if businessModel is 1', () => {
+    test('getZones should return the data of the 9th element in the list', () => {
+      jest.spyOn(commonSrv, 'getZones');
+      component.getAllZones();
+      expect(component.zones[8].idZone).toBe(9);
+      expect(component.zones[8].zoneName).toBe('Sant Andreu');
+    });
+
+    test('getAllActivities should return the exact number of results depending on the Business Model selected ', () => {
       jest.spyOn(myEnvSrv, 'getEconomicActivities');
+      component.businessModel = 0;
+      component.getAllActivities();
+      expect(component.activities.length).toBe(49);
+
       component.businessModel = 1;
       component.getAllActivities();
       expect(component.activities.length).toBe(3);
-    });
 
-    it('getAllActivities should return an array of 100 elements if businessModel is 2', () => {
-      jest.spyOn(myEnvSrv, 'getEconomicActivities');
       component.businessModel = 2;
       component.getAllActivities();
       expect(component.activities.length).toBe(100);
     });
 
-    it('goToResult should return an array of 1 element if business model is Markets and Fairs', () => {
+    test('getAllActivities should return the data of the 72th element in the list', () => {
+      jest.spyOn(myEnvSrv, 'getEconomicActivities');
+      component.businessModel = 2;
+      component.getAllActivities();
+      expect(component.activities[72].activityId).toBe(104799);
+      expect(component.activities[72].activityName).toBe('Ordinadors');
+    });
+
+    test('goToResult should return an array of 1 element if business model is Markets and Fairs', () => {
       jest.spyOn(myEnvSrv, 'getResults');
       component.businessModelSearch = new MarketsAndFairsSearch();
       component.goToResult();
       expect(component.searchResults.length).toBe(1);
     });
 
-    it('goToResult should return an array of 1 element if business model is Municipal Markets', () => {
+    test('goToResult should return an array of 1 element if business model is Municipal Markets', () => {
       jest.spyOn(myEnvSrv, 'getResults');
       component.businessModelSearch = new MunicipalMarketsSearch();
       component.goToResult();
       expect(component.searchResults.length).toBe(1);
     });
 
-    it('goToResult should return the name of the second element', () => {
+    test('goToResult should return the data of the 1st element in the Municipal Markets list', () => {
+      jest.spyOn(myEnvSrv, 'getResults');
+      component.businessModelSearch = new MunicipalMarketsSearch();
+      component.goToResult();
+      expect(component.searchResults[0].name).toBe('Mercat de Les Corts');
+      expect(component.searchResults[0].email).toBe('mercatlescorts@bcn.cat');
+      expect(component.searchResults[0].phone).toBe('667570336,934132318');
+    });
+
+    test('goToResult should return the data of the second element in the Large Establishments list', () => {
+      jest.spyOn(myEnvSrv, 'getResults');
+      component.businessModelSearch = new LargeEstablishmentsSearch();
+      component.goToResult();
+      expect(component.searchResults[1].name).toBe('Pompadour Ibérica S.A.');
+      expect(component.searchResults[1].web).toBe('http://www.pompadour.es');
+      expect(component.searchResults[1].email).toBe(null);
+      expect(component.searchResults[1].phone).toBe(null);
+    });
+
+    test('goToResult should return the name of the second element in the list', () => {
       jest.spyOn(myEnvSrv, 'getResults').mockReturnValue(of({
         results: [
-          {name: 'Mercat de La Concepció'}, 
-          {name: 'Mercat del Ninot'}
+          { name: 'Mercat de La Concepció' },
+          { name: 'Mercat del Ninot' }
         ]
       }));
       component.businessModelSearch = new MunicipalMarketsSearch();

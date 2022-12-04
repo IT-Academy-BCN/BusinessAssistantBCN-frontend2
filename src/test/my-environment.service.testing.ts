@@ -6,12 +6,78 @@ export class MyEnvironmentTestingService {
   getResults(businessModelSearch: MyEnvironmentSearch): Observable<any> {
 
     switch (businessModelSearch.searchType) {
+      case SearchType.LARGE_ESTABLISHMENTS:
+        return of(
+          {
+            "results": [
+              {
+                "name": "Comercial Gallo S.A.",
+                "web": "http://www.pastasgallo.es",
+                "email": null,
+                "phone": null,
+                "activities": [
+                  {
+                    "activityId": 1008031,
+                    "activityName": "Delegacions - oficines comercials"
+                  },
+                  {
+                    "activityId": 107001,
+                    "activityName": "Alimentació i begudes"
+                  },
+                  {
+                    "activityId": 29297307,
+                    "activityName": "Com.may.ptos.alimentic.bebidas y tabacos"
+                  }
+                ],
+                "addresses": [
+                  {
+                    "street_name": "Av Diagonal",
+                    "street_number": "468",
+                    "zip_code": "08006",
+                    "district_id": "06",
+                    "town": "BARCELONA",
+                    "location": {
+                      "x": 41.3960267590958,
+                      "y": 2.156419427782995
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Pompadour Ibérica S.A.",
+                "web": "http://www.pompadour.es",
+                "email": null,
+                "phone": null,
+                "activities": [
+                  {
+                    "activityId": 1008031,
+                    "activityName": "Delegacions - oficines comercials"
+                  },
+                  {
+                    "activityId": 107001,
+                    "activityName": "Alimentació i begudes"
+                  }
+                ],
+                "addresses": [
+                  {
+                    "street_name": "C Sicília",
+                    "street_number": "372*374",
+                    "zip_code": "08025",
+                    "district_id": "06",
+                    "town": "BARCELONA",
+                    "location": {
+                      "x": 41.4052142952385,
+                      "y": 2.1695969647394997
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        );
       case SearchType.MARKETS_AND_FAIRS:
         return of(
           {
-            "offset": 0,
-            "limit": -1,
-            "count": 41,
             "results": [
               {
                 "name": "Fira d'Artesania Popular Catalana *Plaça Eivissa",
@@ -93,9 +159,6 @@ export class MyEnvironmentTestingService {
     if (businessModel === 0) {
       return of(
         {
-          "offset": 0,
-          "limit": -1,
-          "count": 49,
           "results": [
             {
               "activityId": 105001,
@@ -299,9 +362,6 @@ export class MyEnvironmentTestingService {
     } else if (businessModel === 1) {
       return of(
         {
-          "offset": 0,
-          "limit": -1,
-          "count": 3,
           "results": [
             {
               "activityId": 29810738,
@@ -322,9 +382,6 @@ export class MyEnvironmentTestingService {
     } else {
       return of(
         {
-          "offset": 0,
-          "limit": -1,
-          "count": 100,
           "results": [
             {
               "activityId": 107001,

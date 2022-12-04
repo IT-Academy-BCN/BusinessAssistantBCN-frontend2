@@ -68,14 +68,12 @@ export class SearchAndResultComponent implements OnInit {
 
   getAllZones() {
     this.zonesSub = this.commonService.getZones().subscribe(response => {
-      // console.log('ZONES', response.elements);
       this.zones = response.elements;
     })
   }
 
   getAllActivities() {
     this.activitiesSub = this.myEnvSrv.getEconomicActivities(this.businessModel).subscribe(response => {
-      // console.log('ACTIVITIES', response.results);
       this.activities = response.results;
     })
   }
@@ -99,19 +97,12 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   goToResult() {
-  
-    if (this.businessModel <= 2) {
-      this.businessModelSearch.activities = this.selectedActivities;
-    } else {
-      this.businessModelSearch.activities = [new EconomicActivity()];
-    }
     
     this.businessModelSearch.activities = this.selectedActivities;
     this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
 
     this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
-      // console.log('RESULTS: ', response.results);
       response.results.forEach((result: any) => {
         this.searchResults.push({
           name: result.name,

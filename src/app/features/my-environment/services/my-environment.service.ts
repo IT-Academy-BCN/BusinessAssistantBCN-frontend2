@@ -21,14 +21,18 @@ const MUN_MARKET_SEARCH = environment.BACKEND_MUNICIPAL_MARKETS_SEARCH_URL;
 export class MyEnvironmentService {
 
   title: string = ''; // This atribute should be remove once refactor other components is done
+  activityIDs: number[] = [];
+  zoneIDs: number[] = [];
+  businessModel: number = 0; 
 
   constructor(private http: HttpClient) { }
 
   getEconomicActivities(businessModel: SearchType): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    if (businessModel === 0) {
+    this.businessModel = businessModel;
+    if (this.businessModel === 0) {
       return this.http.get(`${BASE_URL}${BIG_MALLS_ACT}`, { headers });
-    } else if (businessModel === 1) {
+    } else if (this.businessModel === 1) {
       return this.http.get(`${BASE_URL}${COMM_GALLE_ACT}`, { headers });
     } else {
       return this.http.get(`${BASE_URL}${LARGE_EST_ACT}`, { headers });
@@ -37,30 +41,30 @@ export class MyEnvironmentService {
 
   getResults(businessModelSearch: MyEnvironmentSearch): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    const activityIDs: number[] = [];
-    const zoneIDs: number[] = [];
-
-    if (businessModelSearch.zones.length > 0 && businessModelSearch.activities.length > 0) {
-      if (businessModelSearch.searchType <= 2) {
-        businessModelSearch.activities.forEach(activity => { activityIDs.push(activity.activityId); })
-      }
-      businessModelSearch.zones.forEach(zone => { zoneIDs.push(zone.idZone); });
-    } else {
-      zoneIDs.push(0);
-      activityIDs.push(0);
+    
+    if(businessModelSearch.activities.length == 0){
+      this.activityIDs.push(0);
+    }else {
+      businessModelSearch.activities.forEach(activity => { this.activityIDs.push(activity.activityId); })
     }
 
+    if(businessModelSearch.zones.length == 0){
+      this.zoneIDs.push(0);
+    }else {
+      businessModelSearch.zones.forEach(zone => { this.zoneIDs.push(zone.idZone); });
+    }
+  
     switch (businessModelSearch.searchType) {
       case SearchType.BIG_MALLS:
-        return this.http.get(`${BASE_URL}${BIG_MALLS_SEARCH}/${zoneIDs}/${activityIDs}`, { headers });
+        return this.http.get(`${BASE_URL}${BIG_MALLS_SEARCH}/${this.zoneIDs}/${this.activityIDs}`, { headers });
       case SearchType.COMMERCIAL_GALLERIES:
-        return this.http.get(`${BASE_URL}${COMM_GALLE_SEARCH}/${zoneIDs}/${activityIDs}`, { headers });
+        return this.http.get(`${BASE_URL}${COMM_GALLE_SEARCH}/${this.zoneIDs}/${this.activityIDs}`, { headers });
       case SearchType.LARGE_ESTABLISHMENTS:
-        return this.http.get(`${BASE_URL}${LARGE_EST_SEARCH}/${zoneIDs}/${activityIDs}`, { headers });
+        return this.http.get(`${BASE_URL}${LARGE_EST_SEARCH}/${this.zoneIDs}/${this.activityIDs}`, { headers });
       case SearchType.MARKETS_AND_FAIRS:
-        return this.http.get(`${BASE_URL}${MARKET_FAIRS_SEARCH}/${zoneIDs}`, { headers });
+        return this.http.get(`${BASE_URL}${MARKET_FAIRS_SEARCH}/${this.zoneIDs}`, { headers });
       case SearchType.MUNICIPAL_MARKETS:
-        return this.http.get(`${BASE_URL}${MUN_MARKET_SEARCH}/${zoneIDs}`, { headers });
+        return this.http.get(`${BASE_URL}${MUN_MARKET_SEARCH}/${this.zoneIDs}`, { headers });
     }
   }
 }

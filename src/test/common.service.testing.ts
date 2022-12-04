@@ -6,7 +6,6 @@ export class CommonTestingService {
     getZones(): Observable<any> {
       return of(
         {
-          "count": 10,
           "elements": [
             {
               "idZone": 1,
