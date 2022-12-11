@@ -3,7 +3,7 @@ import { BigMallsSearch } from 'src/app/shared/models/my-environment-search/my-e
 import { CommonService } from '../../../../services/common/common.service';
 import { of} from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MyEnvironmentService } from '../../services/my-environment.service';
 import { SearchAndResultComponent } from './search-and-result.component';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -78,7 +78,7 @@ describe('SearchAndResultComponent', () => {
          addresses: [],
          email: "",
          phone: null,
-         web: "http://www.serveiestacio.com"
+         web: "https://www.google.com/"
 
       }]
     }
