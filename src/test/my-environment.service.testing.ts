@@ -12,7 +12,7 @@ export class MyEnvironmentTestingService {
             "results": [
               {
                 "name": "Comercial Gallo S.A.",
-                "web": "http://www.pastasgallo.es",
+                "web": "https://www.pastasgallo.es",
                 "email": null,
                 "phone": null,
                 "activities": [
