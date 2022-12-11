@@ -45,7 +45,7 @@ export class MyEnvironmentTestingService {
               },
               {
                 "name": "Pompadour Ibérica S.A.",
-                "web": "http://www.pompadour.es",
+                "web": "https://www.pompadour.es",
                 "email": null,
                 "phone": null,
                 "activities": [
@@ -124,8 +124,8 @@ export class MyEnvironmentTestingService {
                 "name": "Mercat de Les Corts",
                 "web": [
                   "https://www.facebook.com/Mercat-de-Les-Corts-582373918504247",
-                  "http://www.barcelona.cat/mercats",
-                  "http://mercatdelescorts.cat"
+                  "https://www.barcelona.cat/mercats",
+                  "https://mercatdelescorts.cat"
                 ],
                 "email": "mercatlescorts@bcn.cat",
                 "phone": "667570336,934132318",
