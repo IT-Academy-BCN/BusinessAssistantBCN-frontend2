@@ -166,7 +166,7 @@ describe('SearchAndResultComponent', () => {
       component.businessModelSearch = new LargeEstablishmentsSearch();
       component.goToResult();
       expect(component.searchResults[1].name).toBe('Pompadour Ibérica S.A.');
-      expect(component.searchResults[1].web).toBe('http://www.pompadour.es');
+      expect(component.searchResults[1].web).toBe('https://www.pompadour.es');
       expect(component.searchResults[1].email).toBe(null);
       expect(component.searchResults[1].phone).toBe(null);
     });
