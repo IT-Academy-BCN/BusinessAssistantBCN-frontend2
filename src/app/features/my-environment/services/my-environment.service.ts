@@ -1,9 +1,8 @@
-import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from "../../../../environments/environment";
 import { Observable } from 'rxjs';
-import { BigMallsSearch, MyEnvironmentSearch, SearchType, CommercialGalleriesSearch, LargeEstablishmentsSearch } from '../../../shared/models/my-environment-search/my-environment-search.model';
+import { MyEnvironmentSearch, SearchType } from '../../../shared/models/my-environment-search/my-environment-search.model';
 
 const BASE_URL = environment.BACKEND_BASE_URL;
 const BIG_MALLS_ACT = environment.BACKEND_BIG_MALLS_ACTIVITIES_URL;
@@ -42,35 +41,6 @@ export class MyEnvironmentService {
       return this.http.get(`${BASE_URL}${LARGE_EST_ACT}`, { headers });
     }
   }
-
-  // getResults1(businessModelSearch: MyEnvironmentSearch): Observable<any> {
-  //   const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    
-  //   if(businessModelSearch.activities.length == 0){
-  //     this.activityIDs.push(0);
-  //   }else {
-  //     businessModelSearch.activities.forEach(activity => { this.activityIDs.push(activity.activityId); });
-  //   }
-
-  //   if(businessModelSearch.zones.length == 0){
-  //     this.zoneIDs.push(0);
-  //   }else {
-  //     businessModelSearch.zones.forEach(zone => { this.zoneIDs.push(zone.idZone); });
-  //   }
-  
-  //   switch (businessModelSearch.searchType) {
-  //     case SearchType.BIG_MALLS:
-  //       return this.http.get(`${BASE_URL}${BIG_MALLS_SEARCH}/${this.zoneIDs}/${this.activityIDs}`, { headers });
-  //     case SearchType.COMMERCIAL_GALLERIES:
-  //       return this.http.get(`${BASE_URL}${COMM_GALLE_SEARCH}/${this.zoneIDs}/${this.activityIDs}`, { headers });
-  //     case SearchType.LARGE_ESTABLISHMENTS:
-  //       return this.http.get(`${BASE_URL}${LARGE_EST_SEARCH}/${this.zoneIDs}/${this.activityIDs}`, { headers });
-  //     case SearchType.MARKETS_AND_FAIRS:
-  //       return this.http.get(`${BASE_URL}${MARKET_FAIRS_SEARCH}/${this.zoneIDs}`, { headers });
-  //     case SearchType.MUNICIPAL_MARKETS:
-  //       return this.http.get(`${BASE_URL}${MUN_MARKET_SEARCH}/${this.zoneIDs}`, { headers });
-  //   }
-  // }
 
   getResults(businessModelSearch: MyEnvironmentSearch): Observable<any> {
     this.activityIDs = [];

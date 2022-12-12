@@ -135,10 +135,10 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
-  selectItem(item: any) {
-    const selectedIndex = this.selectedList.findIndex(e => e == item), list = [...this.selectedList];
-    if (selectedIndex == -1) list.push(item); else list.splice(selectedIndex, 1);
-    this.selectedList = list;
-  }
+  // selectItem(item: any) {
+  //   const selectedIndex = this.selectedList.findIndex(e => e == item), list = [...this.selectedList];
+  //   if (selectedIndex == -1) list.push(item); else list.splice(selectedIndex, 1);
+  //   this.selectedList = list;
+  // }
 
 }
