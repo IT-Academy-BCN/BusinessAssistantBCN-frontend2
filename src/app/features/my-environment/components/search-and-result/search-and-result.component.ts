@@ -50,6 +50,99 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
+<<<<<<< HEAD
+=======
+  myEnvironmentSearch: MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch = {
+    searchType: 0,
+    activities: [],
+   zone: {
+    idZone: 0,
+    zoneName: '',
+    },
+   result: []
+  };
+
+  defineSearchType(str: string){
+    if (str == 'common.button.mall') {
+      this.myEnvironmentSearch = new BigMallsSearch;
+      //Here go all the data of Big-malls
+    }else if (str == 'common.button.gallery-market') {
+      this.myEnvironmentSearch = new CommercialGalleriesSearch;
+      //Here go all the data of Commercial-galleries
+    }else if (str == 'common.button.big-stablish') {
+      this.myEnvironmentSearch = new LargeEstablishmentsSearch;
+      //Here go all the data of Large-stablishments
+    }else if (str == 'common.button.market-fair') {
+      this.myEnvironmentSearch = new MarketsAndFairsSearch;
+      //Here go all the data of Market-fairs
+    }else if (str == 'common.button.public-market') {
+      this.myEnvironmentSearch = new MunicipalMarketsSearch;
+      //Here go all the data of Municipal-markets
+    }
+    this.bussinesModelSearch = this.myEnvironmentSearch
+  }
+
+  goToResult(bussinesModelSearch:MyEnvironmentSearch | BigMallsSearch | CommercialGalleriesSearch | LargeEstablishmentsSearch | MarketsAndFairsSearch | MunicipalMarketsSearch) {
+    this.showResults = true;
+
+    this.environments=this.myEnvSrv.getResults(bussinesModelSearch).subscribe((response:any)=>{
+    response.results.forEach( (result: any) => { 
+      this.searchResults.push( {
+        name: result.name,
+        web: result.web,
+        email: result.email,
+        phone: result.phone,
+        addresses: result.addresses
+          })
+        })
+     })
+  }
+
+  checkZones(zoneSelected: Zone, event: any) {
+       if (event) {
+          //Adds the selected zone to the array zones in the common service to use it there as parameter
+          this.selectedZones.push(zoneSelected);
+        } else {
+          //removes the zone if it is already in the common service array
+          this.selectedZones.splice(this.selectedZones.indexOf(zoneSelected),1);
+        }
+      }
+
+  checkActivities(activitySelected: EconomicActivity, event: any) {
+            if (event) {
+          
+              //Adds the selected activity to the selected activities array
+              this.selectedActivities.push(activitySelected);
+            } else {
+              //removes the selected if it is already in the selected activities arary
+              this.selectedActivities.splice(this.selectedActivities.indexOf(activitySelected),1);
+            }
+          }
+
+  getAllZones(){
+    this.zonesSub=this.commonService.getZones().subscribe(response=>{
+      this.zones=response.results;
+    })
+  }
+
+  getAllActivities(businessModel:SearchType){
+    this.activitiesSub=this.myEnvSrv.getEconomicActivities(businessModel).subscribe(response=>{
+    this.activities=response.results;
+    })
+  }
+
+
+  selectItem(item:any){
+
+    const selectedIndex = this.selectedList.findIndex(e=>e==item), list = [...this.selectedList];
+
+    if(selectedIndex==-1) list.push(item); else list.splice(selectedIndex,1);
+
+    this.selectedList = list;
+
+  }
+
+>>>>>>> develop
   ngOnInit(): void {
     this.defineSearchType(this.title);
     this.responsive.breakpoint$.subscribe((res) => {
