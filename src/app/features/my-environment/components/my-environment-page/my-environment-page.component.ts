@@ -1,3 +1,4 @@
+import { SearchType } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,6 +19,9 @@ export interface Icons {
 export class MyEnvironmentPageComponent implements OnInit {
 
   size:string = '';
+  title:string= '';
+  searchSelected:boolean = false;
+  businessModel!: SearchType;
 
   iconsList:Icons [] = [
     {
@@ -72,23 +76,26 @@ export class MyEnvironmentPageComponent implements OnInit {
 //For go to my-environment-search
 
   goToSearch(num: number){
-    this.router.navigate(['my-environment-search'])
+    this.businessModel = num;
+   // this.router.navigate(['my-environment-search'])
     if (num == 0) {
-      this.myEnvSrv.title = 'common.button.mall'
+      this.title = 'common.button.mall'
       //Here go all the data of Big-malls
     }else if (num == 1) {
-      this.myEnvSrv.title = 'common.button.gallery-market'
+      this.title = 'common.button.gallery-market'
       //Here go all the data of Commercial-galleries
     }else if (num == 2) {
-      this.myEnvSrv.title = 'common.button.big-stablish'
+      this.title = 'common.button.big-stablish'
       //Here go all the data of Large-stablishments
     }else if (num == 3) {
-      this.myEnvSrv.title = 'common.button.market-fair'
+      this.title = 'common.button.market-fair'
       //Here go all the data of Market-fairs
     }else if (num == 4) {
-      this.myEnvSrv.title = 'common.button.public-market'
+      this.title = 'common.button.public-market'
       //Here go all the data of Municipal-markets
     }
+
+    this.searchSelected = true;
   }
 
   getClassHover(){

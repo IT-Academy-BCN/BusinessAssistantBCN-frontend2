@@ -6,12 +6,11 @@ import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MyEnvironmentService } from '../../services/my-environment.service';
-import { MyEnvironmentSearchComponent } from '../my-environment-search/my-environment-search.component';
-
 import { MyEnvironmentPageComponent } from './my-environment-page.component';
+import { SearchAndResultComponent } from '../search-and-result/search-and-result.component';
 
 const routes: Routes = [
-  {path: 'my-environment-search', component: MyEnvironmentSearchComponent},
+  {path: 'my-environment-search', component: SearchAndResultComponent},
 ];
 
 
@@ -90,17 +89,17 @@ describe('MyEnvironmentPageComponent', () => {
       expect(location.path()).toBe('/my-environment-search')
     }))
 
-    it('#goToSearch shoul change title of MyEnvironmentService', ()=>{
+    it('#goToSearch should change title of MyEnvironmentService', ()=>{
       component.goToSearch(0)
-      expect(myEnvSrv.title).toBe('common.button.mall')
+      expect(component.title).toBe('common.button.mall')
       component.goToSearch(1)
-      expect(myEnvSrv.title).toBe('common.button.gallery-market')
+      expect(component.title).toBe('common.button.gallery-market')
       component.goToSearch(2)
-      expect(myEnvSrv.title).toBe('common.button.big-stablish')
+      expect(component.title).toBe('common.button.big-stablish')
       component.goToSearch(3)
-      expect(myEnvSrv.title).toBe('common.button.market-fair')
+      expect(component.title).toBe('common.button.market-fair')
       component.goToSearch(4)
-      expect(myEnvSrv.title).toBe('common.button.public-market')
+      expect(component.title).toBe('common.button.public-market')
     })
   })
 

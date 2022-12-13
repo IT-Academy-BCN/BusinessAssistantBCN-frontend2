@@ -11,7 +11,7 @@ export class SavedSearchesService {
   constructor(private http: HttpClient) { }
 
   getSavedSearches() {
-    return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${environment.BACKEND_SAVED_SEARCHES_URL}`
+    return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${'no endpoind yet'}`
     )
 
   }
