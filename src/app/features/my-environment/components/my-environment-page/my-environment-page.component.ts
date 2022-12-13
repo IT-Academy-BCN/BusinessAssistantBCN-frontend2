@@ -69,8 +69,6 @@ export class MyEnvironmentPageComponent implements OnInit {
     this._responsive.breakpoint$.subscribe(result => {
       this.size = result;
     });
-
-    this.myEnvSrv.test() // Temporal function for testing endpoints. To delete
   }
 
 //For go to my-environment-search
