@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Input, SimpleChanges } from "@angular/core";
-import * as Mapboxgl from "mapbox-gl"; 
+import Mapboxgl from "mapbox-gl"; 
 import { LngLatBounds, NavigationControl, GeolocateControl, Map, Popup, Marker } from "mapbox-gl";
 import { environment } from "src/environments/environment";
 /* import { LargeStablishmentModel } from '../../models/large-stablishment.model';
