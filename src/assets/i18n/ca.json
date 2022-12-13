@@ -190,7 +190,11 @@
             "public-market": "Mercats Municipals",
             "market-fair": "Mercats i Fires",
             "save-results": "Guardar resultats",
-            "download-results": "Descarregar resultats"
+            "download-results": "Descarregar resultats",
+            "login": "Login",
+            "logout": "Logout",
+            "register": "Registrar-se",
+            "see-summary": "Veure resum"
         },
         "title": {
             "results": "Resultats"
