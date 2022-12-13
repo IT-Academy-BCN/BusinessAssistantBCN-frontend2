@@ -6,12 +6,11 @@ import { Router, Routes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MyEnvironmentService } from '../../services/my-environment.service';
-import { MyEnvironmentSearchComponent } from '../my-environment-search/my-environment-search.component';
-
 import { MyEnvironmentPageComponent } from './my-environment-page.component';
+import { SearchAndResultComponent } from '../search-and-result/search-and-result.component';
 
 const routes: Routes = [
-  {path: 'my-environment-search', component: MyEnvironmentSearchComponent},
+  {path: 'my-environment-search', component: SearchAndResultComponent},
 ];
 
 

@@ -108,6 +108,7 @@ export class SearchAndResultComponent implements OnInit {
 
   checkActivities(activitySelected: EconomicActivity, event: any) {
             if (event) {
+          
               //Adds the selected activity to the selected activities array
               this.selectedActivities.push(activitySelected);
             } else {
