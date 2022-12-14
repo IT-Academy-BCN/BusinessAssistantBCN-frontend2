@@ -10,9 +10,7 @@ import { environment } from "src/environments/environment";
 
 export class CommonService {
 
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getZones(): Observable<any> {
 

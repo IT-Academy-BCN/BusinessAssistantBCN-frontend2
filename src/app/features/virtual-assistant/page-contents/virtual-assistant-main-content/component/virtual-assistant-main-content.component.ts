@@ -2,7 +2,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 // MATERIAL
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 
 // VIRTUAL-ASSISTANT MODELS - BUSINESS ASISSTANT CATEGORY

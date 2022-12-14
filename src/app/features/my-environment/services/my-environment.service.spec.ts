@@ -1,8 +1,10 @@
-import { BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from './../../../shared/models/my-environment-search/my-environment-search.model';
+
+import { SearchType, MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from './../../../shared/models/my-environment-search/my-environment-search.model';
 import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { Zone } from './../../../shared/models/common/zone.model';
 import { TestBed } from '@angular/core/testing';
 import { MyEnvironmentService } from './my-environment.service';
-
+import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 
 describe('MyEnvironmentService', () => {
 
@@ -20,126 +22,79 @@ describe('MyEnvironmentService', () => {
      httpMock = TestBed.inject(HttpTestingController);
   });
   
+  describe('Methods', () => {
 
-  it('should be created', () => {
-    
-    expect(service).toBeTruthy();
-    
-  });
+    test('getEconomicActivities should select the correct option depending on which Business Model has been selected', () => {
+      let businessModel = SearchType.BIG_MALLS;
+      service.getEconomicActivities(businessModel);
+      expect(service.businessModel).toBe(0);
 
-  it('should call correct Economic activities backend api when you select Big Malls search Type', () => {
-    service.getEconomicActivities(0).subscribe((response) => {
-     return response;
+      businessModel = SearchType.COMMERCIAL_GALLERIES;
+      service.getEconomicActivities(businessModel);
+      expect(service.businessModel).toBe(1);
+
+      businessModel = SearchType.LARGE_ESTABLISHMENTS;
+      service.getEconomicActivities(businessModel);
+      expect(service.businessModel).toBe(2);
+      
     })
 
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/big-malls/activities"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
+    test('getResults should assign value 0 in both arrays if length is equal to 0', () => {
+      const businessModel: MyEnvironmentSearch = new LargeEstablishmentsSearch();
+      businessModel.activities = [];
+      businessModel.zones = [];
+      service.getResults(businessModel);
+      expect(service.activityIDs[0]).toBe(0);
+      expect(service.zoneIDs[0]).toBe(0);
+    });
+  
+    test('getResults should assign a value in both arrays if length is greater than 0', () => {
+      const businessModel: MyEnvironmentSearch = new LargeEstablishmentsSearch();
+      businessModel.activities = [new EconomicActivity()];
+      businessModel.zones = [new Zone()];
+      service.getResults(businessModel);
+      expect(service.activityIDs.length).toBe(1);
+      expect(service.zoneIDs.length).toBe(1);
+    });
+  
+    test('getResults should select the correct option depending on which Business Model has been selected', () => {
+      let businessModel: MyEnvironmentSearch = new LargeEstablishmentsSearch();
+      businessModel.activities = [];
+      businessModel.zones = [];
+      service.getResults(businessModel);
+      expect(service.activityIDs[0]).toBe(0);
+      expect(service.zoneIDs[0]).toBe(0);
+     
+      businessModel = new BigMallsSearch();
+      businessModel.activities = [];
+      businessModel.zones = [];
+      service.getResults(businessModel);
+      expect(service.activityIDs[0]).toBe(0);
+      expect(service.zoneIDs[0]).toBe(0);
+     
+      businessModel = new CommercialGalleriesSearch();
+      businessModel.activities = [];
+      businessModel.zones = [];
+      service.getResults(businessModel);
+      expect(service.activityIDs[0]).toBe(0);
+      expect(service.zoneIDs[0]).toBe(0);
+      
+      businessModel = new MunicipalMarketsSearch();
+      businessModel.activities = [];
+      businessModel.zones = [];
+      service.getResults(businessModel);
+      expect(service.activityIDs[0]).toBe(0);
+      expect(service.zoneIDs[0]).toBe(0);
+  
+      businessModel = new MarketsAndFairsSearch();
+      businessModel.activities = [];
+      businessModel.zones = [];
+      service.getResults(businessModel);
+      expect(service.activityIDs[0]).toBe(0);
+      expect(service.zoneIDs[0]).toBe(0);
+    });
 
-  it('should call default Big Malls Economic activities backend api when search does not match 5 options', () => {
-    service.getEconomicActivities(239).subscribe((response) => {
-     return response;
-    })
-
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/big-malls/activities"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
-
-   it('should call correct backend api when you select Big Malls search Type', () => {
-    
-     const businessModelSearch = new BigMallsSearch;
-     service.getResults(businessModelSearch).subscribe((response) => {
-      return response;
-     })
-
-    const testRequest = httpMock.expectOne(
-    (request) => request.url === "/businessassistantbcn/api/v1/opendata/big-malls"
-    );
-
-    expect(testRequest.request.method).toBe("GET");
-   })
-
-   it('should call correct backend api when you select Commercial Galleries search Type', () => {
-    
-    const businessModelSearch = new CommercialGalleriesSearch;
-    service.getResults(businessModelSearch).subscribe((response) => {
-     return response;
-    })
-
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/commercial-galleries/activities"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
-
-  it('should call correct backend api when you select Large Establishments search Type', () => {
-    
-    const businessModelSearch = new LargeEstablishmentsSearch;
-    service.getResults(businessModelSearch).subscribe((response) => {
-     return response;
-    })
-
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/large-establishments/search"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
-
-  it('should call correct backend api when you select Large Establishments search Type', () => {
-    
-    const businessModelSearch = new LargeEstablishmentsSearch;
-    service.getResults(businessModelSearch).subscribe((response) => {
-     return response;
-    })
-
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/large-establishments/search"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
-
-  it('should call correct backend api when you select Market Fairs search Type', () => {
-    
-    const businessModelSearch = new MarketsAndFairsSearch;
-    service.getResults(businessModelSearch).subscribe((response) => {
-     return response;
-    })
-
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/market-fairs"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
-
-  it('should call correct backend api when you select Municipial Markets search Type', () => {
-    
-    const businessModelSearch = new MunicipalMarketsSearch;
-    service.getResults(businessModelSearch).subscribe((response) => {
-     return response;
-    })
-
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/municipal-markets"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
-
-  it('should call correct default api when you do not select search Type', () => {
-    
-    const businessModelSearch = new MunicipalMarketsSearch;
-    service.getResults(businessModelSearch).subscribe((response) => {
-     return response;
-    })
-
-   const testRequest = httpMock.expectOne(
-   (request) => request.url === "/businessassistantbcn/api/v1/opendata/municipal-markets"
-   );
-   expect(testRequest.request.method).toBe("GET");
-  })
+  }); 
   
 });
 

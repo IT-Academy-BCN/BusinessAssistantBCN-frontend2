@@ -71,7 +71,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
+           "configurations": {
             "production": {
               "browserTarget": "BusinessAssistantBCN-frontend2:build:production"
             },

@@ -61,9 +61,8 @@ import { SavedSearchesModule } from './features/saved-searches/saved-searches.mo
     SavedSearchesModule,
     VirtualAssistantModule
   ],
-  providers: [
- //   interceptorProvider
-  ],
+  // providers: [interceptorProvider],
+  providers: [],
   bootstrap: [AppComponent],
   exports: [
      TranslateModule
