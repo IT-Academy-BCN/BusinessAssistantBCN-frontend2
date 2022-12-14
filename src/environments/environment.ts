@@ -12,6 +12,7 @@ export const environment = {
   BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '/businessassistantbcn/api/v1/opendata/large-establishments/search', /* 400 - Bad Request */
   BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL: '/businessassistantbcn/api/v1/opendata/commercial-galleries/activities', /* OK */ 
   BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-search-large-establishments_dummy.json',
+  BACKEND_MARKET_FAIRS_URL: '/businessassistantbcn/api/v1/opendata/market-fairs',
   BACKEND_BIG_MALLS_URL: '/businessassistantbcn/api/v1/opendata/big-malls', /* OK  */
   BACKEND_BIG_MALLS_ACTIVITIES_URL: '/businessassistantbcn/api/v1/opendata/big-malls/activities', /*  OK  */
   BACKEND_MUNICIPAL_MARKETS: '/businessassistantbcn/api/v1/opendata/municipal-markets', /*  OK  */

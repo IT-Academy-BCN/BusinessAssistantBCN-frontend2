@@ -60,7 +60,7 @@ describe('SearchAndResultComponent', () => {
       count: 10,
       limit: 0,
       offset: 0,
-      results: [{idZone:1, zoneName: 'Cuitat Vella'}]
+      elements: [{idZone:1, zoneName: 'Cuitat Vella'}]
     };
 
     expMyEnvResponse = {
@@ -129,9 +129,9 @@ describe('SearchAndResultComponent', () => {
   })
 
   it('Init: should load the zones',() => {
- 
+   
     component.ngOnInit();
-    expect(component.zones.indexOf(expCommonResponse.results[0])).toBeGreaterThanOrEqual(0);
+    expect(component.zones.indexOf(expCommonResponse.elements[0])).toBeGreaterThanOrEqual(0);
   })
 
   it('Init: should load the activities',() => {

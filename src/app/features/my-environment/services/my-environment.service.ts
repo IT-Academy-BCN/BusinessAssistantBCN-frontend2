@@ -26,6 +26,7 @@ export class MyEnvironmentService {
 
     let endPoint=activityEndPoint.find(item=> item.establishment==businessModel)
     if (endPoint==undefined) endPoint={establishment:0,endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL}
+
     return this.http.get(
         `${ environment.BACKEND_BASE_URL }${endPoint.endPointActivity}`,
         {
@@ -33,6 +34,7 @@ export class MyEnvironmentService {
             'Content-Type': 'application/json'
           }
         });
+        
   }
 
   getResults(businessModelSearch: MyEnvironmentSearch){
@@ -51,16 +53,16 @@ export class MyEnvironmentService {
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
         params=params.append('activities',JSON.stringify((businessModelSearch as LargeEstablishmentsSearch).activities))
         return this.http.get(`${environment.BACKEND_LARGE_STABLISHMENTS_SEARCH_URL}`,{params})
-      case SearchType.MARKETS_AND_FAIRS: //This endpoint is missing therefore a repeated one is used
+      case SearchType.MARKETS_AND_FAIRS:
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
-        return this.http.get(`${environment.BACKEND_BIG_MALLS_URL}`,{params})
+        return this.http.get(`${environment.BACKEND_MARKET_FAIRS_URL}`,{params})
       case SearchType.MUNICIPAL_MARKETS:
         params=params.append('zones',JSON.stringify((businessModelSearch.zone)))
         return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS}`,{params})
-      default:
-        return this.http.get(`${environment.BACKEND_LARGE_STABLISHMENTS_SEARCH_URL}`,{params})
     }
   }
-  // The zone atribute up,  should be an Array of Zones 
 
 }
+
+
+

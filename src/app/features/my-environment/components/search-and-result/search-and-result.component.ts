@@ -119,7 +119,8 @@ export class SearchAndResultComponent implements OnInit {
 
   getAllZones(){
     this.zonesSub=this.commonService.getZones().subscribe(response=>{
-      this.zones=response.results;
+      this.zones=response.elements;
+      //may need to rever to response.results depending on object hierarchies
     })
   }
 

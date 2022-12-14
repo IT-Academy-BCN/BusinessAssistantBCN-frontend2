@@ -30,7 +30,7 @@ import { CoreModule } from './core/core.module';
 import { SavedSearchesModule } from './features/saved-searches/saved-searches.module';
 
 // JWT interceptor
-import { interceptorProvider } from './interceptor/jwt-interceptor.service';
+//import { interceptorProvider } from './interceptor/jwt-interceptor.service';
 
 
 @NgModule({
@@ -61,7 +61,9 @@ import { interceptorProvider } from './interceptor/jwt-interceptor.service';
     SavedSearchesModule,
     VirtualAssistantModule
   ],
-  providers: [interceptorProvider],
+  providers: [
+ //   interceptorProvider
+  ],
   bootstrap: [AppComponent],
   exports: [
      TranslateModule
