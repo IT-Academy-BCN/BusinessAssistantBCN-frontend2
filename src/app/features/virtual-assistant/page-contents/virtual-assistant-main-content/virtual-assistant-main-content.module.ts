@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
 
 // MATERIAL
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { VirtualAssistantMainContentComponent } from './component/virtual-assistant-main-content.component';

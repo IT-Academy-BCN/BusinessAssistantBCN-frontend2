@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 // MATERIAL
 import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
+import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 
 // MODULE: i18-translate.module.ts
 import { I18TranslateModule } from '../../translate/i18-translate.module';
