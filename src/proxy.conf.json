@@ -1,0 +1,9 @@
+{
+    "/businessassistantbcn/api/v1/*": {
+    "target": "http://87.106.229.175:7777",
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "headers": {"Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InVlYmVybWVuc2NoQHphcmF0aHVzdHJhLmNvbSIsInBhc3N3b3JkIjoiTDJtbnh1cX1eWiNyQWg3XUooXm9pQCU0QDosRXZmLVYiLCJhdXRob3JpdGllcyI6WyJTVVBFUlVTRVIiXSwiaWF0IjoxNjY5MTM1MjAzfQ.ySbRr7yOZcTwfOux1oitmNUfrM6omb-ky64fGrrqngk"}, 
+    
+    }
+}
