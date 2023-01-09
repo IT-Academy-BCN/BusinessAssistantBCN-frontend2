@@ -3,8 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'showcase-case-title',
     template: `
-  <p class="mat-display-1" style="margin: 10px 50px">{{ titleCase }}
-      <span class="mat-subheading-2" [innerHTML]="innerHtmlSubtitle"></span>
+  <p class="mat-headline-4" style="margin: 10px 50px">{{ titleCase }}
+      <span class="mat-subtitle-1" [innerHTML]="innerHtmlSubtitle"></span>
   </p>
   `
 })

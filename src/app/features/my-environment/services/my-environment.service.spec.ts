@@ -1,32 +1,27 @@
+
+import { SearchType, MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from './../../../shared/models/my-environment-search/my-environment-search.model';
+import { HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import { Zone } from './../../../shared/models/common/zone.model';
-import { MyEnvironmentSearch, LargeEstablishmentsSearch, CommercialGalleriesSearch, BigMallsSearch, MunicipalMarketsSearch, MarketsAndFairsSearch, SearchType } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { MyEnvironmentService } from './my-environment.service';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 
 describe('MyEnvironmentService', () => {
 
-  let service:MyEnvironmentService
-
+  let service:MyEnvironmentService;
+  let httpMock: HttpTestingController;
+ 
+ 
   beforeEach(() => {
-    
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
       providers:[ MyEnvironmentService]
     }).compileComponents();
 
      service = TestBed.inject(MyEnvironmentService);
-     
+     httpMock = TestBed.inject(HttpTestingController);
   });
-
-
-  it('should be created', () => {
-    
-    expect(service).toBeTruthy();
-    
-  });
-
+  
   describe('Methods', () => {
 
     test('getEconomicActivities should select the correct option depending on which Business Model has been selected', () => {
@@ -100,4 +95,9 @@ describe('MyEnvironmentService', () => {
     });
 
   }); 
+  
 });
+
+
+
+

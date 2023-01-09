@@ -30,7 +30,7 @@ import { CoreModule } from './core/core.module';
 import { SavedSearchesModule } from './features/saved-searches/saved-searches.module';
 
 // JWT interceptor
-import { interceptorProvider } from './interceptor/jwt-interceptor.service';
+//import { interceptorProvider } from './interceptor/jwt-interceptor.service';
 
 
 @NgModule({

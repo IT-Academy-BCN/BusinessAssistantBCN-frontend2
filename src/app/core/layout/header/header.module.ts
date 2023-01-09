@@ -6,9 +6,9 @@ import { LanguageChangerModule } from '../language-changer/language-changer.modu
 
 import { HeaderComponent } from './header.component';
 //Material
-import {MatLegacyMenuModule as MatMenuModule} from '@angular/material/legacy-menu';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
-import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
+import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 

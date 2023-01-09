@@ -6,7 +6,7 @@
       <!-- Mis Búsquedas -->
     </h2>
     <div *ngFor="let item of savedSearchesData">
-      <mat-card>
+      <mat-card appearance="outlined">
         <mat-grid-list [cols]="breakpoint" rowHeight="75px" (window:resize)="onResize($event)">
           <mat-grid-tile
                   [colspan]="1"
