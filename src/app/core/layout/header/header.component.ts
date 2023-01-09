@@ -54,9 +54,22 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-  console.log('should heading login component')
-
+    console.log(num)
+    switch (num) {
+      case 0:
+        break;
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        this.router.navigate(['login']);
+        break;
+      default:
+    }
   }
- 
-  
+
+
 }

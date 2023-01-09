@@ -15,131 +15,132 @@
                         </h2>
                     </section>
                     <div class="search-container">
-                     <!-- babcn-CONTAINER -->
-                        <babcn-container containerHeight="395px" 
-                    [containerWidth]='ratio.toString()' 
-                    [containerIsActive]="false"
-                    >
+                        <!-- babcn-CONTAINER -->
+                        <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()'
+                            [containerIsActive]="false">
                             <div class="p-3 ms-8 border">
                                 <div *ngIf="!showResults; else showResult" class="">
                                     <div class="" *ngFor="let zone of zones">
-                                        <div class="" >
-                                        <div class="form-check">
-                                            <label class="form-check-label" >
-                                                <mat-checkbox class="form-check-input" 
-                                                (change)="checkZones(zone, $event.checked)"
-                                                 >{{zone.zoneName}}</mat-checkbox>
-                                            </label>
-                                        </div>
+                                        <div class="">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <mat-checkbox class="form-check-input"
+                                                        (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <ng-template #showResult>
-                            <h2 >
-                                {{ "common.title.results" | translate }}
-                            </h2>
-                            <div class="" *ngIf="true" id="pdfData">
-                                <div *ngFor="let ls of searchResults" >
-                                    <h5 class="details">{{ ls.name }}</h5>
-                                    <mat-list class="result-container list-unstyled" *ngFor="let address of ls.addresses">
-                                        <mat-list-item *ngIf="address.street_name">
-                                            {{ address.street_name }}, {{ address.street_number }}
-                                        </mat-list-item>
-                                        <mat-list-item *ngIf="address.town">
-                                            {{ address.zip_code }} {{ address.town }}
-                                        </mat-list-item>
-                                        <mat-list-item *ngIf="ls.email">
-                                            Email: {{ ls.email }}
-                                        </mat-list-item>
-                                        <mat-list-item *ngIf="ls.web">
-                                            Web: {{ ls.web }}
-                                        </mat-list-item>
-                                        <mat-list-item *ngIf="ls.phone">
-                                            Tel.:{{ ls.phone }}
-                                        </mat-list-item>
-                                    </mat-list>
+                                <h2>
+                                    {{ "common.title.results" | translate }}
+                                </h2>
+                                <div class="" *ngIf="true" id="pdfData">
+                                    <div *ngFor="let ls of searchResults">
+                                        <h5 class="details">{{ ls.name }}</h5>
+                                        <mat-list class="result-container list-unstyled"
+                                            *ngFor="let address of ls.addresses">
+                                            <mat-list-item *ngIf="address.street_name">
+                                                {{ address.street_name }}, {{ address.street_number }}
+                                            </mat-list-item>
+                                            <mat-list-item *ngIf="address.town">
+                                                {{ address.zip_code }} {{ address.town }}
+                                            </mat-list-item>
+                                            <mat-list-item *ngIf="ls.email">
+                                                Email: {{ ls.email }}
+                                            </mat-list-item>
+                                            <mat-list-item *ngIf="ls.web">
+                                                Web: {{ ls.web }}
+                                            </mat-list-item>
+                                            <mat-list-item *ngIf="ls.phone">
+                                                Tel.:{{ ls.phone }}
+                                            </mat-list-item>
+                                        </mat-list>
+                                    </div>
                                 </div>
-                            </div>
-    
+                                
                             </ng-template>
                         </babcn-container>
 
                         <section>
-                            <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'" class="search">
-                            <button mat-raised-button style="background:black; color: white" (click)="goToResult()"
-                                    routerLink="my-environment-search-detail"
-                                    type="submit">
-                                {{'common.button.search' | translate}}
-                            </button>
+                            <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'"
+                                class="search">
+                                <button *ngIf="!showResults" mat-raised-button style="background:black; color: white"
+                                    (click)="goToResult()" routerLink="my-environment-search-detail" type="submit">
+                                    {{'common.button.search' | translate}}
+                                </button>
+                            </div>
+                            <div *ngIf="showResults" class="search">
+                                <button *ngIf="showResults" mat-raised-button style="background:black; color: white"
+                                    routerLink="my-environment-search-detail" type="submit" (click)="onSaveSearch()">
+                                    {{'common.button.save' | translate}}
+                                </button>
                             </div>
                         </section>
                     </div>
-                <!-- END babcn-CONTAINER -->
+                    <!-- END babcn-CONTAINER -->
                 </div>
             </mat-grid-tile>
 
             <mat-grid-tile>
 
-                <div  *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'" class="container">
-                
+                <div *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'"
+                    class="container">
+
                     <section *ngIf="!showResults">
                         <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
                     </section>
 
-               <div class="search-container">
-                   <!-- babcn-CONTAINER -->
-                    <babcn-container 
-                    containerHeight="350px"
-                    [containerWidth]='ratio.toString()'
-                    >
+                    <div class="search-container">
+                        <!-- babcn-CONTAINER -->
+                        <babcn-container containerHeight="350px" [containerWidth]='ratio.toString()'>
                             <div *ngIf="!showResults; else showResult" class="p-3 border bg-light">
                                 <div class="data">
-                                    <div  >
-                                   <div *ngFor="let activity of activities; let i = index" >
-                                        <div class="form-check">
-                                            <label class="form-check-label" >
-                                             <mat-checkbox class="form-check-input" (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
-                                            </label>
-                                        </div>
+                                    <div>
+                                        <div *ngFor="let activity of activities; let i = index">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <mat-checkbox class="form-check-input"
+                                                        (change)="checkActivities(activity,$event.checked)"> {{
+                                                        activity.activityName }}</mat-checkbox>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                   
+
                             </div>
                             <ng-template #showResult>
-                                <app-mapbox ></app-mapbox>
+                                <app-mapbox></app-mapbox>
                             </ng-template>
-                    </babcn-container>
-                               <!-- END babcn-CONTAINER -->
-                   
+                        </babcn-container>
+                        <!-- END babcn-CONTAINER -->
+
                         <div *ngIf="!showResults" class="search">
                             <button mat-raised-button style="background:black; color: white" (click)="goToResult()"
-                                    routerLink="my-environment-search-detail"
-                                    type="submit">
-                                    {{'common.button.search' | translate}}
-                                    </button>
+                                routerLink="my-environment-search-detail" type="submit">
+                                {{'common.button.search' | translate}}
+                            </button>
                         </div>
-               </div> 
+                    </div>
                 </div>
 
-                <div  *ngIf="showResults" class="container">
+                <div *ngIf="showResults" class="container">
 
                     <div class="search-container">
                         <!-- babcn-CONTAINER -->
-                        <babcn-container 
-                        containerHeight="395px"
-                        [containerWidth]='ratio.toString()'
-                        >
-                        <app-mapbox [filteredResultsToPrintOnMap]="[]" [selectedResultsToChangeColor]="selectedList"></app-mapbox>
+                        <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()'>
+                            <app-mapbox [filteredResultsToPrintOnMap]="[]"
+                                [selectedResultsToChangeColor]="selectedList"></app-mapbox>
                         </babcn-container>
                         <!-- END babcn-CONTAINER -->
-                    </div> 
+                    </div>
                 </div>
             </mat-grid-tile>
 
         </mat-grid-list>
         <!-- END MAT GRID LIST -->
-       
+
     </div>
 </section>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { SearchItemResult } from './../../../../shared/models/my-environment-search/search-item-result.model';
 import { MyEnvironmentService } from './../../services/my-environment.service';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
@@ -37,7 +38,9 @@ export class SearchAndResultComponent implements OnInit {
   activitiesSub: Subscription | null = null;
   environments: Subscription | null = null;
 
-  constructor(private responsive: BreakpointService,
+  constructor(
+    private router: Router,
+    private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService,
     private commonService: CommonService) {
     const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
@@ -135,6 +138,9 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
+  onSaveSearch(){
+    this.router.navigate(['saved-searches']);
+  }
   // selectItem(item: any) {
   //   const selectedIndex = this.selectedList.findIndex(e => e == item), list = [...this.selectedList];
   //   if (selectedIndex == -1) list.push(item); else list.splice(selectedIndex, 1);
