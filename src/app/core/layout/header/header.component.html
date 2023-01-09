@@ -18,7 +18,7 @@
         </button>
         <mat-menu #menu="matMenu" yPosition="below">
             <button mat-menu-item 
-            *ngFor="let button of buttons; let i=index">
+            *ngFor="let button of buttons; let i=index" (click) = goToLink(i)>
             {{button | translate}}
             </button>
         </mat-menu>
