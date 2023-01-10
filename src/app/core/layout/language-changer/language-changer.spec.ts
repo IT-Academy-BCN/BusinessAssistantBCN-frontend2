@@ -1,5 +1,4 @@
 
-import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TranslateService, TranslateStore } from '@ngx-translate/core';
 import { LanguageChangerComponent } from './language-changer.component';
