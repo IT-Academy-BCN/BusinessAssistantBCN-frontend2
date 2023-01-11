@@ -8,13 +8,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { LoginModalComponent } from './components/login-modal/login-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
 
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    LoginModalComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +29,11 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
+    I18TranslateModule,
 
   ]
 })

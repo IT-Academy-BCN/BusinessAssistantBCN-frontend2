@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   BACKEND_BASE_URL: 'http://87.106.229.175:7777/businessassistantbcn/api/v1',
   BACKEND_LOGIN_URL: '/login',
-  BACKEND_REGISTER_URL: '/register',
+  BACKEND_REGISTER_URL: '/usermanagement/user',
   BACKEND_ZONES_URL: '/common/bcn-zones',
   BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '/opendata/large-establishments/activities',
   BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '/opendata/large-establishments/search',

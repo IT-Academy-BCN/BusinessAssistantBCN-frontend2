@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -33,7 +34,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ]
 })
 export class HeaderModule { }

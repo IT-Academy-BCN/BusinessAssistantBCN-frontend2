@@ -1,0 +1,39 @@
+<div mat-dialog-content>
+  
+
+  <mat-tab-group>
+
+    <mat-tab class="mat-tab" label="{{'common.button.login'| translate| uppercase}}">          
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" value="" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" value="" />
+        </mat-form-field>
+        
+        
+        <button class="mat-button" mat-raised-button color="primary">{{'common.button.login'| translate| uppercase}}</button>   
+    </mat-tab>
+
+
+    
+    <mat-tab label="{{'common.button.register'| translate| uppercase}}"> 
+         <mat-form-field class="example-full-width">
+            <mat-label>{{'user.register.email-placeholder'| translate}}</mat-label>
+            <input matInput placeholder="Email" value="" />
+          </mat-form-field>
+
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>{{'user.register.password-placeholder'| translate}}</mat-label>
+            <input matInput placeholder="Password" value="" />
+          </mat-form-field>
+  
+          <button class="mat-button" mat-raised-button color="primary">{{'user.register.title'| translate}}</button> 
+    </mat-tab>
+    
+  </mat-tab-group>
+</div>

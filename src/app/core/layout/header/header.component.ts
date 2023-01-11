@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { zoomTitle } from './animation/header.animation';
 
@@ -27,7 +29,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private responsive: BreakpointService,
-    private router: Router
+    private router: Router,
+    public dialog:MatDialog
   ) {
     const currentScreenSize = this.responsive.getCurrentScreenSize();
     this.expandMenu(currentScreenSize);
@@ -65,7 +68,7 @@ export class HeaderComponent implements OnInit {
       case 3:
         break;
       case 4:
-        this.router.navigate(['login']);
+        if (num == 4) this.dialog.open(LoginModalComponent,{})
         break;
       default:
     }
