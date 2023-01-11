@@ -38,7 +38,7 @@ describe('AuthService', () => {
     });
 
     test('login should use HttpClient', () => {
-      service.signup(userData);
+      service.login(userData);
       expect(httpClientMock.post).toBeCalledTimes(1);
     });
 
