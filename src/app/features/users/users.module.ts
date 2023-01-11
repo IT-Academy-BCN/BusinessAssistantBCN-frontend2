@@ -12,6 +12,7 @@ import { LoginModalComponent } from './components/login-modal/login-modal.compon
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
 
 
 
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatDialogModule,
     MatTabsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    I18TranslateModule,
 
   ]
 })

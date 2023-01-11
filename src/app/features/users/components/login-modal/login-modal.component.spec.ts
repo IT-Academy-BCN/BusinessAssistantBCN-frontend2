@@ -4,6 +4,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
 
 import { LoginModalComponent } from './login-modal.component';
 
@@ -19,8 +21,16 @@ describe('LoginModalComponent', () => {
         MatDialogModule,
         MatInputModule,
         MatTabsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          }, 
+        }),
+        
       ],
+     
      
     })
     .compileComponents();
