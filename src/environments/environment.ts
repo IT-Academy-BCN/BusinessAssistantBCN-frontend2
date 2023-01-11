@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   BACKEND_BASE_URL: '/businessassistantbcn/api/v1',
   BACKEND_LOGIN_URL: '/login',
-  BACKEND_REGISTER_URL: '/usermanagement/user/',
+  BACKEND_REGISTER_URL: '/usermanagement/user',
   BACKEND_ZONES_URL: '/common/bcn-zones',
   BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '/opendata/large-establishments/activities',
   BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '/opendata/large-establishments/search', // 400 (Bad Request)
