@@ -13,12 +13,12 @@ import { zoomTitle } from './animation/header.animation';
 })
 export class HeaderComponent implements OnInit {
 
-  buttons: string[] =  [
-    'common.button.search',
-    'components.header.section2.title',
-    'components.header.section4.title',
-    'components.footer.section4.title',
-    'common.button.login',
+  buttons: {name: string, link: string}[] =  [
+    {name: 'common.button.search', link: ''},
+    {name: 'components.header.section2.title', link: ''},
+    {name: 'components.header.section4.title', link: ''},
+    {name: 'components.footer.section4.title', link: ''},
+    {name: 'common.button.login', link: 'login'},
   ]
 
   title: string = 'inactive'
@@ -54,9 +54,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-  console.log('should heading login component')
-
+  this.router.navigate([this.buttons[num].link])
   }
  
-  
 }

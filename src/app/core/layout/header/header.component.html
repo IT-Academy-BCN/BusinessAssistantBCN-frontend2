@@ -18,18 +18,18 @@
         </button>
         <mat-menu #menu="matMenu" yPosition="below">
             <button mat-menu-item 
-            *ngFor="let button of buttons; let i=index">
-            {{button | translate}}
+            *ngFor="let button of buttons; let i=index" (click) = 'goToLink(i)'>
+            {{button.name | translate}}
             </button>
         </mat-menu>
     </div>
 
     <ng-template #headerbtn>
         <button mat-button *ngFor="let button of buttons; let i=index" (click) = 'goToLink(i)'> 
-            <span *ngIf="button == 'Search'" class="padding-x"></span>
+            <span *ngIf="button.name == 'Search'" class="padding-x"></span>
             <mat-icon *ngIf="i == 0">search</mat-icon>
             <mat-icon *ngIf="i == 4">login</mat-icon>
-            {{button | translate}}
+            {{button.name | translate}}
         </button>
     </ng-template>
 

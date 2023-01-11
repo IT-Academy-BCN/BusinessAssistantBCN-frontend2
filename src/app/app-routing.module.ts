@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'virtual-assistant', component: VirtualAssistantPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  { path: "saved-searches", component: SavedSearchesComponent },
+  {path: "saved-searches", component: SavedSearchesComponent },
 ];
 
 @NgModule({

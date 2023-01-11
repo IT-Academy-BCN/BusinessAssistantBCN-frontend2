@@ -15,9 +15,9 @@ export const VIRTUAL_ASSISTANT_MAT_GRID_LIST = new Map([
 ]);
 
 export const MY_ENVIRONMENT_MAT_GRID_LIST = new Map([
-    ["XSmall", [1, "300px"]],
-    ["Small", [1, "420px"]],
-    ["Medium", [2, "420px"]],
-    ["Large", [2, "560px"]],
+    ["XSmall", [1, "60vw"]],
+    ["Small", [1, "76vw"]],
+    ["Medium", [2, "36vw"]],
+    ["Large", [2, "40vw"]],
     ["XLarge", [2, "700px"]]
 ]);
