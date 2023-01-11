@@ -14,7 +14,7 @@ export const environment = {
   BACKEND_COMMERCIAL_GALLERIES_SEARCH_URL: '/opendata/commercial-galleries/search',  // 400 (Bad Request)
   BACKEND_BIG_MALLS_ACTIVITIES_URL: '/opendata/big-malls/activities',
   BACKEND_BIG_MALLS_SEARCH_URL: '/opendata/big-malls/search', // 400 (Bad Request)
-  BACKEND_MARKET_FAIRS_URL: '/businessassistantbcn/api/v1/opendata/market-fairs',
+  BACKEND_MARKET_FAIRS_URL: '/opendata/market-fairs',
   BACKEND_MUNICIPAL_MARKETS_SEARCH_URL: '/opendata/municipal-markets/search',
   BACKEND_MARKET_FAIRS_SEARCH_URL: '/opendata/market-fairs/search', // 400 (Bad Request)
   BACKEND_SAVED_SEARCHES_URL: '/mydata/mysearches',
