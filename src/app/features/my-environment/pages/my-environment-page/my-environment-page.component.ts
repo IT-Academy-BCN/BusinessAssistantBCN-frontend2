@@ -69,8 +69,10 @@ export class MyEnvironmentPageComponent implements OnInit {
 
 //For go to my-environment-search
 
+
   goToSearch(num: number){
-    this.router.navigate(['my-environment-search'])
+   
+    this.router.navigate(['my-environment']) // Here should change to 'my-environment-search' once links are active 
     if (num == 0) {
       this.myEnvSrv.title = 'common.button.mall'
       //Here go all the data of Big-malls
