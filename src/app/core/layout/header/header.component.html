@@ -21,6 +21,9 @@
             *ngFor="let button of buttons; let i=index" (click) = 'goToLink(i)'>
             {{button | translate}}
             </button>
+            <button class="btn1" mat-menu-item *ngFor="let button of languageButtons;"  (click)='changeLanguage(button.lang)'>
+                {{button.text}}
+            </button>
         </mat-menu>
     </div>
 
