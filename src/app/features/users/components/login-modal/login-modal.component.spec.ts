@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
@@ -16,6 +17,9 @@ describe('LoginModalComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LoginModalComponent ],
+      providers: [
+        FormBuilder
+      ],
       imports: [
         MatButtonModule,
         MatDialogModule,
@@ -28,10 +32,9 @@ describe('LoginModalComponent', () => {
             useClass: TranslateFakeLoader,
           }, 
         }),
+       
         
       ],
-     
-     
     })
     .compileComponents();
 
