@@ -10,21 +10,21 @@
           <mat-label>Email</mat-label>
           <input formControlName="email" type="email" matInput placeholder="Email" value=""/>
           <mat-error *ngIf="signInForm.get('email')?.hasError('email') && !signInForm.get('email')?.hasError('required')">
-            Please enter a valid email address
+            {{'user.register.email-error'| translate}}
           </mat-error>
           <mat-error *ngIf="signInForm.get('email')?.hasError('required')">
-            Email is <strong>required</strong>
+            {{'user.register.email-require'| translate}} 
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Password</mat-label>
           <input  formControlName="password" type="password" matInput placeholder="Password" value="" />
-          <mat-error *ngIf="signInForm.get('password')?.hasError('minlength') && !signInForm.get('password')?.hasError('required') ">
-            Please enter a min of 8 characters
+          <mat-error *ngIf="signInForm.get('password')?.hasError('minlength') || signInForm.get('password')?.hasError('pattern') && !signInForm.get('password')?.hasError('required') ">
+            {{'user.register.password-error'| translate}}
           </mat-error>
           <mat-error *ngIf="signInForm.get('password')?.hasError('required')">
-            Password is <strong>required</strong>
+            {{'user.register.password-require'| translate}}
           </mat-error>
         </mat-form-field>
 
@@ -44,21 +44,21 @@
           <mat-label>Email</mat-label>
           <input formControlName="email" type="email" matInput placeholder="Email" value=""/>
           <mat-error *ngIf="signUpForm.get('email')?.hasError('email') && !signUpForm.get('email')?.hasError('required')">
-            Please enter a valid email address
+            {{'user.register.email-error'| translate}}
           </mat-error>
           <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">
-            Email is <strong>required</strong>
+            {{'user.register.email-require'| translate}} 
           </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
           <mat-label>Password</mat-label>
           <input  formControlName="password" type="password" matInput placeholder="Password" value="" />
-          <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength') && !signUpForm.get('password')?.hasError('required') ">
-            Please enter a min of 8 characters
+          <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength') || signUpForm.get('password')?.hasError('pattern') && !signUpForm.get('password')?.hasError('required') ">
+            {{'user.register.password-error'| translate}}
           </mat-error>
           <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">
-            Password is <strong>required</strong>
+            {{'user.register.password-require'| translate}}
           </mat-error>
         </mat-form-field>
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login-modal',
@@ -14,12 +14,12 @@ export class LoginModalComponent {
 
   signInForm:FormGroup= this.fb.group({
     email:["",[Validators.required,Validators.email]], 
-    password:["",[Validators.required,Validators.minLength(8)]], 
+    password:["",[Validators.required,Validators.minLength(8),Validators.pattern("^[a-zA-Z0-9]*$")]], 
   });
 
   signUpForm:FormGroup= this.fb.group({
     email:["",[Validators.required,Validators.email]], 
-    password:["",[Validators.required,Validators.minLength(8)]], 
+    password:["",[Validators.required,Validators.minLength(8),Validators.pattern("^[a-zA-Z0-9]*$")]], 
   });
 
 
