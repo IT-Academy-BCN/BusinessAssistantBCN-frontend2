@@ -18,7 +18,7 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
+          <mat-label>{{'user.register.password-placeholder'| translate }}</mat-label>
           <input  formControlName="password" type="password" matInput placeholder="Password" value="" />
           <mat-error *ngIf="signInForm.get('password')?.hasError('minlength') || signInForm.get('password')?.hasError('pattern') && !signInForm.get('password')?.hasError('required') ">
             {{'user.register.password-error'| translate}}
@@ -29,6 +29,7 @@
         </mat-form-field>
 
         <button class="mat-button" mat-raised-button color="primary">{{'common.button.login'| translate| uppercase}}</button>   
+
       </form>
         
         
@@ -52,7 +53,7 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
+          <mat-label>{{'user.register.password-placeholder'| translate }}</mat-label>
           <input  formControlName="password" type="password" matInput placeholder="Password" value="" />
           <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength') || signUpForm.get('password')?.hasError('pattern') && !signUpForm.get('password')?.hasError('required') ">
             {{'user.register.password-error'| translate}}
