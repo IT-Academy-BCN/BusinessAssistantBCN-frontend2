@@ -1,5 +1,7 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { LanguagesModel } from '../language-changer/language-changer.interface';
 import { Router } from '@angular/router';
 import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
@@ -23,13 +25,20 @@ export class HeaderComponent implements OnInit {
     'common.button.login',
   ]
 
+  languageButtons: {text: string, lang: LanguagesModel}[] = [
+    {text: 'CA', lang: LanguagesModel.ca },
+    {text: 'ES', lang: LanguagesModel.es },
+    {text: 'EN', lang: LanguagesModel.en }
+  ]
+
+
   title: string = 'inactive'
   menu: boolean = false
-
 
   constructor(
     private responsive: BreakpointService,
     private router: Router,
+    private translateService:TranslateService,
     public dialog:MatDialog
   ) {
     const currentScreenSize = this.responsive.getCurrentScreenSize();
@@ -72,6 +81,10 @@ export class HeaderComponent implements OnInit {
         break;
       default:
     }
+  }
+
+  changeLanguage(language: LanguagesModel){
+    this.translateService.use(language);
   }
 
 
