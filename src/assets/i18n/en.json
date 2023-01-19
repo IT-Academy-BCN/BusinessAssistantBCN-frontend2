@@ -206,9 +206,11 @@
             "title": "New user",
             "email-placeholder": "Your email...",
             "email-error": "Email address not valid / User already exists",
+            "email-require":"Email is required",
             "password-title": "Password",
             "password-placeholder": "Your password...",
             "password-error": "Password needs to be 8 alphanumeric characters",
+            "password-require":"Password is required",
             "submit-register": "Create user"
         }
     }

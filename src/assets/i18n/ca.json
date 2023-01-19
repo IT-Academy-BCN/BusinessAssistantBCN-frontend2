@@ -191,7 +191,7 @@
             "market-fair": "Mercats i Fires",
             "save-results": "Guardar resultats",
             "download-results": "Descarregar resultats",
-            "login": "Login",
+            "login": "Accés",
             "logout": "Logout",
             "register": "Registrar-se",
             "see-summary": "Veure resum"
@@ -205,9 +205,11 @@
             "title": "Nou usuari",
             "email-placeholder": "El teu email...",
             "email-error": "Format d'email no vàlid / L'usuari ja existeix",
+            "email-require":"El email és obligatori",
             "password-title": "Contrasenya",
             "password-placeholder": "La teva contrasenya...",
             "password-error": "La contrasenya ha de tenir 8 caràcters alfanumèrics",
+            "password-require":"La contrasenya és obligatori",
             "submit-register": "Crear usuari"
         }
     }

@@ -192,7 +192,7 @@
             "market-fair": "Mercados y Ferias",
             "save-results": "Guardar resultados",
             "download-results": "Descargar resultados",
-            "login": "Login",
+            "login": "Acceso",
             "logout": "Logout",
             "register": "Registrarse",
             "see-summary": "Ver resumen"
@@ -206,9 +206,11 @@
             "title": "Nuevo usuario",
             "email-placeholder": "Tu email...",
             "email-error": "Formato de email inválido / El usuario ya existe",
+            "email-require":"El email es obligatorio",
             "password-title": "Contraseña",
             "password-placeholder": "Tu contraseña...",
             "password-error": "La contraseña debe tener almenos 8 carácteres alfanuméricos",
+            "password-require":"La contraseña es obligatoria",
             "submit-register": "Crear usuario"
         }
     }
