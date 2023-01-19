@@ -37,8 +37,6 @@ export class MapboxComponent implements AfterViewInit {
     ],
   }
 
-
-  constructor() { }
   ngAfterViewInit(): void {
     // Generate map with basic config
   this.generateMap();
@@ -153,9 +151,9 @@ export class MapboxComponent implements AfterViewInit {
 
     (this.filteredResultsToPrintOnMap || []).forEach((element)=>{
 
-      let {x, y} = element!.addresses![0].location!; 
+      let {x, y} = element.addresses![0].location!; 
 
-      selected = (this.selectedResultsToChangeColor || []).find(e=> x == e!.addresses![0].location!.x && y == e!.addresses![0].location!.y);
+      selected = (this.selectedResultsToChangeColor || []).find(e=> x == e.addresses![0].location!.x && y == e.addresses![0].location!.y);
 
       this.createANewMarker( selected ? 'red' : 'yellow' ,element );     
 
@@ -165,7 +163,7 @@ export class MapboxComponent implements AfterViewInit {
 
   coordinatesAreValid(business:SearchItemResult){
 
-    const location = business!.addresses![0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
+    const location = business.addresses![0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
 
     let valid = false;
 
