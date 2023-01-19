@@ -36,7 +36,7 @@ export class SearchAndResultComponent implements OnInit {
 
   sample_Results: SearchItemResult[] = [{
     name: 'Compañia Roca Sanitario For Real',
-    web: 'http://www.roca.es',
+    web: 'https://www.roca.es',
     email: "infosan@roca.net",
     phone: null,
    // activities: [],
@@ -55,7 +55,7 @@ export class SearchAndResultComponent implements OnInit {
   },
   {
     name: 'Inoxcrom SA',
-    web: 'http://www.inoxcrom.com/',
+    web: 'https://www.inoxcrom.com/',
     email: "inoxcrom@inoxcrom.com",
     phone: null,
    // activities: [],
