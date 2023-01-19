@@ -34,6 +34,46 @@ export class SearchAndResultComponent implements OnInit {
   selectedActivities: EconomicActivity[] = [];
   searchResults: SearchItemResult[] = [];
 
+  sample_Results: SearchItemResult[] = [{
+    name: 'Compañia Roca Sanitario For Real',
+    web: 'http://www.roca.es',
+    email: "infosan@roca.net",
+    phone: null,
+   // activities: [],
+    addresses: [{
+      street_name: 'Av Diagonal',
+      street_number: "513",
+      zip_code: "08029",
+      district_id: "04",
+      town: "BARCELONA",
+      location: {
+        x: 2.140835,
+        y: 41.391424
+      },
+    },
+  ],
+  },
+  {
+    name: 'Inoxcrom SA',
+    web: 'http://www.inoxcrom.com/',
+    email: "inoxcrom@inoxcrom.com",
+    phone: null,
+   // activities: [],
+    addresses: [{
+      street_name: "T Estadella",
+      street_number: "46*54",
+      zip_code: "08030",
+      district_id: "09",
+      town: "BARCELONA",
+      location: {
+        x: 2.199667,
+        y: 41.434138
+      },
+    },
+  ],
+  }
+]
+
   zonesSub: Subscription | null = null;
   activitiesSub: Subscription | null = null;
   environments: Subscription | null = null;
@@ -116,6 +156,7 @@ export class SearchAndResultComponent implements OnInit {
         })
       })
     })
+
   }
 
   checkZones(zoneSelected: Zone, event: any) {

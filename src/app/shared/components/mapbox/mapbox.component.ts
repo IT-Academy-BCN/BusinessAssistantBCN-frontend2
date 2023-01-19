@@ -1,8 +1,7 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Input, SimpleChanges } from "@angular/core";
 import Mapboxgl, { LngLatBounds, NavigationControl, GeolocateControl, Map, Popup, Marker } from "mapbox-gl";
 import { environment } from "src/environments/environment";
-/* import { LargeStablishmentModel } from '../../models/large-stablishment.model';
-import {BasicBusinessModel} from "../../models/common/basic-business.model"; */
+import { SearchItemResult } from "../../models/my-environment-search/search-item-result.model";
 
 @Component({
   selector: "app-mapbox",
@@ -12,17 +11,17 @@ import {BasicBusinessModel} from "../../models/common/basic-business.model"; */
 export class MapboxComponent implements AfterViewInit {
   @ViewChild("mapDiv")
   mapDivElement!: ElementRef;
-  @Input() filteredResultsToPrintOnMap!: any[];
-  @Input() selectedResultsToChangeColor!: any[];
+  @Input() filteredResultsToPrintOnMap!: SearchItemResult[];
+  @Input() selectedResultsToChangeColor!: SearchItemResult[];
   private map!: Map;
   private currentMarkers: Marker[] = [];
 
-  private MAPBOX_INIT_LOCATION: any = {
+  private MAPBOX_INIT_LOCATION: SearchItemResult = {
     name: "IT Academy",
     web: "bcn.cat/barcelonactiva",
     email: "itacademy@barcelonactiva.cat",
     phone: '932917610',
-    activities: [],
+   // activities: [],
     addresses: [
       {
         street_name: "Roc Boronat",
@@ -38,25 +37,18 @@ export class MapboxComponent implements AfterViewInit {
     ],
   }
 
-  constructor() { }
 
+  constructor() { }
   ngAfterViewInit(): void {
     // Generate map with basic config
-    this.generateMap();
+  this.generateMap();
     // Depending on if the user accepts to share their location, center the map into the user, or into the default location (IT Academy)
-    this.getUsersLocation();
+  this.getUsersLocation();
   }
 
   ngOnChanges(changes:SimpleChanges) {
-
-   (this.filteredResultsToPrintOnMap || []).forEach((result) => {
-
-      // Create a marker for each result and add it to the map
-
-       if(this.coordinatesAreValid(result)) this.createANewMarker("orange", result);
-    });
-
-    if(changes['selectedResultsToChangeColor']){ this.updateSelectedMarkers(); }
+    if(changes['selectedResultsToChangeColor']){ this.updateSelectedMarkers(); 
+    }
   }
 
   ngOnDestroy() {
@@ -68,7 +60,7 @@ export class MapboxComponent implements AfterViewInit {
     this.map = new Mapboxgl.Map({
       container: this.mapDivElement.nativeElement,
       style: environment.MAPBOX_STYLE,
-      center: [this.MAPBOX_INIT_LOCATION.addresses[0].location.x, this.MAPBOX_INIT_LOCATION.addresses[0].location.y], // starting center so it doesn't start from Germany
+      center: [this.MAPBOX_INIT_LOCATION.addresses![0].location!.x, this.MAPBOX_INIT_LOCATION.addresses![0].location!.y], // starting center so it doesn't start from Germany
       zoom: environment.MAPBOX_ZOOM, 
       maxZoom: 18,
       accessToken:environment.MAPBOX_TOKEN
@@ -85,14 +77,22 @@ export class MapboxComponent implements AfterViewInit {
         trackUserLocation: true,
       })
     );
+
+    if(this.filteredResultsToPrintOnMap) {
+      this.filteredResultsToPrintOnMap.forEach((result) => {
+        // Create a marker for each result and add it to the map
+        this.createANewMarker("orange", result);
+      });
+    }
+  
   }
 
   // Function to create a single marker (with the marker's colour and the business (or user's coords) as parameters)
-  createANewMarker(markerColor: string, business?: any, coord?: GeolocationCoordinates): void {
+  createANewMarker(markerColor: string, business?: SearchItemResult, coord?: GeolocationCoordinates): void {
  
     // Create a popup with the business's basic information
     const popup = new Popup().setHTML(
-      `<b>${business?.name}</b> </br> ${business?.addresses[0].street_name} , ${business?.addresses[0].street_number}`
+      `<b>${business?.name}</b> </br> ${business?.addresses![0].street_name} , ${business?.addresses![0].street_number}`
     );
 
     if (coord) { // If user has accepted to share their location
@@ -102,14 +102,12 @@ export class MapboxComponent implements AfterViewInit {
       this.currentMarkers.push(newIndividualMarker);
     } else { // If user hasn't accepted to share their location OR when iterating through the filteredResultsToPrintOnMap array.
 
-   
         const newIndividualMarker = new Marker({ color: markerColor })
-        .setLngLat([business!.addresses[0].location.x, business!.addresses[0].location.y])
+        .setLngLat([business!.addresses![0].location!.x, business!.addresses![0].location!.y])
         .setPopup(popup)
         .addTo(this.map);
         this.currentMarkers.push(newIndividualMarker);
     
-      
     }
 
     // MAP LÍMITS
@@ -137,7 +135,6 @@ export class MapboxComponent implements AfterViewInit {
       // Error callback function (if user hasn't accepted to share their location)
       () => {
         // this.map.flyTo(
-        //   { center: [environment.MAPBOX_ITAcademy_OBJECT.addresses[0].location.x, environment.MAPBOX_ITAcademy_OBJECT.addresses[0].location.y], zoom: 11 })
         this.createANewMarker("red", this.MAPBOX_INIT_LOCATION);
       }
     );
@@ -156,9 +153,9 @@ export class MapboxComponent implements AfterViewInit {
 
     (this.filteredResultsToPrintOnMap || []).forEach((element)=>{
 
-      let {x, y} = element!.addresses[0].location; 
+      let {x, y} = element!.addresses![0].location!; 
 
-      selected = (this.selectedResultsToChangeColor || []).find(e=> x == e!.addresses[0].location.x && y == e!.addresses[0].location.y);
+      selected = (this.selectedResultsToChangeColor || []).find(e=> x == e!.addresses![0].location!.x && y == e!.addresses![0].location!.y);
 
       this.createANewMarker( selected ? 'red' : 'yellow' ,element );     
 
@@ -166,15 +163,15 @@ export class MapboxComponent implements AfterViewInit {
 
   }
 
-  coordinatesAreValid(business:any){
+  coordinatesAreValid(business:SearchItemResult){
 
-    const location = business!.addresses[0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
+    const location = business!.addresses![0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
 
     let valid = false;
 
     switch (format) {
 
-      case 'GCS':{ valid = [location.x, location.y].every(c=>Math.abs(c)<=90);  break; }        
+      case 'GCS':{ valid = [location!.x, location!.y].every(c=>Math.abs(c)<=90);  break; }        
     
     }
 
@@ -182,4 +179,6 @@ export class MapboxComponent implements AfterViewInit {
 
     return valid
   }
+
+  
 }

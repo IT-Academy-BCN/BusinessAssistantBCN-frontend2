@@ -112,9 +112,7 @@
                                 </div>
 
                             </div>
-                            <ng-template #showResult>
-                                <app-mapbox></app-mapbox>
-                            </ng-template>
+                       
                         </babcn-container>
                         <!-- END babcn-CONTAINER -->
 
@@ -132,7 +130,7 @@
                     <div class="search-container">
                         <!-- babcn-CONTAINER -->
                         <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()'>
-                            <app-mapbox [filteredResultsToPrintOnMap]="[]"
+                            <app-mapbox [filteredResultsToPrintOnMap]="sample_Results"
                                 [selectedResultsToChangeColor]="selectedList"></app-mapbox>
                         </babcn-container>
                         <!-- END babcn-CONTAINER -->
