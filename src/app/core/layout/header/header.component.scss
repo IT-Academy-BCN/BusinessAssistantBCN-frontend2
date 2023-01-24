@@ -10,7 +10,8 @@
 .btn1 {
   padding: 10px;
   margin: 10px;
-  width: 6rem;
+  min-width: 6rem;
+  max-width: 7rem;
 }
 
 mat-menu{

@@ -25,6 +25,11 @@ export class HeaderComponent implements OnInit {
     'common.button.login',
   ]
 
+  userNameButtons: string[] = [
+    'components.header.section5.title',
+    'common.button.logout'
+  ]
+
   languageButtons: {text: string, lang: LanguagesModel}[] = [
     {text: 'CA', lang: LanguagesModel.ca },
     {text: 'ES', lang: LanguagesModel.es },
@@ -34,7 +39,9 @@ export class HeaderComponent implements OnInit {
 
   title: string = 'inactive'
   menu: boolean = false
-  user: boolean = false
+  // esperando endpoint login para que user sea equivalente a username real.
+  // user: boolean = false
+  user: boolean = true
 
   constructor(
     public  dialog     : MatDialog,
