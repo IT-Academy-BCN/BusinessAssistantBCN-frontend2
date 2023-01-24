@@ -31,10 +31,15 @@
         <button mat-button class="btn1" *ngFor="let button of buttons; let i=index" (click) = goToLink(i)> 
             <span *ngIf="button == 'Search'" class="padding-x"></span>
             <mat-icon *ngIf="i == 0">search</mat-icon>
-            <mat-icon *ngIf="i == 4">login</mat-icon>
+            <mat-icon *ngIf="i == 4 && !this.user">login</mat-icon>
             {{button | translate}}
         </button>
+        <button mat-button class="btn1" *ngIf="this.user">UserName</button>
     </ng-template>
+
+
+
+
 
 
     <!-- Navigate-buttons -->

@@ -34,12 +34,13 @@ export class HeaderComponent implements OnInit {
 
   title: string = 'inactive'
   menu: boolean = false
+  user: boolean = false
 
   constructor(
-    private responsive: BreakpointService,
-    private router: Router,
+    public  dialog     : MatDialog,
+    private responsive : BreakpointService,
+    private router     : Router,
     private translateService:TranslateService,
-    public dialog:MatDialog
   ) {
     const currentScreenSize = this.responsive.getCurrentScreenSize();
     this.expandMenu(currentScreenSize);
@@ -66,7 +67,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-    console.log(num)
+    // console.log(num)
     switch (num) {
       case 0:
         break;
@@ -77,7 +78,7 @@ export class HeaderComponent implements OnInit {
       case 3:
         break;
       case 4:
-        if (num == 4) this.dialog.open(LoginModalComponent,{})
+        if (num == 4 && this.user == false) this.dialog.open(LoginModalComponent,{})
         break;
       default:
     }
