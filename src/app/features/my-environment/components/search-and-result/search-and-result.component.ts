@@ -34,7 +34,7 @@ export class SearchAndResultComponent implements OnInit {
   selectedActivities: EconomicActivity[] = [];
   searchResults: SearchItemResult[] = [];
 
-  sample_Results: SearchItemResult[] = [{
+  sampleResults: SearchItemResult[] = [{
     name: 'Compañia Roca Sanitario For Real',
     web: 'https://www.roca.es',
     email: "infosan@roca.net",
@@ -68,6 +68,25 @@ export class SearchAndResultComponent implements OnInit {
       location: {
         x: 2.199667,
         y: 41.434138
+      },
+    },
+  ],
+  },
+  {
+    name: 'Empresa Basf Española',
+    web: 'https://www.inoxcrom.com/',
+    email: "http://www.basf.com/es",
+    phone: null,
+   // activities: [],
+    addresses: [{
+      street_name: "C Can Ràbia",
+      street_number: "3*5",
+      zip_code: "08017",
+      district_id: "09",
+      town: "BARCELONA",
+      location: {
+        x: 2.134532,
+        y: 41.392749
       },
     },
   ],
@@ -182,10 +201,5 @@ export class SearchAndResultComponent implements OnInit {
   onSaveSearch(){
     this.router.navigate(['saved-searches']);
   }
-  // selectItem(item: any) {
-  //   const selectedIndex = this.selectedList.findIndex(e => e == item), list = [...this.selectedList];
-  //   if (selectedIndex == -1) list.push(item); else list.splice(selectedIndex, 1);
-  //   this.selectedList = list;
-  // }
 
 }

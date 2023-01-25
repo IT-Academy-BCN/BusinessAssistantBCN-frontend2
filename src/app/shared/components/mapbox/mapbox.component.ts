@@ -13,8 +13,10 @@ export class MapboxComponent implements AfterViewInit {
   mapDivElement!: ElementRef;
   @Input() filteredResultsToPrintOnMap!: SearchItemResult[];
   @Input() selectedResultsToChangeColor!: SearchItemResult[];
-  private map!: Map;
-  private currentMarkers: Marker[] = [];
+  public map!: Map;
+  public currentMarkers: Marker[] = [];
+
+  public selectedMarkers: Marker[] = [];
 
   private MAPBOX_INIT_LOCATION: SearchItemResult = {
     name: "IT Academy",
@@ -44,13 +46,9 @@ export class MapboxComponent implements AfterViewInit {
   this.getUsersLocation();
   }
 
-  ngOnChanges(changes:SimpleChanges) {
-    if(changes['selectedResultsToChangeColor']){ this.updateSelectedMarkers(); 
-    }
-  }
-
   ngOnDestroy() {
     this.currentMarkers.forEach(marker => marker.remove());
+    this.selectedMarkers.forEach(marker => marker.remove());
   }
 
   generateMap() {
@@ -85,28 +83,52 @@ export class MapboxComponent implements AfterViewInit {
   
   }
 
+  //Create Marker with Popup For Results
+  createMarkerwithPopup(markerColor: string, business?: SearchItemResult) {
+
+        // Create a popup with the business's basic information
+        const popup = new Popup().setHTML(
+          `<b>${business?.name}</b> </br> ${business?.addresses![0].street_name} , ${business?.addresses![0].street_number}`
+        );
+    return new Marker({color: markerColor})
+    .setLngLat([business!.addresses![0].location!.x, business!.addresses![0].location!.y])
+    .setPopup(popup)
+    .addTo(this.map)
+  }
+  
+
   // Function to create a single marker (with the marker's colour and the business (or user's coords) as parameters)
   createANewMarker(markerColor: string, business?: SearchItemResult, coord?: GeolocationCoordinates): void {
- 
-    // Create a popup with the business's basic information
-    const popup = new Popup().setHTML(
-      `<b>${business?.name}</b> </br> ${business?.addresses![0].street_name} , ${business?.addresses![0].street_number}`
-    );
+
 
     if (coord) { // If user has accepted to share their location
       const newIndividualMarker = new Marker({ color: markerColor })
         .setLngLat([coord.longitude, coord.latitude])
         .addTo(this.map);
       this.currentMarkers.push(newIndividualMarker);
+
+    
     } else { // If user hasn't accepted to share their location OR when iterating through the filteredResultsToPrintOnMap array.
 
-        const newIndividualMarker = new Marker({ color: markerColor })
-        .setLngLat([business!.addresses![0].location!.x, business!.addresses![0].location!.y])
-        .setPopup(popup)
-        .addTo(this.map);
+        const newIndividualMarker = this.createMarkerwithPopup(markerColor, business);
         this.currentMarkers.push(newIndividualMarker);
+
+        newIndividualMarker.getElement().addEventListener('click', () => {
+
+          const newSelectedMarker = this.createMarkerwithPopup('red', business);
+          this.selectedMarkers.push(newSelectedMarker);
+
+          newSelectedMarker.getElement().addEventListener('click', () => {
+            newSelectedMarker.remove();
+            let index = this.selectedMarkers.indexOf(newSelectedMarker);
+            if (index !== -1) {this.selectedMarkers.splice(index, 1)};
+          })
+
+        })
     
     }
+
+
 
     // MAP LÍMITS
     // Initial point 0
@@ -138,27 +160,8 @@ export class MapboxComponent implements AfterViewInit {
     );
   }
 
-  updateSelectedMarkers(){
-
-    let selected;
-
-    // first reset markers
-
-    this.currentMarkers.forEach(e=> e.remove())
-    this.currentMarkers = [];
-
-    // then update
-
-    (this.filteredResultsToPrintOnMap || []).forEach((element)=>{
-
-      let {x, y} = element.addresses![0].location!; 
-
-      selected = (this.selectedResultsToChangeColor || []).find(e=> x == e.addresses![0].location!.x && y == e.addresses![0].location!.y);
-
-      this.createANewMarker( selected ? 'red' : 'yellow' ,element );     
-
-    });
-
+  resetCurrentMarkers() {
+    this.currentMarkers.forEach( marker => marker.remove());
   }
 
   coordinatesAreValid(business:SearchItemResult){
