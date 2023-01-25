@@ -105,7 +105,7 @@ export class SearchAndResultComponent implements OnInit {
     this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
 
-    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
+    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {  
       response.results.forEach((result: any) => {
         this.searchResults.push({
           name: result.name,
