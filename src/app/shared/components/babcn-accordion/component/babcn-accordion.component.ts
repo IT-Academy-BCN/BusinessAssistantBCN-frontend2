@@ -1,5 +1,6 @@
 // ANGULAR CORE
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Category } from 'src/app/features/virtual-assistant/models/business-assistant.model';
 
 
 @Component({
@@ -10,13 +11,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class BabcnAccordionComponent {
 
   // Data source. Is the object to be displayed in the material-accordion.
-  @Input('accordionDataInput') dataInput: any[] = []; // TODO improve typing any[]
+  @Input('accordionDataInput') dataInput: Category[] = []; // TODO improve typing any[]
 
   // Component Data Output.
-  @Output('accordionDataOutput') dataOutput: EventEmitter<any[]> = new EventEmitter<any[]>(); // TODO improve typing any[]
+  @Output('accordionDataOutput') dataOutput: EventEmitter<string[]> = new EventEmitter<string[]>(); // TODO improve typing any[]
 
   // Data shared by this component.
-  dataSend: any[] = []; // TODO improve typing any[]
+  dataSend: string[] = []; // TODO improve typing any[]
 
   // Numerical representation of the item index.
   itemAccordion: number = 0;
