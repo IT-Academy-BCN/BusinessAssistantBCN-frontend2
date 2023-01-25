@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
   menu: boolean = false
 
   // Falta username real, user + username solo para test visual
-  user: boolean = true
+  user: boolean = false
   userName : string = "YourName"
 
   constructor(
@@ -75,7 +75,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-    // console.log(num)
+    console.log(num)
     switch (num) {
       case 0:
         break;
@@ -87,6 +87,10 @@ export class HeaderComponent implements OnInit {
         break;
       case 4:
         if (num == 4 && this.user == false) this.dialog.open(LoginModalComponent,{})
+        break;
+      case 5:
+        break;
+      case 6:
         break;
       default:
     }

@@ -20,7 +20,7 @@
                 {{button | translate}}
             </button>
             </span>
-            <span *ngFor="let button of userNameButtons; let i=index">
+            <span *ngFor="let button of userNameButtons; let i=index" (click)=goToLink(i+5)>
                 <button class="btn1" mat-menu-item *ngIf="this.user">
                     {{button | translate}}
                 </button>
