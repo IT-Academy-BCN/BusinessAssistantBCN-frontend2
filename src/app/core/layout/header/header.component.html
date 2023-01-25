@@ -16,13 +16,13 @@
         </button>
         <mat-menu #menu="matMenu" yPosition="below">
             <span *ngFor="let button of buttons; let i=index" (click)=goToLink(i)>
-            <button class="btn1" mat-menu-item *ngIf="!this.user || i != 4">
+            <button class="btn1" mat-menu-item *ngIf="!user.name || i != 4">
                 {{button | translate}}
             </button>
             </span>
-            <span *ngFor="let button of userNameButtons; let i=index" (click)=goToLink(i+5)>
-                <button class="btn1" mat-menu-item *ngIf="this.user">
-                    {{button | translate}}
+            <span *ngFor="let button of userMenuButtons; let i=index" (click)=goToLink(i+5)>
+                <button class="btn1" mat-menu-item *ngIf="user.name">
+                 {{button | translate}}
                 </button>
             </span>
             <button class="btn1" mat-menu-item *ngFor="let button of languageButtons;"
@@ -34,19 +34,17 @@
 
     <ng-template #headerbtn>
         <span *ngFor="let button of buttons; let i=index" (click)=goToLink(i)>
-            <button mat-button class="btn1" *ngIf="!this.user || i != 4">
+            <button mat-button class="btn1" *ngIf="!user.name || i != 4">
                 <span *ngIf="button == 'Search'" class="padding-x"></span>
                 <mat-icon *ngIf="i == 0">search</mat-icon>
                 <mat-icon *ngIf="i == 4">login</mat-icon>
                 {{button | translate}}
             </button>
-        </span>
-
-      
-        <button mat-button class="btn1" *ngIf="this.user" [matMenuTriggerFor]="userMenu"
-            yPosition="below">{{userName}}</button>
+        </span>   
+        <button mat-button class="btn1" *ngIf="user.name" [matMenuTriggerFor]="userMenu"
+            yPosition="below">{{user.name}}</button>
         <mat-menu #userMenu>
-            <button class="btn1" mat-menu-item *ngFor="let button of userNameButtons; let i=index">
+            <button class="btn1" mat-menu-item *ngFor="let button of userMenuButtons; let i=index">
                 {{button | translate}} </button>
         </mat-menu>
     </ng-template>

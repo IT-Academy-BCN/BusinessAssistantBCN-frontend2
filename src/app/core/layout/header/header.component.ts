@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     'common.button.login',
   ]
 
-  userNameButtons: string[] = [
+  userMenuButtons: string[] = [
     'components.header.section5.title',
     'common.button.logout'
   ]
@@ -41,8 +41,9 @@ export class HeaderComponent implements OnInit {
   menu: boolean = false
 
   // Falta username real, user + username solo para test visual
-  user: boolean = false
-  userName : string = "YourName"
+  user : {name : string} = { 
+    name : 'Jhon doe'
+  }
 
   constructor(
     public  dialog     : MatDialog,
@@ -75,7 +76,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-    console.log(num)
+    // console.log(num)
     switch (num) {
       case 0:
         break;
@@ -86,7 +87,7 @@ export class HeaderComponent implements OnInit {
       case 3:
         break;
       case 4:
-        if (num == 4 && this.user == false) this.dialog.open(LoginModalComponent,{})
+        if (num == 4) this.dialog.open(LoginModalComponent,{})
         break;
       case 5:
         break;
