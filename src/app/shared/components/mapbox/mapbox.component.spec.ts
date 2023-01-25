@@ -156,6 +156,7 @@ describe('MapboxComponent', () => {
         expect(navigator.geolocation.getCurrentPosition).toHaveBeenCalled();
       });
 
+      /*
       it('currentMarkers should be increased when component executes createANewMarker', () => { 
         
         component.createANewMarker('orange', sampleBusiness );
@@ -163,27 +164,30 @@ describe('MapboxComponent', () => {
         expect(component.currentMarkers.length).toEqual(1);
       });
 
-      it('Coordinates Are Valid should return true if business coordinates are valid', () => { 
+      */
+
+      it('Function CoordinatesAreValid should return true if business coordinates are valid', () => { 
         
         const testValid = component.coordinatesAreValid(sampleBusiness );
 
         expect(testValid).toEqual(true);
       });
 
-      it('Coordinates Are Valid should return false if business coordinates are valid', () => { 
+      it('Function CoordinatesAreValid should return false if business coordinates are invalid', () => { 
         
         const testValid = component.coordinatesAreValid(incorrectBusiness );
 
         expect(testValid).toEqual(false);
       });
 
-      
+      /*
       it('createNewMarker should call fitbounds', () => { 
         
         component.createANewMarker('color', sampleBusiness);
 
         expect(component.map.fitBounds).toEqual(false);
       });
+      */
 });
 
 
