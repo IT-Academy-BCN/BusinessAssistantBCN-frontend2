@@ -75,7 +75,7 @@ export class SearchAndResultComponent implements OnInit {
   {
     name: 'Empresa Basf Española',
     web: 'https://www.inoxcrom.com/',
-    email: "http://www.basf.com/es",
+    email: "https://www.basf.com/es",
     phone: null,
    // activities: [],
     addresses: [{

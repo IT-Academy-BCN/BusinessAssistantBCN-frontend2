@@ -1,5 +1,4 @@
 import { Popup } from 'mapbox-gl';
-import Mapboxgl, { Marker } from 'mapbox-gl';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MapboxComponent } from './mapbox.component';
@@ -147,10 +146,8 @@ describe('MapboxComponent', () => {
       });
 
       
-      it('createANewMarker should be called when component gets User location', () => { 
-        jest.spyOn(component, 'createANewMarker');
-        
-        const createANewMarker = component.createANewMarker
+      it('getCurrentPosition should be called when getUsersLocation executes', () => { 
+
         component.getUsersLocation();
 
         expect(navigator.geolocation.getCurrentPosition).toHaveBeenCalled();
