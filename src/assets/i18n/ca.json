@@ -61,7 +61,7 @@
             }
         },
         "saved-searches": {
-            "title": "Les meves cerques",
+            "title" : "Les meves cerques",
             "item-1": "Veure al mapa",
             "item-2": "Nom",
             "item-3": "Data",
