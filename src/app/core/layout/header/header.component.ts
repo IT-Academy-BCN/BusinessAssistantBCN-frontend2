@@ -39,9 +39,10 @@ export class HeaderComponent implements OnInit {
 
   title: string = 'inactive'
   menu: boolean = false
-  // esperando endpoint login para que user sea equivalente a username real.
-  // user: boolean = false
+
+  // Falta username real, user + username solo para test visual
   user: boolean = true
+  userName : string = "YourName"
 
   constructor(
     public  dialog     : MatDialog,
