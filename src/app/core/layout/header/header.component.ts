@@ -40,9 +40,10 @@ export class HeaderComponent implements OnInit {
   title: string = 'inactive'
   menu: boolean = false
 
-  // Falta username real, user + username solo para test visual
-  user : {name : string} = { 
-    name : 'Jhon doe'
+  // user.name solo para fines visuales (muestra menú si existe), esperando respuesta de login para definir 'user' correctamente.
+  user = { 
+    name : '',
+    // name : 'Jhon Doe'
   }
 
   constructor(
