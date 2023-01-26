@@ -62,7 +62,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
 
 
   // USER, wait for login implementation to verify the correct status.
-  user : boolean = true;
+  user : boolean = false;
 
 
   /**
