@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from "../../../../environments/environment";
 import { Observable } from 'rxjs';
 import { MyEnvironmentSearch, SearchType } from '../../../shared/models/my-environment-search/my-environment-search.model';
+import { Activities } from 'src/app/shared/models/common/activities.model';
 
 const BASE_URL = environment.BACKEND_BASE_URL;
 const BIG_MALLS_ACT = environment.BACKEND_BIG_MALLS_ACTIVITIES_URL;
@@ -28,17 +29,17 @@ export class MyEnvironmentService {
     this.zoneIDs = [];
   }
 
-  getEconomicActivities(businessModel: SearchType): Observable<any> {
+  getEconomicActivities(businessModel: SearchType): Observable<Activities> {
     
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     this.businessModel = businessModel;
     
     if (this.businessModel === 0) {
-      return this.http.get(`${BASE_URL}${BIG_MALLS_ACT}`, { headers });
+      return this.http.get<Activities>(`${BASE_URL}${BIG_MALLS_ACT}`, { headers });
     } else if (this.businessModel === 1) {
-      return this.http.get(`${BASE_URL}${COMM_GALLE_ACT}`, { headers });
+      return this.http.get<Activities>(`${BASE_URL}${COMM_GALLE_ACT}`, { headers });
     } else {
-      return this.http.get(`${BASE_URL}${LARGE_EST_ACT}`, { headers });
+      return this.http.get<Activities>(`${BASE_URL}${LARGE_EST_ACT}`, { headers });
     }
   }
 

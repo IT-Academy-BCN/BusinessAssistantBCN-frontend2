@@ -4,7 +4,7 @@
   <mat-tab-group>
 
     <mat-tab class="mat-tab" label="{{'common.button.login'| translate| uppercase}}">    
-      <form [formGroup]="signInForm">      
+      <form [formGroup]="signInForm" (ngSubmit)="login()">      
 
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
@@ -28,7 +28,7 @@
           </mat-error>
         </mat-form-field>
 
-        <button class="mat-button" mat-raised-button color="primary">{{'common.button.login'| translate| uppercase}}</button>   
+        <button type="submit" class="mat-button" mat-raised-button color="primary">{{'common.button.login'| translate| uppercase}}</button>   
 
       </form>
         
@@ -39,7 +39,7 @@
 
     
     <mat-tab label="{{'common.button.register'| translate| uppercase}}"> 
-      <form [formGroup]="signUpForm">      
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()">      
 
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
@@ -63,7 +63,7 @@
           </mat-error>
         </mat-form-field>
 
-        <button class="mat-button" mat-raised-button color="primary">{{'common.button.login'| translate| uppercase}}</button>   
+        <button type="submit" class="mat-button" mat-raised-button color="primary">{{'common.button.login'| translate| uppercase}}</button>   
       </form>
     </mat-tab>
     

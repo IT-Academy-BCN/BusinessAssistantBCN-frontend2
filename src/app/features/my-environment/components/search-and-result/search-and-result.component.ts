@@ -72,12 +72,14 @@ export class SearchAndResultComponent implements OnInit {
   getAllZones() {
     this.zonesSub = this.commonService.getZones().subscribe(response => {
       this.zones = response.elements;
+      console.log(response)
     })
   }
 
   getAllActivities() {
     this.activitiesSub = this.myEnvSrv.getEconomicActivities(this.businessModel).subscribe(response => {
       this.activities = response.results;
+      console.log(response)
     })
   }
 
