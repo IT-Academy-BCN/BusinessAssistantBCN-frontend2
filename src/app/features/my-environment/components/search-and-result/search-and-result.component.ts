@@ -1,3 +1,7 @@
+import { SavedSearchesDialogComponent } from '../../../saved-searches/components/saved-searches-dialog/saved-searches-dialog.component';
+import { LoginModalComponent } from './../../../users/components/login-modal/login-modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from './../../../users/services/auth.service';
 import { Router } from '@angular/router';
 import { SearchItemResult } from './../../../../shared/models/my-environment-search/search-item-result.model';
 import { MyEnvironmentService } from './../../services/my-environment.service';
@@ -42,7 +46,9 @@ export class SearchAndResultComponent implements OnInit {
     private router: Router,
     private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService,
-    private commonService: CommonService) {
+    private commonService: CommonService,
+    private authSvc: AuthService,
+    public dialog: MatDialog) {
     const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
@@ -72,14 +78,12 @@ export class SearchAndResultComponent implements OnInit {
   getAllZones() {
     this.zonesSub = this.commonService.getZones().subscribe(response => {
       this.zones = response.elements;
-      console.log(response)
     })
   }
 
   getAllActivities() {
     this.activitiesSub = this.myEnvSrv.getEconomicActivities(this.businessModel).subscribe(response => {
       this.activities = response.results;
-      console.log(response)
     })
   }
 
@@ -141,7 +145,13 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   onSaveSearch(){
-    this.router.navigate(['saved-searches']);
+    if(!this.authSvc.getIsUserLogged()){
+      this.dialog.open(SavedSearchesDialogComponent, { data: { results: this.searchResults } });
+      // this.router.navigate(['saved-searches']);
+    }else {
+      this.dialog.open(LoginModalComponent,{})
+    }
+    
   }
   // selectItem(item: any) {
   //   const selectedIndex = this.selectedList.findIndex(e => e == item), list = [...this.selectedList];

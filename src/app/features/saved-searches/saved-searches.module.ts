@@ -5,18 +5,23 @@ import { SavedSearchesComponent } from './components/saved-searches/saved-search
 import { I18TranslateModule } from './../../shared/translate/i18-translate.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
-
+import { SavedSearchesDialogComponent } from './components/saved-searches-dialog/saved-searches-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [SavedSearchesComponent],
+  declarations: [SavedSearchesComponent, SavedSearchesDialogComponent],
   imports: [
     CommonModule,
     I18TranslateModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatDialogModule
   ]
 })
 export class SavedSearchesModule { }

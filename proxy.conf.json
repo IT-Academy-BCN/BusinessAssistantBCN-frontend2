@@ -1,6 +1,6 @@
 {
     "/businessassistantbcn/api/v1/*": {
-        "target": "http://87.106.229.175:7777",
+        "target": "http://localhost:8762",
         "secure": false,
         "changeOrigin": true,
         "logLevel": "debug"

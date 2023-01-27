@@ -13,6 +13,6 @@ export class SavedSearchesService {
   getSavedSearches() {
     return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${environment.BACKEND_SAVED_SEARCHES_URL}`
     )
-
   }
+  
 }
