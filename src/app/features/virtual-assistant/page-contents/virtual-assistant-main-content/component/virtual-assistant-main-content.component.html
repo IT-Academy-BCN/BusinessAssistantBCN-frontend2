@@ -28,10 +28,14 @@
             <mat-grid-tile>
 
                 <!-- babcn-BUTTONS-CONTAINER -->
-                <babcn-buttons-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme"
+                <babcn-buttons-container containerHeight="395px" 
+                                         [containerWidth]='ratio.toString()' vaStyle="theme"
+                    [mainButtonVisibility]="!user"                      
                     mainButtonText='common.button.save'
                     mainButtonColor="primary" [mainButtonFunction]="onClickSaveButton"
-                    secondaryButtonText='common.button.see-summary' [secondaryButtonFunction]="onClickResumeButton">
+
+                    secondaryButtonText='common.button.see-summary' 
+                    [secondaryButtonFunction]="onClickResumeButton">
 
                     <!-- babcn-LIST -->
                     <babcn-list [listDataInput]="dataShared"></babcn-list>

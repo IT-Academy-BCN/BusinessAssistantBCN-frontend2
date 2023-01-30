@@ -13,6 +13,9 @@ import { ResumeDialogComponent } from '../dialogs/resume-dialog/resume-dialog.co
 
 import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 
+// LOGIN MODAL COMPONENT 
+import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
+
 
 @Component({
   selector: 'virtual-assistant-page-main-content',
@@ -58,6 +61,10 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   }
 
 
+  // USER, wait for login implementation to verify the correct status.
+  user : boolean = false;
+
+
   /**
    * Get the output data from accordion-component.
    * @param accordionData The obtained data is shared by the component in the input of VirtualAssistantList.
@@ -83,6 +90,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
    * It needs to be a callback function (it will be used as a parameter).
    */
   onClickSaveButton = (): void => {
+    this.dialog.open(LoginModalComponent,{})
     // TODO implement onClickSaveButton
   }
 
