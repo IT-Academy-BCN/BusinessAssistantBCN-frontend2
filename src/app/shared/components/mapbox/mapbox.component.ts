@@ -2,6 +2,8 @@ import { Component, AfterViewInit, ViewChild, ElementRef, Input, SimpleChanges }
 import Mapboxgl, { LngLatBounds, NavigationControl, GeolocateControl, Map, Popup, Marker } from "mapbox-gl";
 import { environment } from "src/environments/environment";
 import { SearchItemResult } from "../../models/my-environment-search/search-item-result.model";
+import { MapboxMarkersService } from "src/app/features/my-environment/services/mapbox-markers.service";
+import { LngLatLike } from "mapbox-gl";
 
 @Component({
   selector: "app-mapbox",
@@ -14,6 +16,9 @@ export class MapboxComponent implements AfterViewInit {
   @Input() filteredResultsToPrintOnMap!: SearchItemResult[];
   @Input() selectedResultsToChangeColor!: SearchItemResult[];
   public map!: Map;
+
+  public currentMarker: Marker[] = [];
+
   public currentMarkers: Marker[] = [];
 
   public selectedMarkers: Marker[] = [];
@@ -39,11 +44,24 @@ export class MapboxComponent implements AfterViewInit {
     ],
   }
 
+  constructor(private markersService: MapboxMarkersService) {
+
+  }
+
+  ngOnInit() {
+    this.markersService.currentMarkerSubject.subscribe((markerIndex) => {
+      console.log('MAP COMPONENT RESPONDS TO DATA CHANGE!', markerIndex);
+      this.changeMarkerColor(this.filteredResultsToPrintOnMap[markerIndex])
+
+     })
+  }
+
   ngAfterViewInit(): void {
     // Generate map with basic config
   this.generateMap();
     // Depending on if the user accepts to share their location, center the map into the user, or into the default location (IT Academy)
   this.getUsersLocation();
+
   }
 
   ngOnDestroy() {
@@ -142,6 +160,23 @@ export class MapboxComponent implements AfterViewInit {
     this.map.fitBounds(bounds, {
       padding: 75
     })
+  }
+
+  flyTo( coords: LngLatLike) {
+
+    this.map?.flyTo({
+      zoom: 16,
+      center: coords
+    })
+  }
+
+  changeMarkerColor(business: SearchItemResult):void {
+   let currentMarker = this.currentMarker
+   currentMarker.forEach(marker => marker.remove() )
+   if(currentMarker.length>0) {this.currentMarker.shift();}
+    currentMarker[0] = this.createMarkerwithPopup('black', business);
+
+    this.flyTo(currentMarker[0].getLngLat())
   }
 
   getUsersLocation(): void {
