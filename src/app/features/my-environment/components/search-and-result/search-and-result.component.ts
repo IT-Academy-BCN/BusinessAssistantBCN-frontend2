@@ -72,14 +72,12 @@ export class SearchAndResultComponent implements OnInit {
   getAllZones() {
     this.zonesSub = this.commonService.getZones().subscribe(response => {
       this.zones = response.elements;
-      console.log(response)
     })
   }
 
   getAllActivities() {
     this.activitiesSub = this.myEnvSrv.getEconomicActivities(this.businessModel).subscribe(response => {
       this.activities = response.results;
-      console.log(response)
     })
   }
 
@@ -107,7 +105,7 @@ export class SearchAndResultComponent implements OnInit {
     this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
 
-    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
+    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {  
       response.results.forEach((result: any) => {
         this.searchResults.push({
           name: result.name,
