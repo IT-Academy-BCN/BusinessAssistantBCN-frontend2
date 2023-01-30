@@ -6,7 +6,7 @@
 
     <mat-form-field class="example-full-width">
       <mat-label>Name</mat-label>
-      <input type="text" matInput placeholder="Name" formControlName="name" value="" />
+      <input type="text" matInput placeholder="Name" formControlName="name" value="" autocomplete="off"/>
       <mat-error *ngIf="this.form.get('name')?.hasError('required')">
         {{'user.register.email-require'| translate}}
       </mat-error>
@@ -14,7 +14,7 @@
 
     <mat-form-field class="example-full-width">
       <mat-label>Detail</mat-label>
-      <input type="text" matInput placeholder="Detail" formControlName="detail" value="" />
+      <input type="text" matInput placeholder="Detail" formControlName="detail" value="" autocomplete="off"/>
       <mat-error *ngIf="this.form.get('detail')?.hasError('required')">
         {{'user.register.password-require'| translate}}
       </mat-error>
