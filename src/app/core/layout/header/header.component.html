@@ -43,9 +43,9 @@
         </span>   
         <button mat-button class="btn1" *ngIf="user.name" [matMenuTriggerFor]="userMenu"
             yPosition="below">{{user.name}}</button>
-        <mat-menu #userMenu>
-            <button class="btn1" mat-menu-item *ngFor="let button of userMenuButtons; let i=index">
-                {{button | translate}} </button>
+        <mat-menu class="user" #userMenu>
+            <button mat-menu-item  *ngFor="let button of userMenuButtons; let i=index">
+               <span class="sub-menu-text"> {{button | translate}} </span>  </button>
         </mat-menu>
     </ng-template>
 
