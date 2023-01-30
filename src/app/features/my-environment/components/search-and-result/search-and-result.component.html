@@ -72,17 +72,15 @@
                                 </button>
                             </div>
                             <div *ngIf="showResults" class="search">
-                                <button *ngIf="showResults" mat-raised-button style="background:black; color: white"
+                                <button *ngIf="showResults" mat-raised-button style="background:black; color: white; margin: 5px;"
                                     routerLink="my-environment-search-detail" type="submit" (click)="onSaveSearch()">
                                     {{'common.button.save' | translate}}
                                 </button>
-                                 <div class="dropdown"> <!-- dropdown-button -->
-                                    <button mat-button [matMenuTriggerFor]="aboveMenu" style="background: #5cb85c; margin-top: 5px;">{{ "common.button.download-results" | translate }}</button>
+                                <button mat-button [matMenuTriggerFor]="aboveMenu" style="background: #5cb85c; margin: 5px;">{{ "common.button.download-results" | translate }}</button>
                                     <mat-menu #aboveMenu="matMenu" yPosition="above">
                                         <button mat-menu-item   (click)="savePdf()">{{"pages.big-stablish-detail.dropdown.download"|translate}}</button>
                                         <button mat-menu-item   (click)="openPdf()">{{"pages.big-stablish-detail.dropdown.open"|translate}}</button>
                                     </mat-menu>
-                                  </div>
                             </div>
                         </section>
                     </div>

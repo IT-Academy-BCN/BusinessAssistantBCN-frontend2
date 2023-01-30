@@ -40,6 +40,26 @@ export class SearchAndResultComponent implements OnInit {
   selectedActivities: EconomicActivity[] = [];
   searchResults: SearchItemResult[] = [];
 
+  PDFresult: SearchItemResult[] = [{
+    name: 'Compañia Roca Sanitario For Real',
+    web: 'https://www.roca.es',
+    email: "infosan@roca.net",
+    phone: null,
+   // activities: [],
+    addresses: [{
+      street_name: 'Av Diagonal',
+      street_number: "513",
+      zip_code: "08029",
+      district_id: "04",
+      town: "BARCELONA",
+      location: {
+        x: 2.140835,
+        y: 41.391424
+      },
+    },
+  ],
+  }
+]
   zonesSub: Subscription | null = null;
   activitiesSub: Subscription | null = null;
   environments: Subscription | null = null;
@@ -159,7 +179,7 @@ export class SearchAndResultComponent implements OnInit {
   generateDocument() {
     //definition of content array for the pdf table
     const dataArray: string[][] = [];
-     this.searchResults.forEach(element => { // <= PDF get data from searchResults but to see the data switch to sampleResults in the Develop branch
+     this.PDFresult.forEach(element => { // <= PDF get data from searchResults but to see the data switch to sampleResults in the Develop branch
         const values:any[]=[];
         values.push(element.name);
         values.push(element.web);
