@@ -158,37 +158,61 @@ export class SearchAndResultComponent implements OnInit {
   //test pdf 
   generateDocument() {
     //definition of content array for the pdf table
-    // const dataArray: string[][] = [];
-    // this.businessModels.forEach(element => {
-    //     const values:any[]=[];
-    //     values.push(element.name);
-    //     values.push(element.web);
-    //     values.push(element.email);
-    //     //create a string from the address object
-    //     values.push(`${element.addresses[0].street_name} ${element.addresses[0].street_number}, ${element.addresses[0].zip_code}, ${element.addresses[0].town}`)
-    //     dataArray.push(values)
-    // })
-    // //first element is an array of the table headers
-    // dataArray.unshift(['Name' , 'Web' , 'E-mail' , 'Address'])
+    const dataArray: string[][] = [];
+     this.searchResults.forEach(element => { // <= PDF get data from searchResults but to see the data switch to sampleResults in the Develop branch
+        const values:any[]=[];
+        values.push(element.name);
+        values.push(element.web);
+        values.push(element.email);
+        //create a string from the address object
+        values.push(`${element.addresses[0].street_name} ${element.addresses[0].street_number}, ${element.addresses[0].zip_code}, ${element.addresses[0].town}`)
+        dataArray.push(values)
+    })
+    //first element is an array of the table headers
+    dataArray.unshift(['Name' , 'Web' , 'E-mail' , 'Address'])
 
     const dd = {
+      pageOrientation: 'landscape' ,
       content: [
-        'First paragraph',
-        'Another paragraph, this time a little bit longer to make sure, this line will be divided into at least two lines'
-      ]
+
+        {
+            image: 'bactiva' ,
+            width: 120
+        } ,
+        {
+            text:""
+        },
+        {
+
+            layout: 'lightHorizontalLines' , // optional
+            table: {
+                // headers are automatically repeated if the table spans over multiple pages
+                // you can declare how many rows should be treated as headers
+                headerRows: 1 ,
+                widths: ['auto' , 'auto' , 'auto' , 'auto'] ,
+
+                body: [
+                    ...dataArray
+
+                ]
+            },
+            margin:30
+        }
+    ] ,
+    images: {
+        bactiva: 'https://www.barcelonactiva.cat/image/layout_set_logo?img_id=37024&t=1646291579168'
+    }
+
     }
     return dd ;
   }
  
 
   openPdf(){
-    // @ts-ignore
-
     pdfMake.createPdf(this.generateDocument()).open();
 }
 
 savePdf(){
-    // @ts-ignore
     pdfMake.createPdf(this.generateDocument()).download();
 }
 }
