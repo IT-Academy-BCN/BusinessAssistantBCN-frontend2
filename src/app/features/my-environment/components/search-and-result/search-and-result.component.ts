@@ -8,8 +8,14 @@ import { MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEs
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Zone } from 'src/app/shared/models/common/zone.model';
-
 import { Subscription } from 'rxjs';
+
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+
+
 
 @Component({
   selector: 'app-search-and-result',
@@ -149,4 +155,40 @@ export class SearchAndResultComponent implements OnInit {
   //   this.selectedList = list;
   // }
 
+  //test pdf 
+  generateDocument() {
+    //definition of content array for the pdf table
+    // const dataArray: string[][] = [];
+    // this.businessModels.forEach(element => {
+    //     const values:any[]=[];
+    //     values.push(element.name);
+    //     values.push(element.web);
+    //     values.push(element.email);
+    //     //create a string from the address object
+    //     values.push(`${element.addresses[0].street_name} ${element.addresses[0].street_number}, ${element.addresses[0].zip_code}, ${element.addresses[0].town}`)
+    //     dataArray.push(values)
+    // })
+    // //first element is an array of the table headers
+    // dataArray.unshift(['Name' , 'Web' , 'E-mail' , 'Address'])
+
+    const dd = {
+      content: [
+        'First paragraph',
+        'Another paragraph, this time a little bit longer to make sure, this line will be divided into at least two lines'
+      ]
+    }
+    return dd ;
+  }
+ 
+
+  openPdf(){
+    // @ts-ignore
+
+    pdfMake.createPdf(this.generateDocument()).open();
+}
+
+savePdf(){
+    // @ts-ignore
+    pdfMake.createPdf(this.generateDocument()).download();
+}
 }
