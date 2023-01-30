@@ -77,6 +77,7 @@ let fixture: ComponentFixture<HeaderComponent>
   describe("Variables", () => {
     it("Buttons Should be declared", () => {
       expect(app.buttons.length).toBe(5)
+      expect(app.userMenuButtons.length).toBe(2)
     })
 
     it("Title should be declared", () => {

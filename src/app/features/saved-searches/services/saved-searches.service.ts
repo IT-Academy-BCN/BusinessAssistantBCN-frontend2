@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SavedSearchesModel } from 'src/app/shared/models/saved-search.model';
@@ -10,9 +11,9 @@ export class SavedSearchesService {
 
   constructor(private http: HttpClient) { }
 
-  getSavedSearches() {
-    return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${environment.BACKEND_SAVED_SEARCHES_URL}`
-    )
+  getSavedSearches(): Observable<any> {
+    // return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${environment.BACKEND_SAVED_SEARCHES_URL}`);
+    return this.http.get<any>(environment.FAKE_BACKEND_SAVED_SEARCHES_URL);
   }
   
 }

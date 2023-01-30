@@ -38,6 +38,65 @@ export class SearchAndResultComponent implements OnInit {
   selectedActivities: EconomicActivity[] = [];
   searchResults: SearchItemResult[] = [];
 
+  sampleResults: SearchItemResult[] = [{
+    name: 'Compañia Roca Sanitario For Real',
+    web: 'https://www.roca.es',
+    email: "infosan@roca.net",
+    phone: null,
+   // activities: [],
+    addresses: [{
+      street_name: 'Av Diagonal',
+      street_number: "513",
+      zip_code: "08029",
+      district_id: "04",
+      town: "BARCELONA",
+      location: {
+        x: 2.140835,
+        y: 41.391424
+      },
+    },
+  ],
+  },
+  {
+    name: 'Inoxcrom SA',
+    web: 'https://www.inoxcrom.com/',
+    email: "inoxcrom@inoxcrom.com",
+    phone: null,
+   // activities: [],
+    addresses: [{
+      street_name: "T Estadella",
+      street_number: "46*54",
+      zip_code: "08030",
+      district_id: "09",
+      town: "BARCELONA",
+      location: {
+        x: 2.199667,
+        y: 41.434138
+      },
+    },
+  ],
+  },
+  {
+    name: 'Empresa Basf Española',
+    web: 'https://www.inoxcrom.com/',
+    email: "https://www.basf.com/es",
+    phone: null,
+   // activities: [],
+    addresses: [{
+      street_name: "C Can Ràbia",
+      street_number: "3*5",
+      zip_code: "08017",
+      district_id: "09",
+      town: "BARCELONA",
+      location: {
+        x: 2.134532,
+        y: 41.392749
+      },
+    },
+  ],
+  }
+]
+
   zonesSub: Subscription | null = null;
   activitiesSub: Subscription | null = null;
   environments: Subscription | null = null;
@@ -111,7 +170,7 @@ export class SearchAndResultComponent implements OnInit {
     this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
 
-    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
+    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {  
       response.results.forEach((result: any) => {
         this.searchResults.push({
           name: result.name,
@@ -122,6 +181,7 @@ export class SearchAndResultComponent implements OnInit {
         })
       })
     })
+
   }
 
   checkZones(zoneSelected: Zone, event: any) {
@@ -153,10 +213,5 @@ export class SearchAndResultComponent implements OnInit {
     }
     
   }
-  // selectItem(item: any) {
-  //   const selectedIndex = this.selectedList.findIndex(e => e == item), list = [...this.selectedList];
-  //   if (selectedIndex == -1) list.push(item); else list.splice(selectedIndex, 1);
-  //   this.selectedList = list;
-  // }
 
 }

@@ -12,9 +12,6 @@ import { SearchAndResultComponent } from './components/search-and-result/search-
 import { MyEnvironmentPageComponent } from './components/my-environment-page/my-environment-page.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     MyEnvironmentPageComponent,
