@@ -6,22 +6,22 @@
 
     <mat-form-field class="example-full-width">
       <mat-label>Name</mat-label>
-      <input type="text" matInput placeholder="Name" formControlName="name" value="" autocomplete="off"/>
+      <input type="text" matInput placeholder="Name" formControlName="name" autocomplete="off"/>
       <mat-error *ngIf="this.form.get('name')?.hasError('required')">
-        {{'user.register.email-require'| translate}}
+        nombre obligatorio
       </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Detail</mat-label>
-      <input type="text" matInput placeholder="Detail" formControlName="detail" value="" autocomplete="off"/>
+      <input type="text" matInput placeholder="Detail" formControlName="detail" autocomplete="off"/>
       <mat-error *ngIf="this.form.get('detail')?.hasError('required')">
-        {{'user.register.password-require'| translate}}
+        detalle obligatorio
       </mat-error>
     </mat-form-field>
     <mat-dialog-actions align="end">
       <button mat-dialog-close type="button" class="mat-button" mat-raised-button color="primary">Cancelar</button>
-      <button mat-dialog-close type="submit" class="mat-button" mat-raised-button color="primary">Guardar</button>
+      <button mat-dialog-close type="submit" class="mat-button" mat-raised-button color="primary" [disabled]="this.form.invalid">Guardar</button>
     </mat-dialog-actions>
   </form>
 </div>
