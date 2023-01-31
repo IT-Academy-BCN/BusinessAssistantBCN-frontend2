@@ -11,6 +11,8 @@ import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint
 import { MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
 import { Zone } from 'src/app/shared/models/common/zone.model';
 
+import { MapboxMarkersService } from '../../services/mapbox-markers.service';
+
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -101,6 +103,7 @@ export class SearchAndResultComponent implements OnInit {
   environments: Subscription | null = null;
 
   constructor(
+    private markerService: MapboxMarkersService,
     private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService,
     private commonService: CommonService,
@@ -179,6 +182,10 @@ export class SearchAndResultComponent implements OnInit {
       })
     })
 
+  }
+
+  selectMarker(index: number) {
+    this.markerService.updateCurrentMarker(index)
   }
 
   checkZones(zoneSelected: Zone, event: any) {

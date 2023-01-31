@@ -49,10 +49,10 @@
                                                 {{ address.zip_code }} {{ address.town }}
                                             </mat-list-item>
                                             <mat-list-item *ngIf="ls.email">
-                                                Email: {{ ls.email }}
+                                                Email: <a [href]="'mailto:' + ls.email">{{ ls.email }}</a>
                                             </mat-list-item>
                                             <mat-list-item *ngIf="ls.web">
-                                                Web: {{ ls.web }}
+                                                Web: <a [href]="ls.web" target="_blank">{{ ls.web }}</a>
                                             </mat-list-item>
                                             <mat-list-item *ngIf="ls.phone">
                                                 Tel.:{{ ls.phone }}
@@ -130,7 +130,7 @@
 
                     <div class="search-container">
                         <!-- babcn-CONTAINER -->
-                        <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()'>
+                        <babcn-container [containerWidth]='ratio.toString()'>
                             <app-mapbox [filteredResultsToPrintOnMap]="sampleResults"
                                 [selectedResultsToChangeColor]="selectedList"></app-mapbox>
                         </babcn-container>
