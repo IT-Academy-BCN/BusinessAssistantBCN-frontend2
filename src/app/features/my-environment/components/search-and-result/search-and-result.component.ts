@@ -182,7 +182,6 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   selectMarker(index: number) {
-    console.log("marked")
     this.markerService.updateCurrentMarker(index)
   }
 

@@ -50,7 +50,6 @@ export class MapboxComponent implements AfterViewInit {
 
   ngOnInit() {
     this.markersService.currentMarkerSubject.subscribe((markerIndex) => {
-      console.log('MAP COMPONENT RESPONDS TO DATA CHANGE!', markerIndex);
       this.changeMarkerColor(this.filteredResultsToPrintOnMap[markerIndex])
 
      })
@@ -211,7 +210,7 @@ export class MapboxComponent implements AfterViewInit {
     
     }
 
-    if(!valid) console.log('ERROR - incorrect coordinates format - ' + business.name + '');    
+    if(!valid) console.error('ERROR - incorrect coordinates format - ' + business.name + '');    
 
     return valid
   }
