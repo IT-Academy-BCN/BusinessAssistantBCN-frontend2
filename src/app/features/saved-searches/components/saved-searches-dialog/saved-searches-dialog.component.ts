@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { SavedSearchesService } from './../../services/saved-searches.service';
 import { Router } from '@angular/router';
 import { SavedSearchesModel } from 'src/app/shared/models/saved-search.model';
@@ -11,32 +12,33 @@ import { Component, Inject } from '@angular/core';
   templateUrl: './saved-searches-dialog.component.html',
   styleUrls: ['./saved-searches-dialog.component.scss']
 })
-export class SavedSearchesDialogComponent {
-  form: FormGroup;
+export class SavedSearchesDialogComponent  {
+  form!: FormGroup;
   savedSearchesModel!: SavedSearchesModel;
-
+;
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { results: SearchItemResult[] },
-    private SavedSearchesSvc: SavedSearchesService,
+    private savedSearchesSvc: SavedSearchesService,
     private router: Router,
-    fb: FormBuilder) {
-
-    this.form = fb.group({
+    private fb: FormBuilder) {
+       this.initForm();
+  }
+ 
+  private initForm() {
+    this.form = this.fb.group({
       name: ['', Validators.required],
       detail: ['', Validators.required]
     });
-
   }
+
   onSubmit() {
-    const search_uuid = 12345;
-    const user_uuid = 21222;
+    const user_uuid = environment.USER_UUID;
     const search_date = new Date();
     const search_name = this.form.value.name;
     const search_detail = this.form.value.detail;
     const search_result = this.data.results;
-    this.savedSearchesModel = new SavedSearchesModel(search_uuid, user_uuid, search_name, search_detail, search_date, search_result);
-    console.log(this.savedSearchesModel);
-    this.router.navigate(['saved-searches']);
+    this.savedSearchesModel = new SavedSearchesModel(user_uuid, search_name, search_detail, search_date, search_result);
+    this.savedSearchesSvc.saveSearch(this.savedSearchesModel).subscribe(resp => resp);
+    // this.router.navigate(['saved-searches'])
   }
-
 }
