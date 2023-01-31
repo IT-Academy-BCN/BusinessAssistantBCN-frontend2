@@ -27,7 +27,8 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "allowedCommonJsDependencies": [
-              "mapbox-gl"
+              "mapbox-gl",
+              "pdfmake"
             ],
             "assets": [
               "src/favicon.ico",

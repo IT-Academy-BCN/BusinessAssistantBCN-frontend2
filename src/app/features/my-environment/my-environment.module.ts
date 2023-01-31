@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
 import { I18TranslateModule } from 'src/app/shared/translate/i18-translate.module';
 import { BabcnComponentsModule } from 'src/app/shared/components/babcn-components.module';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -25,6 +26,7 @@ import { MyEnvironmentPageComponent } from './components/my-environment-page/my-
     MatGridListModule,
     I18TranslateModule,
     MatListModule,
+    MatMenuModule,
 
     // BABCN COMPONENTS
     BabcnComponentsModule,
