@@ -11,9 +11,13 @@ export class SavedSearchesService {
 
   constructor(private http: HttpClient) { }
 
-  getSavedSearches(): Observable<any> {
-    // return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${environment.BACKEND_SAVED_SEARCHES_URL}`);
-    return this.http.get<any>(environment.FAKE_BACKEND_SAVED_SEARCHES_URL);
+  getSavedSearches(user_uuid: any): Observable<any> {
+    return this.http.get<any>(environment.BACKEND_SAFE_SEARCHES_URL + user_uuid);
+  }
+
+  saveSearch(savedSearches: SavedSearchesModel): Observable<any>{
+    const user_uuid = savedSearches.user_uuid;
+    return this.http.post<any>(environment.BACKEND_SAFE_SEARCHES_URL + user_uuid , savedSearches);
   }
   
 }
