@@ -77,7 +77,6 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-    // console.log(num)
     switch (num) {
       case 0:
         break;
