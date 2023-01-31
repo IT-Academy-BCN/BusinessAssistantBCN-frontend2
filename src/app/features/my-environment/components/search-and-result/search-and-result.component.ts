@@ -1,8 +1,6 @@
 import { SavedSearchesDialogComponent } from '../../../saved-searches/components/saved-searches-dialog/saved-searches-dialog.component';
 import { LoginModalComponent } from './../../../users/components/login-modal/login-modal.component';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthService } from './../../../users/services/auth.service';
-import { Router } from '@angular/router';
 import { SearchItemResult } from './../../../../shared/models/my-environment-search/search-item-result.model';
 import { MyEnvironmentService } from './../../services/my-environment.service';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
@@ -28,6 +26,7 @@ export class SearchAndResultComponent implements OnInit {
   ratio: string | number;
   showResults: boolean = false;
   selectedList: any[] = [];
+  isUserLogged = true;
 
   @Input() businessModel!: SearchType;
   businessModelSearch!: MyEnvironmentSearch;
@@ -102,12 +101,10 @@ export class SearchAndResultComponent implements OnInit {
   environments: Subscription | null = null;
 
   constructor(
-    private router: Router,
     private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService,
     private commonService: CommonService,
-    private authSvc: AuthService,
-    public dialog: MatDialog) {
+    private dialog: MatDialog) {
     const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
@@ -205,13 +202,11 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   onSaveSearch(){
-    if(!this.authSvc.getIsUserLogged()){
+    if(this.isUserLogged){
       this.dialog.open(SavedSearchesDialogComponent, { data: { results: this.searchResults } });
-      // this.router.navigate(['saved-searches']);
     }else {
       this.dialog.open(LoginModalComponent,{})
-    }
-    
+    } 
   }
 
 }
