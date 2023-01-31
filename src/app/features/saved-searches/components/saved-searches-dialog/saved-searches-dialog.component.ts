@@ -39,6 +39,12 @@ export class SavedSearchesDialogComponent  {
     const search_result = this.data.results;
     this.savedSearchesModel = new SavedSearchesModel(user_uuid, search_name, search_detail, search_date, search_result);
     this.savedSearchesSvc.saveSearch(this.savedSearchesModel).subscribe(resp => resp);
-    // this.router.navigate(['saved-searches'])
+    this.goToMySearches(); 
+  }
+
+  goToMySearches(){
+    setTimeout(() => {
+      this.router.navigate(['saved-searches']);
+    }, 1000);
   }
 }
