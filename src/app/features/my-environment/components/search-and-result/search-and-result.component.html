@@ -37,8 +37,8 @@
                                     {{ "common.title.results" | translate }}
                                 </h2>
                                 <div class="" *ngIf="true" id="pdfData">
-                                    <div *ngFor="let ls of sampleResults">
-                                        <h5 class="details">{{ ls.name }}</h5>
+                                    <div *ngFor="let ls of sampleResults; let i = index">
+                                        <h5 class="details" (click)="selectMarker(i)">{{ ls.name }}</h5>
                                         <mat-list class="result-container list-unstyled"
                                             *ngFor="let address of ls.addresses">
                                             <mat-list-item *ngIf="address.street_name">
@@ -48,10 +48,10 @@
                                                 {{ address.zip_code }} {{ address.town }}
                                             </mat-list-item>
                                             <mat-list-item *ngIf="ls.email">
-                                                Email: {{ ls.email }}
+                                                Email: <a [href]="'mailto:' + ls.email">{{ ls.email }}</a>
                                             </mat-list-item>
                                             <mat-list-item *ngIf="ls.web">
-                                                Web: {{ ls.web }}
+                                                Web: <a [href]="ls.web" target="_blank">{{ ls.web }}</a>
                                             </mat-list-item>
                                             <mat-list-item *ngIf="ls.phone">
                                                 Tel.:{{ ls.phone }}
@@ -129,7 +129,7 @@
 
                     <div class="search-container">
                         <!-- babcn-CONTAINER -->
-                        <babcn-container containerHeight="395px" [containerWidth]='ratio.toString()'>
+                        <babcn-container [containerWidth]='ratio.toString()'>
                             <app-mapbox [filteredResultsToPrintOnMap]="sampleResults"
                                 [selectedResultsToChangeColor]="selectedList"></app-mapbox>
                         </babcn-container>
