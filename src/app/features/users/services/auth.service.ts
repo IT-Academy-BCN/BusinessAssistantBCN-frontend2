@@ -15,17 +15,7 @@ const LOGIN = environment.BACKEND_LOGIN_URL;
 })
 export class AuthService {
 
-  private _isUserLogged: boolean = false;
-
   constructor(private http: HttpClient) { }
-
-  public setIsUserLogged(status: boolean){
-    this._isUserLogged = status;
-  }
-
-  public getIsUserLogged(): boolean{
-    return this._isUserLogged;
-  }
 
   public login(login: LoginRequest): Observable<Login>{
     return this.http.post<Login>(BASE + LOGIN, login);
