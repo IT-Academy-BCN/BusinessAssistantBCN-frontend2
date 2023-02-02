@@ -25,5 +25,6 @@ module.exports = {
     },
     transformIgnorePatterns: [
        `<rootDir>/node_modules/.pnpm/(?!.*\\.mjs$|${esModules.join('|')}@)`,        
-    ]
+    ],
+    modulePathIgnorePatterns: ['<rootDir>/dist', '<rootDir>/node_modules', '<rootDir>/fake-json-server']
 };
