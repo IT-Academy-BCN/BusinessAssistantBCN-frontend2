@@ -17,7 +17,7 @@ export class SavedSearchesService {
 
   saveSearch(savedSearches: SavedSearchesModel): Observable<any>{
     const user_uuid = savedSearches.user_uuid;
-    return this.http.post<any>(environment.BACKEND_SAFE_SEARCHES_URL + user_uuid , savedSearches);
+    return this.http.post<any>(environment.BACKEND_SAVED_SEARCHES_URL + user_uuid , savedSearches);
   }
   
 }
