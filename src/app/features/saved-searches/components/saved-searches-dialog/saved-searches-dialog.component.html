@@ -1,4 +1,4 @@
-<div mat-dialog-content style="padding: 30px;">
+<!-- <div mat-dialog-content style="padding: 30px;">
   <h2> {{ 'components.saved-searches-dialog.save-search' | translate }}</h2>
   <hr>
   <br>
@@ -24,4 +24,37 @@
       <button mat-dialog-close type="submit" class="mat-button" mat-raised-button color="primary" [disabled]="this.form.invalid">{{ 'components.saved-searches-dialog.save' | translate }}</button>
     </mat-dialog-actions>
   </form>
+</div> -->
+
+<div mat-dialog-content>
+  <mat-tab-group>
+    <mat-tab class="mat-tab" label="{{ 'components.saved-searches-dialog.save-search' | translate | uppercase }}">
+      <form [formGroup]="this.form" (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>{{ 'components.saved-searches-dialog.name' | translate }}</mat-label>
+          <input type="text" matInput placeholder="{{ 'components.saved-searches-dialog.name' | translate }}"
+            formControlName="name" autocomplete="off" />
+          <mat-error *ngIf="this.form.get('name')?.hasError('required')">
+            {{ 'components.saved-searches-dialog.name-required' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>{{ 'components.saved-searches-dialog.detail' | translate }}</mat-label>
+          <input type="text" matInput placeholder="{{ 'components.saved-searches-dialog.detail' | translate }}"
+            formControlName="detail" autocomplete="off" />
+          <mat-error *ngIf="this.form.get('detail')?.hasError('required')">
+            {{ 'components.saved-searches-dialog.detail-required' | translate }}
+          </mat-error>
+        </mat-form-field>
+        <mat-dialog-actions align="center" style="padding: 0;">
+          <button mat-dialog-close type="button" class="mat-button" mat-raised-button color="primary">{{
+            'components.saved-searches-dialog.cancel' | translate | uppercase }}</button>
+          <button mat-dialog-close type="submit" class="mat-button" mat-raised-button color="primary"
+            [disabled]="this.form.invalid">{{ 'components.saved-searches-dialog.save' | translate | uppercase }}</button>
+        </mat-dialog-actions>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
 </div>
