@@ -21,7 +21,7 @@ export class SavedSearchesComponent implements OnInit {
   };
 
   getSavedSearches() {
-    this.savedSearchesService.getSavedSearches(environment.USER_UUID).subscribe((resp: any) => {
+    this.savedSearchesService.getSavedSearches().subscribe((resp: any) => {
       this.savedSearchesData = resp.results;
       this.breakpoint = (window.innerWidth <= 600) ? 1 : 4;
     });

@@ -66,6 +66,15 @@
             "item-2": "Nombre",
             "item-3": "Fecha",
             "item-4": "Detalles"
+        },
+        "saved-searches-dialog": {
+            "save-search": "Guardar búsqueda",
+            "name": "Nombre",
+            "detail": "Detalle",
+            "name-required": "El nombre es obligatorio",
+            "detail-required": "El detalle es obligatorio",
+            "cancel": "Cancelar",
+            "save": "Guardar"
         }
     },
     "pages": {
