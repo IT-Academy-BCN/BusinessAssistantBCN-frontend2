@@ -1,4 +1,3 @@
-import { environment } from 'src/environments/environment';
 import { SavedSearchesService } from './../../services/saved-searches.service';
 import { SavedSearchesModel } from './../../../../shared/models/saved-search.model';
 import { Component, OnInit } from '@angular/core';
