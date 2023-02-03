@@ -20,7 +20,7 @@ export const environment = {
   BACKEND_SAFE_SEARCHES_URL: 'http://localhost:8763/businessassistantbcn/api/v1/mydata/mysearches/',
   BACKEND_SAVED_SEARCHES_URL: 'http://localhost:8763/businessassistantbcn/api/v1/mydata/mysearches/',
   // fake urls
-  FAKE_BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-search-large-establishments_dummy.json',
+  FAKE_BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-searches/saved-search-large-establishments_dummy.json',
   // User id
   USER_UUID: 1234567,
   //mapbox
