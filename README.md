@@ -12,6 +12,11 @@ Necesario instalar [Adobe Creative Cloud](https://creativecloud.adobe.com/apps/d
 
 - Angular CLI 13.0.2
 
+### Fake Server
+
+- JSON Server. Tras clonar el repositorio, es necesario ejecutar (dentro de la folder fake-json-server):
+* **git submodule init**
+* **git submodule update**
 
 ### Nomenclatura
 
