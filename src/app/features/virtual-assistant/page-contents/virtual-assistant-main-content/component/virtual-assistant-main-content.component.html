@@ -1,7 +1,7 @@
 <!-- MAIN-CONTENT -->
 <section class="main">
     <div class="main-container">
-        
+
         <!-- babcn-TITLE -->
         <babcn-title titleInput='common.button.assistant'></babcn-title>
         <!-- END babcn-TITLE -->
@@ -28,18 +28,27 @@
             <mat-grid-tile>
 
                 <!-- babcn-BUTTONS-CONTAINER -->
-                <babcn-buttons-container containerHeight="395px" 
-                                         [containerWidth]='ratio.toString()' vaStyle="theme"
-                    [mainButtonVisibility]="!user"                      
-                    mainButtonText='common.button.save'
-                    mainButtonColor="primary" [mainButtonFunction]="onClickSaveButton"
-
-                    secondaryButtonText='common.button.see-summary' 
+                <babcn-buttons-container containerHeight="395px" [containerWidth]='ratio.toString()' vaStyle="theme"
+                    [mainButtonVisibility]="!user" mainButtonText='common.button.save' mainButtonColor="primary"
+                    [mainButtonFunction]="onClickSaveButton" secondaryButtonText='common.button.see-summary'
                     [secondaryButtonFunction]="onClickResumeButton">
 
                     <!-- babcn-LIST -->
                     <babcn-list [listDataInput]="dataShared"></babcn-list>
                     <!-- END babcn-LIST -->
+
+                    <!-- District-zones -->
+                    <div class="p-1 border" *ngIf="zonesList">
+                        <div *ngFor="let zone of zonesData">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <mat-checkbox class="form-check-input"
+                                            (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}
+                                        </mat-checkbox>
+                                    </label>
+                                </div>
+                        </div>
+                    </div>
 
                     <!-- babcn-TREE -->
                     <babcn-tree [treeDataInput]="dataSourceCategory"></babcn-tree>
