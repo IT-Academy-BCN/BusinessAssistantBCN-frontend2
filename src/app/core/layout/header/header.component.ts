@@ -46,6 +46,7 @@ export class HeaderComponent implements OnInit {
     // name : 'Jhon Doe'
   }
 
+
   constructor(
     public  dialog     : MatDialog,
     private responsive : BreakpointService,
