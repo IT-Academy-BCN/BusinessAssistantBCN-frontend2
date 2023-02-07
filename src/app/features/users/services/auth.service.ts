@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { Login } from 'src/app/shared/models/common/login.model';
 import { Signup } from '../../../shared/models/common/signup.model';
 
-const BASE = environment.BACKEND_BASE_URL;
+const BASE = environment.BACKEND_JASON_SERVER_BASE_URL;
 const SIGNUP = environment.BACKEND_REGISTER_URL;
 const LOGIN = environment.BACKEND_LOGIN_URL;
 
@@ -17,8 +17,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+
+
   public login(login: LoginRequest): Observable<Login>{
-    return this.http.post<Login>(BASE + LOGIN, login);
+    return this.http.post<Login>(BASE+ LOGIN,login);
   }
 
   public signup(newUser: LoginRequest): Observable<Signup>{
