@@ -34,7 +34,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   @Input('inputDataMain') dataSourceCategory: Category[] = [];
 
   // Data Shared with VirtualAssistantListComponent.
-  dataShared: string[] = [] // TODO improve typing any[]
+  dataShared: string[] = []
 
   // Not delete this empty constructor to make implementations easier to understand.
   constructor(
@@ -80,7 +80,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
    * Get the output data from accordion-component.
    * @param accordionData The obtained data is shared by the component in the input of VirtualAssistantList.
    */
-  getDataFromAccordion(accordionData: string[]) {  // TODO improve typing any[]
+  getDataFromAccordion(accordionData: string[]) {
 
     //Getting existing selections from service 
     let currentSelections = this.getCurrentSelections();
