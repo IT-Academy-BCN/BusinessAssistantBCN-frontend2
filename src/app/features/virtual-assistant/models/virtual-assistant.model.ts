@@ -1,9 +1,9 @@
-export interface VA_Selections {
+export interface VaSelections {
     userID: number;
-    content: VA_Selected[];
+    content: VaSelected[];
 }
 
-export interface VA_Selected {
+export interface VaSelected {
     id: number;
     content: any;
 }

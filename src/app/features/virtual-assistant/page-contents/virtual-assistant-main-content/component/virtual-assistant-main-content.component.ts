@@ -34,7 +34,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   @Input('inputDataMain') dataSourceCategory: Category[] = [];
 
   // Data Shared with VirtualAssistantListComponent.
-  dataShared: any[] = [] // TODO improve typing any[]
+  dataShared: string[] = [] // TODO improve typing any[]
 
   // Not delete this empty constructor to make implementations easier to understand.
   constructor(
@@ -95,7 +95,8 @@ export class VirtualAssistantMainContentComponent implements OnInit {
     this.dataShared = [...accordionData];
 
      //merge existing selection with saved selections from VA selection service
-    let mergedData = accordionData.concat(currentSelections);mergedData = [...new Set([...accordionData,...currentSelections])];
+    accordionData.concat(currentSelections);
+    let mergedData = [...new Set([...accordionData,...currentSelections])];
     this.dataShared = mergedData;
     this.vaSelectionService.setSelections(mergedData);
   }

@@ -9,8 +9,6 @@ describe('VirtualAssistantMainContentComponent', () => {
 
     let component: VirtualAssistantMainContentComponent;
     let fixture: ComponentFixture<VirtualAssistantMainContentComponent>;
-    let expBreakpointResponse: any;
-    let responsiveSrv: BreakpointService;
 
 
     const fakeBreakpointSrvMock = {
@@ -37,11 +35,9 @@ describe('VirtualAssistantMainContentComponent', () => {
    
       ],
     }).compileComponents();
-    responsiveSrv = TestBed.inject(BreakpointService);
     fixture = TestBed.createComponent(VirtualAssistantMainContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    expBreakpointResponse = of('Large');
 
   });
 
