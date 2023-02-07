@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
 import { Login } from 'src/app/shared/models/common/login.model';
 import { Signup } from '../../../shared/models/common/signup.model';
 
-const BASE = environment.BACKEND_JASON_SERVER_BASE_URL;
-const SIGNUP = environment.BACKEND_REGISTER_URL;
+const BASE = environment.BACKEND_JSON_SERVER_BASE_URL;
+const SIGNUP = environment.BACKEND_JSON_SERVER_REGISTER_URL;
 const LOGIN = environment.BACKEND_LOGIN_URL;
 
 @Injectable({
@@ -19,8 +19,8 @@ export class AuthService {
 
 
 
-  public login(login: LoginRequest): Observable<Login>{
-    return this.http.post<Login>(BASE+ LOGIN,login);
+  public login(login: LoginRequest): Observable<Signup[]>{
+    return this.http.get<Signup[]>(BASE+ SIGNUP);
   }
 
   public signup(newUser: LoginRequest): Observable<Signup>{

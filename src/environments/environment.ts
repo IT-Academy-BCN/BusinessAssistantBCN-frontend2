@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   BACKEND_BASE_URL: '/businessassistantbcn/api/v1',
-  BACKEND_JASON_SERVER_BASE_URL:'http://localhost:3000',
+  BACKEND_JSON_SERVER_BASE_URL:'http://localhost:3000',
+  BACKEND_JSON_SERVER_REGISTER_URL: '/signup',
   BACKEND_LOGIN_URL: '/login',
   BACKEND_REGISTER_URL: '/usermanagement/user',
   BACKEND_ZONES_URL: '/common/bcn-zones',
