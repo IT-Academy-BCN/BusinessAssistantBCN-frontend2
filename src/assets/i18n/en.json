@@ -185,7 +185,10 @@
             "password-placeholder": "Your password...",
             "password-error": "Password needs to be 8 alphanumeric characters",
             "password-require":"Password is required",
-            "submit-register": "Create user"
+            "submit-register": "Create user",
+            "name-placeholder": "Your name...",
+            "name-error": "Name needs to be at least 3 alphanumeric characters",
+            "name-require":"Name is required"
         }
     }
 }

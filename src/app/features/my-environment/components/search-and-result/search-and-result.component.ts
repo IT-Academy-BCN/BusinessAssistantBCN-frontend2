@@ -12,6 +12,9 @@ import { Zone } from 'src/app/shared/models/common/zone.model';
 import { MapboxMarkersService } from '../../services/mapbox-markers.service';
 
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/features/users/services/auth.service';
+import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-search-and-result',
@@ -104,7 +107,9 @@ export class SearchAndResultComponent implements OnInit {
     private router: Router,
     private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService,
-    private commonService: CommonService) {
+    private commonService: CommonService,
+    private auth: AuthService,
+    public dialog:MatDialog) {
     const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
@@ -206,7 +211,12 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   onSaveSearch(){
+    if(!this.auth.loggedIn){
+      this.dialog.open(LoginModalComponent,{})
+    }else{
+    
     this.router.navigate(['saved-searches']);
+    }
   }
 
 }

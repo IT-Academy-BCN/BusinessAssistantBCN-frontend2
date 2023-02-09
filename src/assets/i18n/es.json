@@ -185,7 +185,10 @@
             "password-placeholder": "Tu contraseña...",
             "password-error": "La contraseña debe tener almenos 8 carácteres alfanuméricos",
             "password-require":"La contraseña es obligatoria",
-            "submit-register": "Crear usuario"
+            "submit-register": "Crear usuario",
+            "name-placeholder": "Tu nombre...",
+            "name-error": "La contraseña debe tener al menos 8 carácteres alfanuméricos",
+            "name-require":"El nombre es obligatorio"
         }
     }
 }

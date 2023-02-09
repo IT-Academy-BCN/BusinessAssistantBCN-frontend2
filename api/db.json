@@ -4,61 +4,24 @@
       "id": 1,
       "email": "email1@gmail.com",
       "password": 12345678
-    },
-    {
-      "id": 2,
-      "email": "email2@gmail.com",
-      "password": 12345678
-    },
-    {
-      "email": "email3@gmail.com",
-      "password": "12345678",
-      "id": 3
-    },
-    {
-      "email": "email3@gmail.com",
-      "password": "12345678",
-      "id": 4
-    },
-    {
-      "email": "email5@gmail.com",
-      "password": "12345678",
-      "id": 5
-    },
-    {
-      "email": "test10@gamil.com",
-      "password": "12345678",
-      "id": 7
-    },
-    {
-      "email": "test10@gamil.com",
-      "password": "12345678",
-      "id": 8
-    },
-    {
-      "email": "test11@gamil.com",
-      "password": "12345678",
-      "id": 9
-    },
-    {
-      "email": "test12@gamil.com",
-      "password": "12345678",
-      "id": 10
     }
   ],
   "signup": [
     {
-      "id": 1,
-      "email": "email1@gmail.com",
-      "password": 12345678
+      "email": "test1@gmail.com",
+      "name": "pepe",
+      "password": 12345678,
+      "id": 1
     },
     {
-      "email": "email1@gmail.com",
+      "email": "test2@gmail.com",
+      "name": "jose",
       "password": "12345678",
       "id": 2
     },
     {
-      "email": "test1@gmail.com",
+      "email": "test3@gmail.com",
+      "name": "pancho",
       "password": "12345678",
       "id": 3
     }

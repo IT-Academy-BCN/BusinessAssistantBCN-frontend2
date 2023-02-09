@@ -53,6 +53,18 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
+          <mat-label>{{'user.register.name-placeholder'| translate }}</mat-label>
+          <input  formControlName="name" type="name" matInput placeholder="Name" value="" />
+          <mat-error *ngIf="signUpForm.get('name')?.hasError('minlength') || signUpForm.get('name')?.hasError('pattern') && !signUpForm.get('name')?.hasError('required') ">
+            {{'user.register.name-error'| translate}}
+          </mat-error>
+          <mat-error *ngIf="signUpForm.get('name')?.hasError('required')">
+            {{'user.register.name-require'| translate}}
+          </mat-error>
+        </mat-form-field>
+        
+
+        <mat-form-field class="example-full-width">
           <mat-label>{{'user.register.password-placeholder'| translate }}</mat-label>
           <input  formControlName="password" type="password" matInput placeholder="Password" value="" />
           <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength') || signUpForm.get('password')?.hasError('pattern') && !signUpForm.get('password')?.hasError('required') ">

@@ -184,7 +184,11 @@
             "password-placeholder": "La teva contrasenya...",
             "password-error": "La contrasenya ha de tenir 8 caràcters alfanumèrics",
             "password-require":"La contrasenya és obligatori",
-            "submit-register": "Crear usuari"
+            "submit-register": "Crear usuari",
+            "name-placeholder": "El teu nom...",
+            "name-error": "el nom ha de tenir com a mínim 3 caràcters alfanumèrics",
+            "name-require":"el nom és obligatori"
+        
         }
     }
 }

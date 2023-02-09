@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { zoomTitle } from './animation/header.animation';
+import { AuthService } from '../../../features/users/services/auth.service';
+import { Signup } from 'src/app/shared/models/common/signup.model';
 
 @Component({
   selector: 'app-header',
@@ -41,16 +43,19 @@ export class HeaderComponent implements OnInit {
   menu: boolean = false
 
   // user.name solo para fines visuales (muestra menú si existe), esperando respuesta de login para definir 'user' correctamente.
-  user = { 
-    name : '',
-    // name : 'Jhon Doe'
-  }
+  user:Signup = { 
+    id: 0,
+    email: '',
+    password: 0
+}
+  
 
   constructor(
     public  dialog     : MatDialog,
     private responsive : BreakpointService,
     private router     : Router,
     private translateService:TranslateService,
+    private auth: AuthService
   ) {
     const currentScreenSize = this.responsive.getCurrentScreenSize();
     this.expandMenu(currentScreenSize);
@@ -59,8 +64,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.responsive.breakpoint$.subscribe(result => {
       this.expandMenu(result);
-    })
-  }
+    });
+    this.getUserLogged();
+    }
+  
+    
+  getUserLogged() {
+      this.user=this.auth.user
+    }
+
 
   private expandMenu(currentScreenSize: string) {
     if (currentScreenSize == 'Small' || currentScreenSize == 'XSmall') {

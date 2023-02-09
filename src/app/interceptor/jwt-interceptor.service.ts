@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from "rxjs/operators";
+import { catchError} from "rxjs/operators";
 
 const AUTHORIZATION = environment.AUTHORIZATION;
 const BEARER = environment.BEARER;
@@ -22,6 +22,7 @@ export class JwtInterceptorService implements HttpInterceptor {
     if (TOKEN != null) {
       modifiedRequest = request.clone({ headers: request.headers.set(AUTHORIZATION, BEARER + TOKEN) });
     }
+    
     return next.handle(modifiedRequest).pipe( //redireccionar si alguna petición arroja 401 - Forbidden
       catchError((error) => {
         if (error.status === 401) {

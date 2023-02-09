@@ -6,13 +6,14 @@ import { LoginComponent } from './features/users/components/login/login.componen
 import { RegisterComponent } from './features/users/components/register/register.component';
 import { VirtualAssistantPageComponent } from './features/virtual-assistant/page-routing/virtual-assistant-page.component';
 import { MyEnvironmentPageComponent } from './features/my-environment/components/my-environment-page/my-environment-page.component';
+import { LoginModalComponent } from './features/users/components/login-modal/login-modal.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'my-environment', component: MyEnvironmentPageComponent},
   {path: 'virtual-assistant', component: VirtualAssistantPageComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginModalComponent},
   {path: 'register', component: RegisterComponent},
   {path: "saved-searches", component: SavedSearchesComponent },
 ];
