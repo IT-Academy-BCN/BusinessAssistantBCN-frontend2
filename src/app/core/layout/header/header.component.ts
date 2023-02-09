@@ -105,6 +105,11 @@ export class HeaderComponent implements OnInit {
       case 5:
         break;
       case 6:
+        if (num == 6) 
+          {
+            this.auth.loggedIn=false
+            this.auth.user.name=undefined
+        }
         break;
       default:
     }

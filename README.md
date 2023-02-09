@@ -18,6 +18,8 @@ Necesario instalar [Adobe Creative Cloud](https://creativecloud.adobe.com/apps/d
 * **git submodule init**
 * **git submodule update**
 
+- Para iniciar el servidor, es necesario ejecutar el comando **npm run api** dentro del folder  BusinessAssistantBCN-frontend2
+
 ### Nomenclatura
 
 - Branches para pull request:
