@@ -3,13 +3,14 @@ import { AuthService } from './auth.service';
 import { of, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { SignUpRequest } from '../../../../entities/signUpRequest';
+import { environment } from '../../../../environments/environment';
 
 describe('AuthService', () => {
   
   let service: AuthService;
   let httpClientMock: any;
   const userData: LoginRequest = { email: 'email@gmail.com', password: '1234' }
-  const signUpData:SignUpRequest = {  email: 'email@gmail.com', password: '1234',name:'pepe' }
+  const signUpData:SignUpRequest = {  email: 'email@gmail.com', password:environment.USER_PASSWORD,name:'pepe' }
   
   beforeEach(() => {
     httpClientMock = {
