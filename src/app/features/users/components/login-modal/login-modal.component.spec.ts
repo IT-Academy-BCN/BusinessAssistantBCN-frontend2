@@ -69,6 +69,7 @@ describe('LoginModalComponent', () => {
   it('sign up form is valid', () => {
     component.signUpForm.get('email')?.setValue('test@gmail.com')
     component.signUpForm.get('password')?.setValue('1234qwer')
+    component.signUpForm.get('name')?.setValue('pepe')
    expect(component.signUpForm.valid).toBeTruthy();
    });
  

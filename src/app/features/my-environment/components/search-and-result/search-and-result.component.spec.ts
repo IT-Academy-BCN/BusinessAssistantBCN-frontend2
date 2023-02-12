@@ -9,6 +9,8 @@ import { of } from 'rxjs';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Zone } from 'src/app/shared/models/common/zone.model';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 describe('SearchAndResultComponent', () => {
   let component: SearchAndResultComponent;
@@ -43,7 +45,8 @@ describe('SearchAndResultComponent', () => {
             provide: TranslateLoader,
             useClass: TranslateFakeLoader,
           },
-        }),],
+        }),
+      MatDialogModule],
       declarations: [SearchAndResultComponent],
       providers: [
         { provide: CommonService, useValue: fakeCommonSrvMock },

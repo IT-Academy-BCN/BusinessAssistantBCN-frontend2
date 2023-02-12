@@ -24,6 +24,15 @@
       "name": "pancho",
       "password": "12345678",
       "id": 3
+    },
+    {
+      "email": "email1@gmail.com",
+      "password": "12345678",
+      "id": 4
+    },
+    {
+      "email": "email1@gmail.com",
+      "id": 5
     }
   ]
 }

@@ -8,6 +8,7 @@ import { HeaderComponent } from "./header.component"
 import { LoginComponent } from "src/app/features/users/components/login/login.component"
 
 
+
 import {
   TranslateFakeLoader,
   TranslateLoader,
@@ -17,6 +18,7 @@ import {
 import { Location } from "@angular/common"
 import { NO_ERRORS_SCHEMA } from "@angular/core"
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 
@@ -48,6 +50,7 @@ let fixture: ComponentFixture<HeaderComponent>
             useClass: TranslateFakeLoader,
           },
         }),
+        HttpClientTestingModule,
       ],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
