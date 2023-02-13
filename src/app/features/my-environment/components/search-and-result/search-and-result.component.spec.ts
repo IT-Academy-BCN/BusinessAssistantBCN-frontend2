@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from './../../../../shared/models/my-environment-search/my-environment-search.model';
 import { CommonService } from '../../../../services/common/common.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -18,8 +20,7 @@ describe('SearchAndResultComponent', () => {
   let expGetResultsResponse: any;
   let expBreakpointResponse: string;
   let myEnvSrv: MyEnvironmentService;
-  let commonSrv: CommonService;
-
+ 
   const fakeCommonSrvMock = {
     getZones: jest.fn()
   }
@@ -35,8 +36,11 @@ describe('SearchAndResultComponent', () => {
   }
 
   beforeEach(async () => {
+
     await TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
+        MatDialogModule,
         HttpClientTestingModule,
         TranslateModule.forRoot({
           loader: {
@@ -47,16 +51,16 @@ describe('SearchAndResultComponent', () => {
       declarations: [SearchAndResultComponent],
       providers: [
         { provide: CommonService, useValue: fakeCommonSrvMock },
-        { provide: MyEnvironmentService, useValue: fakeEnvSrvMock },
+        { provide: MyEnvironmentService, useValue: fakeEnvSrvMock }
         //  {provide: BreakpointService, useValue: fakeBreakpointSrvMock}
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
-    myEnvSrv = TestBed.inject(MyEnvironmentService);
-    commonSrv = TestBed.inject(CommonService);
     fixture = TestBed.createComponent(SearchAndResultComponent);
     component = fixture.componentInstance;
+    myEnvSrv = TestBed.inject(MyEnvironmentService);
+
     expCommonResponse = {
       count: 10,
       limit: 0,
@@ -87,45 +91,45 @@ describe('SearchAndResultComponent', () => {
     jest.spyOn(fakeEnvSrvMock, 'getResults').mockReturnValue(of(expGetResultsResponse));
     //TO TEST
     jest.spyOn(fakeBreakpointSrvMock, 'getCurrentScreenSize').mockReturnValue(of(expBreakpointResponse));
-    jest.spyOn(fakeBreakpointSrvMock, 'breakpoint$').mockReturnValue(of(""))
+    jest.spyOn(fakeBreakpointSrvMock, 'breakpoint$').mockReturnValue(of(""));
   })
 
   test('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Init: If user selects Big Malls, the search Type should be Big Malls Search',()=>{
+  it('Init: If user selects Big Malls, the search Type should be Big Malls Search', () => {
     component.title = 'common.button.mall'
     component.ngOnInit()
     expect(component.businessModelSearch.searchType).toBe(0)
   })
 
-  it('Init: If user selects Commercial Galleries, the search Type should be Commercial Galleries Search',()=>{
+  it('Init: If user selects Commercial Galleries, the search Type should be Commercial Galleries Search', () => {
     component.title = 'common.button.gallery-market'
     component.ngOnInit()
     expect(component.businessModelSearch.searchType).toBe(1)
   })
 
-  it('Init: If user selects Big Establishment, the search Type should be Big Establishment Search',()=>{
+  it('Init: If user selects Big Establishment, the search Type should be Big Establishment Search', () => {
     component.title = 'common.button.big-stablish'
     component.ngOnInit()
     expect(component.businessModelSearch.searchType).toBe(2)
   })
 
-  it('Init: If user selects Market Fair, the search Type should be Market Fair Search',()=>{
+  it('Init: If user selects Market Fair, the search Type should be Market Fair Search', () => {
     component.title = 'common.button.market-fair'
     component.ngOnInit()
     expect(component.businessModelSearch.searchType).toBe(3)
   })
 
-  it('Init: If user selects Public Market, the search Type should be Municipial Market Search',()=>{
+  it('Init: If user selects Public Market, the search Type should be Municipial Market Search', () => {
     component.title = 'common.button.public-market'
     component.ngOnInit()
     expect(component.businessModelSearch.searchType).toBe(4)
   })
 
-  it('Init: should load the zones',() => {
-   
+  it('Init: should load the zones', () => {
+
     component.ngOnInit();
     expect(component.zones.indexOf(expCommonResponse.elements[0])).toBeGreaterThanOrEqual(0);
   })
@@ -202,6 +206,16 @@ describe('SearchAndResultComponent', () => {
     event = true;
     component.checkZones(new Zone(), event);
     expect(component.selectedZones.length).toBe(1);
+  });
+
+  test('checkActivities should add element if event is true', () => {
+    let event = false;
+    component.checkActivities(new EconomicActivity(), event);
+    expect(component.selectedActivities.length).toBe(0);
+
+    event = true;
+    component.checkActivities(new EconomicActivity(), event);
+    expect(component.selectedActivities.length).toBe(1);
   });
 
   test('checkActivities should add element if event is true', () => {
