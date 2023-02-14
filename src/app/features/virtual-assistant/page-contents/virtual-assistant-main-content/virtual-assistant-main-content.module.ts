@@ -17,11 +17,12 @@ import { BabcnComponentsModule } from 'src/app/shared/components/babcn-component
 
 
 
+
 @NgModule({
   declarations: [
     VirtualAssistantMainContentComponent,
     ResumeDialogComponent,
-    SaveDialogComponent
+    SaveDialogComponent,
   ],
   imports: [
     CommonModule,
