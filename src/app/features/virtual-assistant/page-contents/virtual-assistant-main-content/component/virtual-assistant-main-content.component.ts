@@ -1,4 +1,5 @@
 import { CcaeService } from './../../../services/ccae.service';
+import { VirtualAssistantSelectionsService } from './../../../services/virtual-assistant-selections.service';
 // ANGULAR CORE
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -28,24 +29,27 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   // Responsive Breakpoint
   breakpoint: number | string | "Unknown";
   ratio: string | number;
+  value: (string | number)[] | undefined= [];
 
   // Data Source to share with Mat-Accordion from VirtualAssistantAccordionComponent.
   @Input('inputDataMain') dataSourceCategory: Category[] = [];
   newDataObj:any = {};
 
   // Data Shared with VirtualAssistantListComponent.
-  dataShared: any[] = [] // TODO improve typing any[]
+  dataShared: string[] = []
 
   // Not delete this empty constructor to make implementations easier to understand.
   constructor(
     public dialog: MatDialog,
+
     private responsive: BreakpointService,
-    private ccae: CcaeService
+    private ccae: CcaeService,
+    public vaSelectionService: VirtualAssistantSelectionsService,
   ) {
-    const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
-    if (value != undefined) {
-      this.breakpoint = value[0];
-      this.ratio = value[1];
+    this.value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
+    if (this.value != undefined) {
+      this.breakpoint = this.value[0];
+      this.ratio = this.value[1];
     } else {
       this.breakpoint = 0;
       this.ratio = "150px";
@@ -53,6 +57,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
@@ -64,6 +69,11 @@ export class VirtualAssistantMainContentComponent implements OnInit {
 
     this.convertSrcDataToTreeObj()
   // console.log(this.newDataObj)
+    if(this.vaSelectionService.selections.content.length > 0) {
+      this.vaSelectionService.selections.content.forEach(item => {
+        this.dataShared.push(item.content);
+      })
+    }
   }
 
   //convert dataSourceCategory to a tree structure for Angular Material Tree
@@ -92,8 +102,20 @@ export class VirtualAssistantMainContentComponent implements OnInit {
    * Get the output data from accordion-component.
    * @param accordionData The obtained data is shared by the component in the input of VirtualAssistantList.
    */
+
   getDataFromAccordion(accordionData: any[]) {  // TODO improve typing any[]
     this.dataShared = [...accordionData];
+
+    let currentSelections = this.getCurrentSelections();
+
+    if (this.vaSelectionService.selections.content.length>0) {
+
+      this.vaSelectionService.selections.content.forEach(item => {
+        currentSelections.push(item.content);
+      })
+     }
+
+    
 
 
     if(this.dataShared.includes("pages.business-assistant.section1.s1-item1")) {
@@ -121,8 +143,15 @@ export class VirtualAssistantMainContentComponent implements OnInit {
       Classe: ClasseObject
     }
       })
- 
     }
+
+         //end of get existing selections
+         this.dataShared = [...accordionData].concat(currentSelections);
+
+         //merge existing selection with saved selections from VA selection service
+        let mergedData = [...new Set([...accordionData,...currentSelections])];
+        this.dataShared = mergedData;
+        this.vaSelectionService.setSelections(mergedData);
   }
 
   createObjFromCcae(array: any[], filter: string) {
@@ -132,6 +161,11 @@ export class VirtualAssistantMainContentComponent implements OnInit {
        return resultObj[idx + 1 + ": " + item.code.description] = null;
      })
      return resultObj;
+    }
+
+  getCurrentSelections() {
+    let currentSelections:string[] = [];
+    return currentSelections
   }
 
   /**
