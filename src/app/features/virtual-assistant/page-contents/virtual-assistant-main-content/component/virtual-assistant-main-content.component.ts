@@ -1,3 +1,4 @@
+import { CcaeService } from './../../../services/ccae.service';
 // ANGULAR CORE
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -30,6 +31,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
 
   // Data Source to share with Mat-Accordion from VirtualAssistantAccordionComponent.
   @Input('inputDataMain') dataSourceCategory: Category[] = [];
+  newDataObj:any = {};
 
   // Data Shared with VirtualAssistantListComponent.
   dataShared: any[] = [] // TODO improve typing any[]
@@ -37,7 +39,8 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   // Not delete this empty constructor to make implementations easier to understand.
   constructor(
     public dialog: MatDialog,
-    private responsive: BreakpointService
+    private responsive: BreakpointService,
+    private ccae: CcaeService
   ) {
     const value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
@@ -58,8 +61,28 @@ export class VirtualAssistantMainContentComponent implements OnInit {
         }
       });
     });
+
+    this.convertSrcDataToTreeObj()
+  // console.log(this.newDataObj)
   }
 
+  //convert dataSourceCategory to a tree structure for Angular Material Tree
+  convertSrcDataToTreeObj() {
+    this.dataSourceCategory.forEach(item => {
+      let subcategories:any ={};
+      item.subcategory.forEach(subcategory => {
+        let subcategoryItems: any = {};
+  
+        subcategory.items.forEach(finalItem => {
+          subcategoryItems[finalItem.item] = null;
+        })
+        subcategories[subcategory.title] = subcategoryItems
+      })
+      this.newDataObj[item.title] = subcategories
+      });
+  }
+
+  //
 
   // USER, wait for login implementation to verify the correct status.
   user : boolean = false;
@@ -71,6 +94,44 @@ export class VirtualAssistantMainContentComponent implements OnInit {
    */
   getDataFromAccordion(accordionData: any[]) {  // TODO improve typing any[]
     this.dataShared = [...accordionData];
+
+
+    if(this.dataShared.includes("pages.business-assistant.section1.s1-item1")) {
+      let SeccionObject:any = {};
+      let DivisionObject:any = {};
+      let GrupObject:any = {};
+      let ClasseObject:any = {};
+//"Divisió" "Grup" "Classe"
+      this.ccae.getCcaeJSON().subscribe((data:{offset:number, limit: number, count: number, results: any[] }) => {
+       
+    
+        SeccionObject = this.createObjFromCcae(data.results, "Secció");
+        DivisionObject = this.createObjFromCcae(data.results, "Divisió");
+        GrupObject = this.createObjFromCcae(data.results, "Grup");
+        ClasseObject = this.createObjFromCcae(data.results, "Classe");
+
+        //MODIFY THIS SINGLE SECTION
+      
+        this.newDataObj = {}
+
+      this.newDataObj["pages.business-assistant.section1.s1-item1"] =  
+      {Secció: SeccionObject,
+      Divisió: DivisionObject,
+      Grupo: GrupObject,
+      Classe: ClasseObject
+    }
+      })
+ 
+    }
+  }
+
+  createObjFromCcae(array: any[], filter: string) {
+    let resultObj: any = {};
+    const result = array.filter(item => item.type === filter);
+    result.forEach((item,idx) => {
+       return resultObj[idx + 1 + ": " + item.code.description] = null;
+     })
+     return resultObj;
   }
 
   /**

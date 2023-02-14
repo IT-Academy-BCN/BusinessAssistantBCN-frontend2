@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 // ANGULAR CORE & COMMON
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -30,7 +31,7 @@ const VirtualAssistantPages = [
   imports: [
     CommonModule,
     CoreModule,
-
+    HttpClientModule,
     // VIRTUAL-ASSISTANT-CONTENTS-MODULE
     VirtualAssistantPageContentsModule,
     MatGridListModule,

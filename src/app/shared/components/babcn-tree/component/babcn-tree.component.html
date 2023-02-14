@@ -30,9 +30,9 @@
         <mat-checkbox [checked]="descendantsAllSelected(node)" [indeterminate]="descendantsPartiallySelected(node)"
             (change)="todoItemSelectionToggle(node)">
             {{ node.item | translate }}</mat-checkbox>
-        <button mat-icon-button (click)="addNewItem(node)">
+        <!-- <button mat-icon-button (click)="addNewItem(node)">
             <mat-icon>add</mat-icon>
-        </button>
+        </button> -->
     </mat-tree-node>
     <!-- END MAT-TREE-NODE -->
     

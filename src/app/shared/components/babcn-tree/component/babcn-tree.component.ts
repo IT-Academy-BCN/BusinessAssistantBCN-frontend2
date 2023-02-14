@@ -1,5 +1,6 @@
+import { SimpleChanges } from '@angular/core';
 // ANGULAR CORE
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges} from '@angular/core';
 
 // ANGULAR CDK
 import { SelectionModel } from '@angular/cdk/collections';
@@ -21,7 +22,7 @@ import { ChecklistDatabase } from '../service/checklist-data-base.service';
   styleUrls: ['./babcn-tree.component.scss'],
   providers: [ChecklistDatabase]
 })
-export class BabcnTreeComponent implements AfterViewInit {
+export class BabcnTreeComponent implements AfterViewInit, OnChanges {
 
   @Input('treeDataInput') data: {} = {};  // TODO improve typing {}
 
@@ -50,6 +51,8 @@ export class BabcnTreeComponent implements AfterViewInit {
   /** The selection for checklist */
   checklistSelection = new SelectionModel<TodoItemFlatNode>(true /* multiple */);
 
+  selectedArray:string[] = []
+
   constructor(private _database: ChecklistDatabase) {
     // this._database.initialize(this.getData);
     this.treeFlattener = new MatTreeFlattener(
@@ -70,6 +73,12 @@ export class BabcnTreeComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this._database.initialize(this.getData);
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    //console.log(changes, "Changes");
+     this.data = changes['data'].currentValue
+     this._database.initialize(changes['data'].currentValue);
+  }   
 
   getLevel = (node: TodoItemFlatNode) => node.level;
 
@@ -131,11 +140,22 @@ export class BabcnTreeComponent implements AfterViewInit {
   todoLeafItemSelectionToggle(node: TodoItemFlatNode): void {
     this.checklistSelection.toggle(node);
     this.checkAllParentsSelection(node);
+
+    /** For child node, if selected include in selectedArray otherwise remove */
+    if(this.selectedArray.includes(node.item)) {
+      let idx = this.selectedArray.indexOf(node.item);
+      this.selectedArray.splice(idx, 1);
+    } else {
+      this.selectedArray.push(node.item)
+    }
+    console.log(this.selectedArray, "Selected Array")
   }
 
   /* Checks all the parents when a leaf node is selected/unselected */
   checkAllParentsSelection(node: TodoItemFlatNode): void {
+    console.log("clicked - gets most top level nodes")
     let parent: TodoItemFlatNode | null = this.getParentNode(node);
+   // console.log(node, "node from checkALlparents")
     while (parent) {
       this.checkRootNodeSelection(parent);
       parent = this.getParentNode(parent);
@@ -144,11 +164,14 @@ export class BabcnTreeComponent implements AfterViewInit {
 
   /** Check root node checked state and change it accordingly */
   checkRootNodeSelection(node: TodoItemFlatNode): void {
+    console.log("clicked - checkRootNodeSelection is what we want")
     const nodeSelected = this.checklistSelection.isSelected(node);
     const descendants = this.treeControl.getDescendants(node);
+    console.log(descendants, "descendants - clicks on Parent Node")
     const descAllSelected =
       descendants.length > 0 &&
       descendants.every(child => {
+        if (child.level === 1) {console.log(node, "every child")}
         return this.checklistSelection.isSelected(child);
       });
     if (nodeSelected && !descAllSelected) {
@@ -161,7 +184,6 @@ export class BabcnTreeComponent implements AfterViewInit {
   /* Get the parent node of a node */
   getParentNode(node: TodoItemFlatNode): TodoItemFlatNode | null {
     const currentLevel = this.getLevel(node);
-
     if (currentLevel < 1) {
       return null;
     }
