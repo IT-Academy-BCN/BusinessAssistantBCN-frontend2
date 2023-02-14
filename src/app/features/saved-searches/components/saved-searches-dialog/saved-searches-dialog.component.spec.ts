@@ -1,4 +1,5 @@
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { TranslateModule, TranslateLoader, TranslateFakeLoader } from '@ngx-translate/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SavedSearchesService } from './../../services/saved-searches.service';
@@ -19,6 +20,12 @@ describe('SavedSearchesDialogComponent', () => {
       imports: [
         ReactiveFormsModule,
         HttpClientTestingModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader,
+          },
+        })
       ],
       providers: [
         { provide: MAT_DIALOG_DATA, useValue: { results: ['result 1', 'result 2'] } },
@@ -40,14 +47,12 @@ describe('SavedSearchesDialogComponent', () => {
   });
 
   test('initForm should validate form', () => {
-    // component.ngOnInit();
     component.form.get('name')?.setValue('Search 1');
     component.form.get('detail')?.setValue('Detail 1');
     expect(component.form.valid).toBe(true);
   });
 
   test('onSubmit should get data from MatDialog', () => {
-    // component.ngOnInit();
     component.onSubmit();
     expect(component.data.results.length).toBe(2);
   });

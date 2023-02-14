@@ -6,11 +6,11 @@
     {
       "search_uuid": "search_uuid",
       "user_uuid": "user_uuid",
-      "search_date": "25/02/22",
-      "search_name": "Busqueda 1",
-      "search_detail": "Zapaterias Nou Barris",
+      "searchDate": "25/02/22",
+      "searchName": "Busqueda 1",
+      "searchDetail": "Zapaterias Nou Barris",
 
-      "search_result": 
+      "searchResult": 
 
       [
         {
@@ -1930,10 +1930,10 @@
     {
       "search_uuid": "search_uuid",
       "user_uuid": "user_uuid",
-      "search_date": "22/02/22",
-      "search_name": "Busqueda 2",
-      "search_detail": "Cinema Sant Andreu",
-      "search_result": 
+      "searchDate": "22/02/22",
+      "searchName": "Busqueda 2",
+      "searchDetail": "Cinema Sant Andreu",
+      "searchResult": 
 
       [
         {
