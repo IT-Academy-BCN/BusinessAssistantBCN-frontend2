@@ -41,7 +41,8 @@
                     <babcn-list [listDataInput]="dataShared"></babcn-list>
                     <!-- END babcn-LIST -->
 
-                    <app-babcn-checkbox-list [checkBoxDataInput]="zonesData"></app-babcn-checkbox-list>
+                    <app-babcn-checkbox-list [checkBoxDataInput]="zonesData" 
+                    (checkBoxDataShared)="getDataFromCheckboxes($event)"></app-babcn-checkbox-list>
 
 
                 </babcn-buttons-container>

@@ -42,9 +42,6 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   // Data Zones from common service
   zonesData: Zone[] = [];
 
-  // Data Zones selected from 
-  zonesSelected: Zone[] = [];
-
   // Not delete this empty constructor to make implementations easier to understand.
   constructor(
     public  dialog: MatDialog,
@@ -117,6 +114,10 @@ export class VirtualAssistantMainContentComponent implements OnInit {
     this.vaSelectionService.setSelections(mergedData);
   }
 
+  getDataFromCheckboxes(checkboxData: string[]) {
+    this.vaSelectionService.setSelections(checkboxData);
+  }
+
   getCurrentSelections() {
     let currentSelections:string[] = [];
     return currentSelections
@@ -143,21 +144,6 @@ export class VirtualAssistantMainContentComponent implements OnInit {
     // TODO implement onClickSaveButton
   }
 
-
-  // Zones tree, get the selected zones and push them to the datashared array (resume)
-
-  checkZones(zoneSelected : any , event: any) {   
-    if (event) {
-      //Adds the selected zone to the array zones  to use it there as parameter
-      this.zonesSelected.push(zoneSelected.zoneName);
-      console.log(zoneSelected);
-    } else {
-      //removes the zone 
-      this.zonesSelected.splice(this.dataShared.indexOf(zoneSelected), 1);
-      console.log(this.zonesSelected);
-    }
-
-  }
 
 
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-babcn-checkbox-list',
@@ -8,19 +8,20 @@ export class BabcnCheckboxListComponent {
 
   @Input('checkBoxDataInput') dataInput: any[] = []; // TODO improve typing any[]
 
-  @Input('checkBoxDataShared') dataShared: any[] = []; // TODO improve typing any[]
-  zonesSelected: any[] = [];
+  @Output('checkBoxDataShared') dataOutput: EventEmitter<string[]> = new EventEmitter<string[]>(); 
+  
+  checkedData: any[] = [];
 
-  checkData(zoneSelected : any , event: any) {   
+  checkData(data : any , event: boolean) {   
     if (event) {
       //Adds the selected zone to the array zones  to use it there as parameter
-      this.zonesSelected.push(zoneSelected.zoneName);
-      console.log(zoneSelected);
+      this.checkedData.push(data);
     } else {
       //removes the zone 
-      this.zonesSelected.splice(this.dataShared.indexOf(zoneSelected), 1);
-      console.log(this.zonesSelected);
+      this.checkedData.splice(this.checkedData.indexOf(data), 1);
     }
+
+    this.dataOutput.emit(this.checkedData.flatMap((item) => item.zoneName));
 
   }
 

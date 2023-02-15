@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { VirtualAssistantMainContentComponent } from './virtual-assistant-main-content.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('VirtualAssistantMainContentComponent', () => {
 
@@ -23,7 +24,8 @@ describe('VirtualAssistantMainContentComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        MatDialogModule
+        MatDialogModule,
+        HttpClientTestingModule
       ],
       providers: [
           {provide: BreakpointService, useValue: fakeBreakpointSrvMock},
