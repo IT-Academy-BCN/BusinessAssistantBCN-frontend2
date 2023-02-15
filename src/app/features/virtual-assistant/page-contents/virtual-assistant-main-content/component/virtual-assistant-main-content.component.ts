@@ -16,6 +16,9 @@ import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/compo
 
 // LOGIN MODAL COMPONENT 
 import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
+import { CommonService } from '../../../../../services/common/common.service';
+import { Zones } from '../../../../../shared/models/common/zones.model';
+import { Zone } from 'src/app/shared/models/common/zone.model';
 
 
 @Component({
@@ -36,11 +39,18 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   // Data Shared with VirtualAssistantListComponent.
   dataShared: string[] = []
 
+  // Data Zones from common service
+  zonesData: Zone[] = [];
+
+  // Data Zones selected from 
+  zonesSelected: Zone[] = [];
+
   // Not delete this empty constructor to make implementations easier to understand.
   constructor(
-    public dialog: MatDialog,
-    public vaSelectionService: VirtualAssistantSelectionsService,
-    private responsive: BreakpointService
+    public  dialog: MatDialog,
+    public  vaSelectionService: VirtualAssistantSelectionsService,
+    private responsive: BreakpointService,
+    private zones : CommonService
 
   ) {
     this.value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
@@ -54,6 +64,12 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+     // Get all Zones from common service
+     this.zones.getZones().subscribe((res : Zones) => {
+      this.zonesData = res.elements;
+    })
+
 
     this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
@@ -82,6 +98,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
    */
   getDataFromAccordion(accordionData: string[]) {
 
+    
     //Getting existing selections from service 
     let currentSelections = this.getCurrentSelections();
 
@@ -125,6 +142,24 @@ export class VirtualAssistantMainContentComponent implements OnInit {
     this.dialog.open(LoginModalComponent,{})
     // TODO implement onClickSaveButton
   }
+
+
+  // Zones tree, get the selected zones and push them to the datashared array (resume)
+
+  checkZones(zoneSelected : any , event: any) {   
+    if (event) {
+      //Adds the selected zone to the array zones  to use it there as parameter
+      this.zonesSelected.push(zoneSelected.zoneName);
+      console.log(zoneSelected);
+    } else {
+      //removes the zone 
+      this.zonesSelected.splice(this.dataShared.indexOf(zoneSelected), 1);
+      console.log(this.zonesSelected);
+    }
+
+  }
+
+
 
 }
 

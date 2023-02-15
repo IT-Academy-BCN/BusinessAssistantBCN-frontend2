@@ -1,0 +1,11 @@
+<div class="p-1 border">
+    <div *ngFor="let info of dataInput">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <mat-checkbox class="form-check-input"
+                        (change)="checkData(info, $event.checked)">{{info.name}}
+                    </mat-checkbox>
+                </label>
+            </div>
+    </div>
+</div>
