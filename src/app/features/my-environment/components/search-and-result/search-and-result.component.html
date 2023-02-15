@@ -37,8 +37,9 @@
                                     {{ "common.title.results" | translate }}
                                 </h2>
                                 <div class="" *ngIf="true" id="pdfData">
-                                    <div *ngFor="let ls of sampleResults; let i = index">
-                                        <h5 class="details" (click)="selectMarker(i)">{{ ls.name }}</h5>
+                                    <!-- <div *ngFor="let ls of sampleResults"> -->
+                                        <div *ngFor="let ls of searchResults">
+                                        <h5 class="details">{{ ls.name }}</h5>
                                         <mat-list class="result-container list-unstyled"
                                             *ngFor="let address of ls.addresses">
                                             <mat-list-item *ngIf="address.street_name">

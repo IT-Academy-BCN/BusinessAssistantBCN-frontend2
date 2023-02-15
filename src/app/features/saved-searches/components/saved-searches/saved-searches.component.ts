@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { SavedSearchesService } from './../../services/saved-searches.service';
 import { SavedSearchesModel } from './../../../../shared/models/saved-search.model';
 import { Component, OnInit } from '@angular/core';
@@ -10,9 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class SavedSearchesComponent implements OnInit {
 
   constructor(private savedSearchesService: SavedSearchesService) { }
-
+  date!: Date;
   savedSearchesData: SavedSearchesModel[] = []
-
   displayedColumns: string[] = ['search-name', 'search-date', 'search-detail', 'search-button'];
   breakpoint: number = 1;
 
@@ -21,7 +21,7 @@ export class SavedSearchesComponent implements OnInit {
   };
 
   getSavedSearches() {
-    this.savedSearchesService.getSavedSearches().subscribe((resp: any) => {
+    this.savedSearchesService.getSavedSearches(environment.USER_UUID).subscribe((resp: any) => {
       this.savedSearchesData = resp.results;
       this.breakpoint = (window.innerWidth <= 600) ? 1 : 4;
     });

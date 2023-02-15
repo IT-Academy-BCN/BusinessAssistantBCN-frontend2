@@ -17,9 +17,12 @@ export const environment = {
   BACKEND_MARKET_FAIRS_URL: '/opendata/market-fairs',
   BACKEND_MUNICIPAL_MARKETS_SEARCH_URL: '/opendata/municipal-markets/search',
   BACKEND_MARKET_FAIRS_SEARCH_URL: '/opendata/market-fairs/search', // 400 (Bad Request)
-  BACKEND_SAVED_SEARCHES_URL: '/mydata/mysearches',
+  BACKEND_SAFE_SEARCHES_URL: 'http://localhost:8763/businessassistantbcn/api/v1/mydata/mysearches/',
+  BACKEND_SAVED_SEARCHES_URL: 'http://localhost:8763/businessassistantbcn/api/v1/mydata/mysearches/',
   // fake urls
   FAKE_BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-search-large-establishments_dummy.json',
+  // User id
+  USER_UUID: 1234567,
   //mapbox
   MAPBOX_TOKEN: 'pk.eyJ1IjoianZyZnJlZWxhbmNlZGV2ZWxvcGVyIiwiYSI6ImNreTl4czUzMTAwNGQydnFsdmRhYXRvbDUifQ.TVL-2T184QdfXbze6VNw4A',
   MAPBOX_ZOOM: 8,
