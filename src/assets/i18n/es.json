@@ -117,8 +117,10 @@
             "section1": {
                 "title": "1. Análisis del Sector",
                 "subcat1": "Catálogo de servicios y productos para emprender",
+                "subcat2": "Ubicación",
                 "s1-item1": "Clasificación catalana de actividaes económicas",
-                "s1-item2": "Ubicación"
+                "s1-item2": "Ver distritos",
+                "s1-item3": "Mostrar mapa"
             },
 
             "section2": {
