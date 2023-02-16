@@ -33,6 +33,481 @@
     {
       "email": "email1@gmail.com",
       "id": 5
+    },
+    {
+      "email": "email1@gmail.com",
+      "id": 6
+    },
+    {
+      "email": "test10@gmail.com",
+      "name": "Pedro",
+      "password": "12345678",
+      "id": 7
     }
-  ]
+  ],
+  "results": [
+    {
+      "id": "00000000-0000-0000-D7DC-CC770365D8FF",
+      "type": "Secció",
+      "code": {
+        "idCcae": "A",
+        "description": "Agricultura, ramaderia, silvicultura i pesca"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-2335-839767DDAEAB",
+      "type": "Divisió",
+      "code": {
+        "idCcae": "01",
+        "description": "Agricultura, ramaderia, caça i activitats dels serveis que s'hi relacionen"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-57EF-6910C56A979B",
+      "type": "Grup",
+      "code": {
+        "idCcae": "011",
+        "description": "Conreus no perennes"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-3D62-9962427BB021",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0111",
+        "description": "Conreu de cereals (excepte arròs), lleguminoses i llavors oleaginoses"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-40A4-3C6429550F88",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0112",
+        "description": "Conreu d'arròs"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-BE3A-6E28CA166505",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0113",
+        "description": "Conreu d'hortalisses, arrels i tubercles"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-DD51-A3F8CBE84B21",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0114",
+        "description": "Conreu de canya de sucre"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-5D39-253D15882491",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0115",
+        "description": "Conreu de tabac"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-49DA-D489D1C17404",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0116",
+        "description": "Conreu de plantes per a fibres tèxtils"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-7576-64B64C644031",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0119",
+        "description": "Altres conreus no perennes"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-833B-55AC348FAAFF",
+      "type": "Grup",
+      "code": {
+        "idCcae": "012",
+        "description": "Conreus perennes"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-BD90-C5F431C3BA0A",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0121",
+        "description": "Conreu de vinya"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-F74E-0969256E44B3",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0122",
+        "description": "Conreu de fruites tropicals"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-50DB-A815E3FBC639",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0123",
+        "description": "Conreu de cítrics"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-02A6-2FBFDA62EFC3",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0124",
+        "description": "Conreu de fruites amb os i amb llavors"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-697D-97AE7C5B0644",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0125",
+        "description": "Conreu d'altres arbres i arbusts fruiters i fruita seca"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-99E4-F734A8F4E2C9",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0126",
+        "description": "Conreu de fruits oleaginosos"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-7439-451DFA4C3111",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0127",
+        "description": "Conreu de plantes per a begudes"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-46DD-DD0EBBC9B4CA",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0128",
+        "description": "Conreu d'espècies, plantes aromàtiques, medicinals i farmacèutiques"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-CFAC-794639BC7F8F",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0129",
+        "description": "Altres conreus perennes"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-4E62-564C155BB735",
+      "type": "Grup",
+      "code": {
+        "idCcae": "013",
+        "description": "Vivers i conreus de plantes ornamentals"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-1F00-BA1A766979C6",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0130",
+        "description": "Vivers i conreus de plantes ornamentals"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-B96E-638F25BE3495",
+      "type": "Grup",
+      "code": {
+        "idCcae": "014",
+        "description": "Producció ramadera"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-A578-D00B0A42F568",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0141",
+        "description": "Explotació de bestiar boví per a la producció de llet"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-F88F-86A0F9393813",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0142",
+        "description": "Explotació de bestiar boví (excepte per a la producció de llet) i búfals"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-A0F8-CE5C1269A7CF",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0143",
+        "description": "Explotació de cavalls i altres equins"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-3539-C3FFFF003598",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0144",
+        "description": "Explotació de camells i altres camèlids"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-DEB2-6E3A31038390",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0145",
+        "description": "Explotació de bestiar oví i cabrum"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-1699-34CD87075297",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0146",
+        "description": "Explotació de bestiar porcí"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-E435-9F26933EFA16",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0147",
+        "description": "Avicultura"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-0C15-9770766DC10A",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0149",
+        "description": "Altres explotacions de bestiar"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-B6D4-34476D31E5C9",
+      "type": "Grup",
+      "code": {
+        "idCcae": "015",
+        "description": "Producció agrícola combinada amb la producció ramadera"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-C014-5B8ECD36A1BD",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0150",
+        "description": "Producció agrícola combinada amb la producció ramadera"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-A3E0-CC3B3F209375",
+      "type": "Grup",
+      "code": {
+        "idCcae": "016",
+        "description": "Activitats de suport a l'agricultura, ramaderia i preparació posterior a la collita"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-9150-3F6C4B8C47F2",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0161",
+        "description": "Activitats de suport a l'agricultura"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-934A-5EC9E7666188",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0162",
+        "description": "Activitats de suport a la ramaderia"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-320F-519E4D9F2514",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0163",
+        "description": "Activitats de preparació posterior a la collita"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-7198-829D0C8BFCC0",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0164",
+        "description": "Activitats de tractament de llavors per a la reproducció"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-9AAD-EA0C00F65EDA",
+      "type": "Grup",
+      "code": {
+        "idCcae": "017",
+        "description": "Caça, captura d'animals i activitats dels serveis que s'hi  relacionen"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-6EB0-80CE38EF9FDB",
+      "type": "Classe",
+      "code": {
+        "idCcae": "0170",
+        "description": "Caça, captura d'animals i activitats dels serveis que s'hi relacionen"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-D3BF-AF2CA83B22B7",
+      "type": "Divisió",
+      "code": {
+        "idCcae": "02",
+        "description": "Silvicultura i explotació forestal"
+      }
+    },
+    {
+      "id": "00000000-0000-0000-8335-7069B246CE07",
+      "type": "Grup",
+      "code": {
+        "idCcae": "021",
+        "description": "Silvicultura i altres activitats forestals"
+      }
+    }
+  ],
+   "saved-searches":{
+          "count": 96,
+          "offset": 0,
+          "limit": 0,
+          "results": [
+            {
+              "search_uuid": "search_uuid",
+              "user_uuid": "user_uuid",
+              "search_date": "25/02/22",
+              "search_name": "Busqueda 1",
+              "search_detail": "Zapaterias Nou Barris",
+
+              "search_result": 
+
+              [
+                {
+                  "name": "Compañia Roca Sanitario",
+                  "web": "http://www.roca.es",
+                  "email": "infosan@roca.net",
+                  "phone": null,
+                  "activities":
+                  [
+                    {
+                      "id": 1008031,
+                      "name": "Delegacions - oficines comercials"
+                    },
+                    {
+                      "id": 32805741,
+                      "name": "Sanitaris"
+                    },
+                    {
+                      "id": 29302310,
+                      "name": "Com.may. materiales construccion"
+                    },
+                    {
+                      "id": 30699721,
+                      "name": "Alquiler locales industriales"
+                    }
+                  ],
+                  "addresses":
+                  [
+                    {
+                      "street_name": "Av Diagonal",
+                      "number": "513",
+                      "zip_code": "08029",
+                      "district_id": "04",
+                      "town": "BARCELONA",
+                      "location":
+                      {
+                            "x": 2.140835,
+                            "y": 41.391424
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Inoxcrom SA",
+                  "web": "http://www.inoxcrom.com",
+                  "email": "inoxcrom@inoxcrom.com",
+                  "phone": null,
+                  "activities":
+                  [
+                    {
+                      "id": 1008031,
+                      "name": "Delegacions - oficines comercials"
+                    },
+                    {
+                      "id": 31801803,
+                      "name": "Inoxcrom"
+                    },
+                    {
+                      "id": 32815721,
+                      "name": "Material d'oficina"
+                    },
+                    {
+                      "id": 32815720,
+                      "name": "Paper"
+                    },
+                    {
+                      "id": 29304311,
+                      "name": "Com.may.art.papeleria y escritorio"
+                    },
+                    {
+                      "id": 68308190,
+                      "name": "Fabricacion de tubos de acero"
+                    },
+                    {
+                      "id": 71799836,
+                      "name": "Otros art. acabados en metales ncop"
+                    },
+                    {
+                      "id": 69307190,
+                      "name": "Tratamiento y recubrimiento de metales"
+                    },
+                    {
+                      "id": 70313191,
+                      "name": "Artes graficas (impresion grafica)"
+                    },
+                    {
+                      "id": 39893895,
+                      "name": "Fab. art. acabados materias plasticas"
+                    },
+                    {
+                      "id": 40896894,
+                      "name": "Fab. art. escritorio"
+                    }
+                  ],
+                  "addresses":
+                  [
+                    {
+                      "street_name": "T Estadella",
+                      "number": "46*54",
+                      "zip_code": "08030",
+                      "district_id": "09",
+                      "town": "BARCELONA",
+                      "location":
+                      {
+                        "x": 2.199667,
+                        "y": 41.434138
+                      }
+                    }
+                  ]
+                }]
+            }
+          ]
+        }
+
 }

@@ -13,6 +13,6 @@ export class SavedSearchesService {
 
   getSavedSearches(): Observable<any> {
     // return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${environment.BACKEND_SAVED_SEARCHES_URL}`);
-    return this.http.get<any>(environment.FAKE_BACKEND_SAVED_SEARCHES_URL);
+    return this.http.get<any>(environment.BACKEND_BASE_URL+environment.BACKEND_SAVED_SEARCHES_URL);
   }
 }

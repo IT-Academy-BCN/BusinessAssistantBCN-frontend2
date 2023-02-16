@@ -76,11 +76,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
            "configurations": {
             "production": {
-              "browserTarget": "BusinessAssistantBCN-frontend2:build:production"
+              "browserTarget": "BusinessAssistantBCN-frontend2:build:production",
+              "proxyConfig": "proxy-prod.conf.json"
             },
             "development": {
               "browserTarget": "BusinessAssistantBCN-frontend2:build:development",
-              "proxyConfig": "proxy.conf.json"
+              "proxyConfig": "proxy-local.conf.json"
             }
           },
           "defaultConfiguration": "development"

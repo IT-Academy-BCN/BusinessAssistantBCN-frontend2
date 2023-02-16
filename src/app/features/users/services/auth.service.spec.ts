@@ -32,7 +32,7 @@ describe('AuthService', () => {
     });
 
     test('signup should use expected params when send request', () => {
-      const url = 'http://localhost:3000/signup';
+      const url = environment.BACKEND_BASE_URL+environment.BACKEND_REGISTER_URL;
       service.signup(signUpData);
       expect(httpClientMock.post).toHaveBeenCalledWith(url, signUpData);
     });
@@ -47,7 +47,7 @@ describe('AuthService', () => {
     });
 
     test('login should use expected params when send request', () => {
-      const url = 'http://localhost:3000/signup';
+      const url = environment.BACKEND_BASE_URL+environment.BACKEND_REGISTER_URL;
       service.login(userData);
       expect(httpClientMock.get).toHaveBeenCalledWith(url);
     });

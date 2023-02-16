@@ -1,0 +1,18 @@
+ [  
+    {
+        "context":["/businessassistantbcn/api/v1/json-server"],
+        "target": "http://localhost:3000",
+        "pathRewrite": { "^/businessassistantbcn/api/v1/json-server": "" },
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    {
+        "context": ["/businessassistantbcn"],
+        "target": "http://87.106.229.175:7777",
+        "secure": false,
+        "changeOrigin": true
+    }
+    
+   
+  ]

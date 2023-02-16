@@ -8,8 +8,8 @@ import { SignUpRequest } from 'src/entities/signUpRequest';
 
 
 
-const BASE = environment.BACKEND_JSON_SERVER_BASE_URL;
-const SIGNUP = environment.BACKEND_JSON_SERVER_REGISTER_URL;
+const BASE = environment.BACKEND_BASE_URL
+const SIGNUP = environment.BACKEND_REGISTER_URL;
 
 
 @Injectable({
