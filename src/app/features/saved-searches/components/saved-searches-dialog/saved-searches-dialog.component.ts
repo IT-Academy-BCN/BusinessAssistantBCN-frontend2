@@ -15,7 +15,7 @@ import { Component, Inject } from '@angular/core';
 export class SavedSearchesDialogComponent  {
   form!: FormGroup;
   savedSearchesModel!: SavedSearchesModel;
-;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { results: SearchItemResult[] },
     private savedSearchesSvc: SavedSearchesService,
@@ -32,7 +32,7 @@ export class SavedSearchesDialogComponent  {
   }
 
   onSubmit() {
-    const user_uuid = environment.USER_UUID;
+    const user_uuid = 123456; //TODO
     const search_date = new Date();
     const search_name = this.form.value.name;
     const search_detail = this.form.value.detail;

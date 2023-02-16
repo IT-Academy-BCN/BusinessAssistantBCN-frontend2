@@ -12,7 +12,7 @@ export class SavedSearchesService {
   constructor(private http: HttpClient) { }
 
   getSavedSearches(): Observable<any> {
-    return this.http.get<any>(environment.FAKE_BACKEND_SAVED_SEARCHES_URL);
+    return new Observable<any>();
   }
 
   saveSearch(savedSearches: SavedSearchesModel): Observable<any>{
