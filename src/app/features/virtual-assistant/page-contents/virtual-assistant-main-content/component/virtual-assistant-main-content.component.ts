@@ -98,14 +98,14 @@ export class VirtualAssistantMainContentComponent implements OnInit {
     
     //Getting existing selections from service 
     let currentSelections = this.getCurrentSelections();
-
+    
     if (this.vaSelectionService.selections.content.length>0) {
-
+      
       this.vaSelectionService.selections.content.forEach(item => {
         currentSelections.push(item.content);
       })
-     }
-      //end of get existing selections
+    }
+    //end of get existing selections
     this.dataShared = [...accordionData].concat(currentSelections);
 
      //merge existing selection with saved selections from VA selection service
