@@ -1,0 +1,1298 @@
+[
+    {
+        "id": "00000000-0000-0000-D7DC-CC770365D8FF",
+        "type": "Secció",
+        "code":
+        {
+            "id_ccae": "A",
+            "description": "Agricultura, ramaderia, silvicultura i pesca"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2335-839767DDAEAB",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "01",
+            "description": "Agricultura, ramaderia, caça i activitats dels serveis que s'hi relacionen"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-57EF-6910C56A979B",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "011",
+            "description": "Conreus no perennes"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-3D62-9962427BB021",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0111",
+            "description": "Conreu de cereals (excepte arròs), lleguminoses i llavors oleaginoses"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-40A4-3C6429550F88",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0112",
+            "description": "Conreu d'arròs"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-BE3A-6E28CA166505",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0113",
+            "description": "Conreu d'hortalisses, arrels i tubercles"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-DD51-A3F8CBE84B21",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0114",
+            "description": "Conreu de canya de sucre"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-5D39-253D15882491",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0115",
+            "description": "Conreu de tabac"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-49DA-D489D1C17404",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0116",
+            "description": "Conreu de plantes per a fibres tèxtils"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-7576-64B64C644031",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0119",
+            "description": "Altres conreus no perennes"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-833B-55AC348FAAFF",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "012",
+            "description": "Conreus perennes"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-BD90-C5F431C3BA0A",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0121",
+            "description": "Conreu de vinya"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-F74E-0969256E44B3",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0122",
+            "description": "Conreu de fruites tropicals"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-50DB-A815E3FBC639",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0123",
+            "description": "Conreu de cítrics"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-02A6-2FBFDA62EFC3",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0124",
+            "description": "Conreu de fruites amb os i amb llavors"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-697D-97AE7C5B0644",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0125",
+            "description": "Conreu d'altres arbres i arbusts fruiters i fruita seca"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-99E4-F734A8F4E2C9",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0126",
+            "description": "Conreu de fruits oleaginosos"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-7439-451DFA4C3111",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0127",
+            "description": "Conreu de plantes per a begudes"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-46DD-DD0EBBC9B4CA",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0128",
+            "description": "Conreu d'espècies, plantes aromàtiques, medicinals i farmacèutiques"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-CFAC-794639BC7F8F",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0129",
+            "description": "Altres conreus perennes"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-4E62-564C155BB735",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "013",
+            "description": "Vivers i conreus de plantes ornamentals"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1F00-BA1A766979C6",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0130",
+            "description": "Vivers i conreus de plantes ornamentals"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-B96E-638F25BE3495",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "014",
+            "description": "Producció ramadera"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A578-D00B0A42F568",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0141",
+            "description": "Explotació de bestiar boví per a la producció de llet"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-F88F-86A0F9393813",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0142",
+            "description": "Explotació de bestiar boví (excepte per a la producció de llet) i búfals"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A0F8-CE5C1269A7CF",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0143",
+            "description": "Explotació de cavalls i altres equins"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-3539-C3FFFF003598",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0144",
+            "description": "Explotació de camells i altres camèlids"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-DEB2-6E3A31038390",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0145",
+            "description": "Explotació de bestiar oví i cabrum"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1699-34CD87075297",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0146",
+            "description": "Explotació de bestiar porcí"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-E435-9F26933EFA16",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0147",
+            "description": "Avicultura"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0C15-9770766DC10A",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0147",
+            "description": "Altres explotacions de bestiar"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-B6D4-34476D31E5C9",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "015",
+            "description": "Producció agrícola combinada amb la producció ramadera"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-C014-5B8ECD36A1BD",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0150",
+            "description": "Producció agrícola combinada amb la producció ramadera"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A3E0-CC3B3F209375",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "016",
+            "description": "Activitats de suport a l'agricultura, ramaderia i preparació posterior a la collita"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-9150-3F6C4B8C47F2",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0161",
+            "description": "Activitats de suport a l'agricultura"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-934A-5EC9E7666188",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0162",
+            "description": "Activitats de suport a la ramaderia"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-320F-519E4D9F2514",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0163",
+            "description": "Activitats de preparació posterior a la collita"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-7198-829D0C8BFCC0",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0164",
+            "description": "Activitats de tractament de llavors per a la reproducció"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-9AAD-EA0C00F65EDA",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "017",
+            "description": "Caça, captura d'animals i activitats dels serveis que s'hi  relacionen"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-6EB0-80CE38EF9FDB",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0170",
+            "description": "Caça, captura d'animals i activitats dels serveis que s'hi relacionen"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-D3BF-AF2CA83B22B7",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "02",
+            "description": "Silvicultura i explotació forestal"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-8335-7069B246CE07",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "021",
+            "description": "Silvicultura i altres activitats forestals"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0CDF-4F37878502B5",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0210",
+            "description": "Silvicultura i altres activitats forestals"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-BF00-CB206487DB81",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "022",
+            "description": "Aprofitament de la fusta"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-828B-E867190A5076",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0220",
+            "description": "Aprofitament de la fusta"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-88F1-E566B5F7AA5E",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "023",
+            "description": "Recol·lecció de productes forestals silvestres, excepte la fusta"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2A99-CCB816F0741C",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0230",
+            "description": "Recol·lecció de productes forestals silvestres, excepte la fusta"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-273E-9554921DA9E9",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "024",
+            "description": "Serveis de suport a la silvicultura"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-E5A6-57CAED14B8F5",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0240",
+            "description": "Serveis de suport a la silvicultura"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-7BEF-B553133C4AC7",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "03",
+            "description": "Pesca i aqüicultura"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-8540-C0E33B79A346",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "031",
+            "description": "Pesca"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-B3BC-BA43AF9A49FB",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0311",
+            "description": "Pesca marítima"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1885-91B9D34A24DE",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0312",
+            "description": "Pesca en aigua dolça"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2486-B33577C37D06",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "032",
+            "description": "Aqüicultura"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-8D3E-12D5B56926C5",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0321",
+            "description": "Aqüicultura marina"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-29AB-893BBFE0D43F",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0322",
+            "description": "Aqüicultura en aigua dolça"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-925F-FDFD1D938AE3",
+        "type": "Secció",
+        "code":
+        {
+            "id_ccae": "B",
+            "description": "Indústries extractives"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-DCEE-9B3368DD109A",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "05",
+            "description": "Extracció d'antracita, hulla i lignit"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-F0B6-A59487C17D99",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "051",
+            "description": "Extracció d'antracita i hulla"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-036C-B6175B0AA0FA",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0510",
+            "description": "Extracció d'antracita i hulla"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-6004-88B9AFE6B76C",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "052",
+            "description": "Extracció de lignit"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-6101-8B8CEAD40679",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0520",
+            "description": "Extracció de lignit"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-73F9-3FA0106E7189",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "06",
+            "description": "Extracció de petroli brut i de gas natural"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-F4AB-49AC8C150466",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "061",
+            "description": "Extracció de petroli brut"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-95E1-8609DED1B50C",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0610",
+            "description": "Extracció de petroli brut"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A84B-E5D281429B78",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "062",
+            "description": "Extracció de gas natural"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-FD21-951BC6C065C8",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0620",
+            "description": "Extracció de gas natural"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0986-29D9E482FB17",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "07",
+            "description": "Extracció de minerals metàl·lics"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-E2E8-9117ADF76EEE",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "071",
+            "description": "Extracció de minerals de ferro"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-69A4-E66D6E1FEBA4",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0710",
+            "description": "Extracció de minerals de ferro"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-EEFF-BC5A85AFD89B",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "072",
+            "description": "Extracció de minerals metàl·lics no fèrrics"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-4335-539A78AF1DFD",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0721",
+            "description": "Extracció de minerals d'urani i de tori"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-9B30-B4EA1BF72F2C",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0729",
+            "description": "Extracció de minerals metàl·lics no fèrrics, excepte els minerals d'urani i de tori"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-E123-9A9EC5360019",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "08",
+            "description": "Extracció de minerals no metàl·lics ni energètics"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0B3F-4EED09DDC59C",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "081",
+            "description": "Extracció de pedra, sorra i argila guix, creta i pissarra"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-D906-14A90D725699",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0811",
+            "description": "Extracció de pedra ornamental i per a la construcció, pedra calcària, guix, creta i pissarra"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-411F-D527E5174523",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0812",
+            "description": "Extracció de graves i sorres; extracció d'argila i caolí"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2B0A-B3EE794C79CD",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "089",
+            "description": "Indústries extractives ncaa"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-E4D3-38E2F9DEFE12",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0891",
+            "description": "Extracció de minerals per a productes químics i fertilitzants"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A98E-FDFF5C26BA81",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0892",
+            "description": "Extracció de torba"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-060C-A8E67680E1DF",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0893",
+            "description": "Extracció de sal"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-7E68-56CD09871EA6",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0899",
+            "description": "Altres indústries extractives ncaa"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-5D21-D8693CA4ECC3",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "09",
+            "description": "Activitats de suport a les indústries extractives"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2C8A-F1554749CE06",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "091",
+            "description": "Activitats de suport a l'extracció de petroli i de gas natural"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-ADB1-E6FF71E7A1F2",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0910",
+            "description": "Activitats de suport a l'extracció de petroli i de gas natural"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-67E0-A66E45D42EC5",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "099",
+            "description": "Altres activitats de suport a les indústries extractives"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-5204-624388BB397A",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "0990",
+            "description": "Altres activitats de suport a les indústries extractives"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-52D2-4F50F6C350B5",
+        "type": "Secció",
+        "code":
+        {
+            "id_ccae": "C",
+            "description": "Indústries manufactureres"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-C0D7-7649D57D9E15",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "10",
+            "description": "Indústries de productes alimentaris"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-4C52-563BD1D7F007",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "101",
+            "description": "Sacrifici de bestiar i conservació de carn i elaboració de productes carnis"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-71D6-3B553095A52C",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1011",
+            "description": "Sacrifici de bestiar i conservació de carn"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-C7DD-AE8DA0700495",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1012",
+            "description": "Sacrifici i conservació de volateria"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-F039-7B04D20A913E",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1013",
+            "description": "Elaboració de productes carnis i de volateria"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-B6BB-22C45D298010",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "102",
+            "description": "Elaboració i conservació de peix, crustacis i mol·luscos"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0F20-E19E8B4F53D1",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1021",
+            "description": "Elaboració de peix, crustacis i mol·luscos"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-7C73-9320DA2EF0A6",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1022",
+            "description": "Fabricació de conserves de peix"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-9321-D2DE579DA2DF",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "103",
+            "description": "Preparació i conservació de fruites i hortalisses"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-DB77-C5BD23D7FB25",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1031",
+            "description": "Preparació i conservació de patates"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-6CB4-A7D1864526BF",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1032",
+            "description": "Elaboració de sucs de fruites i hortalisses"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-3952-00DFAADDB38D",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1039",
+            "description": "Preparació i conservació de fruites i hortalisses ncaa"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-5728-41CDE8FDEC14",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "104",
+            "description": "Fabricació d'olis i greixos vegetals i animals"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-959B-315C26D06296",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1042",
+            "description": "Fabricació de margarina i greixos comestibles similars"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-E2A6-9F8FB0219F8A",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1043",
+            "description": "Fabricació d'oli d'oliva"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-26D8-44481A371F33",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1044",
+            "description": "Fabricació d'olis (excepte d'oliva) i greixos"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-C9A4-A8064072F1B7",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "105",
+            "description": "Fabricació de productes lactis"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-4C15-1FCCC93FCB7D",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1052",
+            "description": "Elaboració de gelats"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1023-F1A0EA824992",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1053",
+            "description": "Fabricació de formatges"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-B341-790FF89DA640",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1054",
+            "description": "Preparació de llet i altres productes lactis"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-17CE-5938028902A9",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "106",
+            "description": "Fabricació de productes de molineria, midons i productes amilacis"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2867-76499A5E566F",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1061",
+            "description": "Fabricació de productes de molineria"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-6494-2FCF764C9CAB",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1062",
+            "description": "Fabricació de midons i productes amilacis"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-FD72-34EBEB7AABCD",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "107",
+            "description": "Fabricació de productes de fleca i de pastes alimentàries"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-86A8-A90CFBCFF762",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1071",
+            "description": "Fabricació de pa i de productes de fleca i pastisseria frescos"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-9F6A-E246761ACD84",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1072",
+            "description": "Fabricació de galetes i productes de fleca i pastisseria de llarga durada"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1493-0E36C9B4CCF9",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1073",
+            "description": "Fabricació de pastes alimentàries, cuscús i productes similars"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2F23-F02BFAD7AD51",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "108",
+            "description": "Fabricació d'altres productes alimentaris"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A709-710C370607C0",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1081",
+            "description": "Fabricació de sucre"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1F9F-6F919EA8DDAE",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1082",
+            "description": "Fabricació de cacau, xocolata i productes de confiteria"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A458-B1A9C02A9EEC",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1083",
+            "description": "Elaboració de cafè, te i infusions"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-C9E0-26B8FF2FDAE6",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1084",
+            "description": "Elaboració d'espècies, salses i condiments"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-DFD0-AE479B5F1AE6",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1085",
+            "description": "Elaboració de menjars i plats preparats"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-83A3-BE1EE50D575E",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1086",
+            "description": "Elaboració de preparats per a l'alimentació infantil i preparats dietètics"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0A54-47766E547544",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1089",
+            "description": "Elaboració d'altres productes alimentaris ncaa"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-2A1B-197E4261BB82",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "109",
+            "description": "Fabricació de productes per a l'alimentació animal"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-631C-7B442605B9A0",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1091",
+            "description": "Fabricació de productes per a l'alimentació d'animals de granja"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-D50C-5E8787EC67BD",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1092",
+            "description": "Fabricació de productes per a l'alimentació d'animals de companyia"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-BA21-42B2D4FCE361",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "11",
+            "description": "Fabricació de begudes"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A734-D3EDA3902601",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "110",
+            "description": "Fabricació de begudes"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-51E8-048262F4EF3F",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1101",
+            "description": "Destil·lació, rectificació i mescla de begudes alcohòliques"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0881-13553DE96173",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1102",
+            "description": "Elaboració de vins"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-B5E3-F1507846213F",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1103",
+            "description": "Elaboració de sidra i altres begudes fermentades a partir de fruites"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1835-86314747E399",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1104",
+            "description": "Elaboració d'altres begudes no destil·lades, procedents de la fermentació"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-7BFE-928394149718",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1105",
+            "description": "Fabricació de cervesa"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0B45-A189FC815CAA",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1106",
+            "description": "Fabricació de malt"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-AD17-7CA9B16C078E",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1107",
+            "description": "Fabricació de begudes analcohòliques; producció d'aigües minerals i altres tipus d'aigües embotellades"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-3721-4024EBC9CE28",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "12",
+            "description": "Indústries del tabac"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-B313-A70CED0B00A1",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "120",
+            "description": "Indústries del tabac"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-C1AD-303185CB57BC",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1200",
+            "description": "Indústries del tabac"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-A42E-2A50EE503028",
+        "type": "Divisió",
+        "code":
+        {
+            "id_ccae": "13",
+            "description": "Indústries tèxtils"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-E40F-4AF4ED504B56",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "131",
+            "description": "Preparació i filatura de fibres tèxtils"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-28A7-682D6C0D5DBC",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1310",
+            "description": "Preparació i filatura de fibres tèxtils"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-BD06-6647C60683D0",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "132",
+            "description": "Fabricació de teixits tèxtils"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-1279-27542947F8CE",
+        "type": "Classe",
+        "code":
+        {
+            "id_ccae": "1320",
+            "description": "Fabricació de teixits tèxtils"
+        }
+    },
+    {
+        "id": "00000000-0000-0000-0F49-2F4EAB8FE397",
+        "type": "Grup",
+        "code":
+        {
+            "id_ccae": "133",
+            "description": "Acabament de tèxtils"
+        }
+    }
+]

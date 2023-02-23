@@ -5,14 +5,14 @@ export const environment = {
   BACKEND_REGISTER_URL: '/usermanagement/user',
   BACKEND_ZONES_URL: '/common/bcn-zones',
   BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL: '/opendata/large-establishments/activities',
-  BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '/opendata/large-establishments/search', // 400 (Bad Request)
+  BACKEND_LARGE_STABLISHMENTS_SEARCH_URL: '/opendata/large-establishments/search',
   BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL: '/opendata/commercial-galleries/activities',
-  BACKEND_COMMERCIAL_GALLERIES_SEARCH_URL: '/opendata/commercial-galleries/search',  // 400 (Bad Request)
+  BACKEND_COMMERCIAL_GALLERIES_SEARCH_URL: '/opendata/commercial-galleries/search',
   BACKEND_BIG_MALLS_ACTIVITIES_URL: '/opendata/big-malls/activities',
-  BACKEND_BIG_MALLS_SEARCH_URL: '/opendata/big-malls/search', // 400 (Bad Request)
+  BACKEND_BIG_MALLS_SEARCH_URL: '/opendata/big-malls/search',
   BACKEND_MARKET_FAIRS_URL: '/opendata/market-fairs',
   BACKEND_MUNICIPAL_MARKETS_SEARCH_URL: '/opendata/municipal-markets/search',
-  BACKEND_MARKET_FAIRS_SEARCH_URL: '/opendata/market-fairs/search', // 400 (Bad Request)
+  BACKEND_MARKET_FAIRS_SEARCH_URL: '/opendata/market-fairs/search',
   BACKEND_SAVED_SEARCHES_URL: '/mydata/mysearches/',
   //mapbox
   MAPBOX_TOKEN: 'pk.eyJ1IjoianZyZnJlZWxhbmNlZGV2ZWxvcGVyIiwiYSI6ImNreTl4czUzMTAwNGQydnFsdmRhYXRvbDUifQ.TVL-2T184QdfXbze6VNw4A',
@@ -23,10 +23,6 @@ export const environment = {
   AUTHORIZATION: 'Authorization',
   BEARER: 'Bearer ',
   BACKEND_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InVlYmVybWVuc2NoQHphcmF0aHVzdHJhLmNvbSIsInBhc3N3b3JkIjoiTDJtbnh1cX1eWiNyQWg3XUooXm9pQCU0QDosRXZmLVYiLCJhdXRob3JpdGllcyI6WyJTVVBFUlVTRVIiXSwiaWF0IjoxNjY5MTM1MjAzfQ.ySbRr7yOZcTwfOux1oitmNUfrM6omb-ky64fGrrqngk',
-  // fake urls
-  //FAKE_BACKEND_SAVED_SEARCHES_URL: '../../assets/dummy/saved-searches/saved-search-large-establishments_dummy.json',
-  // User id
-  //USER_UUID: 1234567
 };
 
 // This file can be replaced during build by using the `fileReplacements` array.
