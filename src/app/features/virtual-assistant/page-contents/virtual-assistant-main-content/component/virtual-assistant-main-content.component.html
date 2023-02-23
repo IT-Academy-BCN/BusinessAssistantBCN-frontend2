@@ -38,12 +38,14 @@
                     [secondaryButtonFunction]="onClickResumeButton">
 
                     <!-- babcn-LIST -->
-                    <!-- <babcn-list [listDataInput]="dataShared"></babcn-list> -->
+                    <babcn-list [listDataInput]="dataTitles"></babcn-list>
                     <!-- END babcn-LIST -->
 
+                    <!-- checkbox list -->
                     <app-babcn-checkbox-list [checkBoxDataInput]="zonesData" 
-                    (checkBoxDataShared)="getDataFromCheckboxes($event)"></app-babcn-checkbox-list>
-
+                    (checkBoxDataShared)="getDataFromCheckboxes($event)" *ngIf="showContent == 'zones'"
+                    ></app-babcn-checkbox-list>
+                    <!-- end checkbox list -->
 
                 </babcn-buttons-container>
                 <!-- END babcn-BUTTONS-CONTAINER -->
