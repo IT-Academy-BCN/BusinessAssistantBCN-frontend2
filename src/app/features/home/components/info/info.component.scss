@@ -1,3 +1,4 @@
+
 @import '../../../../../styles/global';
 
 .whit {
@@ -6,17 +7,15 @@
 }
 
 
-.info-header {
-  padding-top: 50px;
-  text-align: center;
-
-  h1 {
-    padding: 30px auto;
-  }
-
-  p {
-    margin: 50px auto;
-  }
+.info-header{
+    padding-top: 50px;
+    text-align: center;
+    h1 {
+      padding:30px auto;
+    }
+    p{
+        margin: 50px auto;
+    }
 }
 
 .text {
@@ -24,43 +23,39 @@
   background-color: pink;
 }
 
-.card-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  p {
-    margin: 20px;
-  }
+.card-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    p {
+        margin: 20px;
+    }
 }
 
-.icons {
-  height: 70px;
-  width: 70px;
-  border-radius: 50px;
-  border: 1px solid $color-dark2;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    color: $color-dark2;
-    width: 40px;
-    fill: currentColor;
-  }
+.icons{
+    height: 70px;
+    width: 70px;
+    border-radius:50px;
+    border:1px solid $color-dark2;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+        color: $color-dark2;
+        width: 40px;
+        fill:currentColor;
+    }
 }
 
 // Movile query 
 
-@media (max-width: 768px) {
-  .whit {
+@media (max-width: 960px) {
+   .whit{
     padding: 0px 25px;
-  }
+   }
 
-  .icons {
-    height: 50px;
-    width: 50px;
-  }
+   
 }
+
