@@ -70,3 +70,28 @@
     margin: 3rem; 
 }
 
+@media (max-width : 854px){
+    .button-header 
+    {
+        text-align: center;
+    }
+    .text-header{
+        text-align: center;
+    }
+    .text-intro{
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1.4rem;
+    }
+    .header-1 {
+        font-size: 1.5rem;
+        margin-top: 5px;
+    }
+    .header-2{
+        font-size: 3.5rem;
+        margin-top: 5px;
+
+    }
+
+
+}
