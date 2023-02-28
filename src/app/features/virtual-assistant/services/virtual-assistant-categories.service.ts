@@ -36,8 +36,14 @@ export class VirtualAssisstantCategoriesService {
                     {
                         title: 'pages.business-assistant.section1.subcat1',
                         items: [
-                            { item: 'pages.business-assistant.section1.s1-item1' },
-                            { item: 'pages.business-assistant.section1.s1-item2' }
+                            { item: 'pages.business-assistant.section1.s1-item1' }
+                        ]
+                    },
+                    {
+                        title: 'pages.business-assistant.section1.subcat2',
+                        items: [
+                            { item: 'pages.business-assistant.section1.s1-item2' },
+                            { item: 'pages.business-assistant.section1.s1-item3' }
                         ]
                     },
                 ]

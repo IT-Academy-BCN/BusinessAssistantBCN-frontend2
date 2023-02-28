@@ -117,8 +117,10 @@
             "section1": {
                 "title": "1. Anàlisi del Sector",
                 "subcat1": "Catàleg de serveis i productes per emprendre",
+                "subcat2": "Ubicació",
                 "s1-item1": "Classificació catalana d'activitats econòmiques",
-                "s1-item2": "Ubicació"
+                "s1-item2": "Veure districtes",
+                "s1-item3": "Mostrar mapa"
             },
             "section2": {
                 "title": "2. Anàlisi d'hàbits de consum",
