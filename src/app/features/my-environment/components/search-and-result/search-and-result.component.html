@@ -37,7 +37,7 @@
                                     {{ "common.title.results" | translate }}
                                 </h2>
                                 <div class="" *ngIf="true" id="pdfData">
-                                    <div *ngFor="let ls of sampleResults">
+                                    <div *ngFor="let ls of searchResults">
                                         <h5 class="details">{{ ls.name }}</h5>
                                         <mat-list class="result-container list-unstyled"
                                             *ngFor="let address of ls.addresses">
@@ -87,11 +87,9 @@
 
                 <div *ngIf="title !=='common.button.market-fair' && title !=='common.button.public-market'"
                     class="container">
-
                     <section *ngIf="!showResults">
                         <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
                     </section>
-
                     <div class="search-container">
                         <!-- babcn-CONTAINER -->
                         <babcn-container containerHeight="350px" [containerWidth]='ratio.toString()'>
@@ -130,7 +128,7 @@
                     <div class="search-container">
                         <!-- babcn-CONTAINER -->
                         <babcn-container [containerWidth]='ratio.toString()'>
-                            <app-mapbox [filteredResultsToPrintOnMap]="sampleResults"
+                            <app-mapbox [filteredResultsToPrintOnMap]="searchResults"
                                 [selectedResultsToChangeColor]="selectedList"></app-mapbox>
                         </babcn-container>
                         <!-- END babcn-CONTAINER -->
