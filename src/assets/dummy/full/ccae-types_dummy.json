@@ -1,0 +1,18 @@
+[
+	{
+		"idType": "1",
+		"type": "Secció"
+	},
+	{
+		"idType": "2",
+		"type": "Divisió"
+	},
+	{
+		"idType": "3",
+		"type": "Grup"
+	},
+	{
+		"idType": "4",
+		"type": "Classe"
+	}
+]

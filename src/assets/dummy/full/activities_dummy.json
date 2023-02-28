@@ -1,0 +1,216 @@
+{
+  "offset": 0,
+  "limit": -1,
+  "count": 52,
+  "results":
+  [
+    {
+      "idActivity": 105001,
+      "activityName": "Accessible per a persones amb discapacitat física"
+    },
+    {
+      "idActivity": 107001,
+      "activityName": "Alimentació i begudes"
+    },
+    {
+      "idActivity": 30343758,
+      "activityName": "Altres (targeta rosa)"
+    },
+    {
+      "idActivity": 110158,
+      "activityName": "Amb cafeteria"
+    },
+    {
+      "idActivity": 110012,
+      "activityName": "Amb restaurant"
+    },
+    {
+      "idActivity": 29812727,
+      "activityName": "Anglès"
+    },
+    {
+      "idActivity": 32807720,
+      "activityName": "Articles esportius"
+    },
+    {
+      "idActivity": 29808734,
+      "activityName": "Bricolatge"
+    },
+    {
+      "idActivity": 54391845,
+      "activityName": "Centres Comercials"
+    },
+    {
+      "idActivity": 29810744,
+      "activityName": "Cinema"
+    },
+    {
+      "idActivity": 29304307,
+      "activityName": "Com.may. juguetes y articulos deporte"
+    },
+    {
+      "idActivity": 29302309,
+      "activityName": "Com.may. madera y corcho"
+    },
+    {
+      "idActivity": 29302311,
+      "activityName": "Com.may. maquinaria para madera y metal"
+    },
+    {
+      "idActivity": 29302310,
+      "activityName": "Com.may. materiales construccion"
+    },
+    {
+      "idActivity": 29299308,
+      "activityName": "Com.may.ptos.perfumeria,drogueria"
+    },
+    {
+      "idActivity": 34296307,
+      "activityName": "Com.men.grandes almacenes"
+    },
+    {
+      "idActivity": 33296308,
+      "activityName": "Com.men.prendas de vestir y tocado"
+    },
+    {
+      "idActivity": 32302308,
+      "activityName": "Com.men.ptos.alimenticios menos 120 m2"
+    },
+    {
+      "idActivity": 32302310,
+      "activityName": "Com.men.ptos.alimenticios sup.400 m2"
+    },
+    {
+      "idActivity": 32301311,
+      "activityName": "Com.men.tabaco maquinas automaticas"
+    },
+    {
+      "idActivity": 32301307,
+      "activityName": "Com.men.tabacos en expendiduria"
+    },
+    {
+      "idActivity": 32798719,
+      "activityName": "DVD"
+    },
+    {
+      "idActivity": 32798724,
+      "activityName": "Discos"
+    },
+    {
+      "idActivity": 107005,
+      "activityName": "Electrodomèstics"
+    },
+    {
+      "idActivity": 32796760,
+      "activityName": "Entrades"
+    },
+    {
+      "idActivity": 107015,
+      "activityName": "Esports"
+    },
+    {
+      "idActivity": 1026022,
+      "activityName": "Ferreteries"
+    },
+    {
+      "idActivity": 104021,
+      "activityName": "Fotografia"
+    },
+    {
+      "idActivity": 29812725,
+      "activityName": "Francès"
+    },
+    {
+      "idActivity": 43326349,
+      "activityName": "Grans magatzems i establiments especialitzats"
+    },
+    {
+      "idActivity": 43326348,
+      "activityName": "Hipermercats"
+    },
+    {
+      "idActivity": 119001,
+      "activityName": "Horaris especials"
+    },
+    {
+      "idActivity": 107006,
+      "activityName": "Imatge i so"
+    },
+    {
+      "idActivity": 107007,
+      "activityName": "Informàtica i telecomunicació"
+    },
+    {
+      "idActivity": 30344758,
+      "activityName": "LLibreries (targeta rosa)  "
+    },
+    {
+      "idActivity": 1006045,
+      "activityName": "Llibreries"
+    },
+    {
+      "idActivity": 32796754,
+      "activityName": "Llibres"
+    },
+    {
+      "idActivity": 32799720,
+      "activityName": "Maquinari"
+    },
+    {
+      "idActivity": 32799723,
+      "activityName": "Material informàtic"
+    },
+    {
+      "idActivity": 32805726,
+      "activityName": "Material per a la construcció"
+    },
+    {
+      "idActivity": 32804729,
+      "activityName": "Moda dones"
+    },
+    {
+      "idActivity": 32804728,
+      "activityName": "Moda homes"
+    },
+    {
+      "idActivity": 107012,
+      "activityName": "Moda i tèxtil"
+    },
+    {
+      "idActivity": 66013073,
+      "activityName": "Otras maquinas automaticas"
+    },
+    {
+      "idActivity": 32799721,
+      "activityName": "Programari"
+    },
+    {
+      "idActivity": 37296308,
+      "activityName": "Reparacion automoviles y bicicletas"
+    },
+    {
+      "idActivity": 37296315,
+      "activityName": "Reparacion otros bienes consumo ncop"
+    },
+    {
+      "idActivity": 32805720,
+      "activityName": "Sanejament"
+    },
+    {
+      "idActivity": 32799722,
+      "activityName": "Telefonia"
+    },
+    {
+      "idActivity": 1008002,
+      "activityName": "Venda"
+    },
+    {
+      "idActivity": 32798725,
+      "activityName": "Videojocs"
+    },
+    {
+      "idActivity": 29810770,
+      "activityName": "Vídeo"
+    }
+  ]
+}
