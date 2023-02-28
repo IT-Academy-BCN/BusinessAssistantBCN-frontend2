@@ -1,8 +1,9 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Input, SimpleChanges } from "@angular/core";
 import Mapboxgl, { LngLatBounds, NavigationControl, GeolocateControl, Map, Popup, Marker } from "mapbox-gl";
 import { environment } from "src/environments/environment";
-/* import { LargeStablishmentModel } from '../../models/large-stablishment.model';
-import {BasicBusinessModel} from "../../models/common/basic-business.model"; */
+import { SearchItemResult } from "../../models/my-environment-search/search-item-result.model";
+import { MapboxMarkersService } from "src/app/features/my-environment/services/mapbox-markers.service";
+import { LngLatLike } from "mapbox-gl";
 
 @Component({
   selector: "app-mapbox",
@@ -12,17 +13,22 @@ import {BasicBusinessModel} from "../../models/common/basic-business.model"; */
 export class MapboxComponent implements AfterViewInit {
   @ViewChild("mapDiv")
   mapDivElement!: ElementRef;
-  @Input() filteredResultsToPrintOnMap!: any[];
-  @Input() selectedResultsToChangeColor!: any[];
-  private map!: Map;
-  private currentMarkers: Marker[] = [];
+  @Input() filteredResultsToPrintOnMap!: SearchItemResult[];
+  @Input() selectedResultsToChangeColor!: SearchItemResult[];
+  public map!: Map;
 
-  private MAPBOX_INIT_LOCATION: any = {
+  public currentMarker: Marker[] = [];
+
+  public currentMarkers: Marker[] = [];
+
+  public selectedMarkers: Marker[] = [];
+
+  private MAPBOX_INIT_LOCATION: SearchItemResult = {
     name: "IT Academy",
     web: "bcn.cat/barcelonactiva",
     email: "itacademy@barcelonactiva.cat",
     phone: '932917610',
-    activities: [],
+   // activities: [],
     addresses: [
       {
         street_name: "Roc Boronat",
@@ -38,29 +44,28 @@ export class MapboxComponent implements AfterViewInit {
     ],
   }
 
-  constructor() { }
+  constructor(private markersService: MapboxMarkersService) {
+
+  }
+
+  ngOnInit() {
+    this.markersService.currentMarkerSubject.subscribe((markerIndex) => {
+      this.changeMarkerColor(this.filteredResultsToPrintOnMap[markerIndex])
+
+     })
+  }
 
   ngAfterViewInit(): void {
     // Generate map with basic config
-    this.generateMap();
+  this.generateMap();
     // Depending on if the user accepts to share their location, center the map into the user, or into the default location (IT Academy)
-    this.getUsersLocation();
-  }
+  this.getUsersLocation();
 
-  ngOnChanges(changes:SimpleChanges) {
-
-   (this.filteredResultsToPrintOnMap || []).forEach((result) => {
-
-      // Create a marker for each result and add it to the map
-
-       if(this.coordinatesAreValid(result)) this.createANewMarker("orange", result);
-    });
-
-    if(changes['selectedResultsToChangeColor']){ this.updateSelectedMarkers(); }
   }
 
   ngOnDestroy() {
     this.currentMarkers.forEach(marker => marker.remove());
+    this.selectedMarkers.forEach(marker => marker.remove());
   }
 
   generateMap() {
@@ -68,7 +73,7 @@ export class MapboxComponent implements AfterViewInit {
     this.map = new Mapboxgl.Map({
       container: this.mapDivElement.nativeElement,
       style: environment.MAPBOX_STYLE,
-      center: [this.MAPBOX_INIT_LOCATION.addresses[0].location.x, this.MAPBOX_INIT_LOCATION.addresses[0].location.y], // starting center so it doesn't start from Germany
+      center: [this.MAPBOX_INIT_LOCATION.addresses![0].location!.x, this.MAPBOX_INIT_LOCATION.addresses![0].location!.y], // starting center so it doesn't start from Germany
       zoom: environment.MAPBOX_ZOOM, 
       maxZoom: 18,
       accessToken:environment.MAPBOX_TOKEN
@@ -85,32 +90,62 @@ export class MapboxComponent implements AfterViewInit {
         trackUserLocation: true,
       })
     );
+
+    if(this.filteredResultsToPrintOnMap) {
+      this.filteredResultsToPrintOnMap.forEach((result) => {
+        // Create a marker for each result and add it to the map
+        this.createANewMarker("orange", result);
+      });
+    }
+  
   }
 
+  //Create Marker with Popup For Results
+  createMarkerwithPopup(markerColor: string, business?: SearchItemResult) {
+
+        // Create a popup with the business's basic information
+        const popup = new Popup().setHTML(
+          `<b>${business?.name}</b> </br> ${business?.addresses![0].street_name} , ${business?.addresses![0].street_number}`
+        );
+    return new Marker({color: markerColor})
+    .setLngLat([business!.addresses![0].location!.x, business!.addresses![0].location!.y])
+    .setPopup(popup)
+    .addTo(this.map)
+  }
+  
+
   // Function to create a single marker (with the marker's colour and the business (or user's coords) as parameters)
-  createANewMarker(markerColor: string, business?: any, coord?: GeolocationCoordinates): void {
- 
-    // Create a popup with the business's basic information
-    const popup = new Popup().setHTML(
-      `<b>${business?.name}</b> </br> ${business?.addresses[0].street_name} , ${business?.addresses[0].street_number}`
-    );
+  createANewMarker(markerColor: string, business?: SearchItemResult, coord?: GeolocationCoordinates): void {
+
 
     if (coord) { // If user has accepted to share their location
       const newIndividualMarker = new Marker({ color: markerColor })
         .setLngLat([coord.longitude, coord.latitude])
         .addTo(this.map);
       this.currentMarkers.push(newIndividualMarker);
+
+    
     } else { // If user hasn't accepted to share their location OR when iterating through the filteredResultsToPrintOnMap array.
 
-   
-        const newIndividualMarker = new Marker({ color: markerColor })
-        .setLngLat([business!.addresses[0].location.x, business!.addresses[0].location.y])
-        .setPopup(popup)
-        .addTo(this.map);
+        const newIndividualMarker = this.createMarkerwithPopup(markerColor, business);
         this.currentMarkers.push(newIndividualMarker);
+
+        newIndividualMarker.getElement().addEventListener('click', () => {
+
+          const newSelectedMarker = this.createMarkerwithPopup('red', business);
+          this.selectedMarkers.push(newSelectedMarker);
+
+          newSelectedMarker.getElement().addEventListener('click', () => {
+            newSelectedMarker.remove();
+            let index = this.selectedMarkers.indexOf(newSelectedMarker);
+            if (index !== -1) {this.selectedMarkers.splice(index, 1)};
+          })
+
+        })
     
-      
     }
+
+
 
     // MAP LÍMITS
     // Initial point 0
@@ -126,6 +161,23 @@ export class MapboxComponent implements AfterViewInit {
     })
   }
 
+  flyTo( coords: LngLatLike) {
+
+    this.map?.flyTo({
+      zoom: 16,
+      center: coords
+    })
+  }
+
+  changeMarkerColor(business: SearchItemResult):void {
+   let currentMarker = this.currentMarker
+   currentMarker.forEach(marker => marker.remove() )
+   if(currentMarker.length>0) {this.currentMarker.shift();}
+    currentMarker[0] = this.createMarkerwithPopup('black', business);
+
+    this.flyTo(currentMarker[0].getLngLat())
+  }
+
   getUsersLocation(): void {
     navigator.geolocation.getCurrentPosition(
       // Success callback function (if user has accepted to share their location)
@@ -137,44 +189,24 @@ export class MapboxComponent implements AfterViewInit {
       // Error callback function (if user hasn't accepted to share their location)
       () => {
         // this.map.flyTo(
-        //   { center: [environment.MAPBOX_ITAcademy_OBJECT.addresses[0].location.x, environment.MAPBOX_ITAcademy_OBJECT.addresses[0].location.y], zoom: 11 })
         this.createANewMarker("red", this.MAPBOX_INIT_LOCATION);
       }
     );
   }
 
-  updateSelectedMarkers(){
-
-    let selected;
-
-    // first reset markers
-
-    this.currentMarkers.forEach(e=> e.remove())
-    this.currentMarkers = [];
-
-    // then update
-
-    (this.filteredResultsToPrintOnMap || []).forEach((element)=>{
-
-      let {x, y} = element!.addresses[0].location; 
-
-      selected = (this.selectedResultsToChangeColor || []).find(e=> x == e!.addresses[0].location.x && y == e!.addresses[0].location.y);
-
-      this.createANewMarker( selected ? 'red' : 'yellow' ,element );     
-
-    });
-
+  resetCurrentMarkers() {
+    this.currentMarkers.forEach( marker => marker.remove());
   }
 
-  coordinatesAreValid(business:any){
+  coordinatesAreValid(business:SearchItemResult){
 
-    const location = business!.addresses[0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
+    const location = business.addresses![0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
 
     let valid = false;
 
     switch (format) {
 
-      case 'GCS':{ valid = [location.x, location.y].every(c=>Math.abs(c)<=90);  break; }        
+      case 'GCS':{ valid = [location!.x, location!.y].every(c=>Math.abs(c)<=90);  break; }        
     
     }
 
@@ -182,4 +214,6 @@ export class MapboxComponent implements AfterViewInit {
 
     return valid
   }
+
+  
 }

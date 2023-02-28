@@ -34,8 +34,8 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/theme.scss"
             ],
             "scripts": []
           },
@@ -74,12 +74,13 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
+           "configurations": {
             "production": {
               "browserTarget": "BusinessAssistantBCN-frontend2:build:production"
             },
             "development": {
-              "browserTarget": "BusinessAssistantBCN-frontend2:build:development"
+              "browserTarget": "BusinessAssistantBCN-frontend2:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

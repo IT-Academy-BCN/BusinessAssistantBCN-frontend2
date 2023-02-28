@@ -35,7 +35,7 @@
                 "title": "FAQs"
             },
             "section5": {
-                "title": "Mis busquedas"
+                "title": "Mis búsquedas"
             },
             "section6": {
                 "title": "Directorio"
@@ -66,6 +66,15 @@
             "item-2": "Nombre",
             "item-3": "Fecha",
             "item-4": "Detalles"
+        },
+        "saved-searches-dialog": {
+            "save-search": "Guardar búsqueda",
+            "name": "Nombre",
+            "detail": "Detalle",
+            "name-required": "El nombre es obligatorio",
+            "detail-required": "El detalle es obligatorio",
+            "cancel": "Cancelar",
+            "save": "Guardar"
         }
     },
     "pages": {
@@ -108,34 +117,10 @@
             "section1": {
                 "title": "1. Análisis del Sector",
                 "subcat1": "Catálogo de servicios y productos para emprender",
+                "subcat2": "Ubicación",
                 "s1-item1": "Clasificación catalana de actividaes económicas",
-                "s1-item2": "Servicios para emprender",
-                "s1-item3": "Participación catalana en programas financiados por la UE",
-                "subcat2": "Economía",
-                "s2-item1": "Entidades acreditadas de financiacion alternativa",
-                "s2-item2": "Evolucion mensual del periodo medio de pago a proveedor",
-                "s2-item3": "Prestamos participativos concedidos por avancsa",
-                "s2-item4": "Indicadores sobre las convocatorias públicas de becas y ayudas en la investigación financiadas por la Generalitat",
-                "s2-item5": "Datos de las camaras oficiales de comercio industria servicios y navegacion",
-                "s2-item6": "Exportaciones realizadas por Cataluña a nivel mundial",
-                "subcat3": "Clusters de empresas",
-                "s3-item1": "Clusters acreditados de Cataluña",
-                "subcat4": "Subvenciones",
-                "s4-item1": "Concesiones del raisc registro de subvenciones y ayudas de Cataluña",
-                "s4-item2": "Convocatorias del raisc registro de subvenciones y ayudas de Cataluña",
-                "s4-item3": "Agentes de apoyo a la internacionalizacion acreditados",
-                "subcat5": "Departamentos de investigación",
-                "s5-item1": "Publicaciones de investigacion de Cataluña",
-                "s5-item2": "Investigadores de Cataluña",
-                "s5-item3": "Departamentos de investigacion de Cataluña",
-                "s5-item4": "Proyectos de investigacion de Cataluña",
-                "subcat6": "Análisis de infraestructuras",
-                "s6-item1": "Equipamientos de Cataluña",
-                "s6-item2": "Certificacion de eficiencia energetica de edificios agrupaciones segun la cualificacion de energia primaria no renovable",
-                "s6-item3": "Certificacion de eficiencia energetica de edificios",
-                "s6-item4": "Certificacion de eficiencia energetica de edificios agrupaciones segun la cualificacion de emisiones de co2",
-                "s6-item5": "Certificacion de eficiencia energetica de edificios agrupaciones segun la cualificacion de emisiones de co2 y la normativa de construccion",
-                "s6-item6": "Indicadores energeticos de Cataluña"
+                "s1-item2": "Ver distritos",
+                "s1-item3": "Mostrar mapa"
             },
 
             "section2": {
@@ -192,7 +177,7 @@
             "market-fair": "Mercados y Ferias",
             "save-results": "Guardar resultados",
             "download-results": "Descargar resultados",
-            "login": "Login",
+            "login": "Acceso",
             "logout": "Logout",
             "register": "Registrarse",
             "see-summary": "Ver resumen"
@@ -206,9 +191,11 @@
             "title": "Nuevo usuario",
             "email-placeholder": "Tu email...",
             "email-error": "Formato de email inválido / El usuario ya existe",
+            "email-require":"El email es obligatorio",
             "password-title": "Contraseña",
             "password-placeholder": "Tu contraseña...",
             "password-error": "La contraseña debe tener almenos 8 carácteres alfanuméricos",
+            "password-require":"La contraseña es obligatoria",
             "submit-register": "Crear usuario"
         }
     }

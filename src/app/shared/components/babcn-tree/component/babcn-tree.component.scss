@@ -5,15 +5,18 @@
     background-color: transparent;
 }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
     background-color: $color-dark1 !important;
 }
 
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
 ::ng-deep .mat-checkbox-indeterminate .mat-checkbox-background {
     background-color: $color-medium !important;
 }
 
-::ng-deep .mat-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version.*/
+::ng-deep .mat-mdc-checkbox:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
     background-color: $color-medium !important;
 }

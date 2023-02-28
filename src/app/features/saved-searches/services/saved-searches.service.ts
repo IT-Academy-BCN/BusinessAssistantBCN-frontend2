@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SavedSearchesModel } from 'src/app/shared/models/saved-search.model';
@@ -10,9 +11,13 @@ export class SavedSearchesService {
 
   constructor(private http: HttpClient) { }
 
-  getSavedSearches() {
-    return this.http.get<SavedSearchesModel>(`${environment.BACKEND_BASE_URL}${environment.BACKEND_SAVED_SEARCHES_URL}`
-    )
-
+  getSavedSearches(): Observable<any> {
+    return new Observable<any>();
   }
+
+  saveSearch(savedSearches: SavedSearchesModel): Observable<any>{
+    const user_uuid = savedSearches.user_uuid;
+    return this.http.post<any>(environment.BACKEND_SAVED_SEARCHES_URL + user_uuid , savedSearches);
+  }
+  
 }

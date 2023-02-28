@@ -30,6 +30,8 @@ export class BabcnButtonsContainerComponent extends BabcnBaseContainerComponent 
   @Input('mainButtonColor') mainButtonColor: string;
   @Input('mainButtonFunction') mainButtonFunction!: () => void;
   @Input('mainButtonDisabled') mainButtonDisabled: boolean;
+  @Input('mainButtonVisibility') mainButtonVisibility: boolean;
+  
 
   // Secondary Button
   @Input('secondaryButtonText') secondaryButtonText: string;
@@ -62,6 +64,7 @@ export class BabcnButtonsContainerComponent extends BabcnBaseContainerComponent 
     this.mainButtonText = "Main Button";
     this.mainButtonColor = "primary";
     this.mainButtonDisabled = false;
+    this.mainButtonVisibility = true;
 
     // Secondary Button
     this.secondaryButtonText = "Secondary Button";

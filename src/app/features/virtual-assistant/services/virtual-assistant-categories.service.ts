@@ -36,54 +36,14 @@ export class VirtualAssisstantCategoriesService {
                     {
                         title: 'pages.business-assistant.section1.subcat1',
                         items: [
-                            { item: 'pages.business-assistant.section1.s1-item1' },
-                            { item: 'pages.business-assistant.section1.s1-item2' },
-                            { item: 'pages.business-assistant.section1.s1-item3' }
+                            { item: 'pages.business-assistant.section1.s1-item1' }
                         ]
                     },
                     {
                         title: 'pages.business-assistant.section1.subcat2',
                         items: [
-                            { item: 'pages.business-assistant.section1.s2-item1' },
-                            { item: 'pages.business-assistant.section1.s2-item2' },
-                            { item: 'pages.business-assistant.section1.s2-item3' },
-                            { item: 'pages.business-assistant.section1.s2-item4' },
-                            { item: 'pages.business-assistant.section1.s2-item5' },
-                            { item: 'pages.business-assistant.section1.s2-item6' }
-                        ]
-                    },
-                    {
-                        title: 'pages.business-assistant.section1.subcat3',
-                        items: [
-                            { item: 'pages.business-assistant.section1.s3-item1' }
-                        ]
-                    },
-                    {
-                        title: 'pages.business-assistant.section1.subcat4',
-                        items: [
-                            { item: 'pages.business-assistant.section1.s4-item1' },
-                            { item: 'pages.business-assistant.section1.s4-item2' },
-                            { item: 'pages.business-assistant.section1.s4-item3' }
-                        ]
-                    },
-                    {
-                        title: 'pages.business-assistant.section1.subcat5',
-                        items: [
-                            { item: 'pages.business-assistant.section1.s5-item1' },
-                            { item: 'pages.business-assistant.section1.s5-item2' },
-                            { item: 'pages.business-assistant.section1.s5-item3' },
-                            { item: 'pages.business-assistant.section1.s5-item4' }
-                        ]
-                    },
-                    {
-                        title: 'pages.business-assistant.section1.subcat6',
-                        items: [
-                            { item: 'pages.business-assistant.section1.s6-item1' },
-                            { item: 'pages.business-assistant.section1.s6-item2' },
-                            { item: 'pages.business-assistant.section1.s6-item3' },
-                            { item: 'pages.business-assistant.section1.s6-item4' },
-                            { item: 'pages.business-assistant.section1.s6-item5' },
-                            { item: 'pages.business-assistant.section1.s6-item6' }
+                            { item: 'pages.business-assistant.section1.s1-item2' },
+                            { item: 'pages.business-assistant.section1.s1-item3' }
                         ]
                     },
                 ]

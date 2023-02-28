@@ -23,7 +23,7 @@
 
         <!-- Primary Button -->
         <button mat-raised-button [disabled]="mainButtonDisabled" [color]="mainButtonColor"
-            (click)="onMainButtonClick()">
+            (click)="onMainButtonClick()" *ngIf="mainButtonVisibility">
             {{ mainButtonText | translate }}
         </button>
 

@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+@include mat-core();
+
+$my-primary: mat.define-palette($mat-teal, 500);
+$my-accent: mat.define-palette($mat-amber, 500);
+$my-warn: mat.define-palette($mat-gray, 900);
+
+$my-typography: mat.define-typography-config(
+    $font-family: 'Montserrat',
+  );
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ ),
+ typography: $my-typography
+));
+
+@include mat.all-component-themes($my-theme);
+
+

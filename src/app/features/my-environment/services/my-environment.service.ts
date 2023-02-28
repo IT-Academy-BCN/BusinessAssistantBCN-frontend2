@@ -1,56 +1,88 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import {environment} from "../../../../environments/environment";
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { environment } from "../../../../environments/environment";
 import { Observable } from 'rxjs';
+import { MyEnvironmentSearch, SearchType } from '../../../shared/models/my-environment-search/my-environment-search.model';
+import { Activities } from 'src/app/shared/models/common/activities.model';
+
+const BASE_URL = environment.BACKEND_BASE_URL;
+const BIG_MALLS_ACT = environment.BACKEND_BIG_MALLS_ACTIVITIES_URL;
+const LARGE_EST_ACT = environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL;
+const COMM_GALLE_ACT = environment.BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL;
+const BIG_MALLS_SEARCH = environment.BACKEND_BIG_MALLS_SEARCH_URL;
+const COMM_GALLE_SEARCH = environment.BACKEND_COMMERCIAL_GALLERIES_SEARCH_URL;
+const LARGE_EST_SEARCH = environment.BACKEND_LARGE_STABLISHMENTS_SEARCH_URL;
+const MARKET_FAIRS_SEARCH = environment.BACKEND_MARKET_FAIRS_SEARCH_URL;
+const MUN_MARKET_SEARCH = environment.BACKEND_MUNICIPAL_MARKETS_SEARCH_URL;
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyEnvironmentService {
 
-  title: string = '';
+  activityIDs: number[] = [];
+  zoneIDs: number[] = [];
+  businessModel: number = 0; 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.activityIDs = [];
+    this.zoneIDs = [];
+  }
 
-  getResults(businessModel: string){
+  getEconomicActivities(businessModel: SearchType): Observable<Activities> {
+    
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    this.businessModel = businessModel;
+    
+    if (this.businessModel === 0) {
+      return this.http.get<Activities>(`${BASE_URL}${BIG_MALLS_ACT}`, { headers });
+    } else if (this.businessModel === 1) {
+      return this.http.get<Activities>(`${BASE_URL}${COMM_GALLE_ACT}`, { headers });
+    } else {
+      return this.http.get<Activities>(`${BASE_URL}${LARGE_EST_ACT}`, { headers });
+    }
+  }
+
+  getResults(businessModelSearch: MyEnvironmentSearch): Observable<any> {
+    this.activityIDs = [];
+    this.zoneIDs = [];
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
     let params = new HttpParams();
-    /*    params = params.append('zones', JSON.stringify(this.selectedZones))
-        params = params.append('activities', JSON.stringify(this.selectedActivities));   */
-//TODO
-    // switch (businessModel){
-    //   case 'common.button.mall':
-    //     return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
-    //   case 'common.button.gallery-market':
-    //     return this.http.get(`${environment.BACKEND_COMMERCIAL_GALLERIES_FAKE_FILTERED_RESULTS}`,{params})
-    //   case 'common.button.big-stablish':
-    //     return this.http.get(`${environment.BACKEND_BIG_MALLS_FAKE_FILTERED_RESULTS}`,{params})
-    //   case 'common.button.market-fair':
-    //     return this.http.get(`${environment.BACKEND_MARKET_FAIRS_FAKE_FILTERED_RESULTS}`,{params})
-    //   case 'common.button.public-market':
-    //     return this.http.get(`${environment.BACKEND_MUNICIPAL_MARKETS_FAKE_FILTERED_RESULTS}`,{params})
-    //   default:
-    //     return this.http.get(`${environment.BACKEND_LARGE_ESTABLISHMENTS_FAKE_FILTERED_RESULTS}`,{params})
-    // }
-  
+
+    if(businessModelSearch.zones.length == 0){
+      this.zoneIDs.push(0);
+    }else {
+      businessModelSearch.zones.forEach(zone => { this.zoneIDs.push(zone.idZone); });
+    }
+
+    this.zoneIDs.forEach(id => {
+      params = params.append('zones', id);
+    });
+    
+    if(businessModelSearch.activities.length == 0){
+      this.activityIDs.push(0);
+    }else {
+      businessModelSearch.activities.forEach(activity => { this.activityIDs.push(activity.activityId); })
+    }
+
+    this.activityIDs.forEach(id => {
+      params = params.append('activities', id);
+    });
+    
+    switch (businessModelSearch.searchType) {
+      case SearchType.BIG_MALLS:   
+        return this.http.get(`${BASE_URL}${BIG_MALLS_SEARCH}`, { headers, params });
+      case SearchType.COMMERCIAL_GALLERIES:
+        return this.http.get(`${BASE_URL}${COMM_GALLE_SEARCH}`, { headers, params });
+      case SearchType.LARGE_ESTABLISHMENTS:
+        return this.http.get(`${BASE_URL}${LARGE_EST_SEARCH}`, { headers, params });
+      case SearchType.MARKETS_AND_FAIRS:
+        return this.http.get(`${BASE_URL}${MARKET_FAIRS_SEARCH}`, { headers, params });
+      case SearchType.MUNICIPAL_MARKETS:
+        return this.http.get(`${BASE_URL}${MUN_MARKET_SEARCH}`, { headers, params });
+    }
   }
-
-
-  getEconomicActivities(category:string): Observable<any> {
-    const activityEndPoint=[
-      {establishment :'common.button.mall', endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL},
-      {establishment :'common.button.gallery-market', endPointActivity:environment.BACKEND_COMMERCIAL_GALLERIES_ACTIVITIES_URL},
-      {establishment :'common.button.big-stablish', endPointActivity:environment.BACKEND_LARGE_STABLISHMENTS_ACTIVITIES_URL}
-    ]
-
-    let endPoint=activityEndPoint.find(item=> item.establishment==category)
-    if (endPoint==undefined) endPoint={establishment:'common.button.mall',endPointActivity:environment.BACKEND_BIG_MALLS_ACTIVITIES_URL}
-    return this.http.get(
-        `${ environment.BACKEND_BASE_URL }${endPoint.endPointActivity}`,
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-  }
-
 }
+
+
+

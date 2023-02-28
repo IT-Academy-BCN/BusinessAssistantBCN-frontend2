@@ -10,24 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class SavedSearchesComponent implements OnInit {
 
   constructor(private savedSearchesService: SavedSearchesService) { }
-
+  date!: Date;
   savedSearchesData: SavedSearchesModel[] = []
-
   displayedColumns: string[] = ['search-name', 'search-date', 'search-detail', 'search-button'];
-  breakpoint:number = 1;
+  breakpoint: number = 1;
 
   ngOnInit(): void {
-    console.log(this.savedSearchesData)
+    this.getSavedSearches();
+  };
+
+  getSavedSearches() {
     this.savedSearchesService.getSavedSearches().subscribe((resp: any) => {
       this.savedSearchesData = resp.results;
-
       this.breakpoint = (window.innerWidth <= 600) ? 1 : 4;
-
-    })
+    });
   }
 
   onResize(event: any) {
-    console.log(event.target.innerWidth)
     this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 4;
   }
 }

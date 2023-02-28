@@ -1,5 +1,9 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LanguagesModel } from '../language-changer/language-changer.interface';
 import { Router } from '@angular/router';
+import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { zoomTitle } from './animation/header.animation';
 
@@ -21,13 +25,32 @@ export class HeaderComponent implements OnInit {
     'common.button.login',
   ]
 
+  userMenuButtons: string[] = [
+    'components.header.section5.title',
+    'common.button.logout'
+  ]
+
+  languageButtons: {text: string, lang: LanguagesModel}[] = [
+    {text: 'CA', lang: LanguagesModel.ca },
+    {text: 'ES', lang: LanguagesModel.es },
+    {text: 'EN', lang: LanguagesModel.en }
+  ]
+
+
   title: string = 'inactive'
   menu: boolean = false
 
+  // user.name solo para fines visuales (muestra menú si existe), esperando respuesta de login para definir 'user' correctamente.
+  user = { 
+    name : '',
+    // name : 'Jhon Doe'
+  }
 
   constructor(
-    private responsive: BreakpointService,
-    private router: Router
+    public  dialog     : MatDialog,
+    private responsive : BreakpointService,
+    private router     : Router,
+    private translateService:TranslateService,
   ) {
     const currentScreenSize = this.responsive.getCurrentScreenSize();
     this.expandMenu(currentScreenSize);
@@ -54,9 +77,29 @@ export class HeaderComponent implements OnInit {
   }
 
   goToLink(num: number) {
-  //should heading login component
-
+    switch (num) {
+      case 0:
+        break;
+      case 1:
+        break;
+      case 2:
+        break;
+      case 3:
+        break;
+      case 4:
+        if (num == 4) this.dialog.open(LoginModalComponent,{})
+        break;
+      case 5:
+        break;
+      case 6:
+        break;
+      default:
+    }
   }
- 
-  
+
+  changeLanguage(language: LanguagesModel){
+    this.translateService.use(language);
+  }
+
+
 }

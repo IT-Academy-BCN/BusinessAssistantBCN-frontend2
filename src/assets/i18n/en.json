@@ -66,6 +66,15 @@
             "item-2": "Name",
             "item-3": "Date",
             "item-4": "Detail"
+        },
+        "saved-searches-dialog": {
+            "save-search": "Save search",
+            "name": "Name",
+            "detail": "Detail",
+            "name-required": "Name is required",
+            "detail-required": "Detail is required",
+            "cancel": "Cancel",
+            "save": "Save"
         }
     },
     "pages": {
@@ -108,34 +117,10 @@
             "section1": {
                 "title": "1. Industry Analysis",
                 "subcat1": "Catalog of services and products to undertake",
+                "subcat2": "Location",
                 "s1-item1": "Catalan classification of economic activities",
-                "s1-item2": "Services to undertake",
-                "s1-item3": "Catalan participation in programs financed by the EU",
-                "subcat2": "Economy",
-                "s2-item1": "Accredited alternative financing entities",
-                "s2-item2": "Monthly evolution of the average payment period to supplier",
-                "s2-item3": "Participating loans granted by avancsa",
-                "s2-item4": "Indicators on public calls for research grants and aid financed by the Generalitat de Catalunya.",
-                "s2-item5": "Data from the official chambers of commerce, industry, services and navigation.",
-                "s2-item6": "Exports by Catalonia worldwide",
-                "subcat3": "Business clusters",
-                "s3-item1": "Accredited clusters in Catalonia",
-                "subcat4": "Subvenciones",
-                "s4-item1": "Concessions from the raisc registry of subsidies and grants of Catalonia.",
-                "s4-item2": "Announcements of the raisc registry of subsidies and grants of Catalonia",
-                "s4-item3": "Accredited internationalization support agents",
-                "subcat5": "Research departments",
-                "s5-item1": "Research publications from Catalonia",
-                "s5-item2": "Researchers from Catalonia",
-                "s5-item3": "Research Departments of Catalonia",
-                "s5-item4": "Research projects of Catalonia",
-                "subcat6": "Analysis of infrastructure",
-                "s6-item1": "Equipment in Catalonia",
-                "s6-item2": "Certification of energy efficiency of buildings grouped according to the qualification of non-renewable primary ",
-                "s6-item3": "Energy efficiency certification of buildings",
-                "s6-item4": "Certification of energy efficiency of buildings grouped according to the qualification of co2 emissions.",
-                "s6-item5": "Certification of energy efficiency of buildings groupings according to co2 emissions qualification and building regulations.",
-                "s6-item6": "Energy indicators for Catalonia"
+                "s1-item2": "Show districts",
+                "s1-item3": "Show map"
             },
             "section2": {
                 "title": "2. Analysis of consumption habits",
@@ -206,9 +191,11 @@
             "title": "New user",
             "email-placeholder": "Your email...",
             "email-error": "Email address not valid / User already exists",
+            "email-require":"Email is required",
             "password-title": "Password",
             "password-placeholder": "Your password...",
             "password-error": "Password needs to be 8 alphanumeric characters",
+            "password-require":"Password is required",
             "submit-register": "Create user"
         }
     }

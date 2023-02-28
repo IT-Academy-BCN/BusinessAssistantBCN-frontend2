@@ -1,9 +1,8 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import { Observable , Subject} from "rxjs";
-import { Zone } from "src/app/shared/models/common/zone.model";
-import { EconomicActivity } from "src/app/shared/models/common/economic-activity.model";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import { Observable} from "rxjs";
 import { environment } from "src/environments/environment";
+import { Zones } from "src/app/shared/models/common/zones.model";
 
 
 @Injectable({
@@ -12,20 +11,18 @@ import { environment } from "src/environments/environment";
 
 export class CommonService {
 
-  zones:Zone[]=[];
-  activities:EconomicActivity[]=[]
-  //results = new Subject<BasicBusinessModel[]>()
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {
-  }
+  getZones(): Observable<Zones> {
 
-  getZones(): Observable<any>{
-    return this.http.get(
+    const headers = new HttpHeaders({
+      'Content-Type' : 'application/json'
+    })
+
+    return this.http.get<Zones>(
       `${ environment.BACKEND_BASE_URL }${ environment.BACKEND_ZONES_URL }`,
       {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        headers
       });
   }
 

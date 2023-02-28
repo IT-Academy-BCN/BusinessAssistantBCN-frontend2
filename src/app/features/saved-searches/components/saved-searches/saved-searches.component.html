@@ -6,7 +6,7 @@
       <!-- Mis Búsquedas -->
     </h2>
     <div *ngFor="let item of savedSearchesData">
-      <mat-card>
+      <mat-card appearance="outlined">
         <mat-grid-list [cols]="breakpoint" rowHeight="75px" (window:resize)="onResize($event)">
           <mat-grid-tile
                   [colspan]="1"
@@ -14,8 +14,8 @@
           >
             <div class="card-column">
               <mat-card-subtitle>{{'components.saved-searches.item-2'| translate}}</mat-card-subtitle>
-              <!-- <mat-card-content>{{item.search_name}}</mat-card-content>-->
-              <mat-card-content>name</mat-card-content>
+              <mat-card-content>{{item.searchName}}</mat-card-content>
+              <!-- <mat-card-content>name</mat-card-content> -->
             </div>
           </mat-grid-tile>
 
@@ -25,8 +25,8 @@
           >
             <div class="card-column">
               <mat-card-subtitle>{{'components.saved-searches.item-3'| translate}}</mat-card-subtitle>
-              <!--<mat-card-content>{{item.search_date}}</mat-card-content>-->
-              <mat-card-content>date</mat-card-content>
+              <mat-card-content>{{ item.searchDate }}</mat-card-content>
+              <!-- <mat-card-content>date</mat-card-content> -->
             </div>
           </mat-grid-tile>
 
@@ -36,8 +36,8 @@
           >
             <div class="card-column">
               <mat-card-subtitle>{{'components.saved-searches.item-4'| translate}}</mat-card-subtitle>
-              <!--<mat-card-content>{{item.search_detail}}</mat-card-content>-->
-              <mat-card-content>Detail</mat-card-content>
+              <mat-card-content>{{item.searchDetail}}</mat-card-content>
+              <!-- <mat-card-content>Detail</mat-card-content> -->
             </div>
           </mat-grid-tile>
 

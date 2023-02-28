@@ -6,6 +6,11 @@ div {
     margin: 16px;
 }
 
+.fc-white {
+    color: white;
+    font-family: "Montserrat", sans-serif !important;
+}
+
 .margin-list {
     margin-bottom: 3px;
     cursor       : pointer;
@@ -19,6 +24,10 @@ div {
 
 .list-height:hover {
     background-color: $color-dark2 !important;
+    
+    .fc-white{
+        color: black;
+    }
 }
 
 .list-height:focus {

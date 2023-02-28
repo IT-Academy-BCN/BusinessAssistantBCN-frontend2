@@ -29,6 +29,9 @@ import { MyEnvironmentModule } from './features/my-environment/my-environment.mo
 import { CoreModule } from './core/core.module';
 import { SavedSearchesModule } from './features/saved-searches/saved-searches.module';
 
+// JWT interceptor
+//import { interceptorProvider } from './interceptor/jwt-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +61,7 @@ import { SavedSearchesModule } from './features/saved-searches/saved-searches.mo
     SavedSearchesModule,
     VirtualAssistantModule
   ],
+  // providers: [interceptorProvider],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
