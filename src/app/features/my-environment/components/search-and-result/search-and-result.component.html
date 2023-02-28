@@ -37,7 +37,7 @@
                                     {{ "common.title.results" | translate }}
                                 </h2>
                                 <div class="" *ngIf="true" id="pdfData">
-                                    <div *ngFor="let ls of sampleResults">
+                                    <div *ngFor="let ls of searchResults">
                                         <h5 class="details">{{ ls.name }}</h5>
                                         <mat-list class="result-container list-unstyled"
                                             *ngFor="let address of ls.addresses">
@@ -130,7 +130,7 @@
                     <div class="search-container">
                         <!-- babcn-CONTAINER -->
                         <babcn-container [containerWidth]='ratio.toString()'>
-                            <app-mapbox [filteredResultsToPrintOnMap]="sampleResults"
+                            <app-mapbox [filteredResultsToPrintOnMap]="searchResults"
                                 [selectedResultsToChangeColor]="selectedList"></app-mapbox>
                         </babcn-container>
                         <!-- END babcn-CONTAINER -->
