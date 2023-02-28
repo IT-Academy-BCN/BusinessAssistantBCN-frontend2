@@ -117,8 +117,10 @@
             "section1": {
                 "title": "1. Industry Analysis",
                 "subcat1": "Catalog of services and products to undertake",
+                "subcat2": "Location",
                 "s1-item1": "Catalan classification of economic activities",
-                "s1-item2": "Location"
+                "s1-item2": "Show districts",
+                "s1-item3": "Show map"
             },
             "section2": {
                 "title": "2. Analysis of consumption habits",

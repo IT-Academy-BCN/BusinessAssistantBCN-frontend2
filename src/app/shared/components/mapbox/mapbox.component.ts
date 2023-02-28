@@ -210,7 +210,7 @@ export class MapboxComponent implements AfterViewInit {
     
     }
 
-    if(!valid) console.error('ERROR - incorrect coordinates format - ' + business.name + '');    
+    if(!valid) console.log('ERROR - incorrect coordinates format - ' + business.name + '');    
 
     return valid
   }

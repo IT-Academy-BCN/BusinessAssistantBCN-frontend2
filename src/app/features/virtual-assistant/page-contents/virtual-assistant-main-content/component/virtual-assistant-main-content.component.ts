@@ -16,6 +16,10 @@ import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/compo
 
 // LOGIN MODAL COMPONENT 
 import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
+import { CommonService } from '../../../../../services/common/common.service';
+import { Zones } from '../../../../../shared/models/common/zones.model';
+import { Zone } from 'src/app/shared/models/common/zone.model';
+
 
 
 @Component({
@@ -28,7 +32,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   // Responsive Breakpoint
   breakpoint: number | string | "Unknown";
   ratio: string | number;
-  value: (string | number)[] | undefined= [];
+  value: (string | number)[] | undefined = [];
 
   // Data Source to share with Mat-Accordion from VirtualAssistantAccordionComponent.
   @Input('inputDataMain') dataSourceCategory: Category[] = [];
@@ -36,11 +40,20 @@ export class VirtualAssistantMainContentComponent implements OnInit {
   // Data Shared with VirtualAssistantListComponent.
   dataShared: string[] = []
 
-  // Not delete this empty constructor to make implementations easier to understand.
+  // Data Zones from common service + Zones check show/hide
+  zonesData: Zone[] = [];
+
+  // Data Titles from VirtualAssistantAccordionComponent.
+  dataTitles: string[] = [];
+
+  // Show or hide the right panel items.
+  showContent: string = "";
+
   constructor(
     public dialog: MatDialog,
     public vaSelectionService: VirtualAssistantSelectionsService,
-    private responsive: BreakpointService
+    private responsive: BreakpointService,
+    private zones: CommonService
 
   ) {
     this.value = VIRTUAL_ASSISTANT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
@@ -55,6 +68,12 @@ export class VirtualAssistantMainContentComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // Get all Zones from common service
+    this.zones.getZones().subscribe((res: Zones) => {
+      this.zonesData = res.elements;
+    })
+
+
     this.responsive.breakpoint$.subscribe((res) => {
       VIRTUAL_ASSISTANT_MAT_GRID_LIST.forEach((value, key) => {
         if (key == res) {
@@ -64,7 +83,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
       });
     });
 
-    if(this.vaSelectionService.selections.content.length > 0) {
+    if (this.vaSelectionService.selections.content.length > 0) {
       this.vaSelectionService.selections.content.forEach(item => {
         this.dataShared.push(item.content);
       })
@@ -73,7 +92,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
 
 
   // USER, wait for login implementation to verify the correct status.
-  user : boolean = false;
+  user: boolean = false;
 
 
   /**
@@ -82,28 +101,55 @@ export class VirtualAssistantMainContentComponent implements OnInit {
    */
   getDataFromAccordion(accordionData: string[]) {
 
+    this.showInfoRightPanel(accordionData)
+
     //Getting existing selections from service 
     let currentSelections = this.getCurrentSelections();
 
-    if (this.vaSelectionService.selections.content.length>0) {
+    if (this.vaSelectionService.selections.content.length > 0) {
 
       this.vaSelectionService.selections.content.forEach(item => {
         currentSelections.push(item.content);
       })
-     }
-      //end of get existing selections
+    }
+    //end of get existing selections
     this.dataShared = [...accordionData].concat(currentSelections);
 
-     //merge existing selection with saved selections from VA selection service
-    let mergedData = [...new Set([...accordionData,...currentSelections])];
+    //merge existing selection with saved selections from VA selection service
+    let mergedData = [...new Set([...accordionData, ...currentSelections])];
     this.dataShared = mergedData;
     this.vaSelectionService.setSelections(mergedData);
   }
 
+
+  // Get the output data from checkbox-component, merge it in the local variable & send it to the VA service.
+  getDataFromCheckboxes(checkboxData: string[]) {
+   this.vaSelectionService.setSelections(checkboxData);
+  }
+
   getCurrentSelections() {
-    let currentSelections:string[] = [];
+    let currentSelections: string[] = [];
     return currentSelections
   }
+
+  showInfoRightPanel(data: string[]) {
+
+    // cliking on the title of the accordion will show the content of the right panel.
+
+    // title
+    if (data.length > 1) {
+      this.dataTitles = data.slice(data.length - 1, data.length);
+    } else {
+      this.dataTitles = data;
+    }
+
+    // content zones / ccae / etc.
+    const item       = this.dataTitles[0];
+    const selection  = this.vaSelectionService.items.find(obj => obj[item]);
+    this.showContent = selection[item];
+  }
+
+
 
   /**
    * Click on the resume button.
@@ -113,7 +159,7 @@ export class VirtualAssistantMainContentComponent implements OnInit {
     this.dialog.open(ResumeDialogComponent, {
       // width: '500px', // sample use
       // height: '500px', // sample use
-      data: this.dataShared
+      data: this.vaSelectionService.selections.content.flatMap(item => item.content)
     });
   }
 
@@ -122,9 +168,11 @@ export class VirtualAssistantMainContentComponent implements OnInit {
    * It needs to be a callback function (it will be used as a parameter).
    */
   onClickSaveButton = (): void => {
-    this.dialog.open(LoginModalComponent,{})
+    this.dialog.open(LoginModalComponent, {})
     // TODO implement onClickSaveButton
   }
+
+
 
 }
 
