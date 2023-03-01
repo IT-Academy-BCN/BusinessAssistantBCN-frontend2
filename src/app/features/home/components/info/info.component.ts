@@ -17,17 +17,27 @@ export class InfoComponent implements OnInit {
   break: number = 3
   ratio: string = '350px'
 
+
   constructor(
     private responsive: BreakpointService
   ) { }
 
   ngOnInit(): void {
+
+    if (this.responsive.getCurrentScreenSize() == 'XSmall' || this.responsive.getCurrentScreenSize() == 'Small') {
+      this.break = 1
+      this.ratio = '200px'
+    }
     this.responsive.breakpoint$.subscribe(result => {
+      console.log(result);
       if (result == 'XSmall') {
         this.break = 1
-      } else if(result == 'Small') {
+        this.ratio = '200px'
+
+      } else if (result == 'Small') {
         this.break = 1
-      }else {
+        this.ratio = '200px'
+      } else {
         this.break = 3
         this.ratio = '350px'
       }

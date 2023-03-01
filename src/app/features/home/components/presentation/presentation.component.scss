@@ -63,3 +63,34 @@
 .marg{
   margin-left:50px;
 }
+
+// media queries for movile design images display none, text-align center
+
+@media (max-width: 768px) {
+  .wrapp-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .wrapp-text {
+    width: 100%;
+    padding: 0px 10px;
+    text-align: center;
+  }
+
+  .container-image{
+    display: none;
+  }
+
+  .btn1
+  {
+    margin-bottom: 15px;
+  }
+
+  p{
+    text-align: center;
+  } 
+}

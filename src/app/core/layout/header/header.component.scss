@@ -36,5 +36,12 @@ h1 {
     flex: 1;
 }
 
+@media (max-width: 960px) {
+    .padding-x {
+        padding-left: 0px;
+
+    }
+}
+
 
 
