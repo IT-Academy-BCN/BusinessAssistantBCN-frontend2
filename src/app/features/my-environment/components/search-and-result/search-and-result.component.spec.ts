@@ -11,6 +11,7 @@ import { of } from 'rxjs';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Zone } from 'src/app/shared/models/common/zone.model';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
+import { MapboxService } from '../../../../shared/components/mapbox/service/mapbox.service';
 
 describe('SearchAndResultComponent', () => {
   let component: SearchAndResultComponent;
@@ -20,7 +21,11 @@ describe('SearchAndResultComponent', () => {
   let expGetResultsResponse: any;
   let expBreakpointResponse: string;
   let myEnvSrv: MyEnvironmentService;
- 
+
+  const fakeMapboxSrvMock = {
+    flyTo: jest.fn()
+  }
+
   const fakeCommonSrvMock = {
     getZones: jest.fn()
   }
@@ -51,8 +56,8 @@ describe('SearchAndResultComponent', () => {
       declarations: [SearchAndResultComponent],
       providers: [
         { provide: CommonService, useValue: fakeCommonSrvMock },
-        { provide: MyEnvironmentService, useValue: fakeEnvSrvMock }
-        //  {provide: BreakpointService, useValue: fakeBreakpointSrvMock}
+        { provide: MyEnvironmentService, useValue: fakeEnvSrvMock },
+        { provide: MapboxService, useValue : fakeMapboxSrvMock}
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -228,4 +233,13 @@ describe('SearchAndResultComponent', () => {
     expect(component.selectedActivities.length).toBe(1);
   });
 
-});
+ it('should call flyTo method', () => {
+const data = {lat: 1, lng: 1};
+const service = fixture.debugElement.injector.get(MapboxService);
+const spy = jest.spyOn(service, 'flyTo').mockImplementation(() => null);
+component.flyTo(data);
+expect(spy).toHaveBeenCalledWith(data);
+
+})
+
+})

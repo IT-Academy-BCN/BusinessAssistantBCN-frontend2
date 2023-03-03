@@ -1,9 +1,10 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Input, SimpleChanges } from "@angular/core";
+import { Component, AfterViewInit, ViewChild, ElementRef, Input } from "@angular/core";
 import Mapboxgl, { LngLatBounds, NavigationControl, GeolocateControl, Map, Popup, Marker } from "mapbox-gl";
 import { environment } from "src/environments/environment";
 import { SearchItemResult } from "../../models/my-environment-search/search-item-result.model";
 import { MapboxMarkersService } from "src/app/features/my-environment/services/mapbox-markers.service";
 import { LngLatLike } from "mapbox-gl";
+import { MapboxService } from './service/mapbox.service';
 
 @Component({
   selector: "app-mapbox",
@@ -28,7 +29,7 @@ export class MapboxComponent implements AfterViewInit {
     web: "bcn.cat/barcelonactiva",
     email: "itacademy@barcelonactiva.cat",
     phone: '932917610',
-   // activities: [],
+    // activities: [],
     addresses: [
       {
         street_name: "Roc Boronat",
@@ -44,7 +45,8 @@ export class MapboxComponent implements AfterViewInit {
     ],
   }
 
-  constructor(private markersService: MapboxMarkersService) {
+  constructor(private markersService: MapboxMarkersService,
+              private MapboxService : MapboxService) {
 
   }
 
@@ -52,14 +54,14 @@ export class MapboxComponent implements AfterViewInit {
     this.markersService.currentMarkerSubject.subscribe((markerIndex) => {
       this.changeMarkerColor(this.filteredResultsToPrintOnMap[markerIndex])
 
-     })
+    })
   }
 
   ngAfterViewInit(): void {
     // Generate map with basic config
-  this.generateMap();
+    this.generateMap();
     // Depending on if the user accepts to share their location, center the map into the user, or into the default location (IT Academy)
-  this.getUsersLocation();
+    this.getUsersLocation();
 
   }
 
@@ -74,12 +76,14 @@ export class MapboxComponent implements AfterViewInit {
       container: this.mapDivElement.nativeElement,
       style: environment.MAPBOX_STYLE,
       center: [this.MAPBOX_INIT_LOCATION.addresses![0].location!.x, this.MAPBOX_INIT_LOCATION.addresses![0].location!.y], // starting center so it doesn't start from Germany
-      zoom: environment.MAPBOX_ZOOM, 
+      zoom: environment.MAPBOX_ZOOM,
       maxZoom: 18,
-      accessToken:environment.MAPBOX_TOKEN
+      accessToken: environment.MAPBOX_TOKEN
     });
 
-    this.map.addControl(new NavigationControl({showZoom:true}));
+    this.MapboxService.setMap(this.map);
+
+    this.map.addControl(new NavigationControl({ showZoom: true }));
 
     // Add geolocate control to the map.
     this.map.addControl(
@@ -91,30 +95,33 @@ export class MapboxComponent implements AfterViewInit {
       })
     );
 
-    if(this.filteredResultsToPrintOnMap) {
-      this.filteredResultsToPrintOnMap.forEach((result) => {
-        // Create a marker for each result and add it to the map
-        this.createANewMarker("orange", result);
-      });
-    }
-  
+    // Markers from 
+    this.map.on("load", () => {
+      if (this.filteredResultsToPrintOnMap) {
+        this.filteredResultsToPrintOnMap.forEach( (result) => {
+          // Create a marker for each result and add it to the map
+          this.createANewMarker("orange", result);
+        });
+      }});
+
   }
 
   //Create Marker with Popup For Results
   createMarkerwithPopup(markerColor: string, business?: SearchItemResult) {
 
-        // Create a popup with the business's basic information
-        const popup = new Popup().setHTML(
-          `<b>${business?.name}</b> </br> ${business?.addresses![0].street_name} , ${business?.addresses![0].street_number}`
-        );
-    return new Marker({color: markerColor})
-    .setLngLat([business!.addresses![0].location!.x, business!.addresses![0].location!.y])
-    .setPopup(popup)
-    .addTo(this.map)
+    // Create a popup with the business's basic information
+    const popup = new Popup().setHTML(
+      `<b>${business?.name}</b> </br> ${business?.addresses![0].street_name} , ${business?.addresses![0].street_number}`
+    );
+    return new Marker({ color: markerColor })
+      .setLngLat([business!.addresses![0].location!.y, business!.addresses![0].location!.x])
+      .setPopup(popup)
+      .addTo(this.map)
   }
-  
+
 
   // Function to create a single marker (with the marker's colour and the business (or user's coords) as parameters)
+
   createANewMarker(markerColor: string, business?: SearchItemResult, coord?: GeolocationCoordinates): void {
 
 
@@ -124,25 +131,24 @@ export class MapboxComponent implements AfterViewInit {
         .addTo(this.map);
       this.currentMarkers.push(newIndividualMarker);
 
-    
+
     } else { // If user hasn't accepted to share their location OR when iterating through the filteredResultsToPrintOnMap array.
+      const newIndividualMarker = this.createMarkerwithPopup(markerColor, business);
+      this.currentMarkers.push(newIndividualMarker);
 
-        const newIndividualMarker = this.createMarkerwithPopup(markerColor, business);
-        this.currentMarkers.push(newIndividualMarker);
+      newIndividualMarker.getElement().addEventListener('click', () => {
 
-        newIndividualMarker.getElement().addEventListener('click', () => {
+        const newSelectedMarker = this.createMarkerwithPopup('red', business);
+        this.selectedMarkers.push(newSelectedMarker);
 
-          const newSelectedMarker = this.createMarkerwithPopup('red', business);
-          this.selectedMarkers.push(newSelectedMarker);
-
-          newSelectedMarker.getElement().addEventListener('click', () => {
-            newSelectedMarker.remove();
-            let index = this.selectedMarkers.indexOf(newSelectedMarker);
-            if (index !== -1) {this.selectedMarkers.splice(index, 1)};
-          })
-
+        newSelectedMarker.getElement().addEventListener('click', () => {
+          newSelectedMarker.remove();
+          let index = this.selectedMarkers.indexOf(newSelectedMarker);
+          if (index !== -1) { this.selectedMarkers.splice(index, 1) };
         })
-    
+
+      })
+
     }
 
 
@@ -161,7 +167,7 @@ export class MapboxComponent implements AfterViewInit {
     })
   }
 
-  flyTo( coords: LngLatLike) {
+  flyTo(coords: LngLatLike) {
 
     this.map?.flyTo({
       zoom: 16,
@@ -169,10 +175,10 @@ export class MapboxComponent implements AfterViewInit {
     })
   }
 
-  changeMarkerColor(business: SearchItemResult):void {
-   let currentMarker = this.currentMarker
-   currentMarker.forEach(marker => marker.remove() )
-   if(currentMarker.length>0) {this.currentMarker.shift();}
+  changeMarkerColor(business: SearchItemResult): void {
+    let currentMarker = this.currentMarker
+    currentMarker.forEach(marker => marker.remove())
+    if (currentMarker.length > 0) { this.currentMarker.shift(); }
     currentMarker[0] = this.createMarkerwithPopup('black', business);
 
     this.flyTo(currentMarker[0].getLngLat())
@@ -184,7 +190,7 @@ export class MapboxComponent implements AfterViewInit {
       (pos) => {
         // this.map.flyTo({ center: [pos.coords.longitude, pos.coords.latitude], zoom: 11 })
         this.createANewMarker("green", undefined, pos.coords);
-        
+
       },
       // Error callback function (if user hasn't accepted to share their location)
       () => {
@@ -195,10 +201,10 @@ export class MapboxComponent implements AfterViewInit {
   }
 
   resetCurrentMarkers() {
-    this.currentMarkers.forEach( marker => marker.remove());
+    this.currentMarkers.forEach(marker => marker.remove());
   }
 
-  coordinatesAreValid(business:SearchItemResult){
+  coordinatesAreValid(business: SearchItemResult) {
 
     const location = business.addresses![0].location, format = environment.MAPBOX_COORDINATES_FORMAT;
 
@@ -206,14 +212,14 @@ export class MapboxComponent implements AfterViewInit {
 
     switch (format) {
 
-      case 'GCS':{ valid = [location!.x, location!.y].every(c=>Math.abs(c)<=90);  break; }        
-    
+      case 'GCS': { valid = [location!.x, location!.y].every(c => Math.abs(c) <= 90); break; }
+
     }
 
-    if(!valid) console.log('ERROR - incorrect coordinates format - ' + business.name + '');    
+    if (!valid) console.log('ERROR - incorrect coordinates format - ' + business.name + '');
 
     return valid
   }
 
-  
+
 }
