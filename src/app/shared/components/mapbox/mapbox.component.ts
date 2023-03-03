@@ -38,8 +38,8 @@ export class MapboxComponent implements AfterViewInit {
         district_id: "04",
         town: "BARCELONA",
         location: {
-          x: 2.194060007737955,
-          y: 41.40389733660671,
+          y: 2.194060007737955,
+          x: 41.40389733660671,
         },
       },
     ],
@@ -75,7 +75,7 @@ export class MapboxComponent implements AfterViewInit {
     this.map = new Mapboxgl.Map({
       container: this.mapDivElement.nativeElement,
       style: environment.MAPBOX_STYLE,
-      center: [this.MAPBOX_INIT_LOCATION.addresses![0].location!.x, this.MAPBOX_INIT_LOCATION.addresses![0].location!.y], // starting center so it doesn't start from Germany
+      center: [this.MAPBOX_INIT_LOCATION.addresses![0].location!.y, this.MAPBOX_INIT_LOCATION.addresses![0].location!.x], // starting center so it doesn't start from Germany
       zoom: environment.MAPBOX_ZOOM,
       maxZoom: 18,
       accessToken: environment.MAPBOX_TOKEN
