@@ -14,6 +14,7 @@ import { Zone } from 'src/app/shared/models/common/zone.model';
 import { MapboxMarkersService } from '../../services/mapbox-markers.service';
 
 import { Subscription } from 'rxjs';
+import { MapboxService } from '../../../../shared/components/mapbox/service/mapbox.service';
 
 @Component({
   selector: 'app-search-and-result',
@@ -50,6 +51,7 @@ export class SearchAndResultComponent implements OnInit {
     private responsive: BreakpointService,
     private myEnvSrv: MyEnvironmentService,
     private commonService: CommonService,
+    private MapboxService: MapboxService,
     private dialog: MatDialog) {
     const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
@@ -75,6 +77,10 @@ export class SearchAndResultComponent implements OnInit {
     if (this.businessModel <= 2) {
       this.getAllActivities(); //gets all the activities available from my environment service
     }
+  }
+
+  flyTo(data : any){
+    this.MapboxService.flyTo(data)
   }
 
   getAllZones() {
@@ -112,7 +118,6 @@ export class SearchAndResultComponent implements OnInit {
     this.businessModelSearch.activities = this.selectedActivities;
     this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
-
     this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {  
       response.results.forEach((result: any) => {
         this.searchResults.push({
