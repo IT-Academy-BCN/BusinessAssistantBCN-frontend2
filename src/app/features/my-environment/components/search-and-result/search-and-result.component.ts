@@ -39,7 +39,7 @@ export class SearchAndResultComponent implements OnInit {
   selectedActivities: EconomicActivity[] = [];
   searchResults: SearchItemResult[] = [];
 
- 
+
 
   zonesSub: Subscription | null = null;
   activitiesSub: Subscription | null = null;
@@ -108,12 +108,12 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   goToResult() {
-    
+
     this.businessModelSearch.activities = this.selectedActivities;
     this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
 
-    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {  
+    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
       response.results.forEach((result: any) => {
         this.searchResults.push({
           name: result.name,
@@ -153,16 +153,17 @@ export class SearchAndResultComponent implements OnInit {
 
   checkAllActivities(event: any) {
     console.log(this.activities);
-    this.selectedActivities = this.activities
-  console.log(event);
+    this.selectedActivities.push(...this.activities);
+    console.log(this.selectedActivities);
+
   }
 
-  onSaveSearch(){
-    if(this.isUserLogged){
+  onSaveSearch() {
+    if (this.isUserLogged) {
       this.dialog.open(SavedSearchesDialogComponent, { data: { results: this.searchResults } });
-    }else {
-      this.dialog.open(LoginModalComponent,{})
-    } 
+    } else {
+      this.dialog.open(LoginModalComponent, {})
+    }
   }
 
 }
