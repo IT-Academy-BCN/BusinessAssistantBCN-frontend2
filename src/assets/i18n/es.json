@@ -94,7 +94,8 @@
                 "title": "Búsqueda por zona"
             },
             "section2": {
-                "title": "Actividad económica"
+                "title": "Actividad económica",
+                "item1": "Seleccionar las actividades"
             }
         },
         "big-stablish-detail": {

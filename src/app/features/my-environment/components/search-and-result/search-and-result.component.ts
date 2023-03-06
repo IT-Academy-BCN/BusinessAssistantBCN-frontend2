@@ -151,6 +151,12 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
+  checkAllActivities(event: any) {
+    console.log(this.activities);
+    this.selectedActivities = this.activities
+  console.log(event);
+  }
+
   onSaveSearch(){
     if(this.isUserLogged){
       this.dialog.open(SavedSearchesDialogComponent, { data: { results: this.searchResults } });

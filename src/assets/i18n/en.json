@@ -94,7 +94,8 @@
                 "title": "Search by zone"
             },
             "section2": {
-                "title": "Economic activity"
+                "title": "Economic activity",
+                "item1": "Select all activities"
             }
         },
         "big-stablish-detail": {
