@@ -25,7 +25,8 @@
                                             <div class="form-check">
                                                 <label class="form-check-label">
                                                     <mat-checkbox class="form-check-input"
-                                                        (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}</mat-checkbox>
+                                                        (change)="checkZones(zone, $event.checked)">{{zone.zoneName}}
+                                                    </mat-checkbox>
                                                 </label>
                                             </div>
                                         </div>
@@ -59,7 +60,7 @@
                                         </mat-list>
                                     </div>
                                 </div>
-                                
+
                             </ng-template>
                         </babcn-container>
 
@@ -91,26 +92,30 @@
                         <h2 class="ps-5 pt-4 fw-bold mb-3">{{'pages.big-stablish.section2.title' | translate}}</h2>
                     </section>
                     <div class="search-container">
+
+                        <!-- check all  -->
+                        <mat-checkbox class="form-check-input check" color="primary">{{'pages.big-stablish.section2.item1' | translate}}</mat-checkbox>
+                        <!-- end of check all -->
+
                         <!-- babcn-CONTAINER -->
                         <babcn-container containerHeight="350px" [containerWidth]='ratio.toString()'>
                             <div *ngIf="!showResults; else showResult" class="p-3 border bg-light">
                                 <div class="data">
-                                    <div  >
-                                   <div *ngFor="let activity of activities; let i = index" >
-                                        <div class="form-check">
-                                            <label class="form-check-label" >
-                                             <mat-checkbox 
-                                             class="form-check-input" 
-                                             color="primary"
-                                             (change)="checkActivities(activity,$event.checked)"> {{ activity.activityName }}</mat-checkbox>
-                                            </label>
-                                        </div>
+                                    <div>
+                                        <div *ngFor="let activity of activities; let i = index">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    <mat-checkbox class="form-check-input" color="primary"
+                                                        (change)="checkActivities(activity,$event.checked)">
+                                                        {{ activity.activityName }}</mat-checkbox>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                       
+
                         </babcn-container>
                         <!-- END babcn-CONTAINER -->
 
