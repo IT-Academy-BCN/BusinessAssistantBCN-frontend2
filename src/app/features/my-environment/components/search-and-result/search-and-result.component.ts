@@ -39,7 +39,7 @@ export class SearchAndResultComponent implements OnInit {
   selectedZones: Zone[] = [];
   selectedActivities: EconomicActivity[] = [];
   searchResults: SearchItemResult[] = [];
-
+  allChecked: boolean = false;
 
 
   zonesSub: Subscription | null = null;
@@ -79,7 +79,7 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
-  flyTo(data : any){
+  flyTo(data: any) {
     this.MapboxService.flyTo(data)
   }
 
@@ -158,10 +158,15 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   checkAllActivities(event: any) {
-    console.log(this.activities);
-    this.selectedActivities.push(...this.activities);
-    console.log(this.selectedActivities);
-
+    // if all activities are selected, all checked is true and the selected activities array is filled with all the activities
+    if (event) {
+      this.selectedActivities = [...this.activities];
+      this.allChecked = true;
+      // if all activities are not selected, all checked is false and the selected activities array is empty
+    } else {
+      this.selectedActivities = [];
+      this.allChecked = false;
+    }
   }
 
   onSaveSearch() {

@@ -94,7 +94,9 @@
                     <div class="search-container">
 
                         <!-- check all activities -->
-                        <mat-checkbox class="form-check-input check" color="primary" (change)="checkAllActivities($event)">{{'pages.big-stablish.section2.item1' | translate}}</mat-checkbox>
+                        <mat-checkbox class="form-check-input check"
+                            (change)="checkAllActivities($event.checked)">{{'pages.big-stablish.section2.item1' | translate}}
+                        </mat-checkbox>
                         <!-- end of check all -->
 
                         <!-- babcn-CONTAINER -->
@@ -106,7 +108,8 @@
                                             <div class="form-check">
                                                 <label class="form-check-label">
                                                     <mat-checkbox class="form-check-input" color="primary"
-                                                        (change)="checkActivities(activity,$event.checked)">
+                                                        (change)="checkActivities(activity,$event.checked)"
+                                                        [checked]="allChecked">
                                                         {{ activity.activityName }}</mat-checkbox>
                                                 </label>
                                             </div>
