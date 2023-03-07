@@ -1,20 +1,19 @@
-import { SavedSearchesDialogComponent } from '../../../saved-searches/components/saved-searches-dialog/saved-searches-dialog.component';
-import { LoginModalComponent } from './../../../users/components/login-modal/login-modal.component';
-import { MatDialog } from '@angular/material/dialog';
-import { SearchItemResult } from './../../../../shared/models/my-environment-search/search-item-result.model';
-import { MyEnvironmentService } from './../../services/my-environment.service';
-import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
+import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { CommonService } from 'src/app/services/common/common.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
+import { LoginModalComponent } from './../../../users/components/login-modal/login-modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MapboxService } from '../../../../shared/components/mapbox/service/mapbox.service';
+import { MapboxMarkersService } from '../../services/mapbox-markers.service';
+import { MyEnvironmentService } from './../../services/my-environment.service';
 import { MyEnvironmentSearch, BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch, SearchType } from 'src/app/shared/models/my-environment-search/my-environment-search.model';
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { MY_ENVIRONMENT_MAT_GRID_LIST } from 'src/app/shared/components/component-constants';
+import { SavedSearchesDialogComponent } from '../../../saved-searches/components/saved-searches-dialog/saved-searches-dialog.component';
+import { SearchItemResult } from './../../../../shared/models/my-environment-search/search-item-result.model';
+import { Subscription } from 'rxjs';
 import { Zone } from 'src/app/shared/models/common/zone.model';
 
-import { MapboxMarkersService } from '../../services/mapbox-markers.service';
-
-import { Subscription } from 'rxjs';
-import { MapboxService } from '../../../../shared/components/mapbox/service/mapbox.service';
 
 @Component({
   selector: 'app-search-and-result',
@@ -25,34 +24,35 @@ export class SearchAndResultComponent implements OnInit {
 
   @Input() title = '';
   // Responsive Breakpoint
-  breakpoint: number | string | "Unknown";
-  ratio: string | number;
-  showResults: boolean = false;
-  selectedList: any[] = [];
-  isUserLogged = true;
+  breakpoint     : number | string | "Unknown";
+  ratio          : string | number;
+  showResults    : boolean = false;
+  selectedList   : any[] = [];
+  isUserLogged   = true;
+  snackBarMessage: string = ""
 
   @Input() businessModel!: SearchType;
   businessModelSearch!: MyEnvironmentSearch;
 
-  zones: Zone[] = []; //zones will store all the available zones
-  activities: EconomicActivity[] = []; //activities will store all the available economic activities before any selection
-  selectedZones: Zone[] = [];
-  selectedActivities: EconomicActivity[] = [];
-  searchResults: SearchItemResult[] = [];
-  allChecked: boolean = false;
+  zones              : Zone[] = []; //zones will store all the available zones
+  activities         : EconomicActivity[] = []; //activities will store all the available economic activities before any selection
+  selectedZones      : Zone[] = [];
+  selectedActivities : EconomicActivity[] = [];
+  searchResults      : SearchItemResult[] = [];
+  allChecked         : boolean = false;
 
 
-  zonesSub: Subscription | null = null;
-  activitiesSub: Subscription | null = null;
-  environments: Subscription | null = null;
+  zonesSub      : Subscription | null = null;
+  activitiesSub : Subscription | null = null;
+  environments  : Subscription | null = null;
 
   constructor(
     private markerService: MapboxMarkersService,
-    private responsive: BreakpointService,
-    private myEnvSrv: MyEnvironmentService,
+    private responsive   : BreakpointService,
+    private myEnvSrv     : MyEnvironmentService,
     private commonService: CommonService,
     private MapboxService: MapboxService,
-    private dialog: MatDialog) {
+    private dialog       : MatDialog,) {
     const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
@@ -114,12 +114,13 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   goToResult() {
-
+    if(this.selectedZones.length > 0 && this.selectedActivities.length > 0){
     this.businessModelSearch.activities = this.selectedActivities;
     this.businessModelSearch.zones = this.selectedZones;
     this.showResults = true;
 
     this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
+      console.log(response);
       response.results.forEach((result: any) => {
         this.searchResults.push({
           name: result.name,
@@ -130,7 +131,23 @@ export class SearchAndResultComponent implements OnInit {
         })
       })
     })
+  } else {
+    this.openSnackBar()
+   }
+  }
 
+  // 
+  openSnackBar(){
+    if(this.selectedZones.length !> 0){
+      // this.snackBar.open(
+      //   "activity", 'X'
+      // )
+    } else {
+      // this.snackBar.open(
+      //   "zones", 'X')
+      // 
+    }
+    
   }
 
   selectMarker(index: number) {

@@ -184,6 +184,10 @@
         },
         "title": {
             "results": "Resultats"
+        },
+        "alerts" : {
+            "zone" : "Si us plau seleccioneu una zona",
+            "activity" : "Si us plau seleccioneu una activitat"
         }
     },
     "user": {

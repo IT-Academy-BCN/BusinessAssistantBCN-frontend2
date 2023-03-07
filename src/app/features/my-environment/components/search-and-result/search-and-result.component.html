@@ -33,6 +33,7 @@
                                     </div>
                                 </div>
                             </div>
+                           
                             <ng-template #showResult>
                                 <h2>
                                     {{ "common.title.results" | translate }}
@@ -64,6 +65,7 @@
                             </ng-template>
                         </babcn-container>
 
+
                         <section>
                             <div *ngIf="title==='common.button.market-fair' || title==='common.button.public-market'"
                                 class="search">
@@ -94,7 +96,7 @@
                     <div class="search-container">
 
                         <!-- check all activities -->
-                        <mat-checkbox class="form-check-input check"
+                        <mat-checkbox class="check"
                             (change)="checkAllActivities($event.checked)">{{'pages.big-stablish.section2.item1' | translate}}
                         </mat-checkbox>
                         <!-- end of check all -->

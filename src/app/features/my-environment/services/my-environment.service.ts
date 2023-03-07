@@ -68,7 +68,6 @@ export class MyEnvironmentService {
     this.activityIDs.forEach(id => {
       params = params.append('activities', id);
     });
-    
     switch (businessModelSearch.searchType) {
       case SearchType.BIG_MALLS:   
         return this.http.get(`${BASE_URL}${BIG_MALLS_SEARCH}`, { headers, params });

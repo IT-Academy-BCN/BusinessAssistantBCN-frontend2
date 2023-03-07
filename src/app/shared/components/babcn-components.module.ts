@@ -12,7 +12,7 @@ import { BabcnListModule } from './babcn-list/babcn-list.module';
 import { BabcnTitleModule } from './babcn-title/babcn-title.module';
 import { BabcnTreeModule } from './babcn-tree/babcn-tree.module';
 import { BabcnShowcaseModule } from './showcase/babcn-showcase.module';
-;
+
 
 
 @NgModule({

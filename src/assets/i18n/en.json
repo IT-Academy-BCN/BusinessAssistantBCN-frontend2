@@ -185,7 +185,11 @@
         },
         "title": {
             "results": "Results"
-        }
+        },
+        "alerts" : {
+                "zone" : "Please select an area",
+                "activity" : "Please select an activity"
+            }
     },
     "user": {
         "register": {
