@@ -1,6 +1,6 @@
 import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
 import { CommonService } from 'src/app/services/common/common.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 import { LoginModalComponent } from './../../../users/components/login-modal/login-modal.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -21,38 +21,39 @@ import { Zone } from 'src/app/shared/models/common/zone.model';
   styleUrls: ['./search-and-result.component.scss']
 })
 export class SearchAndResultComponent implements OnInit {
+  @ViewChild('alertDialog') alertDialog!: TemplateRef<any>;
 
   @Input() title = '';
   // Responsive Breakpoint
-  breakpoint     : number | string | "Unknown";
-  ratio          : string | number;
-  showResults    : boolean = false;
-  selectedList   : any[] = [];
-  isUserLogged   = true;
-  snackBarMessage: string = ""
+  breakpoint: number | string | "Unknown";
+  ratio: string | number;
+  showResults: boolean = false;
+  selectedList: any[] = [];
+  isUserLogged = true;
+
 
   @Input() businessModel!: SearchType;
   businessModelSearch!: MyEnvironmentSearch;
 
-  zones              : Zone[] = []; //zones will store all the available zones
-  activities         : EconomicActivity[] = []; //activities will store all the available economic activities before any selection
-  selectedZones      : Zone[] = [];
-  selectedActivities : EconomicActivity[] = [];
-  searchResults      : SearchItemResult[] = [];
-  allChecked         : boolean = false;
+  zones: Zone[] = []; //zones will store all the available zones
+  activities: EconomicActivity[] = []; //activities will store all the available economic activities before any selection
+  selectedZones: Zone[] = [];
+  selectedActivities: EconomicActivity[] = [];
+  searchResults: SearchItemResult[] = [];
+  allChecked: boolean = false;
+  endOfSearch: boolean = false;
 
-
-  zonesSub      : Subscription | null = null;
-  activitiesSub : Subscription | null = null;
-  environments  : Subscription | null = null;
+  zonesSub: Subscription | null = null;
+  activitiesSub: Subscription | null = null;
+  environments: Subscription | null = null;
 
   constructor(
     private markerService: MapboxMarkersService,
-    private responsive   : BreakpointService,
-    private myEnvSrv     : MyEnvironmentService,
+    private responsive: BreakpointService,
+    private myEnvSrv: MyEnvironmentService,
     private commonService: CommonService,
     private MapboxService: MapboxService,
-    private dialog       : MatDialog,) {
+    private dialog: MatDialog) {
     const value = MY_ENVIRONMENT_MAT_GRID_LIST.get(this.responsive.getCurrentScreenSize());
     if (value != undefined) {
       this.breakpoint = value[0];
@@ -114,40 +115,36 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   goToResult() {
-    if(this.selectedZones.length > 0 && this.selectedActivities.length > 0){
-    this.businessModelSearch.activities = this.selectedActivities;
-    this.businessModelSearch.zones = this.selectedZones;
-    this.showResults = true;
+    if (this.selectedZones.length > 0 && this.selectedActivities.length > 0) {
 
-    this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
-      console.log(response);
-      response.results.forEach((result: any) => {
-        this.searchResults.push({
-          name: result.name,
-          web: result.web,
-          email: result.email,
-          phone: result.phone,
-          addresses: result.addresses
+      this.businessModelSearch.activities = this.selectedActivities;
+      this.businessModelSearch.zones = this.selectedZones;
+      this.showResults = true;
+
+      this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
+        response.results.forEach((result: any) => {
+          this.searchResults.push({
+            name: result.name,
+            web: result.web,
+            email: result.email,
+            phone: result.phone,
+            addresses: result.addresses
+          })
+          this.endOfSearch = true;
         })
       })
-    })
-  } else {
-    this.openSnackBar()
-   }
+    } else {
+      this.openOtherDialog()
+    }
+    this.endOfSearch = true;
+
   }
 
-  // 
-  openSnackBar(){
-    if(this.selectedZones.length !> 0){
-      // this.snackBar.open(
-      //   "activity", 'X'
-      // )
-    } else {
-      // this.snackBar.open(
-      //   "zones", 'X')
-      // 
-    }
-    
+  openOtherDialog() {
+    this.dialog.open(this.alertDialog,);
+    setTimeout(() => {
+      this.dialog.closeAll();
+    }, 2500);
   }
 
   selectMarker(index: number) {
@@ -164,7 +161,7 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
-  checkActivities(activitySelected: EconomicActivity, event: any) {
+  checkActivities(activitySelected: EconomicActivity, event: boolean) {
     if (event) {
       //Adds the selected activity to the selected activities array
       this.selectedActivities.push(activitySelected);
@@ -174,7 +171,7 @@ export class SearchAndResultComponent implements OnInit {
     }
   }
 
-  checkAllActivities(event: any) {
+  checkAllActivities(event: boolean) {
     // if all activities are selected, all checked is true and the selected activities array is filled with all the activities
     if (event) {
       this.selectedActivities = [...this.activities];
@@ -193,5 +190,14 @@ export class SearchAndResultComponent implements OnInit {
       this.dialog.open(LoginModalComponent, {})
     }
   }
+
+  // Go back to search if user wants to change the search or create a new one.
+  goBack() {
+    this.showResults = false;
+    this.selectedZones = [];
+    this.selectedActivities = [];
+    this.allChecked = false;
+  }
+
 
 }

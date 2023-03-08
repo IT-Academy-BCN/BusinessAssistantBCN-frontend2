@@ -162,13 +162,13 @@
             "section6": {
                 "title": "6. Report generation"
             }
-
         }
     },
     "common": {
         "button": {
             "search": "Search",
             "save": "Save",
+            "back": "Back to search",
             "my-enviroment": "My environment",
             "assistant": "Virtual Assistant",
             "big-stablish": "Large Establishments",
@@ -181,26 +181,29 @@
             "login": "Login",
             "logout": "Logout",
             "register": "Sign-in",
-            "see-summary": "See summary"
+            "see-summary": "See summary",
+            "dismiss": "Close"
         },
         "title": {
-            "results": "Results"
+            "results": "Results",
+            "no-results": "No results"
         },
-        "alerts" : {
-                "zone" : "Please select an area",
-                "activity" : "Please select an activity"
-            }
+        "alerts": {
+            "search": "Please review the search criteria",
+            "zone": "Please select an area",
+            "activity": "Please select an activity"
+        }
     },
     "user": {
         "register": {
             "title": "New user",
             "email-placeholder": "Your email...",
             "email-error": "Email address not valid / User already exists",
-            "email-require":"Email is required",
+            "email-require": "Email is required",
             "password-title": "Password",
             "password-placeholder": "Your password...",
             "password-error": "Password needs to be 8 alphanumeric characters",
-            "password-require":"Password is required",
+            "password-require": "Password is required",
             "submit-register": "Create user"
         }
     }

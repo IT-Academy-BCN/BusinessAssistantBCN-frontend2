@@ -168,6 +168,7 @@
         "button": {
             "search": "Cercar",
             "save": "Guardar",
+            "back": "Tornar",
             "my-enviroment": "El meu entorn",
             "assistant": "Assistent Virtual",
             "big-stablish": "Grans Establiments",
@@ -180,12 +181,15 @@
             "login": "Accés",
             "logout": "Logout",
             "register": "Registrar-se",
-            "see-summary": "Veure resum"
+            "see-summary": "Veure resum",
+            "dismiss": "Tanca"
         },
         "title": {
-            "results": "Resultats"
+            "results": "Resultats",
+            "no-results": "No hi ha resultats"
         },
         "alerts" : {
+            "search": "Reviseu els camps de cerca",
             "zone" : "Si us plau seleccioneu una zona",
             "activity" : "Si us plau seleccioneu una activitat"
         }

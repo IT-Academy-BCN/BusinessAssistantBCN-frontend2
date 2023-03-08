@@ -10,7 +10,8 @@ import { MapboxComponent } from 'src/app/shared/components/mapbox/mapbox.compone
 import { CardContentComponent } from './components/card-content/card-content.component';
 import { SearchAndResultComponent } from './components/search-and-result/search-and-result.component';
 import { MyEnvironmentPageComponent } from './components/my-environment-page/my-environment-page.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -26,11 +27,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatGridListModule,
     I18TranslateModule,
     MatListModule,
-    MatSnackBarModule,
     
     // BABCN COMPONENTS
     BabcnComponentsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule
   ],
   exports: [
     

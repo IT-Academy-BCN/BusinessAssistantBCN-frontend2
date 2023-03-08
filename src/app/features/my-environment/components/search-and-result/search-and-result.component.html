@@ -33,12 +33,15 @@
                                     </div>
                                 </div>
                             </div>
-                           
+
                             <ng-template #showResult>
-                                <h2>
+                                <h2 *ngIf='searchResults.length > 0; else noResults'>
                                     {{ "common.title.results" | translate }}
                                 </h2>
-                                <div class="" *ngIf="true" id="pdfData">
+                                <ng-template #noResults>
+                                    <h2 class="noResults">{{ "common.title.no-results" | translate }}</h2>
+                                </ng-template>
+                                <div *ngIf="true" id="pdfData">
                                     <div *ngFor="let ls of searchResults">
                                         <h5 class="details" (click)="flyTo(ls.addresses)">{{ ls.name }}</h5>
                                         <mat-list class="result-container list-unstyled"
@@ -75,9 +78,16 @@
                                 </button>
                             </div>
                             <div *ngIf="showResults" class="search">
-                                <button *ngIf="showResults" mat-raised-button style="background:black; color: white"
-                                    routerLink="my-environment-search-detail" type="submit" (click)="onSaveSearch()">
+                                <!-- save button -->
+                                <button *ngIf="this.searchResults.length > 0 && this.endOfSearch" mat-raised-button
+                                    style="background:black; color: white" routerLink="my-environment-search-detail"
+                                    type="submit" (click)="onSaveSearch()">
                                     {{'common.button.save' | translate}}
+                                </button>
+                                <!-- go back button -->
+                                <button class="go-back-button" mat-raised-button style="background:black; color: white"
+                                    type="submit" (click)="goBack()">
+                                    {{'common.button.back' | translate}}
                                 </button>
                             </div>
                         </section>
@@ -96,8 +106,8 @@
                     <div class="search-container">
 
                         <!-- check all activities -->
-                        <mat-checkbox class="check"
-                            (change)="checkAllActivities($event.checked)">{{'pages.big-stablish.section2.item1' | translate}}
+                        <mat-checkbox class="check" (change)="checkAllActivities($event.checked)">
+                            {{'pages.big-stablish.section2.item1' | translate}}
                         </mat-checkbox>
                         <!-- end of check all -->
 
@@ -148,6 +158,17 @@
 
         </mat-grid-list>
         <!-- END MAT GRID LIST -->
+
+        <!-- Simple dialog when user not pick any option-->
+
+        <ng-template #alertDialog>
+            <p mat-dialog-content><em>{{'common.alerts.search' | translate}}</em></p>
+            <mat-dialog-actions align="end">
+                <button mat-button mat-dialog-close>{{'common.button.dismiss' | translate}}</button>
+            </mat-dialog-actions>
+           
+        </ng-template>
+
 
     </div>
 </section>
