@@ -44,3 +44,16 @@
     height: 441px;
 }
 
+@media (max-width: 599px) {
+    .search-container {
+       margin-top: 25px;
+      width: 100vh;
+    }
+    .subtitle {
+        font-size: 1rem;
+        margin-top: 25px;
+    }
+    .container {
+        justify-content: center;
+    }
+}

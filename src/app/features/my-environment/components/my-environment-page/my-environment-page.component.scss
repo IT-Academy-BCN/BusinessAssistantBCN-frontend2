@@ -1,40 +1,40 @@
 @import '../../../../../styles/global';
 
 
-.grid-env {
-  margin:100px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap:20px;
-  max-width: 1600px;
-}
-
-
-.padding-env{
-  padding:50px;
-}
-
 .environment {
-  padding:50px;
+  padding: 50px;
   transition: all 0.2s ease;
-  cursor    : pointer;
+  cursor: pointer;
   min-width: 20%;
   border-radius: 5px;
   background-color: #fff;
 }
 
 .env-hovering:hover {
-  transform       : scale(1.06);
+  transform: scale(1.06);
   background-color: $color-light2;
-  color:white;
+  color: white;
 }
 
+.grid-env {
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1600px;
+}
 
-svg {
-  margin-bottom:10px;
-  width: 50px;
-  fill:$color-dark2;
+.img-shopping {
+  background-image: url(../../../../../assets/img/shopping-arcade-sm.jpg);
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+
+.padding-env {
+  padding: 50px;
 }
 
 .parallax {
@@ -49,15 +49,10 @@ svg {
   background-size: cover;
 }
 
-.width-small {
-  min-width: 50%;
-  margin:auto 3%;
-}
-
-
-.width-xsmall {
-  min-width: 70%;
-  margin:auto 10%;
+svg {
+  margin-bottom: 10px;
+  width: 50px;
+  fill: $color-dark2;
 }
 
 .text {
@@ -65,14 +60,58 @@ svg {
 }
 
 
-.img-shopping {
-  background-image: url(../../../../../assets/img/shopping-arcade-sm.jpg);
-  height:80vh;
-  background-position: center;
-  background-size: cover;
+.width-small {
+  min-width: 50%;
+  margin: auto 3%;
+}
+
+
+.width-xsmall {
+  min-width: 90%;
+  margin: auto 10%;
 }
 
 
 
+@media (max-width: 599px) {
+
+  a {
+    font-size: 1.5rem;
+  }
+
+  #environment {
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .grid-env {
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
+
+  .icon {
+    position: absolute;
+    left: 50px;
+    opacity: 1;
+    animation: disappear 1s ease-in;
+
+  }
 
 
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

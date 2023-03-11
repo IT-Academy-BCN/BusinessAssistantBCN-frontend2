@@ -2,11 +2,38 @@
     font-size: 3rem;
     font-weight: 500;
     color:black;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .line {
-    width:300px;
+    width:400px;
     background-color: #ffb142;
     border:none;
-    height: 2px;
+    height: 3px;
+    margin-top: 10px;
+}
+
+@media (max-width: 960px) {
+    .title{
+        font-size: 2.5rem;
+    } 
+    .line { 
+        width: 340px;
+    }   
+}
+
+@media (max-width: 600px) {
+    .titleBox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        font-size: 2rem;
+    } 
+    .line { 
+        width: 350px;
+        margin: 0 auto;
+    }   
 }

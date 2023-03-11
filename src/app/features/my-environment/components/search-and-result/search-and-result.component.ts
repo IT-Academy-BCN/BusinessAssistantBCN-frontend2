@@ -46,6 +46,7 @@ export class SearchAndResultComponent implements OnInit {
   zonesSub: Subscription | null = null;
   activitiesSub: Subscription | null = null;
   environments: Subscription | null = null;
+  component: any;
 
   constructor(
     private markerService: MapboxMarkersService,
@@ -60,7 +61,7 @@ export class SearchAndResultComponent implements OnInit {
       this.ratio = value[1];
     } else {
       this.breakpoint = 0;
-      this.ratio = "150px";
+      this.ratio = "100px";
     }
   }
 

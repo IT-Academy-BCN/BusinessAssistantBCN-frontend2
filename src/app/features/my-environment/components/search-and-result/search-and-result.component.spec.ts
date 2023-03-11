@@ -1,5 +1,5 @@
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from './../../../../shared/models/my-environment-search/my-environment-search.model';
 import { CommonService } from '../../../../services/common/common.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -8,7 +8,7 @@ import { MyEnvironmentService } from '../../services/my-environment.service';
 import { SearchAndResultComponent } from './search-and-result.component';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NO_ERRORS_SCHEMA, TemplateRef, ViewChild } from '@angular/core';
 import { Zone } from 'src/app/shared/models/common/zone.model';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 import { MapboxService } from '../../../../shared/components/mapbox/service/mapbox.service';
@@ -40,6 +40,11 @@ describe('SearchAndResultComponent', () => {
     breakpoint$: jest.fn()
   }
 
+  const mockDialog = {
+    open: jest.fn(),
+    closeAll: jest.fn()
+  };
+
   beforeEach(async () => {
 
     await TestBed.configureTestingModule({
@@ -57,7 +62,8 @@ describe('SearchAndResultComponent', () => {
       providers: [
         { provide: CommonService, useValue: fakeCommonSrvMock },
         { provide: MyEnvironmentService, useValue: fakeEnvSrvMock },
-        { provide: MapboxService, useValue : fakeMapboxSrvMock}
+        { provide: MapboxService, useValue : fakeMapboxSrvMock},
+        { provide: MatDialog, useValue: mockDialog },
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -89,6 +95,7 @@ describe('SearchAndResultComponent', () => {
         phone: null,
         web: "https://www.google.com/"
       }]
+      
     }
     expBreakpointResponse = 'Medium'
     jest.spyOn(fakeCommonSrvMock, 'getZones').mockReturnValue(of(expCommonResponse));
@@ -191,17 +198,46 @@ describe('SearchAndResultComponent', () => {
 
   test('goToResult should return an array of 1 element if business model is Markets and Fairs', () => {
     jest.spyOn(myEnvSrv, 'getResults');
+    jest.spyOn(component, 'openOtherDialog').mockImplementation(() => { });
+    component.selectedZones = [new Zone(), new Zone()];
+    component.selectedActivities = [new EconomicActivity(), new EconomicActivity()];
     component.businessModelSearch = new MarketsAndFairsSearch();
     component.goToResult();
     expect(component.searchResults.length).toBe(1);
+    expect(component.endOfSearch).toBe(true);
   });
-
+  
   test('goToResult should return an array of 1 element if business model is Municipal Markets', () => {
     jest.spyOn(myEnvSrv, 'getResults');
+    jest.spyOn(component, 'openOtherDialog').mockImplementation(() => { });
+    component.selectedZones = [new Zone(), new Zone()];
+    component.selectedActivities = [new EconomicActivity(), new EconomicActivity()];
     component.businessModelSearch = new MunicipalMarketsSearch();
+    component.selectedActivities = [new EconomicActivity()];
     component.goToResult();
     expect(component.searchResults.length).toBe(1);
+    expect(component.endOfSearch).toBe(true);
   });
+
+  test('gotToResult should call openOtherDialog if business model is not Markets and Fairs or Municipal Markets', () => {
+    jest.spyOn(myEnvSrv, 'getResults');
+    jest.spyOn(component, 'openOtherDialog').mockImplementation(() => { });
+
+    component.selectedZones = [];
+    component.selectedActivities = [];
+    component.businessModelSearch = new BigMallsSearch();
+    component.goToResult();
+    expect(component.openOtherDialog).toHaveBeenCalled();
+  });
+
+  // --------------------------
+  // openOtherDialog
+  test('openOtherDialog should call openDialog', () => {
+    component.openOtherDialog();
+    expect(mockDialog.open).toHaveBeenCalled();
+  });
+
+
 
   test('checkZones should add element if event is true', () => {
     let event = false;
@@ -239,7 +275,36 @@ const service = fixture.debugElement.injector.get(MapboxService);
 const spy = jest.spyOn(service, 'flyTo').mockImplementation(() => null);
 component.flyTo(data);
 expect(spy).toHaveBeenCalledWith(data);
-
 })
+
+
+it('CheckAllActivities should be called if checks checkboxes, and allChecked should be true if event is true', () => {
+component.activities = [{ activityId: 105001, activityName: 'Accessible per a persones amb discapacitat física' }];
+const event = true;
+component.checkAllActivities(event);
+expect(component.selectedActivities).toEqual(component.activities);
+expect(component.allChecked).toBe(true);
+})
+
+it('CheckAllActivities should be called if unchecks checkboxes, and allChecked should be false if event is false', () => {
+  const event = false;
+  component.checkAllActivities(event);
+  expect(component.selectedActivities.length).toBe(0);
+  expect(component.allChecked).toBe(false);
+ });
+
+  it('goBack should set showResults to false, selectedZones to [], selectedActivities to [], and allChecked to false', () => {
+    component.showResults = true;
+    component.selectedZones = [new Zone(), new Zone()];
+    component.selectedActivities = [new EconomicActivity(), new EconomicActivity()];
+    component.allChecked = true;
+    component.goBack();
+    expect(component.showResults).toBe(false);
+    expect(component.selectedZones.length).toBe(0);
+    expect(component.selectedActivities.length).toBe(0);
+    expect(component.allChecked).toBe(false);
+  });
+
+
 
 })
