@@ -123,6 +123,7 @@ export class SearchAndResultComponent implements OnInit {
       this.showResults = true;
 
       this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
+        console.log(response);
         response.results.forEach((result: any) => {
           this.searchResults.push({
             name: result.name,
