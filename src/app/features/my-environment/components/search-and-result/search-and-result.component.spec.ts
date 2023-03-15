@@ -62,7 +62,7 @@ describe('SearchAndResultComponent', () => {
       providers: [
         { provide: CommonService, useValue: fakeCommonSrvMock },
         { provide: MyEnvironmentService, useValue: fakeEnvSrvMock },
-        { provide: MapboxService, useValue : fakeMapboxSrvMock},
+        { provide: MapboxService, useValue: fakeMapboxSrvMock },
         { provide: MatDialog, useValue: mockDialog },
       ],
       schemas: [NO_ERRORS_SCHEMA]
@@ -95,7 +95,7 @@ describe('SearchAndResultComponent', () => {
         phone: null,
         web: "https://www.google.com/"
       }]
-      
+
     }
     expBreakpointResponse = 'Medium'
     jest.spyOn(fakeCommonSrvMock, 'getZones').mockReturnValue(of(expCommonResponse));
@@ -206,7 +206,7 @@ describe('SearchAndResultComponent', () => {
     expect(component.searchResults.length).toBe(1);
     expect(component.endOfSearch).toBe(true);
   });
-  
+
   test('goToResult should return an array of 1 element if business model is Municipal Markets', () => {
     jest.spyOn(myEnvSrv, 'getResults');
     jest.spyOn(component, 'openOtherDialog').mockImplementation(() => { });
@@ -221,13 +221,22 @@ describe('SearchAndResultComponent', () => {
 
   test('gotToResult should call openOtherDialog if business model is not Markets and Fairs or Municipal Markets', () => {
     jest.spyOn(myEnvSrv, 'getResults');
-    jest.spyOn(component, 'openOtherDialog').mockImplementation(() => { });
-
+    jest.spyOn(component, 'openOtherDialog');
+    component.businessModelSearch = new BigMallsSearch();
     component.selectedZones = [];
     component.selectedActivities = [];
-    component.businessModelSearch = new BigMallsSearch();
     component.goToResult();
     expect(component.openOtherDialog).toHaveBeenCalled();
+  });
+
+  test('gotToResult should not call openOtherDialog if no activity is selected and business model is market type', () => {
+    jest.spyOn(myEnvSrv, 'getResults');
+    jest.spyOn(component, 'openOtherDialog');
+    component.businessModelSearch = new MarketsAndFairsSearch();
+    component.selectedZones.length = 1;
+    component.selectedActivities = [];
+    component.goToResult();
+    expect(component.openOtherDialog).toHaveBeenCalledTimes(0);
   });
 
   // --------------------------
@@ -236,8 +245,6 @@ describe('SearchAndResultComponent', () => {
     component.openOtherDialog();
     expect(mockDialog.open).toHaveBeenCalled();
   });
-
-
 
   test('checkZones should add element if event is true', () => {
     let event = false;
@@ -269,29 +276,29 @@ describe('SearchAndResultComponent', () => {
     expect(component.selectedActivities.length).toBe(1);
   });
 
- it('should call flyTo method', () => {
-const data = {lat: 1, lng: 1};
-const service = fixture.debugElement.injector.get(MapboxService);
-const spy = jest.spyOn(service, 'flyTo').mockImplementation(() => null);
-component.flyTo(data);
-expect(spy).toHaveBeenCalledWith(data);
-})
+  it('should call flyTo method', () => {
+    const data = { lat: 1, lng: 1 };
+    const service = fixture.debugElement.injector.get(MapboxService);
+    const spy = jest.spyOn(service, 'flyTo').mockImplementation(() => null);
+    component.flyTo(data);
+    expect(spy).toHaveBeenCalledWith(data);
+  })
 
 
-it('CheckAllActivities should be called if checks checkboxes, and allChecked should be true if event is true', () => {
-component.activities = [{ activityId: 105001, activityName: 'Accessible per a persones amb discapacitat física' }];
-const event = true;
-component.checkAllActivities(event);
-expect(component.selectedActivities).toEqual(component.activities);
-expect(component.allChecked).toBe(true);
-})
+  it('CheckAllActivities should be called if checks checkboxes, and allChecked should be true if event is true', () => {
+    component.activities = [{ activityId: 105001, activityName: 'Accessible per a persones amb discapacitat física' }];
+    const event = true;
+    component.checkAllActivities(event);
+    expect(component.selectedActivities).toEqual(component.activities);
+    expect(component.allChecked).toBe(true);
+  })
 
-it('CheckAllActivities should be called if unchecks checkboxes, and allChecked should be false if event is false', () => {
-  const event = false;
-  component.checkAllActivities(event);
-  expect(component.selectedActivities.length).toBe(0);
-  expect(component.allChecked).toBe(false);
- });
+  it('CheckAllActivities should be called if unchecks checkboxes, and allChecked should be false if event is false', () => {
+    const event = false;
+    component.checkAllActivities(event);
+    expect(component.selectedActivities.length).toBe(0);
+    expect(component.allChecked).toBe(false);
+  });
 
   it('goBack should set showResults to false, selectedZones to [], selectedActivities to [], and allChecked to false', () => {
     component.showResults = true;
@@ -304,7 +311,4 @@ it('CheckAllActivities should be called if unchecks checkboxes, and allChecked s
     expect(component.selectedActivities.length).toBe(0);
     expect(component.allChecked).toBe(false);
   });
-
-
-
 })

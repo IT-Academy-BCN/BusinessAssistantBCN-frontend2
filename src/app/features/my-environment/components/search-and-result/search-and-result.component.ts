@@ -116,12 +116,11 @@ export class SearchAndResultComponent implements OnInit {
   }
 
   goToResult() {
-    if (this.selectedZones.length > 0 && this.selectedActivities.length > 0) {
-
+    let isMarket = this.businessModelSearch instanceof MarketsAndFairsSearch || this.businessModelSearch instanceof MunicipalMarketsSearch ? true : false;
+    if (this.selectedZones.length > 0 && this.selectedActivities.length > 0 || (this.selectedZones.length > 0 && isMarket)) {
       this.businessModelSearch.activities = this.selectedActivities;
       this.businessModelSearch.zones = this.selectedZones;
       this.showResults = true;
-
       this.environments = this.myEnvSrv.getResults(this.businessModelSearch).subscribe((response: any) => {
         console.log(response);
         response.results.forEach((result: any) => {
@@ -139,7 +138,6 @@ export class SearchAndResultComponent implements OnInit {
       this.openOtherDialog()
     }
     this.endOfSearch = true;
-
   }
 
   openOtherDialog() {
@@ -200,6 +198,4 @@ export class SearchAndResultComponent implements OnInit {
     this.selectedActivities = [];
     this.allChecked = false;
   }
-
-
 }
