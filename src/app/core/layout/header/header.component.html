@@ -10,19 +10,19 @@
 
     <!-- Navigate-buttons -->
 
-    <div *ngIf="menu;else headerbtn">
+    <div *ngIf="menu; else headerbtn">
         <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>menu</mat-icon>
         </button>
         <mat-menu #menu="matMenu" yPosition="below">
             <span *ngFor="let button of buttons; let i=index" (click)=goToLink(i)>
-            <button class="btn1" mat-menu-item *ngIf="!user.name || i != 4">
-                {{button | translate}}
-            </button>
+                <button class="btn1" mat-menu-item *ngIf="!user.name || i != 4">
+                    {{button | translate}}
+                </button>
             </span>
             <span *ngFor="let button of userMenuButtons; let i=index" (click)=goToLink(i+5)>
                 <button class="btn1" mat-menu-item *ngIf="user.name">
-                 {{button | translate}}
+                    {{button | translate}}
                 </button>
             </span>
             <button class="btn1" mat-menu-item *ngFor="let button of languageButtons;"
@@ -32,23 +32,28 @@
         </mat-menu>
     </div>
 
-    <ng-template #headerbtn>
+    <ng-template #headerbtn >
+
         <span *ngFor="let button of buttons; let i=index" (click)=goToLink(i)>
-            <button mat-button class="btn1" *ngIf="!user.name || i != 4">
+            <button mat-button class="btn1" *ngIf="!user.name || i != 3">
                 <span *ngIf="button == 'Search'" class="padding-x"></span>
-                <mat-icon *ngIf="i == 0">search</mat-icon>
-                <mat-icon *ngIf="i == 4">login</mat-icon>
+                <mat-icon *ngIf="i == 2">search</mat-icon>
+                <mat-icon *ngIf="i == 3">login</mat-icon>
                 {{button | translate}}
             </button>
-        </span>   
-        <button mat-button class="btn1" *ngIf="user.name" [matMenuTriggerFor]="userMenu"
-            yPosition="below">{{user.name}}</button>
-        <mat-menu class="user" #userMenu>
-            <button mat-menu-item  *ngFor="let button of userMenuButtons; let i=index">
-               <span class="sub-menu-text"> {{button | translate}} </span>  </button>
-        </mat-menu>
-    </ng-template>
+        </span>  
 
+        <button mat-icon-button [matMenuTriggerFor]="langMenu">
+            <mat-icon>language</mat-icon>
+        </button>
+
+        <mat-menu #langMenu="matMenu" yPosition="below">
+            <button class="btn1" mat-menu-item *ngFor="let button of languageButtons;" (click)='changeLanguage(button.lang)'>
+                {{button.text}}
+            </button>
+        </mat-menu>
+
+    </ng-template>
 
 
 

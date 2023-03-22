@@ -18,10 +18,12 @@ import { zoomTitle } from './animation/header.animation';
 export class HeaderComponent implements OnInit {
 
   buttons: string[] =  [
-    'common.button.search',
-    'components.header.section2.title',
+    'common.button.assistant',
+    'common.button.my-enviroment',
+    /* 'components.header.section2.title',
     'components.header.section4.title',
-    'components.footer.section4.title',
+    'components.footer.section4.title', */
+    'common.button.search',
     'common.button.login',
   ]
 
@@ -79,15 +81,17 @@ export class HeaderComponent implements OnInit {
   goToLink(num: number) {
     switch (num) {
       case 0:
+        this.router.navigate(['virtual-assistant']);
         break;
       case 1:
+        this.router.navigate(['my-environment']);
         break;
       case 2:
         break;
       case 3:
+        if (num == 3) this.dialog.open(LoginModalComponent,{})
         break;
       case 4:
-        if (num == 4) this.dialog.open(LoginModalComponent,{})
         break;
       case 5:
         break;
