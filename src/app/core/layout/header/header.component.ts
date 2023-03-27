@@ -38,6 +38,13 @@ export class HeaderComponent implements OnInit {
     {text: 'EN', lang: LanguagesModel.en }
   ]
 
+  environmentButtons: string[] = [
+    'common.button.mall',
+    'common.button.gallery-market',
+    'common.button.big-stablish',
+    'common.button.market-fair',
+    'common.button.public-market',
+  ];
 
   title: string = 'inactive'
   menu: boolean = false
@@ -100,10 +107,51 @@ export class HeaderComponent implements OnInit {
       default:
     }
   }
+  goToEnvironment(num: number) {
+    switch (num) {
+      case 0:
+        this.router.navigate(['virtual-assistant']);
+        break;
+      case 1:
+        this.router.navigate(['my-environment']);
+        break;
+      case 2:
+        break;
+      case 3:
+        if (num == 3) this.dialog.open(LoginModalComponent,{})
+        break;
+      case 4:
+        break;
+      case 5:
+        break;
+      case 6:
+        break;
+      default:
+    }
+  }
 
   changeLanguage(language: LanguagesModel){
     this.translateService.use(language);
   }
+  goToSearch(num: number){
+   // this.router.navigate(['my-environment-search'])
+    if (num == 0) {
+      this.title = 'common.button.mall'
+      //Here go all the data of Big-malls
+    }else if (num == 1) {
+      this.title = 'common.button.gallery-market'
+      //Here go all the data of Commercial-galleries
+    }else if (num == 2) {
+      this.title = 'common.button.big-stablish'
+      //Here go all the data of Large-stablishments
+    }else if (num == 3) {
+      this.title = 'common.button.market-fair'
+      //Here go all the data of Market-fairs
+    }else if (num == 4) {
+      this.title = 'common.button.public-market'
+      //Here go all the data of Municipal-markets
+    }
 
+  }
 
 }

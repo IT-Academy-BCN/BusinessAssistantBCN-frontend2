@@ -10,6 +10,7 @@
 
     <!-- Navigate-buttons -->
 
+    <!--MOBILE-->
     <div *ngIf="menu; else headerbtn">
         <button mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>menu</mat-icon>
@@ -32,10 +33,14 @@
         </mat-menu>
     </div>
 
+    <!--DESKTOP-->
     <ng-template #headerbtn >
 
         <span *ngFor="let button of buttons; let i=index" (click)=goToLink(i)>
-            <button mat-button class="btn1" *ngIf="!user.name || i != 3">
+            <button mat-button class="btn1" [matMenuTriggerFor]="environmentMenu" *ngIf="i == 1">
+                {{button | translate}}
+            </button>
+            <button mat-button class="btn1" *ngIf="(!user.name || i != 3) && i != 1">
                 <span *ngIf="button == 'Search'" class="padding-x"></span>
                 <mat-icon *ngIf="i == 2">search</mat-icon>
                 <mat-icon *ngIf="i == 3">login</mat-icon>
@@ -48,8 +53,14 @@
         </button>
 
         <mat-menu #langMenu="matMenu" yPosition="below">
-            <button class="btn1" mat-menu-item *ngFor="let button of languageButtons;" (click)='changeLanguage(button.lang)'>
+            <button mat-menu-item *ngFor="let button of languageButtons;" (click)='changeLanguage(button.lang)'>
                 {{button.text}}
+            </button>
+        </mat-menu>
+        
+        <mat-menu #environmentMenu="matMenu" yPosition="below">
+            <button mat-menu-item *ngFor="let button of environmentButtons; let i=index" (click)="goToSearch(i)" >
+                {{button | translate}}
             </button>
         </mat-menu>
 
