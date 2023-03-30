@@ -1,4 +1,4 @@
-import { LoginRequest } from './../../../../entities/auth';
+import { LoginRequest } from '../../../shared/models/common/auth';
 import { AuthService } from './auth.service';
 import { of, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';

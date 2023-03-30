@@ -1,14 +1,9 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginRequest } from 'src/entities/auth';
+import { LoginRequest } from 'src/app/shared/models/common/auth';
 import { environment } from 'src/environments/environment';
-import { Login } from 'src/app/shared/models/common/login.model';
-import { Signup } from '../../../shared/models/common/signup.model';
-
-const BASE = environment.BACKEND_BASE_URL;
-const SIGNUP = environment.BACKEND_REGISTER_URL;
-const LOGIN = environment.BACKEND_LOGIN_URL;
+import { User } from 'src/app/shared/models/common/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +12,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  public login(login: LoginRequest): Observable<Login>{
-    return this.http.post<Login>(BASE + LOGIN, login);
+  public login(login: LoginRequest): Observable<User>{
+    return this.http.post<User>(environment.BACKEND_BASE_URL + environment.BACKEND_LOGIN_URL, login);
   }
 
-  public signup(newUser: LoginRequest): Observable<Signup>{
-    return this.http.post<Signup>(BASE + SIGNUP, newUser);
+  public signup(newUser: LoginRequest): Observable<User>{
+    return this.http.post<User>(environment.BACKEND_BASE_URL + environment.BACKEND_REGISTER_URL, newUser);
   }
 
 }
