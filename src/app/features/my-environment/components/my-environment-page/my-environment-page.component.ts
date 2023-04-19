@@ -3,7 +3,7 @@ import { SearchType } from 'src/app/shared/models/my-environment-search/my-envir
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyEnvironmentService } from '../../services/my-environment.service';
-import {BreakpointService} from '../../../../services/shared/breakpoint/breakpoint.service';
+import {BreakpointService} from '../../../../shared/services/breakpoint/breakpoint.service';
 
 
 export interface Icons {

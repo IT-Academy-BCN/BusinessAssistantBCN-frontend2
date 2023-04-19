@@ -1,7 +1,7 @@
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BigMallsSearch, CommercialGalleriesSearch, LargeEstablishmentsSearch, MarketsAndFairsSearch, MunicipalMarketsSearch } from './../../../../shared/models/my-environment-search/my-environment-search.model';
-import { CommonService } from '../../../../services/common/common.service';
+import { CommonService } from '../../../../shared/services/common.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MyEnvironmentService } from '../../services/my-environment.service';

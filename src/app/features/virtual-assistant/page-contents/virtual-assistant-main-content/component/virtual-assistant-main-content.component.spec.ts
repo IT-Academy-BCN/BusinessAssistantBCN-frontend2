@@ -1,11 +1,11 @@
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { BreakpointService } from 'src/app/shared/services/breakpoint/breakpoint.service';
 import { of } from 'rxjs';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { VirtualAssistantMainContentComponent } from './virtual-assistant-main-content.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { CommonService } from '../../../../../services/common/common.service';
+import { CommonService } from '../../../../../shared/services/common.service';
 import { Zones } from '../../../../../shared/models/common/zones.model';
 import { VirtualAssistantSelectionsService } from '../../../services/virtual-assistant-selections.service';
 

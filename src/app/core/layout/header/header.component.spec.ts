@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { Router , Routes} from "@angular/router"
 import { RouterTestingModule } from "@angular/router/testing"
 import { of } from "rxjs"
-import { BreakpointService } from "src/app/services/shared/breakpoint/breakpoint.service"
+import { BreakpointService } from "src/app/shared/services/breakpoint/breakpoint.service"
 import { HeaderComponent } from "./header.component"
 import { LoginComponent } from "src/app/features/users/components/login/login.component"
 

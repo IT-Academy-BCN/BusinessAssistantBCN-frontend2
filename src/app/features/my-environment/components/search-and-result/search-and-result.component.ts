@@ -1,5 +1,5 @@
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
-import { CommonService } from 'src/app/services/common/common.service';
+import { BreakpointService } from 'src/app/shared/services/breakpoint/breakpoint.service';
+import { CommonService } from 'src/app/shared/services/common.service';
 import { Component, OnInit, Input, ViewChild, TemplateRef } from '@angular/core';
 import { EconomicActivity } from 'src/app/shared/models/common/economic-activity.model';
 import { LoginModalComponent } from './../../../users/components/login-modal/login-modal.component';

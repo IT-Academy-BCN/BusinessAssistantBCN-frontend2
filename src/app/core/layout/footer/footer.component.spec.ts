@@ -2,7 +2,7 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from "@angular/router/testing"
 
 import { FooterComponent } from './footer.component';
-import {BreakpointService} from "../../../services/shared/breakpoint/breakpoint.service";
+import {BreakpointService} from "../../../shared/services/breakpoint/breakpoint.service";
 import {
   TranslateFakeLoader,
   TranslateLoader,

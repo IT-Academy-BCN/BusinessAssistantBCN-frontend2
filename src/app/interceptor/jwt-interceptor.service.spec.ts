@@ -1,4 +1,4 @@
-import { CommonService } from './../services/common/common.service';
+import { CommonService } from '../shared/services/common.service';
 import { TestBed } from '@angular/core/testing';
 import { environment } from 'src/environments/environment';
 import { interceptorProvider, JwtInterceptorService } from './jwt-interceptor.service';

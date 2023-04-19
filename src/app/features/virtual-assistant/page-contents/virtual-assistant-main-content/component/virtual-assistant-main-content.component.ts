@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 // MATERIAL
 import { MatDialog } from '@angular/material/dialog';
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { BreakpointService } from 'src/app/shared/services/breakpoint/breakpoint.service';
 
 // VIRTUAL-ASSISTANT MODELS - BUSINESS ASISSTANT CATEGORY
 import { Category } from '../../../models/business-assistant.model';
@@ -16,7 +16,7 @@ import { VIRTUAL_ASSISTANT_MAT_GRID_LIST } from 'src/app/shared/components/compo
 
 // LOGIN MODAL COMPONENT 
 import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
-import { CommonService } from '../../../../../services/common/common.service';
+import { CommonService } from '../../../../../shared/services/common.service';
 import { Zones } from '../../../../../shared/models/common/zones.model';
 import { Zone } from 'src/app/shared/models/common/zone.model';
 

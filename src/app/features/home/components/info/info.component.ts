@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { BreakpointService } from 'src/app/shared/services/breakpoint/breakpoint.service';
 
 @Component({
   selector: 'home-info',

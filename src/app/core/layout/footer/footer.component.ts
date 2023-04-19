@@ -4,7 +4,7 @@
  */
 import { Component, OnInit } from '@angular/core';
 
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { BreakpointService } from 'src/app/shared/services/breakpoint/breakpoint.service';
 import { FOOTER_MAT_GRID_LIST } from '../../../shared/components/component-constants';
 
 @Component({

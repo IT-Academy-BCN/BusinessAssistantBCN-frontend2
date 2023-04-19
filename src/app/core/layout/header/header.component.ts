@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LanguagesModel } from '../language-changer/language-changer.interface';
 import { Router } from '@angular/router';
 import { LoginModalComponent } from 'src/app/features/users/components/login-modal/login-modal.component';
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { BreakpointService } from 'src/app/shared/services/breakpoint/breakpoint.service';
 import { zoomTitle } from './animation/header.animation';
 
 @Component({

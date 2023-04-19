@@ -2,7 +2,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
-import { BreakpointService } from 'src/app/services/shared/breakpoint/breakpoint.service';
+import { BreakpointService } from 'src/app/shared/services/breakpoint/breakpoint.service';
 
 import { InfoComponent } from './info.component';
 

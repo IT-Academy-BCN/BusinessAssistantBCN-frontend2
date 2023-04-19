@@ -78,7 +78,7 @@ A fin de mantener una diferenciación entre las capas de la aplicación, y tambi
 
 # Breakpoint Service [app]
 
-Véase la [Guía de uso](src/app/services/shared/breakpoint/BreakpointServiceReadme.md)
+Véase la [Guía de uso](src/app/shared/services/breakpoint/BreakpointServiceReadme.md)
 
 <hr/>
 
