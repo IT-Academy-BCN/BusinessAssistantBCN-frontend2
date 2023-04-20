@@ -28,6 +28,8 @@ import { UsersModule } from './features/users/users.module';
 import { MyEnvironmentModule } from './features/my-environment/my-environment.module';
 import { CoreModule } from './core/core.module';
 import { SavedSearchesModule } from './features/saved-searches/saved-searches.module';
+import { SearchComponent } from './my-enviroment/components/search/search.component';
+import { ResultComponent } from './src/app/features/my-environment/components/result/result.component';
 
 // JWT interceptor
 //import { interceptorProvider } from './interceptor/jwt-interceptor.service';
@@ -35,7 +37,9 @@ import { SavedSearchesModule } from './features/saved-searches/saved-searches.mo
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
