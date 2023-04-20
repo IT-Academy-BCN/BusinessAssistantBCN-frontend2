@@ -11,6 +11,11 @@ import { MyEnvironmentPageComponent } from './features/my-environment/components
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'my-environment', component: MyEnvironmentPageComponent},
+
+  {
+    path: 'my-environment',
+    loadChildren: () => import('./features/my-environment/my-environment.module').then( m => m.MyEnvironmentModule)
+  },
   {path: 'virtual-assistant', component: VirtualAssistantPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
