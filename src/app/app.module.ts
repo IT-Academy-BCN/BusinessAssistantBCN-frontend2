@@ -35,7 +35,7 @@ import { SavedSearchesModule } from './features/saved-searches/saved-searches.mo
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
